@@ -1,0 +1,47 @@
+{
+    "name": "mxweb",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "/Users/eoliphan/projects/mx/public/web",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 640,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "bb695723-c896-486b-8cef-984389add084": {
+            "paths": [
+                "metadata/view/MyToolbar",
+                "app/view/override/MyToolbar.js",
+                "app/view/MyToolbar.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyToolbar"
+        },
+        "4c1b4908-4f15-4670-b270-97893b6a52a1": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "bb695723-c896-486b-8cef-984389add084"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "4c1b4908-4f15-4670-b270-97893b6a52a1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

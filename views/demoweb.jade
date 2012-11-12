@@ -1,0 +1,190 @@
+extends layout
+
+block content
+    style
+        /* Carousel base class */
+            .carousel {
+              margin-bottom: 60px;
+            }
+
+            .carousel .container {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            }
+
+            .carousel-control {
+              background-color: transparent;
+              border: 0;
+              font-size: 120px;
+              margin-top: 0;
+              text-shadow: 0 1px 1px rgba(0,0,0,.4);
+            }
+
+            .carousel .item {
+              height: 500px;
+            }
+            .carousel img {
+              min-width: 100%;
+              height: 500px;
+            }
+
+            .carousel-caption {
+              background-color: transparent;
+              position: static;
+              max-width: 550px;
+              padding: 0 20px;
+              margin-bottom: 100px;
+            }
+            .carousel-caption h1,
+            .carousel-caption .lead {
+              margin: 0;
+              line-height: 1.25;
+              color: #fff;
+              text-shadow: 0 1px 1px rgba(0,0,0,.4);
+            }
+            .carousel-caption .btn {
+              margin-top: 10px;
+            }
+    // Toolbar
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container-fluid
+                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href='#') SoundScry
+                div.nav-collapse.collapse
+                    p.navbar-text.pull-right Logged in as
+                        a.navbar-link(href='/profile')  Scott Joplin
+                    ul.nav
+                        li.active: a(href='#') Home
+                        li: a(href='#about') About
+                        li: a(href='#contact') Contact
+    div#mainCarousel.carousel.slide
+        div.carousel-inner
+            div.item.active
+                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-01.jpg')
+                div.container
+                    div.carousel-caption
+                        h1 Artist
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
+            div.item
+                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-02.jpg')
+                div.container
+                    div.carousel-caption
+                        h1 Promoter
+                        p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
+            div.item
+                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-03.jpg')
+                div.container
+                    div.carousel-caption
+                        h1 Music Lover
+                        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
+        a.left.carousel-control(href="#mainCarousel",data-slide="prev") &lsaquo;
+        a.right.carousel-control(href="#mainCarousel",data-slide="next") &rsaquo;
+    // market
+    div.container
+    div.container
+    div.hero-unit
+        div.row
+            div.span8
+                h3 MarketPlace: Supporting Bands by Investing In Their Success
+            div.span4
+                h3 Shop Music (Listen And Buy)
+        div.row
+        div.row
+            div.span8
+                table#grid
+                    thead
+                        tr
+                            th Band
+                            th Album
+                            th $ on Offer
+                            th $ per share
+                            th # of shares
+                            th Listen!
+                            th More Info
+                    tbody
+                        td(colspan=7)
+            div.span4
+                div#genrelist
+    footer
+        div.container
+
+        p &copy; SoundScry 2012
+    //blocks
+        div.container.marketing
+            div.row
+                div.span4
+                    img.img-circle(src='http://placehold.it/140x140')
+                    h2 Artists
+                    p Artist stuff
+                    p: a.btn(href="#") View Details &raquo;
+                div.span4
+                    img.img-circle(src='http://placehold.it/140x140')
+                    h2 Promoters
+                    p promoter stuff
+                    p: a.btn(href="#") View Details &raquo;
+                div.span4
+                    img.img-circle(src='http://placehold.it/140x140')
+                    h2 Music Lovers
+                    p Music stuff
+                    p: a.btn(href="#") View Details &raquo;
+    // init carousel
+    script
+        !function ($) {
+            $(function(){
+              // carousel demo
+              $('#mainCarousel').carousel()
+            })
+          }(window.jQuery)
+    script
+        $("#grid").kendoGrid({
+            height: 200,
+            columns: [
+                {title: "Band", field: "band"},
+                {title: "Album", field: "album"},
+                {title: "$ On Offer", field: "dolOnOffer"},
+                {title: "$ Per Share", field: "dolPerShare"},
+                {title: "# Of Shares", field: "numOfShares"},
+                {title: "Listen!", command: "listen"},
+                {title: "More Info", command: "moreinfo"}
+            ],
+            dataSource: {
+                data:[
+                    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+                    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+                ],
+                pageSize: 2
+            }
+        });
+    script#listtmpl(type="text/x-kendo-tmpl")
+        <div><h4>${title}</h4></div>
+    script
+        $("#genrelist").kendoListView({
+            template: kendo.template($("#listtmpl").html()),
+            height: 200,
+            dataSource: {
+                data:[
+                    {title:"Rock"},
+                    {title:"Country"},
+                    {title:"HipHop"},
+                    {title:"R & B"},
+                    {title:"Pop"},
+                    {title:"Classical"}
+                ]
+
+            }
+        });

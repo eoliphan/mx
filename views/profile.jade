@@ -1,0 +1,111 @@
+extends layout
+
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+              .sidebar-nav {
+                padding: 9px 0;
+              }
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container-fluid
+                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href='/demoweb') SoundScry
+                div.nav-collapse.collapse
+                    p.navbar-text.pull-right Logged in as
+                        a.navbar-link(href='#')  Scott Joplin
+                    ul.nav
+                        li.active: a(href='#') Home
+                        li: a(href='#about') About
+                        li: a(href='#contact') Contact
+    div.container-fluid
+        div.row-fluid
+            div.span3
+                div.well.sidebar-nav
+                    ul.nav.nav-list
+                        li.nav-header Options
+                        li: a(href="#") Edit Profile
+                        li.active: a(href="#") Active Offerings
+                        li: a(href="#") Music Genres
+                        li: a(href="#") Band Search
+            div.span9
+                div.hero-unit
+                    div.row-fluid
+                        div.span8
+                            table#grid
+                                thead
+                                    tr
+                                        th Band
+                                        th Project
+                                        th Shares Owned
+                                        th Value
+                                        th Status
+                                        th Revenue
+                                tbody
+                                    td(colspan=6)
+                        div.span4
+                            div#investchart
+                    div.row-fluid
+                        div.span12
+                            div#revenuechart
+
+    script
+        $("#revenuechart").kendoChart({
+            title: {
+                text: "Revenue Over Time"
+            },
+            series: [
+                {
+                    type: "line",
+                    name: "Revenue",
+                    data:[50.27,112.65,245.50,302.97,600.12, 1027.25, 2047.45]
+                }
+            ],
+            seriesDefaults: {type: "line"}
+        });
+    script
+        $("#investchart").kendoChart({
+            height: 200,
+            title: {
+                text: "Investment Breakdown"
+            },
+            dataSource: {
+                data: [
+                    {category: "Moop", value: 5000},
+                    {category: "Faith+1", value: 3000}
+                ]
+            },
+            series: [{
+                type: "donut",
+                field: "value"
+            }]
+        });
+    script
+        $("#grid").kendoGrid({
+                    height: 400,
+                    columns: [
+                        {title: "Band", field: "band"},
+                        {title: "Project", field: "project"},
+                        {title: "Shares Owned", field: "sharesOwned"},
+                        {title: "Value", field: "shareValue"},
+                        {title: "Status", field: "status"},
+                        {title: "Revenue", field: "revenue"}
+                    ],
+                    dataSource: {
+                        data:[
+                            {band:"Moop",project:"Trilogy",sharesOwned:5,shareValue:5000,status:"In Production",revenue:"N/A"},
+                            {band:"Faith+1",project:"Renewal",sharesOwned:3,shareValue:3000,status:"Released",revenue:"$675.45"}
+
+                        ],
+                        pageSize: 2
+                    }
+                });
+
+
+

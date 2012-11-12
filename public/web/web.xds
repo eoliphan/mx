@@ -1,0 +1,47 @@
+{
+    "name": "web",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 640,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "b68af317-2528-41e7-8060-7d76e6ac53b6": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "67be0401-d33a-4429-b2ad-18fc59c53f4f": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "b68af317-2528-41e7-8060-7d76e6ac53b6"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "67be0401-d33a-4429-b2ad-18fc59c53f4f"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
