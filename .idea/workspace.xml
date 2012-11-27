@@ -1,7 +1,462 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="" />
+    <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Black/imagebrowser.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Black/imagebrowser.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Black/sprite.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Black/sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/BlueOpal/imagebrowser.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/BlueOpal/imagebrowser.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/BlueOpal/sprite.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/BlueOpal/sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Default/imagebrowser.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Default/imagebrowser.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Default/sprite.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Default/sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/imagebrowser.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/imagebrowser.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/slider-h.gif" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/slider-h.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/slider-v.gif" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/slider-v.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/sprite.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Metro/sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Silver/imagebrowser.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Silver/imagebrowser.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/Silver/sprite.png" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Silver/sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.af-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.af-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.af.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.af.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.am-ET.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.am-ET.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.am.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.am.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-AE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-AE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-BH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-BH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-DZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-DZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-EG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-EG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-IQ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-IQ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-JO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-JO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-KW.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-KW.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-LB.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-LB.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-LY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-LY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-MA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-MA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-OM.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-OM.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-QA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-QA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-SA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-SA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-SY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-SY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-TN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-TN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-YE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar-YE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.arn-CL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.arn-CL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.arn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.arn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.as-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.as-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.as.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.as.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Cyrl-AZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Cyrl-AZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Latn-AZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Latn-AZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.az.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ba-RU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ba-RU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ba.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ba.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.be-BY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.be-BY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.be.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.be.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bg-BG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bg-BG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bg.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bg.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn-BD.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn-BD.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bo-CN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bo-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bo.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.br-FR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.br-FR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.br.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.br.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Cyrl-BA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Cyrl-BA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Latn-BA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Latn-BA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.bs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ca-ES.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ca-ES.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ca.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ca.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.co-FR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.co-FR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.co.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.co.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cs-CZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cs-CZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cs.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cy-GB.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cy-GB.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cy.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.cy.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.da-DK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.da-DK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.da.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.da.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-AT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-AT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-CH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-CH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-DE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-DE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-LI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-LI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-LU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de-LU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.de.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dsb-DE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dsb-DE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dsb.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dsb.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dv-MV.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dv-MV.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dv.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.dv.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.el-GR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.el-GR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.el.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.el.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-029.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-029.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-AU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-AU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-BZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-BZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-CA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-CA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-GB.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-GB.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-IE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-IE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-JM.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-JM.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-MY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-MY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-NZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-NZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-PH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-PH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-SG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-SG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-TT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-TT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-US.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-US.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-ZW.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en-ZW.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.en.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-AR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-AR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-BO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-BO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-CR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-DO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-DO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-EC.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-EC.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-ES.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-ES.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-GT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-GT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-HN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-HN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-MX.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-MX.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-NI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-NI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-PY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-SV.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-SV.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-US.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-US.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-UY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-UY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-VE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es-VE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.es.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.et-EE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.et-EE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.et.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.et.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.eu-ES.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.eu-ES.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.eu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.eu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fa-IR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fa-IR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fa.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fa.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fi-FI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fi-FI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fi.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fi.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fil-PH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fil-PH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fil.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fil.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fo-FO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fo-FO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fo.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-BE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-BE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-CA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-CA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-CH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-CH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-FR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-FR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-LU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-LU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-MC.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr-MC.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fy-NL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fy-NL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fy.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.fy.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ga-IE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ga-IE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ga.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ga.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gd-GB.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gd-GB.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gd.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gd.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gl-ES.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gl-ES.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gsw-FR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gsw-FR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gsw.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gsw.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gu-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gu-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.gu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha-Latn-NG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha-Latn-NG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ha.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.he-IL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.he-IL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.he.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.he.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hi-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hi-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hi.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hi.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr-BA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr-BA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr-HR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr-HR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hsb-DE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hsb-DE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hsb.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hsb.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hu-HU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hu-HU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hy-AM.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hy-AM.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hy.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.hy.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.id-ID.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.id-ID.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.id.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.id.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ig-NG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ig-NG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ig.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ig.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ii-CN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ii-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ii.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ii.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.is-IS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.is-IS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.is.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.is.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it-CH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it-CH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it-IT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it-IT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.it.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Cans-CA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Cans-CA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Cans.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Cans.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Latn-CA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Latn-CA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.iu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ja-JP.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ja-JP.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ja.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ja.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ka-GE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ka-GE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ka.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ka.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kk-KZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kk-KZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kk.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kl-GL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kl-GL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.km-KH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.km-KH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.km.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.km.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kn-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kn-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ko-KR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ko-KR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ko.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ko.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kok-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kok-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kok.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.kok.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ky-KG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ky-KG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ky.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ky.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lb-LU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lb-LU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lb.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lb.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lo-LA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lo-LA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lo.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lt-LT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lt-LT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lt.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lt.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lv-LV.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lv-LV.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lv.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.lv.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mi-NZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mi-NZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mi.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mi.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mk-MK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mk-MK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mk.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ml-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ml-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ml.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ml.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-MN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-MN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Mong-CN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Mong-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Mong.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn-Mong.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.moh-CA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.moh-CA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.moh.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.moh.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mr-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mr-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms-BN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms-BN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms-MY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms-MY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ms.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mt-MT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mt-MT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mt.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.mt.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nb-NO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nb-NO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nb.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nb.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ne-NP.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ne-NP.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ne.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ne.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl-BE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl-BE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl-NL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl-NL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nn-NO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nn-NO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.no.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.no.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nso-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nso-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nso.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.nso.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.oc-FR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.oc-FR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.oc.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.oc.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.or-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.or-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.or.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.or.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pa-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pa-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pa.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pa.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pl-PL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pl-PL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.prs-AF.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.prs-AF.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.prs.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.prs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ps-AF.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ps-AF.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ps.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ps.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt-BR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt-BR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt-PT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt-PT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.pt.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.qut-GT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.qut-GT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.qut.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.qut.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-BO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-BO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-EC.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-EC.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-PE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz-PE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.quz.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rm-CH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rm-CH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rm.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rm.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ro-RO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ro-RO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ro.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ro.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru-RU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru-RU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru-UA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru-UA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ru.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rw-RW.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rw-RW.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rw.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.rw.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sa-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sa-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sa.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sa.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sah-RU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sah-RU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sah.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sah.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-FI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-FI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-NO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-NO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-SE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se-SE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.se.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.si-LK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.si-LK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.si.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.si.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sk-SK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sk-SK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sk.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sl-SI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sl-SI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma-NO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma-NO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma-SE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma-SE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sma.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj-NO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj-NO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj-SE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj-SE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smj.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smn-FI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smn-FI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.smn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sms-FI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sms-FI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sms.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sms.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sq-AL.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sq-AL.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sq.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sq.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-BA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-BA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-CS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-CS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-ME.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-ME.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-RS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl-RS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-BA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-BA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-CS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-CS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-ME.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-ME.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-RS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn-RS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv-FI.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv-FI.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv-SE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv-SE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sv.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sw-KE.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sw-KE.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sw.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.sw.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.syr-SY.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.syr-SY.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.syr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.syr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ta-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ta-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ta.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ta.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.te-IN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.te-IN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.te.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.te.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg-Cyrl-TJ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg-Cyrl-TJ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tg.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.th-TH.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.th-TH.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.th.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.th.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tk-TM.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tk-TM.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tk.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tn-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tn-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tr-TR.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tr-TR.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tr.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tt-RU.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tt-RU.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tt.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tt.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm-Latn-DZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm-Latn-DZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.tzm.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ug-CN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ug-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ug.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ug.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uk-UA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uk-UA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uk.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ur-PK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ur-PK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ur.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.ur.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Cyrl-UZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Cyrl-UZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Cyrl.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Cyrl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Latn-UZ.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Latn-UZ.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Latn.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz-Latn.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.uz.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.vi-VN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.vi-VN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.vi.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.vi.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.wo-SN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.wo-SN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.wo.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.wo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.xh-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.xh-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.xh.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.xh.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.yo-NG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.yo-NG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.yo.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.yo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CHS.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CHS.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CHT.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CHT.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CN.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-HK.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-HK.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-Hans.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-Hans.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-Hant.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-Hant.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-MO.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-MO.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-SG.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-SG.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-TW.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh-TW.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zh.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zu-ZA.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zu-ZA.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.zu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/jquery.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.all.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.aspnetmvc.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.aspnetmvc.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.autocomplete.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.autocomplete.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.binder.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.binder.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.calendar.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.calendar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.columnmenu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.columnmenu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.combobox.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.combobox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.core.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.core.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.odata.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.odata.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.xml.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.data.xml.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.chart.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.chart.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.core.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.core.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.gauge.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.gauge.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.svg.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.svg.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.themes.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.themes.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.vml.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.vml.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.datepicker.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.datepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.datetimepicker.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.datetimepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.draganddrop.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.draganddrop.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dropdownlist.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dropdownlist.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.editable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.editable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.editor.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.editor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.filtermenu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.filtermenu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.fx.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.fx.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.grid.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.grid.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.groupable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.groupable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.history.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.history.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.list.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.list.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.listview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.listview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.menu.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.menu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.actionsheet.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.actionsheet.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.application.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.application.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.button.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.button.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.buttongroup.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.buttongroup.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.listview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.listview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.loader.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.loader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.modalview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.modalview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.navbar.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.navbar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.pane.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.pane.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.popover.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.popover.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.scroller.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.scroller.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.scrollview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.scrollview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.shim.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.shim.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.splitview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.splitview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.switch.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.switch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.tabstrip.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.tabstrip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.view.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.mobile.view.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.numerictextbox.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.numerictextbox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.pager.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.pager.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.panelbar.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.panelbar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.popup.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.popup.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.reorderable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.reorderable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.resizable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.resizable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.selectable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.selectable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.slider.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.slider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.sortable.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.sortable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.splitter.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.splitter.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.tabstrip.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.tabstrip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.timepicker.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.timepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.treeview.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.treeview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.upload.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.upload.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.validator.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.validator.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.web.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.web.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kendo/kendo.window.min.js" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.window.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.black.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.black.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.blueopal.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.blueopal.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.common.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.common.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.default.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.default.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.metro.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.metro.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.all.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.all.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.android4.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.android4.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.blackberry.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.blackberry.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.ios.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.ios.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.meego.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.mobile.meego.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.silver.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.silver.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/web/app.html" afterPath="$PROJECT_DIR$/public/web/app.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/demoweb.js" afterPath="$PROJECT_DIR$/routes/demoweb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demoweb.jade" afterPath="$PROJECT_DIR$/views/demoweb.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.jade" afterPath="$PROJECT_DIR$/views/profile.jade" />
+    </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,43 +478,16 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="32" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+            <state line="44" column="33" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Procfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="3" selection-start="251" selection-end="251" vertical-scroll-proportion="0.25119618">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layout.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="52" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
+            <state line="10" column="20" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,10 +502,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demoweb.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="demoweb.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="11" selection-start="5994" selection-end="6796" vertical-scroll-proportion="0.0">
+            <state line="175" column="10" selection-start="6929" selection-end="6929" vertical-scroll-proportion="0.81657606">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="67" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,7 +523,7 @@
       <file leaf-file-name="profile.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/profile.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
+            <state line="60" column="22" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,7 +532,7 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="31" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
+            <state line="2" column="16" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,7 +541,25 @@
       <file leaf-file-name="demoweb.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="2" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+            <state line="22" column="39" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="artist.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/artist.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="55" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/layout.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="52" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,27 +572,32 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/public/web/metadata/view/MyViewport" />
         <option value="$PROJECT_DIR$/public/web/app.html" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/demoweb.jade" />
-        <option value="$PROJECT_DIR$/routes/demoweb.js" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
-        <option value="$PROJECT_DIR$/views/profile.jade" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/views/login.jade" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/demoweb.js" />
+        <option value="$PROJECT_DIR$/views/profile.jade" />
+        <option value="$PROJECT_DIR$/views/artist.jade" />
+        <option value="$PROJECT_DIR$/views/demoweb.jade" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="98" />
-    <option name="y" value="22" />
-    <option name="width" value="1131" />
-    <option name="height" value="1123" />
+    <option name="x" value="-1885" />
+    <option name="width" value="1381" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -161,7 +621,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -187,6 +647,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,19 +694,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode.XML" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -291,10 +783,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$" coffeescript-run="false">
       <method />
     </configuration>
-    <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+    <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$" coffeescript-run="false">
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
@@ -324,33 +816,34 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="" />
       <created>1352141857539</created>
       <updated>1352141857539</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="98" y="22" width="1131" height="1123" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1885" y="0" width="1381" height="1080" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30322582" sideWeight="0.88323355" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25093633" sideWeight="0.8321168" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11676647" sideWeight="0.9781022" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16788322" sideWeight="0.3108614" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16788322" sideWeight="0.6838951" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -406,104 +899,29 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/web/app/view/Viewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/web/app/view/MyViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/web/metadata/view/MyViewport">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/web/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="520" selection-end="520" vertical-scroll-proportion="-8.125">
-          <folding />
-        </state>
+        <state line="13" column="7" selection-start="520" selection-end="520" vertical-scroll-proportion="-8.125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/bs/bootstrap-responsive.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/kendo/cultures/kendo.culture.af-ZA.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="31" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="11" selection-start="5994" selection-end="6796" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="32" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -517,7 +935,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="3" selection-start="251" selection-end="251" vertical-scroll-proportion="0.25119618">
+        <state line="10" column="20" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="16" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="39" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="67" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="65" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="33" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/profile.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="22" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="52" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/artist.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="55" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="10" selection-start="6929" selection-end="6929" vertical-scroll-proportion="0.81657606">
           <folding />
         </state>
       </provider>

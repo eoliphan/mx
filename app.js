@@ -8,7 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , demoweb = require('./routes/demoweb')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+    , passport = require('passport');
 
 var app = express();
 
@@ -41,6 +42,8 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/demoweb', demoweb.index);
 app.get('/profile', demoweb.profile);
+app.get('/artist', demoweb.artist);
+app.get('/login', demoweb.login);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
