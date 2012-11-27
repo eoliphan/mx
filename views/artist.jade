@@ -1,0 +1,81 @@
+extends layout
+
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+              .sidebar-nav {
+                padding: 9px 0;
+              }
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container-fluid
+                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href='/demoweb') SoundScry
+                div.nav-collapse.collapse
+                    p.navbar-text.pull-right Logged in as
+                        a.navbar-link(href='#')  Scott Joplin
+                    ul.nav
+                        li.active: a(href='#') Home
+                        li: a(href='#about') About
+                        li: a(href='#contact') Contact
+    div#buyDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="myModalLabel",aria-hidden="true")
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#myModalLabel Buy Shares
+        div.modal-body
+            h4 SEC Advisory
+            p Buying securities entails risk.  Nam velit nisl, lobortis ut commodo at, iaculis sed ligula. Morbi odio diam, tincidunt vitae ornare vitae, congue nec metus. Cras vel urna elit, eu pulvinar sem. Aliquam erat volutpat. Donec sodales sem id arcu scelerisque sodales. Nunc dapibus ante et justo commodo rutrum. Maecenas pharetra, turpis in posuere adipiscing, diam risus rhoncus ipsum, ut bibendum nibh tortor id metus. Ut faucibus placerat placerat. Nam dolor diam, tincidunt fermentum suscipit eget, tempor sit amet nisi. Praesent congue hendrerit aliquet. Sed id urna neque. Etiam vitae sagittis libero. Vivamus fringilla neque lacus. In mauris est, fringilla sed facilisis vitae, imperdiet in mauris.
+        div.modal-footer
+            button.btn(data-dismiss="modal", aria-hidden="true") Cancel
+            button.btn.btn-primary Acknowledge Advisory
+    div.container-fluid
+        div.row-fluid
+            div.span3
+                div.well.sidebar-nav
+                    div.well
+                        h2 Moop - Trilogy
+                        hr
+                        h3 Listen!
+                        br
+                        h4 Demo Track 1
+                        audio(src='test.ogg',controls)
+                        h4 Demo Track 2
+                        audio(src='test.ogg',controls)
+                        hr
+                        h4 Seeking: $40,000 USD
+                        h4 Maximum Share: $1,000 USD
+                        h4 Our Progress:
+                        br
+                        div.progress.progress-striped.active
+                            div.bar(style="width: 40%;")
+                        a.btn.btn-primary.btn-large(href="#buyDialog",role="button",data-toggle="modal") Buy Shares!
+
+                //
+                    ul.nav.nav-list
+                        li.nav-header Options
+                        li: a(href="#") Edit Profile
+                        li.active: a(href="#") Active Offerings
+                        li: a(href="#") Music Genres
+                        li: a(href="#") Band Search
+            div.span9
+                div.hero-unit
+                    div.row-fluid
+                        div.span12
+                            img(width=1000,src='http://twitter.github.com/bootstrap/assets/img/examples/slide-03.jpg')
+                    div.row-fluid
+                        div.span12
+                            p This their second release.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet interdum ante. In accumsan consequat velit ut pellentesque. Maecenas vulputate elementum est, vitae adipiscing orci commodo in. Sed fringilla euismod arcu ut luctus. Quisque sodales velit a tortor imperdiet vehicula. Donec rutrum congue feugiat. Vestibulum quis urna sed nisi convallis ultricies at ut nunc. Aliquam suscipit pellentesque quam, ac auctor velit aliquam tempor. Praesent nec dui massa. Fusce euismod faucibus erat, vitae fringilla eros lobortis quis.
+
+
+
+
+
+
+
+
