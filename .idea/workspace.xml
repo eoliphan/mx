@@ -1,116 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="latest update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/editor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/imagebrowser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/loading-image.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/slider-h.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/slider-v.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Bootstrap/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/editor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/imagebrowser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/loading-image.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/slider-h.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/slider-v.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/HighContrast/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/editor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/imagebrowser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/loading-image.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/slider-h.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/slider-v.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/MetroBlack/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/editor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/imagebrowser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/loading-image.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/slider-h.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/slider-v.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Moonlight/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/editor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/imagebrowser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/loading-image.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/slider-h.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/slider-v.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/Uniform/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/images/KendoUI.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/images/KendoUI.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/images/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/brushed-metal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/dots9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/glass-lighter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/leather1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/leather2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/noise.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/textures/stripe6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/context/http/actions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/context/http/context.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/http/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/middleware/authenticate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/middleware/initialize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/strategies/session.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/lib/passport/strategy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/docs/docco.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/docs/pkginfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/all-properties.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/array-argument.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/multiple-properties.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/object-argument.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/examples/single-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/lib/pkginfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pkginfo/test/pkginfo-test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/passport/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.dataviz.stock.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.imagebrowser.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.touch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/kendo/kendo.userevents.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.black.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.blueopal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.highcontrast.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.metro.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.metroblack.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.moonlight.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.silver.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.dataviz.uniform.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.highcontrast.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.metroblack.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.moonlight.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/kendo/kendo.uniform.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/artist.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/login.jade" />
+    <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mx.iws" />
@@ -480,7 +371,11 @@
       <created>1354005784584</created>
       <updated>1354005784584</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="latest update">
+      <created>1354005945250</created>
+      <updated>1354005945250</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
