@@ -25,6 +25,8 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+    app.set('view options', { pretty: true });
+    app.locals.pretty = true;
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());

@@ -47,6 +47,25 @@ block content
             .carousel-caption .btn {
               margin-top: 10px;
             }
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+            #musicdiv {
+                background-image: url('images/mlover_sm.jpg');
+                height: 300px;
+                width: 300px;
+            }
+            #artistdiv {
+                        background-image: url('images/artistsq_sm.jpg');
+                        height: 300px;
+                        width: 300px;
+                    }
+        #promoterdiv {
+                                background-image: url('images/promoter_sm.jpg');
+                                height: 300px;
+                                width: 300px;
+                            }
     // Toolbar
     div.navbar.navbar-inverse.navbar-fixed-top
         div.navbar-inner
@@ -63,46 +82,69 @@ block content
                         li.active: a(href='#') Home
                         li: a(href='#about') About
                         li: a(href='#contact') Contact
-    div#mainCarousel.carousel.slide
-        div.carousel-inner
-            div.item.active
-                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-01.jpg')
-                div.container
-                    div.carousel-caption
-                        h1 Artist
-                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        a.btn.btn-large.btn-info(href="#") Learn More
-                        &nbsp;
-                        a.btn.btn-large.btn-primary(href="#") Sign Up
-            div.item
-                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-02.jpg')
-                div.container
-                    div.carousel-caption
-                        h1 Promoter
-                        p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        a.btn.btn-large.btn-info(href="#") Learn More
-                        &nbsp;
-                        a.btn.btn-large.btn-primary(href="#") Sign Up
-            div.item
-                img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-03.jpg')
-                div.container
-                    div.carousel-caption
-                        h1 Music Lover
-                        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                        a.btn.btn-large.btn-info(href="#") Learn More
-                        &nbsp;
-                        a.btn.btn-large.btn-primary(href="#") Sign Up
-        a.left.carousel-control(href="#mainCarousel",data-slide="prev") &lsaquo;
-        a.right.carousel-control(href="#mainCarousel",data-slide="next") &rsaquo;
+    div.container
+        div.hero-unit
+            p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            div.row-fluid
+                div#musicdiv.span4
+                    h3(style="color:white") Music Lover
+                    a.btn.btn-large.btn-info(href="#") Learn More
+                    &nbsp;
+                    a.btn.btn-large.btn-primary(href="#") Sign Up
+                div#artistdiv.span4
+                    h3(style="color:white") Artist
+                    a.btn.btn-large.btn-info(href="#") Learn More
+                    &nbsp;
+                    a.btn.btn-large.btn-primary(href="#") Sign Up
+                div#promoterdiv.span4
+                    h3(style="color:white") Promoter
+                    a.btn.btn-large.btn-info(href="#") Learn More
+                    &nbsp;
+                    a.btn.btn-large.btn-primary(href="#") Sign Up
+
+    //
+        div#mainCarousel.carousel.slide
+            div.carousel-inner
+                div.item.active
+                    img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-01.jpg')
+                    div.container
+                        div.carousel-caption
+                            h1 Artist
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            a.btn.btn-large.btn-info(href="#") Learn More
+                            &nbsp;
+                            a.btn.btn-large.btn-primary(href="#") Sign Up
+                div.item
+                    img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-02.jpg')
+                    div.container
+                        div.carousel-caption
+                            h1 Promoter
+                            p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            a.btn.btn-large.btn-info(href="#") Learn More
+                            &nbsp;
+                            a.btn.btn-large.btn-primary(href="#") Sign Up
+                div.item
+                    img(src='http://twitter.github.com/bootstrap/assets/img/examples/slide-03.jpg')
+                    div.container
+                        div.carousel-caption
+                            h1 Music Lover
+                            p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                            a.btn.btn-large.btn-info(href="#") Learn More
+                            &nbsp;
+                            a.btn.btn-large.btn-primary(href="#") Sign Up
+            a.left.carousel-control(href="#mainCarousel",data-slide="prev") &lsaquo;
+            a.right.carousel-control(href="#mainCarousel",data-slide="next") &rsaquo;
     // market
     div.container
+    hr
     div.container
-    div.hero-unit
+        h2 Marketplace
+        p  Supporting Bands by Investing In Their Success
         div.row
             div.span8
-                h3 MarketPlace: Supporting Bands by Investing In Their Success
+
             div.span4
-                h3 Shop Music (Listen And Buy)
+
         div.row
         div.row
             div.span8
@@ -119,7 +161,65 @@ block content
                     tbody
                         td(colspan=7)
             div.span4
+                h3 Today's Hot Offering!
+                h4 Trilogy (Moop)
+                img(src="images/band.jpg",height="200",width="200")
+                p
+                p $1000 / share (only 2 left!)
+                p
+                a.btn.btn-large.btn-primary(href="#") Bid Now!
+
+    hr
+    div.container
+        h2 Shop Music &nbsp;&nbsp;&nbsp;&nbsp;
+
+        div.row
+            div.span8
+                div.tabbable
+                    ul.nav.nav-tabs
+                        li.active
+                            a(href="#tab1",data-toggle="tab") This Week
+                        li
+                            a(href="#tab2",data-toggle="tab") New Releases
+
+                    div.tab-content
+                        div#tab1.tab-pane.active
+                            p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                            div.row-fluid
+                                ul.thumbnails
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Jc2v9ndpL._SL500_AA300_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61e3FaHueCL._SL500_AA300_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61iKyNi5UKL._SL500_AA300_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/41ZsWDiEvfL._SL500_AA300_.jpg",width="90")
+                        div#tab2.tab-pane
+                            p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesen doloremque laudantium, totam
+                            div.row-fluid
+                                ul.thumbnails
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61DAJ0zqFhL._AA160_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Xb620XzWL._AA160_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/5135bFFBrWL._AA160_.jpg",width="90")
+                                    li
+                                        a(href="#")
+                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg",width="90")
+                        a.btn.btn-large.btn-primary(href="#") See All Music!
+
+            div.span4
                 div#genrelist
+    hr
     footer
         div.container
 
