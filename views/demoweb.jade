@@ -85,7 +85,7 @@ block content
     div.container
         div.hero-unit
             p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            div.row-fluid
+            div.row
                 div#musicdiv.span4
                     h3(style="color:white") Music Lover
                     a.btn.btn-large.btn-info(href="#") Learn More
@@ -138,16 +138,17 @@ block content
     div.container
     hr
     div.container
-        h2 Marketplace
-        p  Supporting Bands by Investing In Their Success
-        div.row
-            div.span8
-
-            div.span4
 
         div.row
+            div.span6
+
+            div.span6
+
         div.row
-            div.span8
+        div.row
+            div.span6
+                h2 Marketplace
+                p  Supporting Bands by Investing In Their Success
                 table#grid
                     thead
                         tr
@@ -160,21 +161,17 @@ block content
                             th More Info
                     tbody
                         td(colspan=7)
-            div.span4
-                h3 Today's Hot Offering!
-                h4 Trilogy (Moop)
-                img(src="images/band.jpg",height="200",width="200")
-                p
-                p $1000 / share (only 2 left!)
-                p
-                a.btn.btn-large.btn-primary(href="#") Bid Now!
-
-    hr
-    div.container
-        h2 Shop Music &nbsp;&nbsp;&nbsp;&nbsp;
-
-        div.row
-            div.span8
+                div.container
+                div.media
+                    a.pull-left(href="#")
+                        img.media-object(src="images/band.jpg",width="90")
+                    div.media-body
+                        h4.media-heading Featured Offering
+                        p Trilogy (Moop) $500/share (Only 4 shares left!)
+                        a.btn.btn-primary(href="#") Buy Now !
+            div.span6
+                h2 Shop Music
+                p  Supporting Bands by Investing In Their Success
                 div.tabbable
                     ul.nav.nav-tabs
                         li.active
@@ -217,9 +214,9 @@ block content
                                             img.thumbnail(src="http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg",width="90")
                         a.btn.btn-large.btn-primary(href="#") See All Music!
 
-            div.span4
-                div#genrelist
     hr
+
+
     footer
         div.container
 
@@ -277,18 +274,18 @@ block content
     script#listtmpl(type="text/x-kendo-tmpl")
         <div><h4>${title}</h4></div>
     script
-        $("#genrelist").kendoListView({
-            template: kendo.template($("#listtmpl").html()),
-            height: 200,
-            dataSource: {
-                data:[
-                    {title:"Rock"},
-                    {title:"Country"},
-                    {title:"HipHop"},
-                    {title:"R & B"},
-                    {title:"Pop"},
-                    {title:"Classical"}
-                ]
-
-            }
-        });
+//        $("#genrelist").kendoListView({
+//            template: kendo.template($("#listtmpl").html()),
+//            height: 200,
+//            dataSource: {
+//                data:[
+//                    {title:"Rock"},
+//                    {title:"Country"},
+//                    {title:"HipHop"},
+//                    {title:"R & B"},
+//                    {title:"Pop"},
+//                    {title:"Classical"}
+//                ]
+//
+//            }
+//        });
