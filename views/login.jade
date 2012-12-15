@@ -32,6 +32,11 @@ block content
                 margin-bottom: 15px;
                 padding: 7px 9px;
               }
+        #loginform {
+                        background-image: url('images/soundlogo.jpg');
+                        height: 300px;
+                        width: 300px;
+                    }
 
     div.navbar.navbar-inverse.navbar-fixed-top
         div.navbar-inner
@@ -49,10 +54,10 @@ block content
                         li: a(href='#about') About
                         li: a(href='#contact') Contact
     div.container
-        form.form-signin
+        form#loginform.form-signin(method="POST")
             h2.form-signin-heading Sign In
-            input.input-block-level(type="text",placeholder="Email Address")
-            input.input-block-level(type="password",placeholder="Password")
+            input.input-block-level(type="text",placeholder="Email Address",name="username")
+            input.input-block-level(type="password",placeholder="Password",name="password")
             label.checkbox
                 input(type="checkbox",value="remember-me") Remember Me
             button.btn.btn-large.btn-primary(type="submit") Sign In

@@ -40,6 +40,8 @@ block content
                                 li: a(href="#") Investment Summary Per Investment
                         li: a(href="#") Music Genres
                         li: a(href="#") Band Search
+                //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
+                a.btn.btn-primary.span2(id="addProjectBtn") Add Project!
             div.span9
                 div.hero-unit
                     div.row-fluid
@@ -62,7 +64,44 @@ block content
                     div.row-fluid
                         div.span12
                             div#revenuechart
+    div#addOfferDialog.modal.hide.fade()
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true")
+            h3#addOfferDialogLabel Create A New Project!
+        form.well(id="newProjectForm")
+            div.modal-body
+                label Project Name
+                input.span3(type="text",placeholder="Project Name",name="projectName")
+                label Amount Required for Project (USD)
+                input.span3(type="text",placeholder="Amount Required",name="amountRequired")
+                label Number of Shares
+                input.span3(type="text",placeholder="Number of shares",name="noOfShares")
+                label Single Investor Max
+                input.span3(type="text",placeholder="Single Investor Max",name="singleInvestorMax")
+                label Description (max 1000 characters)
+                textarea.span3(rows="4",placeholder="Description",name="description")
+                label Photo (1500x900)
+                input.span3(type="file",name="photo")
+            div.modal-footer
+                button.btn() Close
+                input.btn.btn-primary(type="submit") Sign Up!
+    script
+        var socket = io.connect();
+        //socket.emit('newIssue',{name:"test"});
+        // handle submission form
+        $('#newProjectForm').submit(function(){
+            //$('#addOfferDialog').remove();
+            var formData = $(this).serialize();
+            //alert(formData);
+            socket.emit('newIssue',{data:formData});
 
+
+        });
+    script
+        $("#addProjectBtn").click(function(){
+            $('#addOfferDialog').modal('show');
+
+        });
     script
         $("#revenuechart").kendoChart({
             title: {

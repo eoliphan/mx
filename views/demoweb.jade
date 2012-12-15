@@ -76,31 +76,78 @@ block content
                     span.icon-bar
                 a.brand(href='#') SoundScry
                 div.nav-collapse.collapse
-                    p.navbar-text.pull-right Logged in as
-                        a.navbar-link(href='/profile')  Scott Joplin
+                    div.navbar-text.pull-right
+                        a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
+                    form.navbar-form.pull-right
+                        input.span2(type="text",name="username",placeholder="Email")
+                        input.span2(type="password",name="password",placeholder="Password")
+                        button.btn(type="submit") Log In
+
+                    //
+                        p.navbar-text.pull-right Logged in as
+                            a.navbar-link(href='/profile')  Scott Joplin
                     ul.nav
                         li.active: a(href='#') Home
                         li: a(href='#about') About
                         li: a(href='#contact') Contact
+    // signup dialog
+    div#signupDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signupDialogLabel",aria-hidden="true")
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true")
+            h3#signupDialogLabel Join SoundScry!
+        form.well
+            div.modal-body
+                label Email
+                input.span3(type="text",placeholder="Email")
+                label Password
+                input.span3(type="text",placeholder="Password")
+                label Confirm Password
+                input.span3(type="text",placeholder="Confirm Pass")
+                label How do you think you will primarily use SoundScry?
+                a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
+                    select
+                        option(value="musiclover") Music Lover
+                        option(value="artist") Artist
+                        option(value="promoter") Promoter
+            div.modal-footer
+                button.btn(data-dismiss="modal",aria-hidden="true") Close
+                button.btn.btn-primary Sign Up!
+
+
+
     div.container
-        div.hero-unit
-            p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            div.row
-                div#musicdiv.span4
-                    h3(style="color:white") Music Lover
-                    a.btn.btn-large.btn-info(href="#") Learn More
-                    &nbsp;
-                    a.btn.btn-large.btn-primary(href="#") Sign Up
-                div#artistdiv.span4
-                    h3(style="color:white") Artist
-                    a.btn.btn-large.btn-info(href="#") Learn More
-                    &nbsp;
-                    a.btn.btn-large.btn-primary(href="#") Sign Up
-                div#promoterdiv.span4
-                    h3(style="color:white") Promoter
-                    a.btn.btn-large.btn-info(href="#") Learn More
-                    &nbsp;
-                    a.btn.btn-large.btn-primary(href="#") Sign Up
+        p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        div.row
+            ul.thumbnails
+                li.span4
+                    div.thumbnail
+                        img(src="images/mlover_sm.jpg")
+                        div.caption
+                            h3 Artist
+                            p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                li.span4
+                    div.thumbnail
+                        img(src="images/artistsq_sm.jpg")
+                li.span4
+                    div.thumbnail
+                        img(src="images/promoter_sm.jpg")
+            //
+                div.row
+                    div#musicdiv.span4
+                        h3(style="color:white") Music Lover
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
+                    div#artistdiv.span4
+                        h3(style="color:white") Artist
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
+                    div#promoterdiv.span4
+                        h3(style="color:white") Promoter
+                        a.btn.btn-large.btn-info(href="#") Learn More
+                        &nbsp;
+                        a.btn.btn-large.btn-primary(href="#") Sign Up
 
     //
         div#mainCarousel.carousel.slide
@@ -252,19 +299,22 @@ block content
             height: 200,
             columns: [
                 {title: "Band", field: "band"},
-                {title: "Album", field: "album"},
-                {title: "$ On Offer", field: "dolOnOffer"},
+                {title: "Album", field: "projectName"},
+                {title: "$ On Offer", field: "amountRequired"},
                 {title: "$ Per Share", field: "dolPerShare"},
-                {title: "# Of Shares", field: "numOfShares"},
+                {title: "# Of Shares", field: "noOfShares"},
                 {title: "Listen!", command: "listen"},
                 {title: " ", command: {text: "More Info", click: moreInfo}}
             ],
             dataSource: {
-                data:[
-                    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
-                    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
-                ],
-                pageSize: 2
+                //data:[
+                //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+                //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+                //],
+                transport: {
+                    read: '/api/issues'
+                },
+                pageSize: 10
             }
         });
         function moreInfo(e) {
