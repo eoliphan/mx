@@ -13,7 +13,9 @@ var express = require('express')
   , mongoose = require('mongoose')
     , Schema = mongoose.Schema
   , LocalStrategy = require('passport-local').Strategy
-    ,  querystring = require('querystring');
+    ,  querystring = require('querystring')
+    , domain = require("./domain/domain")
+    ;
 
 
 // connect to db
@@ -149,4 +151,8 @@ io.sockets.on('connection',function(socket){
     });
 
 });
+
+// send message to domain
+
+domain.domain.handle({id:"1234",command:"createUser",payload:{id:"1234"},username:"eko",password:"blah"});
 
