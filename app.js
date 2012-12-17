@@ -15,6 +15,8 @@ var express = require('express')
   , LocalStrategy = require('passport-local').Strategy
     ,  querystring = require('querystring')
     , domain = require("./domain/domain")
+    , passportSocketIo = require("passport.socketio")
+    , uuid = require('node-uuid')
     ;
 
 
@@ -55,7 +57,7 @@ app.configure('development', function(){
 app.configure('production', function(){
   app.use(express.errorHandler());
 });
-
+store  = new express.session.MemoryStore;
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -66,8 +68,8 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
+  app.use(express.cookieParser('secret'));
+  app.use(express.session({ secret: 'secret', store: store }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
@@ -131,6 +133,17 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 // setup socket io
 var io = require('socket.io').listen(server);
 io.set('log level',1);
+io.set("authorization", passportSocketIo.authorize({
+    sessionKey:    'express.sid',      //the cookie where express (or connect) stores its session id.
+    sessionStore:  store,     //the session store that express uses
+    sessionSecret: "secret", //the session secret to parse the cookie
+    fail: function(data, accept) {     // *optional* callbacks on success or fail
+      accept(null, false);             // second param takes boolean on whether or not to allow handshake
+    },
+    success: function(data, accept) {
+      accept(null, true);
+    }
+  }));
 
 io.sockets.on('connection',function(socket){
 
@@ -152,7 +165,9 @@ io.sockets.on('connection',function(socket){
 
 });
 
+// init domain
+domain.initDomain();
 // send message to domain
-
-domain.domain.handle({id:"1234",command:"createUser",payload:{id:"1234"},username:"eko",password:"blah"});
+var newUuid = uuid.v4();
+domain.domain.handle({id:newUuid,command:"createUser",payload:{id:newUuid},username:"eko",password:"blah"});
 
