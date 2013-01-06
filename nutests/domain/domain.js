@@ -4,26 +4,29 @@ var uuid=require("node-uuid");
 module.exports = {
     setUp: function (callback) {
         console.log("setting up");
-        this.foo = 'bar';
-        //domain =  ;
         domain.initDomain(callback);
-        //callback();
+        callback();
     },
     tearDown: function (callback) {
         // clean up
         console.log('tearing down...');
-        domain.killDomain();
+        //domain.killDomain();
         callback();
     },
-    test1: function (test) {
-        test.expect(1);
+    testCreateUser: function (test) {
+
         console.log("running test");
-        test.equals(this.foo, 'bar');
+
         var newId = uuid.v4();
-        domain.domain.handle({id:newId,command:"createUser",payload:{id:newId},username:"eko",password:"blah"});
+        domain.domain.on('event',function(evt){
+            console.log("caught event");
+           test.ok(true,'event was transmitted');
+        });
+
+        domain.domain.handle({id:newId,command:"createUser",payload:{id:newId,username:"eko",password:"blah"}});
 
 
-
+        test.expect(1);
         test.done();
     }
 };

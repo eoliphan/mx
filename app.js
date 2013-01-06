@@ -134,7 +134,7 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 io.set('log level',1);
 io.set("authorization", passportSocketIo.authorize({
-    sessionKey:    'express.sid',      //the cookie where express (or connect) stores its session id.
+    sessionKey:    'connect.sid',      //the cookie where express (or connect) stores its session id.
     sessionStore:  store,     //the session store that express uses
     sessionSecret: "secret", //the session secret to parse the cookie
     fail: function(data, accept) {     // *optional* callbacks on success or fail
@@ -168,6 +168,11 @@ io.sockets.on('connection',function(socket){
 // init domain
 domain.initDomain();
 // send message to domain
-var newUuid = uuid.v4();
-domain.domain.handle({id:newUuid,command:"createUser",payload:{id:newUuid},username:"eko",password:"blah"});
 
+domain.domain.on('event',function(evt){
+   console.log('event: ' + evt);
+});
+for (var i = 0; i < 10;i++){
+    var newUuid = uuid.v4();
+    domain.domain.handle({id:newUuid,command:"createUser",payload:{id:newUuid,email:"e@e.com",password:"blah"}});
+}

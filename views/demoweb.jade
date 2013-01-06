@@ -111,7 +111,7 @@ block content
                         option(value="promoter") Promoter
             div.modal-footer
                 button.btn(data-dismiss="modal",aria-hidden="true") Close
-                button.btn.btn-primary Sign Up!
+                button.btn.btn-primary(id="signupbtn") Sign Up!
 
 
 
@@ -123,14 +123,21 @@ block content
                     div.thumbnail
                         img(src="images/mlover_sm.jpg")
                         div.caption
-                            h3 Artist
+                            h3 Music Lover
                             p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 li.span4
                     div.thumbnail
                         img(src="images/artistsq_sm.jpg")
+                        div.caption
+                            h3 Artist
+                            p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 li.span4
                     div.thumbnail
                         img(src="images/promoter_sm.jpg")
+                        div.caption
+                            h3 Promoter
+                            p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+
             //
                 div.row
                     div#musicdiv.span4
@@ -287,6 +294,25 @@ block content
                     p Music stuff
                     p: a.btn(href="#") View Details &raquo;
     // init carousel
+    script
+            var socket = io.connect();
+            //socket.emit('newIssue',{name:"test"});
+            // handle submission form
+            $('#newProjectForm').submit(function(){
+                //$('#addOfferDialog').remove();
+                var formData = $(this).serialize();
+                //alert(formData);
+                socket.emit('newIssue',{data:formData});
+
+
+            });
+            $('#signupbtn').click(function(){
+
+                var formData = $('#newProjectForm').serialize();
+                //$('#addOfferDialog').remove();
+                //alert(formData);
+                socket.emit('newIssue',{data:formData});
+            });
     script
         !function ($) {
             $(function(){

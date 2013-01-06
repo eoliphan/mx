@@ -5,6 +5,7 @@ module.exports = base.extend({
     // Commands
 
     createUser: function(data, callback) {
+        //console.log('creating user');
         this.apply(this.toEvent('userCreated', data));
 
         this.checkBusinessRules(callback);
@@ -20,6 +21,7 @@ module.exports = base.extend({
     // Events
 
     userCreated: function(data) {
+        //console.log('setting user create data');
         this.set(data);
     },
 

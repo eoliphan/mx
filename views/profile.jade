@@ -84,7 +84,7 @@ block content
                 input.span3(type="file",name="photo")
             div.modal-footer
                 button.btn() Close
-                input.btn.btn-primary(type="submit") Sign Up!
+                button.btn.btn-primary(id='submitbtn',type='button') Sign Up!
     script
         var socket = io.connect();
         //socket.emit('newIssue',{name:"test"});
@@ -96,6 +96,13 @@ block content
             socket.emit('newIssue',{data:formData});
 
 
+        });
+        $('#submitbtn').click(function(){
+
+            var formData = $('#newProjectForm').serialize();
+            //$('#addOfferDialog').remove();
+            //alert(formData);
+            socket.emit('newIssue',{data:formData});
         });
     script
         $("#addProjectBtn").click(function(){
