@@ -40,20 +40,20 @@ exports.initDomain = function(callback) {
             username: dbUser,                           // optional
             password: dbPass                             // optional
         },
-        eventStore: {
-                type: 'inMemory', //'mongoDb',
-                dbName: 'cqrssample'
-            }
-//        eventStore: {                                   // optional
-//            type: 'mongoDb',                            // example with mongoDb
-//            dbName: db_name,
-//            eventsCollectionName: 'events',             // optional
-//            snapshotsCollectionName: 'snapshots',       // optional
-//            host: dbHost,                          // optional
-//            port: dbPort,                                // optional
-//            username: dbUser,                           // optional
-//            password: dbPass                               // optional
-//        }
+//        eventStore: {
+//                type: 'inMemory', //'mongoDb',
+//                dbName: 'cqrssample'
+//            }
+        eventStore: {                                   // optional
+            type: 'mongoDb',                            // example with mongoDb
+            dbName: db_name,
+            eventsCollectionName: 'events',             // optional
+            snapshotsCollectionName: 'snapshots',       // optional
+            host: dbHost,                          // optional
+            port: dbPort,                                // optional
+            username: dbUser,                           // optional
+            password: dbPass                               // optional
+        }
     }, function(err) {
         console.log("loaded domain...");
         console.log("domain: "+ domain);

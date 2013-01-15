@@ -16,6 +16,11 @@ module.exports = base.extend({
 
         this.checkBusinessRules(callback);
     },
+    changeUserPassword:function(data,callback) {
+        this.apply(this.toEvent('userPasswordChanged', data));
+
+        this.checkBusinessRules(callback);
+    },
 
 
     // Events
@@ -27,6 +32,10 @@ module.exports = base.extend({
 
     userDestroyed: function(data) {
         this.set('destroyed', true);
+    },
+
+    userPasswordChanged: function(data) {
+        this.set(data);
     }
 
 });

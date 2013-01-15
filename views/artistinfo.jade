@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container-fluid
+                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href='#') SoundScry
+                div.nav-collapse.collapse
+                    div.navbar-text.pull-right
+                        a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
+                    form.navbar-form.pull-right
+                        input.span2(type="email",name="username",placeholder="Email",required)
+                        input.span2(type="password",name="password",placeholder="Password")
+                        button.btn(type="submit") Log In
+                    //
+                        p.navbar-text.pull-right Logged in as
+                            a.navbar-link(href='/profile')  Scott Joplin
+                    ul.nav
+                        li.active: a(href='#') Home
+                        li: a(href='#about') About
+                        li: a(href='#contact') Contact
+    div#signUpModal.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signUpModalLabel",aria-hidden="true)
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#signUpModalLabel SignUp
+        div.modal-body
+            p -
+        div.modal-footer
+            button.btn(data-dismiss="modal",aria-hidden="true") Close
+            button.btn.btn-primary Save Changes
+    div.container
+        div.hero-unit
+            h1 Artist
+            p SoundScry allows you to control your destiny and keep more money in your pocket by harnessing the power of the social network
+            ul
+                li Acquire funds for your albums release and double or triple your royalty
+                li Get an advance on your album without having to pay it back through the sales of your royalties
+                li Get more fans working for you by allowing them to invest in your success doing this by directly investing in your album(s) in which the money goes directly to you, creating motivating peer-to-peer networks both online and offline that drive interest in your music, and benefiting from greatly increased royalty rate.
+            p: a.btn.btn-primary.btn-large(role="button",data-toggle="modal",data-href="/signup",data-target="#signUpModal") Sign Up!

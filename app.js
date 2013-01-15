@@ -20,18 +20,7 @@ var express = require('express')
     ;
 
 
-// connect to db
-mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
 
-//todo: move schema defs to another file
-var userSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    password: String
-});
-mongoose.model('User',userSchema);
-var User = mongoose.model('User');
 
 var issueSchema = new Schema({
     projectName: String,
@@ -94,6 +83,8 @@ app.post('/login',
                                        failureRedirect: '/login',
                                        failureFlash: true })
 );
+app.get('/artistinfo', demoweb.artistinfo);
+app.get('/signup', demoweb.signup());
 app.get('/users', user.list);
 app.get('/api/issues',function(req,res){
     return Issue.find(function(err,issues){
@@ -146,7 +137,34 @@ io.set("authorization", passportSocketIo.authorize({
   }));
 
 io.sockets.on('connection',function(socket){
+    socket.on('message',function(data){
+        console.log('received generic:');
+               console.log(data);
+               var newIssueData = querystring.parse(data.data);
 
+
+               console.log(newIssueData);
+
+    });
+    socket.on('command',function(data){
+           console.log('received command:');
+           console.log(data);
+           var commandData = querystring.parse(data.data);
+           var newUuid = uuid.v4();
+           console.log(commandData);
+           domain.domain.handle({id:newUuid,command:data.command,payload:commandData});
+
+
+    });
+    socket.on('createUser',function(data){
+        console.log('received:');
+       console.log(data);
+       var newIssueData = querystring.parse(data.data);
+
+
+       console.log(newIssueData);
+
+    });
     socket.on('newIssue',function(data){
        console.log('received:');
        console.log(data);
@@ -154,12 +172,12 @@ io.sockets.on('connection',function(socket){
 
 
        console.log(newIssueData);
-        var issue = new Issue(newIssueData);
-        issue.save(function(err){
-           console.log('saving');
-           if(err)
-            console.log(err);
-        });
+//        var issue = new Issue(newIssueData);
+//        issue.save(function(err){
+//           console.log('saving');
+//           if(err)
+//            console.log(err);
+//        });
 
     });
 
@@ -170,9 +188,11 @@ domain.initDomain();
 // send message to domain
 
 domain.domain.on('event',function(evt){
-   console.log('event: ' + evt);
+   console.log('event: ' + JSON.stringify(evt));
 });
 for (var i = 0; i < 10;i++){
     var newUuid = uuid.v4();
-    domain.domain.handle({id:newUuid,command:"createUser",payload:{id:newUuid,email:"e@e.com",password:"blah"}});
+    var objId = uuid.v4();
+    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
+    domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"c586c0ee-b7a3-482f-85a4-3d585209d729",email:"e@e.com",password:objId}});
 }
