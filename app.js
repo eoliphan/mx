@@ -78,11 +78,17 @@ function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login')
 }
-app.get('/', ensureAuthenticated,routes.index);
+app.get('/', function(req,res){
+    res.redirect("/demoweb");
+});
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated,demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated,demoweb.profiledetail);
 app.get('/artist',ensureAuthenticated, demoweb.artist);
+app.get('/logout',function(req,res){
+    req.logout();
+    res.redirect("/");
+});
 app.get('/login', demoweb.login);
 app.post('/login',
     passport.authenticate('local', { successRedirect: '/demoweb',

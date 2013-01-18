@@ -14,8 +14,11 @@ div.navbar.navbar-inverse.navbar-fixed-top
                     li: a(href='#about') About
                     li: a(href='#contact') Contact
                 - if (locals.user)
+                    p.navbar-text.pull-right
+                                            a.navbar-link.pull-right(href='/logout') &nbsp;(Logout)
                     p.navbar-text.pull-right Logged in as
                         a.navbar-link(href='/profile')  #{locals.user.firstName} #{locals.user.lastName}
+
                 - else
                     div.navbar-text.pull-right
                         a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
