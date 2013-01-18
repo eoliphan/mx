@@ -53,10 +53,14 @@ block content
                         li.active: a(href='#') Home
                         li: a(href='#about') About
                         li: a(href='#contact') Contact
+    //- if (message)
+    //    div.alert
+    //        button(type="button",data-dismiss="alert") &times;
+    //        message
     div.container
         form#loginform.form-signin(method="POST")
             h2.form-signin-heading Sign In
-            input.input-block-level(type="text",placeholder="Email Address",name="username")
+            input.input-block-level(type="text",placeholder="Email Address",name="email")
             input.input-block-level(type="password",placeholder="Password",name="password")
             label.checkbox
                 input(type="checkbox",value="remember-me") Remember Me

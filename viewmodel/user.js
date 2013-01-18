@@ -12,7 +12,7 @@ repo.init(
         host: dbHost,      // optional
         port: dbPort,            // optional
         dbName: db_name,    // optional
-        collectionName: 'dummy',// optional and only if you directly
+        collectionName: 'user',// optional and only if you directly
                                 // want to use a collection,
                                 // so repo.extend() is not necessary...
         username: dbUser,       // optional

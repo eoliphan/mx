@@ -1,0 +1,25 @@
+// Toolbar
+div.navbar.navbar-inverse.navbar-fixed-top
+    div.navbar-inner
+        div.container-fluid
+            a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.brand(href='#') SoundScry
+            div.nav-collapse.collapse
+
+                ul.nav.test
+                    li.active: a(href='#') Home
+                    li: a(href='#about') About
+                    li: a(href='#contact') Contact
+                - if (locals.user)
+                    p.navbar-text.pull-right Logged in as
+                        a.navbar-link(href='/profile')  #{locals.user.firstName} #{locals.user.lastName}
+                - else
+                    div.navbar-text.pull-right
+                        a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
+                    form.navbar-form.pull-right(method="POST",action="/login")
+                        input.span2(type="email",name="email",placeholder="Email",required)
+                        input.span2(type="password",name="password",placeholder="Password")
+                        button.btn(type="submit") Log In

@@ -23,7 +23,10 @@
         "async":">= 0.0.1",
         "mongoose":"*",
         "node-uuid":"*",
-        "nodeunit":"*"
+        "nodeunit":"*",
+        "resourceful":"*",
+        "nconf":"*",
+        "connect-flash":"*"
     },
     "engines":{
         "node":"0.8.x",

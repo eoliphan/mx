@@ -1,11 +1,19 @@
-
+var User = require("../repositories/user").User;
 /*
  * GET home page.
  */
 
 exports.index = function(req, res){
   console.log("in demoweb");
-  res.render('demoweb', { title: 'Home' });
+  //res.render('demoweb', { title: 'Home' });
+    if (req.user) {
+    var curUser = User.findById(req.user._id,function(err,user){
+          if (err) res.send(400);
+          res.render('demoweb',{title: 'Home',user:user});
+      });
+    }
+    else
+        res.render('demoweb', { title: 'Home' });
 };
 
 exports.profile = function(req, res){
@@ -15,7 +23,7 @@ exports.profile = function(req, res){
 
 exports.login = function(req, res){
   console.log("in demoweb");
-  res.render('login', { title: 'Login' });
+  res.render('login', { title: 'Login', flash: req.flash('info') });
 };
 
 exports.artist = function(req, res){
@@ -40,5 +48,15 @@ exports.promoterinfo = function(req, res){
 
 exports.signup = function(req, res){
   //console.log("in demoweb");
-  res.render('signup');
+  res.render('signup',{title: ''});
+  //res.render();
+};
+
+exports.profiledetail = function(req, res){
+  //console.log("in demoweb");
+  var curUser = User.findById(req.user._id,function(err,user){
+      if (err) res.send(400);
+      res.render('profiledetail',{title: 'Profile Detail',user:user});
+  });
+
 };

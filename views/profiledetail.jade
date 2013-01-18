@@ -9,29 +9,15 @@ block content
               .sidebar-nav {
                 padding: 9px 0;
               }
-    div.navbar.navbar-inverse.navbar-fixed-top
-        div.navbar-inner
-            div.container-fluid
-                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.brand(href='/demoweb') SoundScry
-                div.nav-collapse.collapse
-                    p.navbar-text.pull-right Logged in as
-                        a.navbar-link(href='#')  Scott Joplin
-                    ul.nav
-                        li.active: a(href='#') Home
-                        li: a(href='#about') About
-                        li: a(href='#contact') Contact
+    include common/topbar
     div.container-fluid
         div.row-fluid
             div.span3
                 div.well.sidebar-nav
                     ul.nav.nav-list
                         li.nav-header Options
-                        li: a(href="/profile/detail") Edit Profile
-                        li.active: a(href="#") Active Offerings
+                        li.active: a(href="/profile/detail") Edit Profile
+                        li: a(href="/profile") Active Offerings
                         li: a(href="#") Reports
                             ul.nav.nav-list
                                 li: a(href="#") Account Information Summary
@@ -44,68 +30,122 @@ block content
                 a.btn.btn-primary.span2(id="addProjectBtn") Add Project!
             div.span9
                 div.hero-unit
-                    div.row-fluid
-                        div.span8
-                            table#grid
-                                thead
-                                    tr
-                                        th Band
-                                        th Project
-                                        th Shares Owned
-                                        th Value
-                                        th Status
-                                        th Revenue
-                                tbody
-                                    td(colspan=6)
-                        div.span4
-                            div#investchart
-                    div.row-fluid
-                    br
+                    div#alert.alert(style="display: none")
+                        button(type="button",class="close",data-dismiss="alert") &times;
+                        p Data Updated
                     div.row-fluid
                         div.span12
-                            div#revenuechart
+                            h4 Basic Information
+                    div.row-fluid
+                        div.span2
+                        div.span8
+                            form#basicInfoForm.well
+                                label Email
+                                input.span3(type="email",placeholder="Email",name="email",readonly="",value=locals.user.email);
+                                label First Name
+                                input#password.span3(placeholder="First Name",name="firstName",value=locals.user.firstName)
+                                label Last Name
+                                input.span3(placeholder="Last Name",name="lastName",value=locals.user.lastName)
+                                input#uid(type="hidden",name="_id",value=locals.user._id)
+                            button#submitBasic.btn.btn-primary Update Basic Information
+                            button.btn Change Password
+
+
+                    div.row-fluid
+                        hr
+                        h4 Investor Information
+                    div.row-fluid
+                        div.span2
+                        div.span8
+                            form#investorInfoForm.well
+                                label Address1
+                                input.span3(placeholder="Address",name="address1",value=locals.user.address1);
+                                label Address2
+                                input#password.span3(placeholder="Address2",name="address2",value=locals.user.address2)
+                                label City
+                                input.span3(placeholder="City",name="city",value=locals.user.city)
+                                label State
+                                input.span3(placeholder="State",name="state",value=locals.user.state)
+                                hr
+                                label SSN
+                                input.span3(placeholder="SSN",name="ssn",value=locals.user.ssn)
+                                label Annual Income
+                                input.span3(placeholder="Annual Income",name="annualIncome",value=locals.user.annualIncome)
+                            button#submitInvestor.btn.btn-primary Update Investor Information
+
+
+
     div#addOfferDialog.modal.hide.fade()
         div.modal-header
             button.close(type="button",data-dismiss="modal",aria-hidden="true")
             h3#addOfferDialogLabel Create A New Project!
         form.well(id="newProjectForm",method="post",action="/api/issue")
             div.modal-body
-                label Project Name
-                input.span3(type="text",placeholder="Project Name",name="projectName",required="")
+                label Prform
+                input.span3(type="text",placeholder="Project Name",name="projectName")
                 label Amount Required for Project (USD)
-                input.span3(type="number",placeholder="Amount Required",name="amountRequired",required="")
+                input.span3(type="text",placeholder="Amount Required",name="amountRequired")
                 label Number of Shares
-                input.span3(type="number",placeholder="Number of shares",name="noOfShares",required="")
+                input.span3(type="text",placeholder="Number of shares",name="noOfShares")
                 label Single Investor Max
                 input.span3(type="text",placeholder="Single Investor Max",name="singleInvestorMax")
                 label Description (max 1000 characters)
-                textarea.span3(rows="4",placeholder="Description",name="description",required="")
+                textarea.span3(rows="4",placeholder="Description",name="description")
                 label Photo (1500x900)
                 input.span3(type="file",name="photo")
-
             div.modal-footer
                 button.btn(data-dismiss="modal",aria-hidden="true") Close
-                button.btn.btn-primary(id='submitbtn',type='submit') Create!
+                button.btn.btn-primary(id='submitbtn',type='submit') Sign Up!
     script
-        $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
         var socket = io.connect();
         //socket.emit('newIssue',{name:"test"});
         // handle submission form
+        $('#submitBasic').click(function(){
+            var formData = $('#basicInfoForm').serialize();
+            var id = $("#uid").val();
+            $.ajax({
+                type:"PUT",
+                url:"/api/user/"+id,
+                data: formData,
+                success: function(data) {
+                    //alert(sent);
+                    $('#alert').show();
+                }
+            });
+
+        });
+        $('#submitInvestor').click(function(){
+            var formData = $('#investorInfoForm').serialize();
+            var id = $("#uid").val();
+            $.ajax({
+                type:"PUT",
+                url:"/api/user/"+id,
+                data: formData,
+                success: function(data) {
+                    //alert(sent);
+                    $('#alert').show();
+                }
+            });
+
+        });
         $('#newProjectForm').submit(function(){
             //$('#addOfferDialog').remove();
             var formData = $(this).serialize();
+            var id = $("#uid").val();
+            formData.userid = id;
             //alert(formData);
             socket.emit('newIssue',{data:formData});
-
+            return false;
 
         });
         //$('#submitbtn').click(function(){
 
         //    var formData = $('#newProjectForm').serialize();
-
-        //    //alert(formData);
+        //    var id = $("#uid").val();
+        //    formData.userid = id;
+            //$('#addOfferDialog').remove();
+            //alert(formData);
         //    socket.emit('newIssue',{data:formData});
-        //    $('#addOfferDialog').hide();
         //});
     script
         $("#addProjectBtn").click(function(){

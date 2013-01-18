@@ -17,12 +17,16 @@ var express = require('express')
     , domain = require("./domain/domain")
     , passportSocketIo = require("passport.socketio")
     , uuid = require('node-uuid')
-    ;
+    , conf = require('./config').conf
+    , userrepo = require("./repositories/user")
+    , flash = require('connect-flash');
+
 
 
 
 
 var issueSchema = new Schema({
+    userId: String,
     projectName: String,
     amountRequired: Number,
     noOfShares: Number,
@@ -59,6 +63,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser('secret'));
   app.use(express.session({ secret: 'secret', store: store }));
+  app.use(flash());
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
@@ -74,8 +79,9 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login')
 }
 app.get('/', ensureAuthenticated,routes.index);
-app.get('/demoweb',ensureAuthenticated, demoweb.index);
+app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated,demoweb.profile);
+app.get('/profile/detail', ensureAuthenticated,demoweb.profiledetail);
 app.get('/artist',ensureAuthenticated, demoweb.artist);
 app.get('/login', demoweb.login);
 app.post('/login',
@@ -84,8 +90,62 @@ app.post('/login',
                                        failureFlash: true })
 );
 app.get('/artistinfo', demoweb.artistinfo);
-app.get('/signup', demoweb.signup());
+app.get('/signup', demoweb.signup);
+app.post('/signup',function(req,res){
+    console.log(JSON.stringify(req.body));
+
+    var newUser = new userrepo.User(req.body);
+    newUser.save();
+    //req.flash('info',"User Created.  Please Log In");
+    res.redirect("/login");
+
+});
 app.get('/users', user.list);
+app.get('/api/checkemail',function(req,res){
+    console.log(req.value);
+});
+
+app.put('/api/user/:id',function(req,res){
+    console.log(req.params.id);
+    console.log(req.body);
+    var body = req.body;
+    delete body._id;
+    delete body.email;
+
+    userrepo.User.update({_id:req.params.id},{$set: body},function(err,numAffected,raw){
+        if (err)
+            res.send(400);
+        else
+            res.send(200);
+
+
+    });
+
+});
+
+app.post('/api/issue',function(req,res){
+    console.log(req.params.id);
+    console.log(req.body);
+    var body = req.body;
+    body.userId = req.user._id;
+    var issue = new Issue(body);
+    issue.save(function(err){
+       console.log('saving');
+       if(err)
+            res.send(400);
+       else
+            res.redirect("/profile");
+    });
+//    userrepo.User.update({_id:req.params.id},{$set: body},function(err,numAffected,raw){
+//        if (err)
+//            res.send(400);
+//        else
+//            res.send(200);
+//
+//
+//    });
+
+});
 app.get('/api/issues',function(req,res){
     return Issue.find(function(err,issues){
         if(!err) {
@@ -97,10 +157,21 @@ app.get('/api/issues',function(req,res){
 });
 
 
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy({usernameField:'email'},
     function(username,password,done) {
-        if (username == 'sscry' || password == "sscry")
-        return done(null,{id:1,"username":username});
+
+        userrepo.User.findOne({email: username},function(err,user){
+            if(err){return done(err);}
+            if(!user) {
+                return done(null,false,{message: "Incorrect user."});
+            }
+            if(!user.password == password) {
+                return done(null,false,{message: "Incorrect password"});
+            }
+            return done(null,user);
+        });
+//        if (username == 'sscry' || password == "sscry")
+//        return done(null,{id:1,"username":username});
 
     }
 
@@ -166,6 +237,7 @@ io.sockets.on('connection',function(socket){
 
     });
     socket.on('newIssue',function(data){
+       console.log(JSON.stringify(socket.handshake.user));
        console.log('received:');
        console.log(data);
        var newIssueData = querystring.parse(data.data);
@@ -190,9 +262,9 @@ domain.initDomain();
 domain.domain.on('event',function(evt){
    console.log('event: ' + JSON.stringify(evt));
 });
-for (var i = 0; i < 10;i++){
-    var newUuid = uuid.v4();
-    var objId = uuid.v4();
-    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
-    domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"c586c0ee-b7a3-482f-85a4-3d585209d729",email:"e@e.com",password:objId}});
-}
+//for (var i = 0; i < 10;i++){
+//    var newUuid = uuid.v4();
+//    var objId = uuid.v4();
+//    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
+//    domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"c586c0ee-b7a3-482f-85a4-3d585209d729",email:"e@e.com",password:objId}});
+//}
