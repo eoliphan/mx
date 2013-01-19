@@ -71,9 +71,17 @@ block content
     // signup dialog
     div#signupDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signupDialogLabel",aria-hidden="true")
         div.modal-header
-            button.close(type="button",data-dismiss="modal",aria-hidden="true")
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
             h3#signupDialogLabel Join SoundScry!
-
+        form#signupForm.well(method="POST",action="/signup")
+            div.modal-body
+                label Email
+                input.span3(type="text",placeholder="Email",name="email")
+                label Password
+                input.span3(type="text",placeholder="Password",name="password")
+                label Confirm Password
+                input.span3(type="text",placeholder="Confirm Pass",name="passconfirm")
+                label How do you think you will primarily use SoundScry?
                 a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
                     select(name="primaryuse")
                         option(value="musiclover") Music Lover
@@ -231,7 +239,7 @@ block content
     script
             $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
             $('#signupDialog').on('show',function(){
-                $('#signupForm')[0].reset();
+                //$('#signupForm')[0].reset();
             });
 
             //var socket = io.connect();
