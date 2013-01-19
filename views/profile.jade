@@ -28,22 +28,22 @@ block content
         div.row-fluid
             div.span3
                 div.well.sidebar-nav
-                    ul.nav.nav-list
+                    ul#sidenav.nav.nav-list
                         li.nav-header Options
                         li: a(href="/profile/detail") Edit Profile
                         li.active: a(href="#") Active Offerings
-                        li: a(href="#") Reports
+                        li: a(href="/profile/reports") Reports
                             ul.nav.nav-list
                                 li: a(href="#") Account Information Summary
                                 li: a(href="#") Complete Offering Summary
                                 li: a(href="#") Offering Revenue Summary
                                 li: a(href="#") Investment Summary Per Investment
-                        li: a(href="#") Music Genres
-                        li: a(href="#") Band Search
+                        li: a(href="/profile/genres") Music Genres
+                        li: a(href="/profile/bandsearch") Band Search
                 //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
                 a.btn.btn-primary.span2(id="addProjectBtn") Add Project!
             div.span9
-                div.hero-unit
+                div#profileContent.hero-unit
                     div.row-fluid
                         div.span8
                             table#grid
@@ -86,6 +86,13 @@ block content
             div.modal-footer
                 button.btn(data-dismiss="modal",aria-hidden="true") Close
                 button.btn.btn-primary(id='submitbtn',type='submit') Create!
+    script
+        $('#sidenav a').css("border", "2px dotted blue");
+        $('#sidenav a').click(function(evn){
+            alert(evn.target);
+            alert(evn.data);
+            return false;
+        });
     script
         $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
         var socket = io.connect();

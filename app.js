@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+require('nodetime').profile();
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
@@ -16,10 +16,12 @@ var express = require('express')
     ,  querystring = require('querystring')
     , domain = require("./domain/domain")
     , passportSocketIo = require("passport.socketio")
-    , uuid = require('node-uuid')
+    , uuid = require('node-uuid') 
     , conf = require('./config').conf
     , userrepo = require("./repositories/user")
-    , flash = require('connect-flash');
+    , flash = require('connect-flash')
+    , User = require("./repositories/user").User
+    ;
 
 
 
@@ -104,6 +106,15 @@ app.post('/signup',function(req,res){
     newUser.save();
     //req.flash('info',"User Created.  Please Log In");
     res.redirect("/login");
+
+});
+
+app.get('/fragments/:frag',ensureAuthenticated,function(req,res){
+    User.findById(req.user._id,function(err,user){
+          if (err) res.send(400);
+          else
+            res.render("fragments/"+req.params.frag,{user:user});
+      });
 
 });
 app.get('/users', user.list);

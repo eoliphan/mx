@@ -1,0 +1,70 @@
+div#alert.alert(style="display: none")
+    button(type="button",class="close",data-dismiss="alert") &times;
+    p Data Updated
+div.row-fluid
+    div.span12
+        h4 Basic Information
+div.row-fluid
+    div.span2
+    div.span8
+        form#basicInfoForm.well
+            label Email
+            input.span3(type="email",placeholder="Email",name="email",readonly="",value=locals.user.email);
+            label First Name
+            input#password.span3(placeholder="First Name",name="firstName",value=locals.user.firstName)
+            label Last Name
+            input.span3(placeholder="Last Name",name="lastName",value=locals.user.lastName)
+            input#uid(type="hidden",name="_id",value=locals.user._id)
+        button#submitBasic.btn.btn-primary Update Basic Information
+        button.btn Change Password
+div.row-fluid
+    hr
+    h4 Investor Information
+div.row-fluid
+    div.span2
+    div.span8
+        form#investorInfoForm.well
+            label Address1
+            input.span3(placeholder="Address",name="address1",value=locals.user.address1);
+            label Address2
+            input#password.span3(placeholder="Address2",name="address2",value=locals.user.address2)
+            label City
+            input.span3(placeholder="City",name="city",value=locals.user.city)
+            label State
+            input.span3(placeholder="State",name="state",value=locals.user.state)
+            hr
+            label SSN
+            input.span3(placeholder="SSN",name="ssn",value=locals.user.ssn)
+            label Annual Income
+            input.span3(placeholder="Annual Income",name="annualIncome",value=locals.user.annualIncome)
+        button#submitInvestor.btn.btn-primary Update Investor Information
+
+script
+    $('#submitBasic').click(function(){
+        var formData = $('#basicInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
+    $('#submitInvestor').click(function(){
+        var formData = $('#investorInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });

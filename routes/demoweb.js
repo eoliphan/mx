@@ -54,7 +54,7 @@ exports.signup = function(req, res){
 
 exports.profiledetail = function(req, res){
   //console.log("in demoweb");
-  var curUser = User.findById(req.user._id,function(err,user){
+  User.findById(req.user._id,function(err,user){
       if (err) res.send(400);
       res.render('profiledetail',{title: 'Profile Detail',user:user});
   });
