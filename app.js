@@ -2,7 +2,10 @@
 /**
  * Module dependencies.
  */
-require('nodetime').profile();
+require('nodetime').profile({
+    accountKey: '0e70635ffc6e0abdd3e4ae80e85fd15a9a4c1749',
+    appName: 'Scry Application'
+  });
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
@@ -21,6 +24,7 @@ var express = require('express')
     , userrepo = require("./repositories/user")
     , flash = require('connect-flash')
     , User = require("./repositories/user").User
+    , Artist = require("./repositories/artist").Artist
     ;
 
 
@@ -33,7 +37,8 @@ var issueSchema = new Schema({
     amountRequired: Number,
     noOfShares: Number,
     singleInvestorMax: Number,
-    description: String
+    description: String,
+    photoPath:String
 
 });
 mongoose.model("Issue",issueSchema);
@@ -118,8 +123,33 @@ app.get('/fragments/:frag',ensureAuthenticated,function(req,res){
 
 });
 app.get('/users', user.list);
+
+app.get('/store',demoweb.store);
+app.get('/cart',demoweb.cart);
+
+// -- utility
+app.get('/util/rndsmlcvr/:rnd',function(req,res){
+    var images = ["http://ecx.images-amazon.com/images/I/51Jc2v9ndpL._SL500_AA300_.jpg",
+        "http://ecx.images-amazon.com/images/I/61e3FaHueCL._SL500_AA300_.jpg",
+        "http://ecx.images-amazon.com/images/I/61iKyNi5UKL._SL500_AA300_.jpg",
+        "http://ecx.images-amazon.com/images/I/41ZsWDiEvfL._SL500_AA300_.jpg",
+        "http://ecx.images-amazon.com/images/I/61DAJ0zqFhL._AA160_.jpg",
+        "http://ecx.images-amazon.com/images/I/51Xb620XzWL._AA160_.jpg",
+        "http://ecx.images-amazon.com/images/I/5135bFFBrWL._AA160_.jpg",
+        "http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg"]
+    res.redirect(images[Math.floor(Math.random() * images.length)]);
+});
+// -- api mappings
 app.get('/api/checkemail',function(req,res){
     console.log(req.value);
+});
+
+app.get('/api/session/user',ensureAuthenticated,function(req,res){
+    userrepo.User.findById(req.user._id,function(err,user){
+          if (err) res.send(400);
+          var jsonData = JSON.stringify(user);
+          res.send(jsonData);
+      });
 });
 
 app.put('/api/user/:id',function(req,res){
@@ -134,8 +164,6 @@ app.put('/api/user/:id',function(req,res){
             res.send(400);
         else
             res.send(200);
-
-
     });
 
 });
@@ -145,6 +173,18 @@ app.post('/api/issue',function(req,res){
     console.log(req.body);
     var body = req.body;
     body.userId = req.user._id;
+    // handle uploaded file
+    var tmpPath = req.files.photo.path;
+    var newUuid = uuid.v4();
+    var tgtPath = '.public/images/issues/'+newUuid;
+    body.photoPath = tgtPath;
+    fs.rename(tmpPath,tgtPath,function(err){
+        if (err) throw err;
+        fs.unlink(tmpPath,function(){
+            if(err) throw err;
+
+        });
+    });
     var issue = new Issue(body);
     issue.save(function(err){
        console.log('saving');
@@ -172,6 +212,110 @@ app.get('/api/issues',function(req,res){
         }
     });
 });
+
+app.get('/api/albums',function(req,res){
+//    Artist.find()
+//        .limit(50)
+//        .select('albums')
+//        .exec(function(err,artists){
+//            if (!err)
+//                 res.send(artists);
+//            else
+//            {
+//                console.log(err);
+//                res.send(404);
+//            }
+//
+//        });
+    Artist.aggregate({$project:{
+                    'artistName':1,
+                    'albums' : 1
+
+                }},
+                {$unwind: "$albums"},
+                {$limit: 50},
+            function(err,artists){
+                            if (!err)
+                                 res.send(artists);
+                            else
+                            {
+                                console.log(err);
+                                res.send(404);
+                            }
+
+                        });
+
+
+});
+app.get('/api/albums/bygenre/:genre',function(req,res){
+    Artist.find({'albums.genre':req.params.genre})
+            .limit(50)
+            //.where('albums.genre').equals(req.params.genre)
+            .select('albums')
+            .exec(function(err,artists){
+                if (!err)
+                     res.send(artists);
+                else
+                {
+                    console.log(err);
+                    res.send(404);
+                }
+
+            });
+
+});
+
+app.get('/api/songs',function(req,res){
+//    Artist.find()
+//            .limit(50)
+//            .select('albums.songs')
+//            .exec(function(err,artists){
+//                if (!err)
+//                     res.send(artists);
+//                else
+//                {
+//                    console.log(err);
+//                    res.send(404);
+//                }
+//
+//            });
+    Artist.aggregate({$project:{
+                'artistName':1,
+                'bio': 1,
+                'albums' : 1
+            }},
+            {$unwind: "$albums"},
+            {$limit: 50},
+        function(err,artists){
+                        if (!err)
+                             res.send(artists);
+                        else
+                        {
+                            console.log(err);
+                            res.send(404);
+                        }
+
+                    });
+
+});
+
+app.get('/api/songs/bygenre/:genre',function(req,res){
+    Artist.find()
+                .limit(50)
+                .select('albums.songs')
+                .where('albums.songs.genre').equals(req.params.genre)
+                .exec(function(err,artists){
+                    if (!err)
+                         res.send(artists);
+                    else
+                    {
+                        console.log(err);
+                        res.send(404);
+                    }
+
+                });
+});
+
 
 
 passport.use(new LocalStrategy({usernameField:'email'},

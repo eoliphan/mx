@@ -30,7 +30,7 @@ block content
                 div.well.sidebar-nav
                     ul#sidenav.nav.nav-list
                         li.nav-header Options
-                        li: a(href="/profile/detail") Edit Profile
+                        li: a(href="/fragments/acctinfo") Edit Profile
                         li.active: a(href="#") Active Offerings
                         li: a(href="/profile/reports") Reports
                             ul.nav.nav-list
@@ -68,7 +68,7 @@ block content
         div.modal-header
             button.close(type="button",data-dismiss="modal",aria-hidden="true")
             h3#addOfferDialogLabel Create A New Project!
-        form.well(id="newProjectForm",method="post",action="/api/issue")
+        form.well(id="newProjectForm",method="post",action="/api/issue",enctype="multipart/form-data")
             div.modal-body
                 label Project Name
                 input.span3(type="text",placeholder="Project Name",name="projectName",required="")
@@ -87,10 +87,29 @@ block content
                 button.btn(data-dismiss="modal",aria-hidden="true") Close
                 button.btn.btn-primary(id='submitbtn',type='submit') Create!
     script
-        $('#sidenav a').css("border", "2px dotted blue");
-        $('#sidenav a').click(function(evn){
-            alert(evn.target);
-            alert(evn.data);
+        //$('#sidenav a').css("border", "2px dotted blue");
+        $('#sidenav a').click(function(evt){
+            evt.preventDefault();
+            //alert(evt.target);
+            $('#sidenav li[class="active"]').toggleClass('active');
+            var tgt = $(evt.target);
+            tgt.parent().toggleClass('active');
+            console.log(tgt.context.href);
+            $.ajax({
+
+                 type: "GET",
+                 url: tgt.context.href,
+                 //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
+                 success: function(data) {
+                       // data is ur summary
+                      $('#profileContent').hide();
+                      $('#profileContent').html(data);
+                      $('#profileContent').fadeIn();
+                 }
+
+               });
+            //alert(evn.data);
+            //evt.target.parentElement.toggleClass('active');
             return false;
         });
     script

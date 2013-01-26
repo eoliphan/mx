@@ -1,0 +1,122 @@
+extends layout
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+    include common/topbar
+    .container
+        table#grid
+            thead
+                tr
+                    th &nbsp;
+                    th Item
+                    th Price
+            tbody
+                td(colspan=3)
+
+
+    script#template(type="text/x-kendo-tmpl")
+        .product(data-content="${albums.price} ${albums.genre}",data-trigger="hover")
+            img(src="http://placehold.it/72x72")
+            .h3 ${albums.name}
+            p ${artistName} $${albums.price} ${albums.genre}
+    script
+        $("#grid").kendoGrid({
+            height: 200,
+            columns: [
+                {title: " ", command: {text: "Delete", click: deleteItem}}
+                {title: "Item Name", field: "itemName"},
+                {title: "Price", field: "price"}
+            ],
+            dataSource: {
+                //data:[
+                //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+                //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+                //],
+                //transport: {
+                //    read: '/api/issues'
+                //},
+                pageSize: 10
+            }
+        });
+        function deleteItem(e) {
+            e.preventDefault();
+            window.location = "/artist";
+        };
+
+
+    style(scoped="")
+        #listView {
+            min-height: 610px;
+        }
+
+        .product {
+        float: left;
+        position: relative;
+            width: 110px;
+            height: 160px;
+            margin: 10px;
+            padding: 7px 7px 0 7px;
+            -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+        background-color: rgba(255,255,255,0.8)
+        }
+
+        .product img {
+        width: 110px;
+            height: 110px;
+        }
+
+        .product h3 {
+            margin: 0;
+            padding: 0;
+            line-height: 1.1em;
+        font-size: .9em;
+        font-weight: normal;
+            text-transform: uppercase;
+        color: #777;
+        }
+
+        .product p {
+            visibility: hidden;
+        }
+
+        .product:hover p {
+            visibility: visible;
+        position: absolute;
+        width: 100px;
+        height: 78px;
+        top: 77px;
+            margin: 0;
+        padding: 3px 5px;
+        line-height: 34px;
+        vertical-align: top;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0,0,0,0.65);
+        transition: background .2s linear, color .2s linear;
+        -moz-transition: background .2s linear, color .2s linear;
+        -webkit-transition: background .2s linear, color .2s linear;
+        -o-transition: background .2s linear, color .2s linear;
+        }
+
+        .k-listview:after, .product dl:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .k-listview {
+            border: 0;
+            padding: 0 0 20px 0;
+            min-width: 0;
+        }
+
+
+
+

@@ -10,7 +10,9 @@ div.navbar.navbar-inverse.navbar-fixed-top
             div.nav-collapse.collapse
 
                 ul.nav.test
-                    li.active: a(href='#') Home
+                    li.active: a(href='/') Home
+                    li: a(href='/store') Store
+                    li: a(href='/cart') Cart
                     li: a(href='#about') About
                     li: a(href='#contact') Contact
                 - if (locals.user)

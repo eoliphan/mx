@@ -60,3 +60,15 @@ exports.profiledetail = function(req, res){
   });
 
 };
+
+exports.store = function(req, res){
+  //console.log("in demoweb");
+  res.render('store',{title: 'SoundScry Store'});
+  //res.render();
+};
+
+exports.cart = function(req, res){
+  //console.log("in demoweb");
+  res.render('cart',{title: 'SoundScry Store'});
+  //res.render();
+};

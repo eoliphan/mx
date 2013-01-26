@@ -1,0 +1,57 @@
+[
+    '{{repeat(5)}}',
+    {
+        artistName: '{{firstName}} {{lastName}}',
+        bio: '{{lorem(30,50)}}',
+        albums: [
+            '{{repeat(5)}}',
+            {
+                name: '{{lorem(10,20)}}',
+                genre: function() {
+                    var genres = [
+                        'Blues',
+                        'Country',
+                        'Easy Listening',
+                        'Electronic',
+                        'Modern Folk',
+                        'Hip Hop',
+                        'Jazz',
+                        'Latin American',
+                        'Pop',
+                        'R&B',
+                        'Rock',
+                        'Other'
+                    ];
+                    return genres[Math.floor(Math.random()*genres.length)];
+                },
+                price: '{{numeric(7.99,12.99)}}',
+                releaseDate: '{{date(YYYY-MM-dd)}}',
+                songs: [
+                    '{{repeat(5)}}',
+                    {
+                       name: '{{lorem(10,20)}}',
+                        genre: function() {
+                            var genres = [
+                                'Blues',
+                                'Country',
+                                'Easy Listening',
+                                'Electronic',
+                                'Modern Folk',
+                                'Hip Hop',
+                                'Jazz',
+                                'Latin American',
+                                'Pop',
+                                'R&B',
+                                'Rock',
+                                'Other'
+                            ];
+                            return genres[Math.floor(Math.random()*genres.length)];
+                        },
+                        price: '{{numeric(.79,.99)}}',
+                        releaseDate: '{{date(YYYY-MM-dd)}}' 	
+                    }
+                ]
+            }
+        ]
+    }
+]
