@@ -24,7 +24,8 @@ var express = require('express')
     , userrepo = require("./repositories/user")
     , flash = require('connect-flash')
     , User = require("./repositories/user").User
-    , Artist = require("./repositories/artist").Artist
+    , Artist = require("./repositories/artist").Artist,
+    _ = require('underscore')
     ;
 
 
@@ -85,6 +86,8 @@ function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login')
 }
+
+/// -- routes
 app.get('/', function(req,res){
     res.redirect("/demoweb");
 });
@@ -125,7 +128,51 @@ app.get('/fragments/:frag',ensureAuthenticated,function(req,res){
 app.get('/users', user.list);
 
 app.get('/store',demoweb.store);
+
+app.get('/album/:id',function(req,res){
+    // grab the album
+    var albumId = mongoose.Types.ObjectId(req.params.id);
+    console.log(albumId);
+    Artist.aggregate(
+        {$match: {'albums._id':albumId}},
+                    {$project:{
+                    'artistName':1,
+                    'bio': 1,
+                    'albums' : 1
+                }},
+                {$unwind: "$albums"},
+
+            function(err,artists){
+                            if (!err) {
+                                //TODO: clunky to have to filter here
+                                var match = _.where(artists,{'albums._id':req.params.id});
+                                var artist = _.find(artists,function(element){
+                                    return (element.albums._id == req.params.id)
+
+                                });
+                                res.send(artist);
+
+
+
+                            }
+                            else
+                            {
+                                console.log(err);
+                                res.send(404);
+                            }
+
+                        });
+
+//    Artist.findOne({'albums._id':albumId},"albums",function(err,artist){
+//        if(err)
+//            res.send(404);
+//        else
+//            res.send(artist);
+//
+//    });
+});
 app.get('/cart',demoweb.cart);
+app.get('/about',demoweb.about);
 
 // -- utility
 app.get('/util/rndsmlcvr/:rnd',function(req,res){

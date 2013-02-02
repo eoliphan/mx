@@ -72,3 +72,9 @@ exports.cart = function(req, res){
   res.render('cart',{title: 'SoundScry Store'});
   //res.render();
 };
+
+exports.about = function(req, res){
+  //console.log("in demoweb");
+  res.render('about',{title: 'About SoundScry'});
+  //res.render();
+};
