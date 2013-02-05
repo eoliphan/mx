@@ -5,4 +5,54 @@ block content
                 padding-top: 60px;
                 padding-bottom: 40px;
               }
+        /* Custom container */
+              .container-narrow {
+                margin: 0 auto;
+                max-width: 700px;
+              }
+              .container-narrow > hr {
+                margin: 30px 0;
+              }
+
+              /* Main marketing message and sign up button */
+              .jumbotron {
+                margin: 60px 0;
+                text-align: center;
+              }
+              .jumbotron h1 {
+                font-size: 72px;
+                line-height: 1;
+              }
+              .jumbotron .btn {
+                font-size: 21px;
+                padding: 14px 24px;
+              }
+
+              /* Supporting marketing content */
+              .marketing {
+                margin: 60px 0;
+              }
+              .marketing p + h4 {
+                margin-top: 28px;
+              }
     include common/topbar
+    .container-narrow
+        .jumbotron
+            h1 Who We Are
+            p.lead We are a music and merchandising distribution platform that supports musicians by providing them with up-front funding from fans, a larger share of the royalties, and increased exposure driven by motivated fans that stand to benefit financially through utilizing their peer-to-peer networks to drive music sales through the SoundScry platform.
+            a.btn.btn-large.btn-primary(href="#") Sign Up! 
+        .jumbotron
+            h2  What We Believe
+        .row-fluid.marketing
+            .span6
+                p Free markets work when everyone participates
+                p Transparency is positive
+                p Giving people a chance to benefit financially from their everyday interests
+                p Opening more markets, to more people will create huge opportunities and a more vibrant economy
+            .span6
+                p More choice is a good thing
+                p Creating a large pie that more people can participate in and gain from
+                p People who have skin in the game are motivated
+                p Allow the potention for endless creativity and diversity in the world of music
+
+

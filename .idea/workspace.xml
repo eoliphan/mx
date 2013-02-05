@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/about.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/album.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/Readme.md" afterPath="$PROJECT_DIR$/node_modules/jade/Readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/lib/compiler.js" afterPath="$PROJECT_DIR$/node_modules/jade/lib/compiler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/lib/filters.js" afterPath="$PROJECT_DIR$/node_modules/jade/lib/filters.js" />
@@ -13,10 +10,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/lib/nodes/filter.js" afterPath="$PROJECT_DIR$/node_modules/jade/lib/nodes/filter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/lib/parser.js" afterPath="$PROJECT_DIR$/node_modules/jade/lib/parser.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jade/package.json" afterPath="$PROJECT_DIR$/node_modules/jade/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/demoweb.js" afterPath="$PROJECT_DIR$/routes/demoweb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/topbar.jade" afterPath="$PROJECT_DIR$/views/common/topbar.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.jade" afterPath="$PROJECT_DIR$/views/about.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demoweb.jade" afterPath="$PROJECT_DIR$/views/demoweb.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/store.jade" afterPath="$PROJECT_DIR$/views/store.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +31,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.47032642">
+    <splitter split-orientation="vertical" split-proportion="0.48516318">
       <split-first>
         <leaf>
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
@@ -56,10 +52,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/layout.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="74" selection-start="318" selection-end="388" vertical-scroll-proportion="0.0">
+                <state line="23" column="10" selection-start="954" selection-end="954" vertical-scroll-proportion="0.17582418">
                   <folding />
                 </state>
               </provider>
@@ -92,10 +88,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="demoweb.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="demoweb.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="77" column="45" selection-start="1973" selection-end="1973" vertical-scroll-proportion="1.3574145">
+                <state line="77" column="45" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -177,10 +173,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="topbar.jade" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="topbar.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="38" selection-start="559" selection-end="559" vertical-scroll-proportion="0.09174312">
+                <state line="22" column="0" selection-start="857" selection-end="962" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -198,16 +194,16 @@
           <file leaf-file-name="demoweb.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="109" column="113" selection-start="4241" selection-end="4241" vertical-scroll-proportion="0.0">
+                <state line="222" column="0" selection-start="10111" selection-end="10111" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="about.jade" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="about.jade" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/about.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+                <state line="44" column="14" selection-start="1537" selection-end="1537" vertical-scroll-proportion="0.31205675">
                   <folding />
                 </state>
               </provider>
@@ -233,24 +229,24 @@
         <option value="$PROJECT_DIR$/util/bulkloadartists.js" />
         <option value="$PROJECT_DIR$/util/artistgen.json" />
         <option value="$PROJECT_DIR$/repositories/artist.js" />
-        <option value="$PROJECT_DIR$/views/layout.jade" />
         <option value="$PROJECT_DIR$/util/data/artists.json" />
         <option value="$PROJECT_DIR$/repositories/cart.js" />
         <option value="$PROJECT_DIR$/views/cart.jade" />
         <option value="$PROJECT_DIR$/views/store.jade" />
         <option value="$PROJECT_DIR$/views/album.jade" />
-        <option value="$PROJECT_DIR$/views/demoweb.jade" />
-        <option value="$PROJECT_DIR$/views/about.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/demoweb.js" />
         <option value="$PROJECT_DIR$/views/common/topbar.jade" />
+        <option value="$PROJECT_DIR$/views/layout.jade" />
+        <option value="$PROJECT_DIR$/views/demoweb.jade" />
+        <option value="$PROJECT_DIR$/views/about.jade" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="28" />
-    <option name="width" value="1398" />
+    <option name="y" value="24" />
+    <option name="width" value="1147" />
     <option name="height" value="1172" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -616,19 +612,24 @@
       <created>1359206221815</created>
       <updated>1359206221815</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="MUSX-1 front page updates">
+      <created>1359767242431</created>
+      <updated>1359767242431</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1398" height="1172" extended-state="0" />
+    <frame x="0" y="24" width="1147" height="1172" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33922997" sideWeight="0.49438202" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17973372" sideWeight="0.20266412" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22070844" sideWeight="0.20266412" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17973372" sideWeight="0.43196955" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22070844" sideWeight="0.43196955" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.358706" sideWeight="0.98087955" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20049658" sideWeight="0.1994302" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1994302" sideWeight="0.36663124" order="7" side_tool="true" content_ui="tabs" />
@@ -638,7 +639,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -648,7 +648,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
@@ -679,7 +679,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="MUSX-1, MUSX-10 updated Kendo UI, first cut of store" />
+    <option name="LAST_COMMIT_MESSAGE" value="MUSX-1 front page updates" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -705,6 +705,7 @@
     <MESSAGE value="MUSX-1 updates for login/login functionality toolbar refactoring" />
     <MESSAGE value="MUSX-1 added profiling support, view refactoring" />
     <MESSAGE value="MUSX-1, MUSX-10 updated Kendo UI, first cut of store" />
+    <MESSAGE value="MUSX-1 front page updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -759,11 +760,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/express/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="22" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/bulkloadartists.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="32" selection-start="85" selection-end="111" vertical-scroll-proportion="0.0">
@@ -827,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="113" selection-start="4241" selection-end="4241" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/store.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="0" selection-end="169" vertical-scroll-proportion="0.0">
@@ -848,23 +837,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="857" selection-end="962" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="45" selection-start="1973" selection-end="1973" vertical-scroll-proportion="1.3574145">
+        <state line="77" column="45" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="0" selection-start="10111" selection-end="10111" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="10" selection-start="954" selection-end="954" vertical-scroll-proportion="0.17582418">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/about.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="559" selection-end="559" vertical-scroll-proportion="0.09174312">
+        <state line="44" column="14" selection-start="1537" selection-end="1537" vertical-scroll-proportion="0.31205675">
           <folding />
         </state>
       </provider>
