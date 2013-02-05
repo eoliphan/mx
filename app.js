@@ -173,6 +173,7 @@ app.get('/album/:id',function(req,res){
 });
 app.get('/cart',demoweb.cart);
 app.get('/about',demoweb.about);
+app.get('/contact',demoweb.contact);
 
 // -- utility
 app.get('/util/rndsmlcvr/:rnd',function(req,res){

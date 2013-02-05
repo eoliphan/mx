@@ -78,3 +78,9 @@ exports.about = function(req, res){
   res.render('about',{title: 'About SoundScry'});
   //res.render();
 };
+
+exports.contact = function(req, res){
+  //console.log("in demoweb");
+  res.render('contact',{title: 'Contact'});
+  //res.render();
+};
