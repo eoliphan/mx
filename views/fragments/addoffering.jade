@@ -1,0 +1,64 @@
+div#alert.alert(style="display: none")
+    button(type="button",class="close",data-dismiss="alert") &times;
+    p Data Updated
+div.row-fluid
+    div.span12
+        h4 Add Offering
+        p Please complete the following information in order to share your music and make offers on SoundScry
+div.row-fluid
+
+    div.span5
+        form#offeringForm.well
+            label Band Name
+            input.span3(type="text",placeholder="Band Name",name="bandName",readonly="",value="");
+            label Description
+            input#password.span3(type="textarea",placeholder="description",name="description",value="")
+            label Total Value
+            input.span3(placeholder="Total Value of Offering",name="totalValue",value="")
+            label Percentage Of Offering You Want To Sell
+            input.span3(placeholder="Percentage of Offering",name="pctOfOffering",value="")
+            label Amount of $ you would like to raise
+            input.span3(placeholder="Total to Raise",name="totalToRaise",value="")
+            label # of Shares
+            input.span3(placeholder="$ value of each share",name="valuePerShare",value="")
+            label Max Purchase per investor
+            input.span3(placeholder="Max Per Investor",name="maxPerInvestor",value="")
+            label Max Purchase per investor
+            input.span3(placeholder="Max Per Investor",name="maxPerInvestor",value="")
+            label Facebook URL
+            input.span3(placeholder="FaceBook URL",name="facebookURL",value="")
+            label Twitter #HashTag
+            input.span3(placeholder="Twitter #HashTag",name="twitterHashtag",value="")
+            label Agree To Terms of Service?
+            input.span3(type="checkbox",placeholder="Max Per Investor",name="maxPerInvestor",value="")
+            label#status
+
+
+        button#submitBasic.btn.btn-primary Create Offering
+    div.span7
+        div.well
+            .row
+                .span12
+                    h3 What will be created once you sign up?
+            .row-fluid
+                .span12
+                    ul Here is an example of how you make more money while retaining creative control by letting more people benefit from your success:
+                        li You value your album and merchandising offer at $10,000
+                        li You want to sell 50% of the album/merchandising proceeds (form the SoundScry platform only) to investors, promoters, and fans.
+                        li You design and offering that sells 50% for $5,000 to investors, promoters, and fans. The $5,000 is yours minus our commission.
+                        li Your album sells 10,000 units at $10 apiece through the SoundScry platform totaling $100,000
+                        li We deduct a 15% transaction fee
+                        li You split the proceeds 50%/50% with the people who invested in your album which equals $42,500 each
+                        li Your total take home is $5,000 minus $500 commission plus $42,500 for a total of $47,500
+                    p On merchandising the difference between the wholesale and the retail price is the dollar amount shared with the investors determined by your percentage split
+                    ul For Example:
+                        li $15 retail  - $7.50 cost to make = $7.5 that is split
+                        li 50%/50% per the above example (Has to be a 100% minimum difference between the $15 “selling price” versus the “cost to make price”)
+
+    script
+        $(document).ready(function(){
+            console.log("loaded snippet");
+            var validator = $("#offeringForm").kendoValidator().data("kendoValidator"),
+            var status = $("#status");
+        });
+

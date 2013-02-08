@@ -1,0 +1,42 @@
+div#alert.alert(style="display: none")
+    button(type="button",class="close",data-dismiss="alert") &times;
+    p Data Updated
+div.row-fluid
+    div.span12
+        h4 Musician Sign-Up
+        p Please complete the following information in order to share your music and make offers on SoundScry
+div.row-fluid
+    div.span1
+    div.span5
+        form#basicInfoForm.well
+            label Band Name
+            input.span3(type="test",placeholder="Band Name",name="bandName",readonly="",value="");
+            label Band Contact
+            input#password.span3(placeholder="Band Contact",name="bandContact",value="")
+            label Band Contact Phone
+            input.span3(placeholder="Band Contact Phone",name="lastName",value="")
+
+        button#submitBasic.btn.btn-primary Create Band Information
+    div.span6
+        div.well
+            .row
+                .span12
+                    h3 What will be created once you sign up?
+            .row-fluid
+                .span12
+                    ul A Public Profile page that will showcase your music. Including your:
+                        li Artwork
+                        li Band Name
+                        li Albums
+                        li Tracks
+                        li Merchandise
+                        li Description
+                        li Storefront
+                    ul A Private Profile page that will be for your eyes only and include:
+                        li Current Offerings and where that stand
+                        li Music Sales
+                        li Merchandising Sales
+                        li Analytics
+                        li Reports
+                        li Music Purchaes
+                        li Other Musicians you have invested in

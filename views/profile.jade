@@ -32,6 +32,8 @@ block content
                         li.nav-header Options
                         li: a(href="/fragments/acctinfo") Edit Profile
                         li.active: a(href="#") Active Offerings
+                        li: a(href="/fragments/musiciansignup") Musician
+                        li: a(href="#") Investor
                         li: a(href="/profile/reports") Reports
                             ul.nav.nav-list
                                 li: a(href="#") Account Information Summary
@@ -41,7 +43,7 @@ block content
                         li: a(href="/profile/genres") Music Genres
                         li: a(href="/profile/bandsearch") Band Search
                 //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
-                a.btn.btn-primary.span2(id="addProjectBtn") Add Project!
+                a.btn.btn-primary.span2(id="addProjectBtn",href="/fragments/addoffering") Add Offering!
             div.span9
                 div#profileContent.hero-unit
                     div.row-fluid
@@ -64,28 +66,29 @@ block content
                     div.row-fluid
                         div.span12
                             div#revenuechart
-    div#addOfferDialog.modal.hide.fade()
-        div.modal-header
-            button.close(type="button",data-dismiss="modal",aria-hidden="true")
-            h3#addOfferDialogLabel Create A New Project!
-        form.well(id="newProjectForm",method="post",action="/api/issue",enctype="multipart/form-data")
-            div.modal-body
-                label Project Name
-                input.span3(type="text",placeholder="Project Name",name="projectName",required="")
-                label Amount Required for Project (USD)
-                input.span3(type="number",placeholder="Amount Required",name="amountRequired",required="")
-                label Number of Shares
-                input.span3(type="number",placeholder="Number of shares",name="noOfShares",required="")
-                label Single Investor Max
-                input.span3(type="text",placeholder="Single Investor Max",name="singleInvestorMax")
-                label Description (max 1000 characters)
-                textarea.span3(rows="4",placeholder="Description",name="description",required="")
-                label Photo (1500x900)
-                input.span3(type="file",name="photo")
+    //
+        div#addOfferDialog.modal.hide.fade()
+            div.modal-header
+                button.close(type="button",data-dismiss="modal",aria-hidden="true")
+                h3#addOfferDialogLabel Create A New Project!
+            form.well(id="newProjectForm",method="post",action="/api/issue",enctype="multipart/form-data")
+                div.modal-body
+                    label Project Name
+                    input.span3(type="text",placeholder="Project Name",name="projectName",required="")
+                    label Amount Required for Project (USD)
+                    input.span3(type="number",placeholder="Amount Required",name="amountRequired",required="")
+                    label Number of Shares
+                    input.span3(type="number",placeholder="Number of shares",name="noOfShares",required="")
+                    label Single Investor Max
+                    input.span3(type="text",placeholder="Single Investor Max",name="singleInvestorMax")
+                    label Description (max 1000 characters)
+                    textarea.span3(rows="4",placeholder="Description",name="description",required="")
+                    label Photo (1500x900)
+                    input.span3(type="file",name="photo")
 
-            div.modal-footer
-                button.btn(data-dismiss="modal",aria-hidden="true") Close
-                button.btn.btn-primary(id='submitbtn',type='submit') Create!
+                div.modal-footer
+                    button.btn(data-dismiss="modal",aria-hidden="true") Close
+                    button.btn.btn-primary(id='submitbtn',type='submit') Create!
     script
         //$('#sidenav a').css("border", "2px dotted blue");
         $('#sidenav a').click(function(evt){
@@ -134,10 +137,30 @@ block content
         //    $('#addOfferDialog').hide();
         //});
     script
-        $("#addProjectBtn").click(function(){
-            $('#addOfferDialog').modal('show');
+        $("#addProjectBtn").click(function(evt){
+                    evt.preventDefault();
+                    //alert(evt.target);
+                   // $('#sidenav li[class="active"]').toggleClass('active');
+                    var tgt = $(evt.target);
+                    //tgt.parent().toggleClass('active');
+                    console.log(tgt.context.href);
+                    $.ajax({
 
-        });
+                         type: "GET",
+                         url: tgt.context.href,
+                         //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
+                         success: function(data) {
+                               // data is ur summary
+                              $('#profileContent').hide();
+                              $('#profileContent').html(data);
+                              $('#profileContent').fadeIn();
+                         }
+
+                       });
+                    //alert(evn.data);
+                    //evt.target.parentElement.toggleClass('active');
+                    return false;
+                });
     script
         $("#revenuechart").kendoChart({
             title: {
