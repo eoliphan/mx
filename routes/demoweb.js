@@ -18,7 +18,11 @@ exports.index = function(req, res){
 
 exports.profile = function(req, res){
   console.log("in demoweb");
-  res.render('profile', { title: 'Profile' });
+    User.findById(req.user._id,function(err,user){
+          if (err) res.send(400);
+          res.render('profile',{title: 'Profile',user:user});
+      });
+
 };
 
 exports.login = function(req, res){
@@ -41,9 +45,9 @@ exports.musicloverinfo = function(req, res){
   res.render('musicloverinfo', { title: 'Music Lover Info' });
 };
 
-exports.promoterinfo = function(req, res){
+exports.investorinfo = function(req, res){
   //console.log("in demoweb");
-  res.render('promoterinfo', { title: 'Promoter Info' });
+  res.render('promoterinfo', { title: 'Investor Info' });
 };
 
 exports.signup = function(req, res){

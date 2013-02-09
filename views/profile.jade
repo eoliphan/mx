@@ -32,14 +32,16 @@ block content
                         li.nav-header Options
                         li: a(href="/fragments/acctinfo") Edit Profile
                         li.active: a(href="#") Active Offerings
-                        li: a(href="/fragments/musiciansignup") Musician
-                        li: a(href="#") Investor
-                        li: a(href="/profile/reports") Reports
-                            ul.nav.nav-list
-                                li: a(href="#") Account Information Summary
-                                li: a(href="#") Complete Offering Summary
-                                li: a(href="#") Offering Revenue Summary
-                                li: a(href="#") Investment Summary Per Investment
+                        - if (locals.user.isArtist)
+                            li: a(href="/fragments/musicianprofile") Musician
+                        - else
+                            li: a(href="/fragments/musiciansignup") Musician
+                        - if (locals.user.isInvestor)
+                            li: a(href="/fragments/investorprofile") Investor
+                        - else
+                            li: a(href="/fragments/investorsignup") Investor
+
+                        li: a(href="/fragments/financialinfo") Financial Info
                         li: a(href="/profile/genres") Music Genres
                         li: a(href="/profile/bandsearch") Band Search
                 //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!

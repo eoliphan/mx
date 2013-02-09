@@ -22,7 +22,9 @@ var userSchema = new Schema({
     city: String,
     state: String,
     ssn: String,
-    annualIncome: String
+    annualIncome: String,
+    isArtist:{type:Boolean, default: false},
+    isInvestor:{type:Boolean, default: false}
 });
 var User = mongoose.model('User',userSchema);
 // = mongoose.model('User');

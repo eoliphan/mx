@@ -1,0 +1,97 @@
+div.row-fluid
+    .span4
+        form#bandInfo.well
+            label(for="bandName") BandName
+            input#bandName.k-textbox(type="text",name="bandName",placeholder="Band Name", required="", validationMessage="please enter a band name")
+            label(for="phone") Phone #
+            input#phone.k-textbox(type="text",name="phone",placeholder="Phone")
+            label(for="bio") Bio
+            textarea#bio(name="bio",placeholder="Bio")
+            button#submitBasic.btn.btn-primary Update Band Information
+        .bandformstatus
+        .well
+            b Pending Offerings
+            select(multiple="multiple")
+                option Offering 1
+                option Offering 2
+                option Offering 3
+        .well
+            b Active Offerings
+            select(multiple="multiple")
+                option Offering 4
+                option Offering 5
+                option Offering 6
+        .well
+            b Completed Offerings
+            select(multiple="multiple")
+                option Offering 4
+                option Offering 5
+                option Offering 6
+    .span8
+        .row-fluid
+            h4 Current Offering
+        .row-fluid
+            .span6
+                label(for="albumName") Offering Name
+                input#offeringName(name="albumName",placeholder="Offering Name")
+                label(for="albumDescription") Offering Description
+                textarea#offeringDescription(name="offeringDescription",placeholder="Offering Description")
+                label(for="totalOfferingValue") Total $ Value of Offering
+                input#totalOfferingValue(type="text",name="totalOfferingValue",placeholder="Total Offering Value")
+                label(for="pctOfferingToSell") % Of Offering To Sell
+                input#pctOfferingToSell(type="text",name="pctOfferingToSell",placeholder="% To Sell")
+                label(for="amtToRaise") Amt you want to Raise
+                input#amtToRaise(type="text",name="amtToRaise")
+                label(for="numShares") # of Shares
+                input#numShares(type="text",name="numShares")
+                hr
+                img(src="http://placehold.it/100x100")
+                button#submitBasic.btn.btn-small Upload Cover Art (JPG 1000x1000 px)
+                b Tracks
+                select(multiple="multiple")
+                    option Track 1
+                    option Track 2
+                    option Track 3
+                button#submitBasic.btn.btn-small Upload Tracks
+            .span6
+                label(for="genre") Genre
+                input#genre(name="genre",placeholder="Genre")
+                label(for="copyrightYear") Copyright Year
+                textarea#copyrightYear(name="copyrightYear",placeholder="Copyright Year")
+                label(for="upcCode") UPC Code
+                input#upcCode(type="text",name="upcCode",placeholder="Total Offering Value")
+                label
+                input#explicitContent(type="checkbox",name="explicitContent") Explicit Content?
+                label
+                button#submitBasic.btn.btn-primary Update Offering Information
+
+
+script
+    $('#submitBasic').click(function(){
+        var formData = $('#basicInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
+    $('#submitInvestor').click(function(){
+        var formData = $('#investorInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });

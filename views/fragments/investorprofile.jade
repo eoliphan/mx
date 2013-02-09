@@ -1,0 +1,76 @@
+div.row-fluid
+    .span4
+        p: small Investor, Promoter, Music Lover: Before being able to buy into the first musician offering you have to fill out the fields below in order to comply with SEC regulations on equity crowdfunding:
+        form#bandInfo.well
+            label(for="bandName") Company Name
+            input#bandName.k-textbox(type="text",name="bandName",placeholder="Company Name", required="", validationMessage="please enter a band name")
+            label(for="phone") Phone #
+            input#phone.k-textbox(type="text",name="phone",placeholder="Phone")
+            p
+                label What Best Describes You?
+                    input#upTo40K(type="radio",name="investorClass",value='upTo40K')
+                    label(for='upTo40K') Up to $40,000 in annual income
+                    input#btw40and100K(type='radio',name='investorClass',value='btw40and100K')
+                    label(for='btw40and100K') Between $40,000 and $100,000 in annual income
+                    input#moreThan100K(type='radio',name='investorClass',value='moreThan100K')
+                    label(for='moreThan100K') More than $100,000 in annual income
+                    input#moreThan200Kand2mil(type='radio',name='investorClass',value='moreThan200Kand2mil')
+                    label(for='moreThan200Kand2mil') More than $200,000 in annual income for 2 years and/or $1,000,000 in net worth
+            label(for="ssn") SSN
+            input#bandName.k-textbox(type="text",name="bandName",placeholder="SSN", required="", validationMessage="please enter a band name")
+            label - or -
+            label(for="bandName") EIN/Tax ID
+            input#bandName.k-textbox(type="text",name="bandName",placeholder="EIN/Tax ID", required="", validationMessage="please enter a band name")
+
+            button#submitBasic.btn.btn-primary Update Investor Information
+        .bandformstatus
+        .well
+            h4: a Investor Analytics
+    .span8
+        .row-fluid
+            h4 Current Investments
+        .row-fluid
+            .span12
+                .well
+                    h5 Current Invested Offering
+                .well
+                    h5 Snapshot of Investments
+                .well
+                    h5 Reports
+                    ul
+                        li: a Account Information Summary
+                        li: a Investment Summary by Offering
+                        li: a Overall ROI
+                .well
+                    h5 Listen and Buy Music
+
+
+script
+    $('#submitBasic').click(function(){
+        var formData = $('#basicInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
+    $('#submitInvestor').click(function(){
+        var formData = $('#investorInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });

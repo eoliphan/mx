@@ -6,28 +6,9 @@ block content
                 padding-top: 60px;
                 padding-bottom: 40px;
               }
-    div.navbar.navbar-inverse.navbar-fixed-top
-        div.navbar-inner
-            div.container-fluid
-                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.brand(href='#') SoundScry
-                div.nav-collapse.collapse
-                    div.navbar-text.pull-right
-                        a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
-                    form.navbar-form.pull-right
-                        input.span2(type="email",name="username",placeholder="Email",required)
-                        input.span2(type="password",name="password",placeholder="Password")
-                        button.btn(type="submit") Log In
-                    //
-                        p.navbar-text.pull-right Logged in as
-                            a.navbar-link(href='/profile')  Scott Joplin
-                    ul.nav
-                        li.active: a(href='#') Home
-                        li: a(href='#about') About
-                        li: a(href='#contact') Contact
+    include common/topbar
+
+
     div#signUpModal.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signUpModalLabel",aria-hidden="true)
         div.modal-header
             button.close(type="button",data-dismiss="modal",aria-hidden="true") x
@@ -47,13 +28,13 @@ block content
             ul  Keep control of your content by
                 li Choosing sell by album and/or track along with to
                 li The control of pricing your content the way you want to
-            ul  Your investors and fans become your biggest promoters by
+            ul Your investors and fans become your biggest promoters by
                 li Utilizing their online and offline networks to grow interest in your music – We call this Motivated peer-to-peer marketing
                 li By having your fans as your investors they are will benefit from your success and therefore more inclined to aggressively promote your music
             ul Giving you access tools take you through a process that will help you determine:
                 li How much money you need to raise
                 li Will determine what your Offering to fans, promoter, investors, businesses will look like
-            ul Reports that will:
+            ul  Reports that will:
                 li Track the amount of money you have raised per Offering and how many investors you have per offering
                 li Keep track of your income through our site
                 li Tracks listened to
@@ -61,4 +42,9 @@ block content
                 li Merchandising sold
                 li Analytics on investor and listener behavior
                 li Plus much more
+            p Idealistically speaking we want more music to be heard across more audiences, thus expanding creativity and public interaction with a wide variety of music.
+            p To sum it up; we are a music distribution platform that believes in an ownership philosophy which allows venue owners, professional promoters, and listeners to invest in your album giving you upfront money for a percentage of the proceeds that the album generates through music downloads from this site.
+            p: i There are NO up front fees.
+            p: i Our fees are dependent upon your success
+            p: i Try us out. There is nothing to lose.
             p: a.btn.btn-primary.btn-large(role="button",data-toggle="modal",data-href="/signup",data-target="#signUpModal") Sign Up!

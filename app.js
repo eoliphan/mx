@@ -106,6 +106,8 @@ app.post('/login',
                                        failureFlash: true })
 );
 app.get('/artistinfo', demoweb.artistinfo);
+app.get('/investorinfo', demoweb.investorinfo);
+app.get('/musicloverinfo', demoweb.musicloverinfo);
 app.get('/signup', demoweb.signup);
 app.post('/signup',function(req,res){
     console.log(JSON.stringify(req.body));
