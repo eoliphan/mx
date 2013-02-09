@@ -6,34 +6,23 @@ block content
                 padding-top: 60px;
                 padding-bottom: 40px;
               }
-    div.navbar.navbar-inverse.navbar-fixed-top
-        div.navbar-inner
-            div.container-fluid
-                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.brand(href='#') SoundScry
-                div.nav-collapse.collapse
-                    div.navbar-text.pull-right
-                        a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
-                    form.navbar-form.pull-right
-                        input.span2(type="email",name="username",placeholder="Email",required)
-                        input.span2(type="password",name="password",placeholder="Password")
-                        button.btn(type="submit") Log In
-                    //
-                        p.navbar-text.pull-right Logged in as
-                            a.navbar-link(href='/profile')  Scott Joplin
-                    ul.nav
-                        li.active: a(href='#') Home
-                        li: a(href='#about') About
-                        li: a(href='#contact') Contact
+    include common/topbar
     div.container
         div.hero-unit
             h1 Music Lover
-            p SoundScry allows you to control your destiny and keep more money in your pocket by harnessing the power of the social network
+            p SoundScry is a place where you can listen to a bands’ music, purchase it, and promote it.
+            p: i NOTHING NEW YOU SAY -> Here’s how we are different:
             ul
-                li Acquire funds for your albums release and double or triple your royalty
-                li Get an advance on your album without having to pay it back through the sales of your royalties
-                li Get more fans working for you by allowing them to invest in your success doing this by directly investing in your album(s) in which the money goes directly to you, creating motivating peer-to-peer networks both online and offline that drive interest in your music, and benefiting from greatly increased royalty rate.
+                li Music lovers actually invest in the bands’ music by purchasing share from the bands’ Offering (An Offering is when a band currently has share to sell in their album)
+                li Music lovers share in the music and merchandising purchases through the SoundScry platform
+                li Bands price their own music
+                li Band’s receive a much larger share of the royalties
+            p For Example:
+            .well
+                ul
+                    li Band A Offers a 50/50 split to cover $5,000 in expenses
+                    li Band A sells 2,000 albums and merchandise at $10 each through the SoundScry platform for a total of $20,000
+                    li After a commission of 25% has been deducted the Musician and the Investor fans will split $15,000, 50/50 or $7,500 each.
+                    li This means that the musician receives $3.75 per album sold as opposed to the 0.70¢ to $1.00 per download or 0.040¢ per stream.
+
             p: a.btn.btn-primary.btn-large Sign Up!
