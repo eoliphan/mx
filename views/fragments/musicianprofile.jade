@@ -2,11 +2,11 @@ div.row-fluid
     .span4
         form#bandInfo.well
             label(for="bandName") BandName
-            input#bandName.k-textbox(type="text",name="bandName",placeholder="Band Name", required="", validationMessage="please enter a band name")
+            input#bandName.k-textbox(type="text",name="bandName",placeholder="Band Name", required="", validationMessage="please enter a band name",value=locals.user.bandName)
             label(for="phone") Phone #
-            input#phone.k-textbox(type="text",name="phone",placeholder="Phone")
+            input#phone.k-textbox(type="text",name="phone",placeholder="Phone",value=locals.user.bandContactPhone)
             label(for="bio") Bio
-            textarea#bio(name="bio",placeholder="Bio")
+            textarea#bio.span2(name="bio",placeholder="Bio")
             button#submitBasic.btn.btn-primary Update Band Information
         .bandformstatus
         .well

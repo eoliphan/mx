@@ -3,9 +3,9 @@ div.row-fluid
         p: small Investor, Promoter, Music Lover: Before being able to buy into the first musician offering you have to fill out the fields below in order to comply with SEC regulations on equity crowdfunding:
         form#bandInfo.well
             label(for="bandName") Company Name
-            input#bandName.k-textbox(type="text",name="bandName",placeholder="Company Name", required="", validationMessage="please enter a band name")
+            input#bandName.k-textbox(type="text",name="companyName",placeholder="Company Name",  validationMessage="please enter a band name",value=locals.user.companyName)
             label(for="phone") Phone #
-            input#phone.k-textbox(type="text",name="phone",placeholder="Phone")
+            input#phone.k-textbox(type="text",name="phoneNumber",placeholder="Phone",value=locals.user.phoneNumber)
             p
                 label What Best Describes You?
                     input#upTo40K(type="radio",name="investorClass",value='upTo40K')
@@ -17,10 +17,10 @@ div.row-fluid
                     input#moreThan200Kand2mil(type='radio',name='investorClass',value='moreThan200Kand2mil')
                     label(for='moreThan200Kand2mil') More than $200,000 in annual income for 2 years and/or $1,000,000 in net worth
             label(for="ssn") SSN
-            input#bandName.k-textbox(type="text",name="bandName",placeholder="SSN", required="", validationMessage="please enter a band name")
+            input#bandName.k-textbox(type="text",name="ssn",placeholder="SSN",  validationMessage="please enter a band name",value=locals.user.ssn)
             label - or -
             label(for="bandName") EIN/Tax ID
-            input#bandName.k-textbox(type="text",name="bandName",placeholder="EIN/Tax ID", required="", validationMessage="please enter a band name")
+            input#bandName.k-textbox(type="text",name="einTaxID",placeholder="EIN/Tax ID",  validationMessage="please enter a band name",valus=locals.user.einTaxID)
 
             button#submitBasic.btn.btn-primary Update Investor Information
         .bandformstatus

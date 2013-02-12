@@ -20,7 +20,12 @@ div.navbar.navbar-inverse.navbar-fixed-top
                     p.navbar-text.pull-right
                                             a.navbar-link.pull-right(href='/logout') &nbsp;(Logout)
                     p.navbar-text.pull-right Logged in as
-                        a.navbar-link(href='/profile')  #{locals.user.firstName} #{locals.user.lastName}
+                        - if (locals.user.firstName)
+                            a.navbar-link(href='/profile')  #{locals.user.firstName} #{locals.user.lastName}
+                        - else
+                            a.navbar-link(href='/profile')  #{locals.user.email}
+                        - if((locals.user.primaryuse =='artist' && !locals.user.isArtist) || (locals.user.primaryuse =='investor' && !locals.user.isInvestor))
+                            span.badge.badge-warning 1
 
                 - else
                     div.navbar-text.pull-right

@@ -24,7 +24,16 @@ var userSchema = new Schema({
     ssn: String,
     annualIncome: String,
     isArtist:{type:Boolean, default: false},
-    isInvestor:{type:Boolean, default: false}
+    isInvestor:{type:Boolean, default: false},
+    primaryuse: String,
+    bandName:String,
+    bandContactPhone:String,
+    phoneNumber:String,
+    companyName:String,
+    investorClass:String,
+    ssn:String,
+    einTaxID:String
+
 });
 var User = mongoose.model('User',userSchema);
 // = mongoose.model('User');

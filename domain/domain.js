@@ -21,7 +21,8 @@ exports.initDomain = function(callback) {
         sagaHandlersPath: __dirname + '/sagaHandlers',  // optional, only if using sagas
         sagasPath: __dirname + '/sagas',                // optional, only if using sagas
         publishingInterval: 20,                         // optional
-        snapshotThreshold: 10,                          // optional
+        snapshotThreshold: 10,
+        //forkEventDispatching: false,                          // optional
         commandQueue: {                                 // optional
             type: 'mongoDb',                            // example with mongoDb
             dbName: db_name,

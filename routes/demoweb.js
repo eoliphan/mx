@@ -27,7 +27,7 @@ exports.profile = function(req, res){
 
 exports.login = function(req, res){
   console.log("in demoweb");
-  res.render('login', { title: 'Login', flash: req.flash('info') });
+  res.render('login', { title: 'Login', alert: req.flash('info')[0] });
 };
 
 exports.artist = function(req, res){

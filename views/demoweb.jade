@@ -68,28 +68,7 @@ block content
                             }
     include common/topbar
 
-    // signup dialog
-    div#signupDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signupDialogLabel",aria-hidden="true")
-        div.modal-header
-            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
-            h3#signupDialogLabel Join SoundScry!
-        form#signupForm.well(method="POST",action="/signup")
-            div.modal-body
-                label Email
-                input.span3(type="text",placeholder="Email",name="email")
-                label Password
-                input.span3(type="text",placeholder="Password",name="password")
-                label Confirm Password
-                input.span3(type="text",placeholder="Confirm Pass",name="passconfirm")
-                label How do you think you will primarily use SoundScry?
-                a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
-                    select(name="primaryuse")
-                        option(value="musiclover") Music Lover
-                        option(value="artist") Artist
-                        option(value="promoter") Promoter
-            div.modal-footer
-                button.btn(data-dismiss="modal",aria-hidden="true") Close
-                button.btn.btn-primary(id="signupbtn",type="submit") Sign Up!
+
 
 
 
@@ -108,7 +87,7 @@ block content
                                 li Muscians price their own music
                                 li Muscians share their royalties with you!
                                 li Buy music from us, share the artist with your friends, find the next hot bands
-                            a.btn.btn-primary(href="#") Sign Up!
+                            a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                             &nbsp;
                             a.btn(href="/musicloverinfo") Learn More
 
@@ -122,7 +101,7 @@ block content
                                 li Let fans fund your music allowing you both to benefit
                                 li Stay independent, control your content and your pricing
                                 li Expand your audience and your creativity
-                            a.btn.btn-primary(href="#") Sign Up!
+                            a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                             &nbsp;
                             a.btn(href="/artistinfo") Learn More
                 li.span4
@@ -135,7 +114,7 @@ block content
                                 li Invest in music you love
                                 li Use your and others networks to benefit from the music you have invested in
                                 li Support independence by increasing its' exposure and variety
-                            a.btn.btn-primary(href="#") Sign Up!
+                            a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                             &nbsp;
                             a.btn(href="/investorinfo") Learn More
 

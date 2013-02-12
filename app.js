@@ -71,9 +71,10 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser('secret'));
   app.use(express.session({ secret: 'secret', store: store }));
-  app.use(flash());
+
   app.use(passport.initialize());
   app.use(passport.session());
+    app.use(flash());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -114,7 +115,7 @@ app.post('/signup',function(req,res){
 
     var newUser = new userrepo.User(req.body);
     newUser.save();
-    //req.flash('info',"User Created.  Please Log In");
+    req.flash('info',"Account Created. Welcome to SoundSrcy.  Please Log In");
     res.redirect("/login");
 
 });
@@ -206,10 +207,11 @@ app.put('/api/user/:id',function(req,res){
     console.log(req.params.id);
     console.log(req.body);
     var body = req.body;
+    var objId = mongoose.Types.ObjectId(req.params.id);
     delete body._id;
     delete body.email;
 
-    userrepo.User.update({_id:req.params.id},{$set: body},function(err,numAffected,raw){
+    userrepo.User.update({_id:objId},{$set: body},function(err,numAffected,raw){
         if (err)
             res.send(400);
         else

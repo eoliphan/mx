@@ -10,13 +10,22 @@ div.row-fluid
     div.span5
         form#basicInfoForm.well
             label Band Name
-            input.span3(type="test",placeholder="Band Name",name="bandName",readonly="",value="");
-            label Band Contact
-            input#password.span3(placeholder="Band Contact",name="bandContact",value="")
-            label Band Contact Phone
-            input.span3(placeholder="Band Contact Phone",name="lastName",value="")
-
-        button#submitBasic.btn.btn-primary Create Band Information
+            input.span3(type="text",placeholder="Band Name",name="bandName",value=locals.user.bandName);
+            //label Band Contact
+            //input#password.span3(placeholder="Band Contact",name="bandContact",value=locals.user.)
+            label Contact Phone
+            input.span3(placeholder="Band Contact Phone",name="bandContactPhone",value=locals.user.bandContactPhone)
+            label Address1
+            input.span3(placeholder="Address",name="address1",value=locals.user.address1);
+            label Address2
+            input#password.span3(placeholder="Address2",name="address2",value=locals.user.address2)
+            label City
+            input.span3(placeholder="City",name="city",value=locals.user.city)
+            label State
+            input.span3(placeholder="State",name="state",value=locals.user.state)
+            input#uid(type="hidden",name="_id",value=locals.user._id)
+            input#isArtist(type="hidden",name="isArtist",value="true")
+        button#submitBasic.btn.btn-primary Create Musician Information
     div.span6
         div.well
             .row
@@ -40,3 +49,20 @@ div.row-fluid
                         li Reports
                         li Music Purchaes
                         li Other Musicians you have invested in
+script
+    $('#submitBasic').click(function(){
+            var formData = $('#basicInfoForm').serialize();
+
+            var id = $("#uid").val();
+            $.ajax({
+                type:"PUT",
+                url:"/api/user/"+id,
+                data: formData,
+                success: function(data) {
+                    alert("Musician Info Updated. Loading Musician Profile.");
+                    loadProfilePage('/fragments/musicianprofile');
+                    //$('#alert').show();
+                }
+            });
+
+        });

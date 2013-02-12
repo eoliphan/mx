@@ -3,41 +3,64 @@ div#alert.alert(style="display: none")
     p Data Updated
 div.row-fluid
     div.span12
-        h4 Musician Sign-Up
-        p Please complete the following information in order to share your music and make offers on SoundScry
+        h4 Investor Sign-Up
+        p Please complete the following information in order to invest in offers on SoundScry
 div.row-fluid
     div.span1
     div.span5
         form#basicInfoForm.well
-            label Band Name
-            input.span3(type="test",placeholder="Band Name",name="bandName",readonly="",value=locals.user.email);
-            label Band Contact
-            input#password.span3(placeholder="Band Contact",name="bandContact",value=locals.user.firstName)
-            label Band Contact Phone
-            input.span3(placeholder="Last Name",name="lastName",value=locals.user.lastName)
+            label First Name
+            input.span3(type="test",placeholder="First Name",name="firstName",value=locals.user.firstName);
+            label Last Name
+            input#password.span3(placeholder="Last Name",name="lastName",value=locals.user.firstName)
+            label Company Name (if applicable)
+            input.span3(placeholder="Company Name",name="companyName",value=locals.user.companyName)
+            label Phone Number
+            input.span3(placeholder="Phone Number",name="phoneNumber",value=locals.user.phoneNumber)
+            p
+                label What Best Describes You?
+                    input#upTo40K(type="radio",name="investorClass",value='upTo40K')
+                    label(for='upTo40K') Up to $40,000 in annual income
+                    input#btw40and100K(type='radio',name='investorClass',value='btw40and100K')
+                    label(for='btw40and100K') Between $40,000 and $100,000 in annual income
+                    input#moreThan100K(type='radio',name='investorClass',value='moreThan100K')
+                    label(for='moreThan100K') More than $100,000 in annual income
+                    input#moreThan200Kand2mil(type='radio',name='investorClass',value='moreThan200Kand2mil')
+                    label(for='moreThan200Kand2mil') More than $200,000 in annual income for 2 years and/or $1,000,000 in net worth
+            label(for="ssn") SSN
+            input#bandName.k-textbox(type="text",name="ssn",placeholder="SSN",  validationMessage="please enter a band name",value=locals.user.ssn)
+            label - or -
+            label(for="einTaxID") EIN/Tax ID
+            input#bandName.k-textbox(type="text",name="einTaxID",placeholder="EIN/Tax ID",  validationMessage="please enter a band name",valus=locals.user.einTaxID)
+            input#uid(type="hidden",name="_id",value=locals.user._id)
+            input#isInvestor(type="hidden",name="isArtist",value="true")
 
-        button#submitBasic.btn.btn-primary Update Basic Information
-        button.btn Change Password
+        button#submitBasic.btn.btn-primary Create Investor Information
+
     div.span6
         div.well
             .row
                 .span12
-                    h4 What will be created once you sign up?
+                    h4 What can you do once you sign up?
             .row
                 .span12
-                    ul A Public Profile page that will showcase your music. Including your:
-                        li Artwork
-                        li Band Name
-                        li Albums
-                        li Tracks
-                        li Merchandise
-                        li Description
-                        li Storefront
-                    ul A Private Profile page that will be for your eyes only and include:
-                        li Current Offerings and where that stand
-                        li Music Sales
-                        li Merchandising Sales
-                        li Analytics
-                        li Reports
-                        li Music Purchaes
-                        li Other Musicians you have invested in
+                    ul Search and select offerings for investment
+                        li ...
+                    ul ...
+script
+    $('#submitBasic').click(function(){
+            var formData = $('#basicInfoForm').serialize();
+
+            var id = $("#uid").val();
+            $.ajax({
+                type:"PUT",
+                url:"/api/user/"+id,
+                data: formData,
+                success: function(data) {
+                    alert("Investor Info Updated. Loading Investor Profile.");
+                    loadProfilePage('/fragments/investorprofile');
+                    //$('#alert').show();
+                }
+            });
+
+        });

@@ -22,6 +22,28 @@ html
         script(src='/socket.io/socket.io.js')
 
   body
+    // signup dialog
+    div#signupDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signupDialogLabel",aria-hidden="true")
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#signupDialogLabel Join SoundScry!
+        form#signupForm.well(method="POST",action="/signup")
+            div.modal-body
+                label Email
+                input.span3(type="text",placeholder="Email",name="email")
+                label Password
+                input.span3(type="text",placeholder="Password",name="password")
+                label Confirm Password
+                input.span3(type="text",placeholder="Confirm Pass",name="passconfirm")
+                label How do you think you will primarily use SoundScry?
+                a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
+                    select(name="primaryuse")
+                        option(value="musiclover") Music Lover
+                        option(value="artist") Artist
+                        option(value="investor") Investor
+            div.modal-footer
+                button.btn(data-dismiss="modal",aria-hidden="true") Close
+                button.btn.btn-primary(id="signupbtn",type="submit") Sign Up!
     block content
     .footer
         hr

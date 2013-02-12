@@ -9,24 +9,21 @@ block content
               .sidebar-nav {
                 padding: 9px 0;
               }
-    div.navbar.navbar-inverse.navbar-fixed-top
-        div.navbar-inner
-            div.container-fluid
-                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.brand(href='/demoweb') SoundScry
-                div.nav-collapse.collapse
-                    p.navbar-text.pull-right Logged in as
-                        a.navbar-link(href='#')  Scott Joplin
-                    ul.nav
-                        li.active: a(href='#') Home
-                        li: a(href='#about') About
-                        li: a(href='#contact') Contact
+    include common/topbar
+
     div.container-fluid
         div.row-fluid
             div.span3
+                - if(locals.user.primaryuse =='artist' && !locals.user.isArtist)
+                    .container
+                        .alert.span4
+                            button(type="button",data-dismiss="alert") &times;
+                            message Click "Musician" to Complete Signup
+                - if(locals.user.primaryuse =='investor' && !locals.user.isInvestor)
+                    .container
+                        .alert.span4
+                            button(type="button",data-dismiss="alert") &times;
+                            message Click "Investor" to Complete Signup
                 div.well.sidebar-nav
                     ul#sidenav.nav.nav-list
                         li.nav-header Options
@@ -45,7 +42,15 @@ block content
                         li: a(href="/profile/genres") Music Genres
                         li: a(href="/profile/bandsearch") Band Search
                 //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
-                a.btn.btn-primary.span2(id="addProjectBtn",href="/fragments/addoffering") Add Offering!
+                .container
+                    a.btn.btn-primary.span2(id="addProjectBtn",href="/fragments/addoffering") Add Offering!
+                // alerts
+                // musician sign up
+                .container
+                    .row
+                    .row
+
+
             div.span9
                 div#profileContent.hero-unit
                     div.row-fluid
@@ -93,6 +98,21 @@ block content
                     button.btn.btn-primary(id='submitbtn',type='submit') Create!
     script
         //$('#sidenav a').css("border", "2px dotted blue");
+        function loadProfilePage(page) {
+            $.ajax({
+
+             type: "GET",
+             url: page,
+             //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
+             success: function(data) {
+                   // data is ur summary
+                  $('#profileContent').hide();
+                  $('#profileContent').html(data);
+                  $('#profileContent').fadeIn();
+             }
+
+           });
+        }
         $('#sidenav a').click(function(evt){
             evt.preventDefault();
             //alert(evt.target);
