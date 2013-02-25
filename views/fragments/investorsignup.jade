@@ -33,7 +33,7 @@ div.row-fluid
             label(for="einTaxID") EIN/Tax ID
             input#bandName.k-textbox(type="text",name="einTaxID",placeholder="EIN/Tax ID",  validationMessage="please enter a band name",valus=locals.user.einTaxID)
             input#uid(type="hidden",name="_id",value=locals.user._id)
-            input#isInvestor(type="hidden",name="isArtist",value="true")
+            input#isInvestor(type="hidden",name="isInvestor",value="true")
 
         button#submitBasic.btn.btn-primary Create Investor Information
 

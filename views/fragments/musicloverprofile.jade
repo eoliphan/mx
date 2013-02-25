@@ -1,0 +1,113 @@
+div#alert.alert(style="display: none")
+    button(type="button",class="close",data-dismiss="alert") &times;
+    p Data Updated
+div.row-fluid
+    div.span12
+        h4 Game Account
+
+div.row-fluid
+    table#gamegrid
+        thead
+            tr
+                th Artist
+                th Album Name
+                th # Of Chips Bet
+                th # Of Points Gained
+                th Your % Return
+            tbody
+                td(colspan=5)
+div.row-fluid
+    &nbsp;
+div.row-fluid
+    .span4
+        strong Leaderboard
+        br
+        em February, 2013
+        ol
+            li John
+            li Chance
+            li Kyle
+
+    .span6
+        strong Time Remaining
+    //
+        .span3
+            strong Albums In Portfolio
+
+            button.btn.btn-mini.btn-danger Top Movers
+            button.btn.btn-mini.btn-primary Full Portfolio
+            hr
+            #albInPortList
+        .span3
+            strong # of Chips Bet
+            br
+            button.btn.btn-mini.btn-danger Top Movers
+            button.btn.btn-mini.btn-primary Full Portfolio
+            hr
+            #numOfChipsBetList
+        .span3
+            strong # of Points Gained
+            br
+            button.btn.btn-mini.btn-danger Top Movers
+            button.btn.btn-mini.btn-primary Full Portfolio
+            hr
+            #numOfPointsList
+        .span3
+            strong % return/Album
+            br
+            button.btn.btn-mini.btn-danger Top Movers
+            button.btn.btn-mini.btn-primary Full Portfolio
+            hr
+            #retPerAlbum
+
+script#template(type="text/x-kendo-tmpl")
+        li: small ${band}/${album}
+
+script
+    $("#gamegrid").kendoGrid({
+        height:200,
+        columns: [
+            {title: "Band", field: "band"},
+            {title: "Album", field: "name"},
+            {title: "# Of Chips Bet", field: "numChipsBet"},
+            {title: "# of Points Gained", field: "numPointsGained"},
+            {title: "% return", field: "pctReturn"},
+        ],
+        dataSource: {
+            data:[
+                {band:"Moop",name:"Sunrise",numChipsBet:25,numPointsGained:5,pctReturn:65},
+                {band:"Geezer",name:"SkyFall",numChipsBet:10,numPointsGained:25,pctReturn:356},
+                {band:"Stadium",name:"Owl",numChipsBet:34,numPointsGained:44,pctReturn:80},
+                {band:"Avant",name:"Garde",numChipsBet:10,numPointsGained:22,pctReturn:20},
+
+            ]
+        }
+
+    });
+//    $("#albInPortList").kendoListView({
+//        //dataSource: dataSource,
+//        template: kendo.template($("#template").html()),
+//        dataSource: {
+//            data:[
+//                {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+//                {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+//            ],
+//            //transport: {
+//            //    read: '/api/issues'
+//            //},
+//            height:200,
+//            pageSize: 10
+//        }
+//    });
+//    $("#numOfChipsBetList").kendoListView({
+//            //dataSource: dataSource,
+//            template: kendo.template($("#template").html())
+//    });
+//    $("#numOfPointsList").kendoListView({
+//            //dataSource: dataSource,
+//            template: kendo.template($("#template").html())
+//    });
+//    $("#retPerAlbum").kendoListView({
+//            //dataSource: dataSource,
+//            template: kendo.template($("#template").html())
+//    });

@@ -25,7 +25,9 @@ var express = require('express')
     , flash = require('connect-flash')
     , User = require("./repositories/user").User
     , Artist = require("./repositories/artist").Artist,
-    _ = require('underscore')
+    _ = require('underscore'),
+    cart = require("./routes/cart"),
+    game = require("./routes/game")
     ;
 
 
@@ -45,7 +47,15 @@ var issueSchema = new Schema({
 mongoose.model("Issue",issueSchema);
 var Issue = mongoose.model("Issue");
 
+//-- setup dbs
+var connstring = "mongodb://"+conf.get('database:user')+":"+conf.get('database:password')+"@"+
+    conf.get('database:host')+":"+conf.get('database:port')+"/"+conf.get('database:name');
 
+console.log(connstring);
+//var opts ={'user':conf.get('database:user'),'pass':conf.get('database:password')};
+//mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
+mongoose.connect(connstring);
+//-- end setup dbs
 
 
 // - end schema
@@ -92,6 +102,7 @@ function ensureAuthenticated(req, res, next) {
 app.get('/', function(req,res){
     res.redirect("/demoweb");
 });
+
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated,demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated,demoweb.profiledetail);
@@ -129,8 +140,16 @@ app.get('/fragments/:frag',ensureAuthenticated,function(req,res){
 
 });
 app.get('/users', user.list);
-
+// - ecommerce
 app.get('/store',demoweb.store);
+app.post('/cart/item',cart.addToCart);
+app.get('/cart',cart.getCart);
+app.post('/buynow/item',cart.addToCart);
+
+//- game
+app.post('/chips/item',game.addChips);
+
+
 
 app.get('/album/:id',function(req,res){
     // grab the album
@@ -144,19 +163,18 @@ app.get('/album/:id',function(req,res){
                     'albums' : 1
                 }},
                 {$unwind: "$albums"},
-
             function(err,artists){
                             if (!err) {
                                 //TODO: clunky to have to filter here
                                 var match = _.where(artists,{'albums._id':req.params.id});
                                 var artist = _.find(artists,function(element){
                                     return (element.albums._id == req.params.id)
-
                                 });
-                                res.send(artist);
 
-
-
+                                var pageData = {title:"Title",info:artist};
+                                if (req.user)
+                                    pageData.user = req.user;
+                                res.render("albumdetail",pageData);
                             }
                             else
                             {
@@ -164,15 +182,9 @@ app.get('/album/:id',function(req,res){
                                 res.send(404);
                             }
 
-                        });
+            });
 
-//    Artist.findOne({'albums._id':albumId},"albums",function(err,artist){
-//        if(err)
-//            res.send(404);
-//        else
-//            res.send(artist);
-//
-//    });
+
 });
 app.get('/cart',demoweb.cart);
 app.get('/about',demoweb.about);
@@ -190,6 +202,8 @@ app.get('/util/rndsmlcvr/:rnd',function(req,res){
         "http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg"]
     res.redirect(images[Math.floor(Math.random() * images.length)]);
 });
+
+//TODO: Refactor api's to module/route
 // -- api mappings
 app.get('/api/checkemail',function(req,res){
     console.log(req.value);

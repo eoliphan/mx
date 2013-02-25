@@ -3,14 +3,35 @@ var mongoose = require('mongoose')
     , conf = require("../config").conf;
 
 // connect to db
-var connstring = "mongodb://"+conf.get('database:user')+":"+conf.get('database:password')+"@"+
-    conf.get('database:host')+":"+conf.get('database:port')+"/"+conf.get('database:name');
 
-console.log(connstring);
-//var opts ={'user':conf.get('database:user'),'pass':conf.get('database:password')};
-//mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
-mongoose.connect(connstring);
+var lineItemSchema = new Schema({
 
+    itemId:Schema.Types.ObjectId,
+    itemVersion:String,
+    itemType:String,
+    name:String,
+    price:Number,
+    quantity:Number
+});
+//--
+var orderSchema = new Schema({
+    userId:Schema.Types.ObjectId,
+    orderDate:Date,
+    items:[lineItemSchema]
+
+});
+
+var Order = mongoose.model('Order',orderSchema);
+exports.Order = Order;
+
+//-- game stuff
+var chipWagerSchema = new Schema({
+    userId:Schema.Types.ObjectId,
+    orderDate:Date,
+    chipCount:Number,
+    points:Number,
+    itemId:Schema.Types.ObjectId
+});
 
 var userSchema = new Schema({
     firstName: String,
@@ -32,19 +53,26 @@ var userSchema = new Schema({
     companyName:String,
     investorClass:String,
     ssn:String,
-    einTaxID:String
+    einTaxID:String,
+    chipWagers:[chipWagerSchema],
+    orders:[orderSchema]
 
 });
 var User = mongoose.model('User',userSchema);
-// = mongoose.model('User');
-
 
 exports.User = User;
-exports.save=function(user) {
 
-};
 
-exports.findOne=function(id) {
+var cartSchema = new Schema({
+    sessionId:String,
+    userId:Schema.Types.ObjectId,
+    items:[lineItemSchema],
+    active:Boolean
+});
+var Cart = mongoose.model('Cart',cartSchema);
+exports.Cart = Cart;
 
-};
+
+
+
 

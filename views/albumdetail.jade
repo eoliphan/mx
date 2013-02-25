@@ -1,0 +1,73 @@
+extends layout
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+    include common/topbar
+    .container
+            .hero-unit
+                h2 #{locals.info.albums.name}
+                h4 Artist: #{locals.info.artistName}
+                .row-fluid
+                    .span4
+                        img(src="/util/rndsmlcvr/1",width=300,height=300)
+                    .span8
+                        h4 Genre: <em>#{locals.info.albums.genre}</em>
+                        h4 Bio: <em>#{locals.info.bio}</em>
+                        h4 # of Tracks: <em>#{locals.info.albums.songs.length}</em>
+                        h4 Release Date: <em>#{locals.info.albums.releaseDate.toString('yyyy-MM-dd')}</em>
+                        h4 Price: <em> $ #{parseFloat(locals.info.albums.price).toFixed(2)}</em>
+                        hr
+                        - if (locals.user)
+                            button#addToCart.btn.btn-primary Add To Cart
+                            button#buyNow.btn Buy Now
+                            button#investChips.btn.btn-danger Invest 10 Chips!
+                        - else
+                            button#addToCart.btn.btn-primary.disabled Add To Cart
+                            button#buyNow.btn.disabled  Buy Now
+                            button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
+
+            hr
+    script
+        $('#addToCart').click(function(){
+            //var formData = $('#investorInfoForm').serialize();
+            //var id = $("#uid").val();
+            $.ajax({
+                type:"POST",
+                url:"/cart/item",
+                data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
+                success: function(data) {
+                    //alert(sent);
+                    $('#alert').show();
+                }
+            });
+
+        });
+        $('#buyNow').click(function(){
+            //var formData = $('#investorInfoForm').serialize();
+            //var id = $("#uid").val();
+            $.ajax({
+                type:"POST",
+                url:"/buynow/item",
+                data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
+                success: function(data) {
+                    //alert(sent);
+                    $('#alert').show();
+                }
+            });
+
+        });
+        $('#investChips').click(function(){
+            $.ajax({
+                type:"POST",
+                url:"/chips/item",
+                data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
+                success: function(data) {
+                    //alert(sent);
+                    $('#alert').show();
+                }
+            });
+
+        });

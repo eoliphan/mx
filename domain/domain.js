@@ -22,7 +22,7 @@ exports.initDomain = function(callback) {
         sagasPath: __dirname + '/sagas',                // optional, only if using sagas
         publishingInterval: 20,                         // optional
         snapshotThreshold: 10,
-        //forkEventDispatching: false,                          // optional
+        forkEventDispatching: false,                          // optional
         commandQueue: {                                 // optional
             type: 'mongoDb',                            // example with mongoDb
             dbName: db_name,

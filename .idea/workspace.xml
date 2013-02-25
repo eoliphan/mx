@@ -2,25 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/cart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/game.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/albumdetail.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/fragments/musicloverprofile.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/domain.js" afterPath="$PROJECT_DIR$/domain/domain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositories/artist.js" afterPath="$PROJECT_DIR$/repositories/artist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositories/cart.js" afterPath="$PROJECT_DIR$/repositories/cart.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositories/user.js" afterPath="$PROJECT_DIR$/repositories/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/demoweb.js" afterPath="$PROJECT_DIR$/routes/demoweb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/artistinfo.jade" afterPath="$PROJECT_DIR$/views/artistinfo.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/common/topbar.jade" afterPath="$PROJECT_DIR$/views/common/topbar.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demoweb.jade" afterPath="$PROJECT_DIR$/views/demoweb.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/fragments/investorprofile.jade" afterPath="$PROJECT_DIR$/views/fragments/investorprofile.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/fragments/investorsignup.jade" afterPath="$PROJECT_DIR$/views/fragments/investorsignup.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/fragments/musicianprofile.jade" afterPath="$PROJECT_DIR$/views/fragments/musicianprofile.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/fragments/musiciansignup.jade" afterPath="$PROJECT_DIR$/views/fragments/musiciansignup.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.jade" afterPath="$PROJECT_DIR$/views/login.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/musicloverinfo.jade" afterPath="$PROJECT_DIR$/views/musicloverinfo.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.jade" afterPath="$PROJECT_DIR$/views/profile.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/promoterinfo.jade" afterPath="$PROJECT_DIR$/views/promoterinfo.jade" />
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,13 +33,22 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.4380826">
+    <splitter split-orientation="vertical" split-proportion="0.4587946">
       <split-first>
         <leaf>
-          <file leaf-file-name="musicianprofile.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/fragments/musicianprofile.jade">
+          <file leaf-file-name="topbar.jade" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="23" column="13" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0">
+                <state line="32" column="78" selection-start="1622" selection-end="1653" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/layout.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="59" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -60,10 +63,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="profile.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/profile.jade">
+          <file leaf-file-name="store.jade" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/store.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="55" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+                <state line="43" column="60" selection-start="1229" selection-end="1718" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -72,52 +75,16 @@
           <file leaf-file-name="acctinfo.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/fragments/acctinfo.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="69" selection-start="656" selection-end="713" vertical-scroll-proportion="0.0">
+                <state line="8" column="13" selection-start="0" selection-end="226" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="musiciansignup.jade" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/fragments/musiciansignup.jade">
+          <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/game.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="34" selection-start="2739" selection-end="2739" vertical-scroll-proportion="0.45564517">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="demoweb.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cart.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/cart.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="26" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="domain.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/domain/domain.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="10" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="artistinfo.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/artistinfo.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="97" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+                <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -126,7 +93,34 @@
           <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/repositories/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="19" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
+                <state line="5" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="demoweb.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="19" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -136,46 +130,37 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="topbar.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
+          <file leaf-file-name="eventStore.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/lib/eventStore.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="30" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
+                <state line="96" column="58" selection-start="3286" selection-end="3286" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="investorsignup.jade" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/fragments/investorsignup.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="59" column="66" selection-start="3020" selection-end="3020" vertical-scroll-proportion="0.7670807">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="investorprofile.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/fragments/investorprofile.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="26" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="217" column="0" selection-start="6651" selection-end="6651" vertical-scroll-proportion="0.0">
+                <state line="485" column="0" selection-start="14261" selection-end="14261" vertical-scroll-proportion="0.33333334">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/layout.jade">
+          <file leaf-file-name="cart.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/repositories/cart.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="57" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+                <state line="12" column="35" selection-start="109" selection-end="591" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="artist.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/repositories/artist.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="35" selection-start="109" selection-end="591" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -184,43 +169,54 @@
           <file leaf-file-name="demoweb.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="70" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="0.0">
+                <state line="79" column="68" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="artist.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/artist.jade">
+          <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="15" selection-start="48" selection-end="143" vertical-scroll-proportion="0.0">
+                <state line="8" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <marker date="1361744695000" expanded="true" signature="756:6149" placeholder="{&quot;test&quot;: &quot;mocha&quot;...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="38" column="21" selection-start="944" selection-end="951" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/login.jade">
+          <file leaf-file-name="storage.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/eventstore.mongoDb/storage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="47" selection-start="2246" selection-end="2344" vertical-scroll-proportion="0.0">
+                <state line="93" column="0" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="promoterinfo.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/promoterinfo.jade">
+          <file leaf-file-name="eventDispatcher.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/lib/eventDispatcher.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="98" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.0">
+                <state line="19" column="42" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="about.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/about.jade">
+          <file leaf-file-name="domain.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/domain/domain.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+                <state line="18" column="45" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -241,31 +237,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/domain/domain.js" />
-        <option value="$PROJECT_DIR$/views/artistinfo.jade" />
-        <option value="$PROJECT_DIR$/views/musicloverinfo.jade" />
-        <option value="$PROJECT_DIR$/views/promoterinfo.jade" />
-        <option value="$PROJECT_DIR$/views/demoweb.jade" />
-        <option value="$PROJECT_DIR$/routes/demoweb.js" />
-        <option value="$PROJECT_DIR$/views/login.jade" />
-        <option value="$PROJECT_DIR$/views/layout.jade" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/fragments/musicianprofile.jade" />
-        <option value="$PROJECT_DIR$/views/common/topbar.jade" />
-        <option value="$PROJECT_DIR$/views/profile.jade" />
-        <option value="$PROJECT_DIR$/views/fragments/investorprofile.jade" />
-        <option value="$PROJECT_DIR$/repositories/user.js" />
         <option value="$PROJECT_DIR$/views/fragments/musiciansignup.jade" />
+        <option value="$PROJECT_DIR$/views/profile.jade" />
         <option value="$PROJECT_DIR$/views/fragments/investorsignup.jade" />
+        <option value="$PROJECT_DIR$/views/fragments/musicloverprofile.jade" />
+        <option value="$PROJECT_DIR$/routes/game.js" />
+        <option value="$PROJECT_DIR$/routes/cart.js" />
+        <option value="$PROJECT_DIR$/views/albumdetail.jade" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/views/layout.jade" />
+        <option value="$PROJECT_DIR$/domain/domain.js" />
+        <option value="$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/lib/eventStore.js" />
+        <option value="$PROJECT_DIR$/views/demoweb.jade" />
+        <option value="$PROJECT_DIR$/repositories/user.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/repositories/artist.js" />
+        <option value="$PROJECT_DIR$/repositories/cart.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
-    <option name="y" value="54" />
-    <option name="width" value="1419" />
-    <option name="height" value="1080" />
+    <option name="x" value="2" />
+    <option name="y" value="22" />
+    <option name="width" value="1276" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -315,7 +311,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,70 +353,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="repositories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -442,6 +373,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -676,20 +608,24 @@
       <created>1360428192189</created>
       <updated>1360428192189</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="MUSX-1,MUSX-2 updates to login and acct enhancement">
+      <created>1360701821491</created>
+      <updated>1360701821491</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="54" width="1419" height="1080" extended-state="0" />
+    <frame x="2" y="22" width="1276" height="1174" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33922997" sideWeight="0.49438202" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23233795" sideWeight="0.40145984" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2398374" sideWeight="0.24406458" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23233795" sideWeight="0.3096976" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28154328" sideWeight="0.5639374" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2398374" sideWeight="0.52136755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22792023" sideWeight="0.999187" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20049658" sideWeight="0.1994302" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2867996" sideWeight="0.42962283" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26305792" sideWeight="0.9968304" order="2" side_tool="false" content_ui="tabs" />
@@ -739,7 +675,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="MUSX-1 updates to info pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="MUSX-1,MUSX-2 updates to login and acct enhancement" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -772,6 +708,7 @@
     <MESSAGE value="MUSX-1 update for info screens" />
     <MESSAGE value="MUSX-1 toolbar, fix node_modules" />
     <MESSAGE value="MUSX-1 updates to info pages" />
+    <MESSAGE value="MUSX-1,MUSX-2 updates to login and acct enhancement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -798,17 +735,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>213</line>
+          <line>227</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>241</line>
+          <line>254</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>201</line>
+          <line>214</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -818,7 +755,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>115</line>
+          <line>125</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -828,127 +765,169 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>215</line>
+          <line>229</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>217</line>
+          <line>231</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/cart.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/cart.js</url>
+          <line>36</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/cart.js</url>
+          <line>14</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/cart.js</url>
+          <line>30</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/cqrs-domain/lib/domain.js</url>
+          <line>77</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/cqrs-domain/lib/domain.js</url>
+          <line>54</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/domain/domain.js</url>
+          <line>17</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app.js</url>
+          <line>485</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="61" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Library/Caches/WebIde50/extLibs/nodejs-v0.8.2-src/core-modules-sources/lib/timers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="0" selection-start="3451" selection-end="3451" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/nodeEventedCommand/lib/hub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/domain/domain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="10" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+        <state line="18" column="45" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/artistinfo.jade">
+    <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="97" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+        <state line="8" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1361744695000" expanded="true" signature="756:6149" placeholder="{&quot;test&quot;: &quot;mocha&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/lib/eventDispatcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="42" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/data/artists.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/eventstore.mongoDb/storage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="21" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
+        <state line="93" column="0" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+    <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/node_modules/eventstore/lib/eventStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="57" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+        <state line="96" column="58" selection-start="3286" selection-end="3286" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="21" selection-start="944" selection-end="951" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="1957" selection-end="1957" vertical-scroll-proportion="0.0">
+        <state line="79" column="68" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/artist.jade">
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="48" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="47" selection-start="2246" selection-end="2344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/promoterinfo.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="98" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/about.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.0">
+        <state line="4" column="59" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/repositories/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="19" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/demoweb.js">
+    <entry file="file://$PROJECT_DIR$/views/fragments/musicloverprofile.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
+        <state line="26" column="19" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repositories/artist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="35" selection-start="109" selection-end="591" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repositories/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="35" selection-start="109" selection-end="591" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="0" selection-start="6651" selection-end="6651" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/fragments/investorprofile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="26" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/fragments/investorsignup.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="66" selection-start="3020" selection-end="3020" vertical-scroll-proportion="0.7670807">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/fragments/musiciansignup.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="34" selection-start="2739" selection-end="2739" vertical-scroll-proportion="0.45564517">
+        <state line="485" column="0" selection-start="14261" selection-end="14261" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
