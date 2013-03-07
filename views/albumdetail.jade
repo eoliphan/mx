@@ -34,7 +34,17 @@ block content
         $('#addToCart').click(function(){
             //var formData = $('#investorInfoForm').serialize();
             //var id = $("#uid").val();
-            $.ajax({
+            var newUuid = uuid.v4();
+            command = {
+                id: newUuid,
+                command: "addItemToOrder",
+                payload: {
+                    itemType:"album",
+                    itemId: "#{locals.info.albums._id}"
+                }
+            };
+            socket.emit("command",command);
+            /*$.ajax({
                 type:"POST",
                 url:"/cart/item",
                 data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
@@ -42,7 +52,7 @@ block content
                     //alert(sent);
                     $('#alert').show();
                 }
-            });
+            });*/
 
         });
         $('#buyNow').click(function(){
@@ -60,10 +70,12 @@ block content
 
         });
         $('#investChips').click(function(){
+            var newUuid = uuid.v4();
             $.ajax({
                 type:"POST",
-                url:"/chips/item",
-                data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
+                url:"/user/chips/item",
+                data: {id:newUuid,command:"addUserWager",payload:{itemId: "#{locals.info.albums._id}",chips:10}},
+                //data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
                 success: function(data) {
                     //alert(sent);
                     $('#alert').show();

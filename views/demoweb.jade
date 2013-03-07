@@ -231,8 +231,8 @@ block content
                 //$('#signupForm')[0].reset();
             });
 
-            //var socket = io.connect();
-            //socket.emit('newIssue',{name:"test"});
+            var socket = io.connect();
+            socket.emit('newIssue',{name:"test"});
             // handle submission form
             //$('#newProjectForm').submit(function(){
                 //$('#addOfferDialog').remove();

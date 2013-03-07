@@ -28,6 +28,8 @@ var express = require('express')
     _ = require('underscore'),
     cart = require("./routes/cart"),
     game = require("./routes/game")
+    , logger = require("winston")
+
     ;
 
 
@@ -56,6 +58,10 @@ console.log(connstring);
 //mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
 mongoose.connect(connstring);
 //-- end setup dbs
+
+var evtcmdbus = require('./evtcmdbus')
+    , evthandlers = require("./loadeventhandlers")
+;
 
 
 // - end schema
@@ -87,11 +93,31 @@ app.configure(function(){
     app.use(flash());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+
+  //-- custom middleware
+  app.use(function(req,res,next){
+    if (req.user)
+        res.locals.user=req.user;
+    next();
+  });
 });
 
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
+
+//-- domain
+// init domain
+domain.initDomain();
+// send message to domain
+
+
+for (var i = 0; i < 1;i++){
+    var newUuid = uuid.v4();
+    var objId = uuid.v4();
+//    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
+    domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"50f845e01d3435931b000001",email:"e@e.com",password:objId}});
+}
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
@@ -144,10 +170,11 @@ app.get('/users', user.list);
 app.get('/store',demoweb.store);
 app.post('/cart/item',cart.addToCart);
 app.get('/cart',cart.getCart);
+app.get('/api/cart',cart.getCartData);
 app.post('/buynow/item',cart.addToCart);
 
 //- game
-app.post('/chips/item',game.addChips);
+app.post('/user/chips/item',game.addChips);
 
 
 
@@ -422,19 +449,42 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 // setup socket io
 var io = require('socket.io').listen(server);
 io.set('log level',1);
-io.set("authorization", passportSocketIo.authorize({
-    sessionKey:    'connect.sid',      //the cookie where express (or connect) stores its session id.
-    sessionStore:  store,     //the session store that express uses
-    sessionSecret: "secret", //the session secret to parse the cookie
+//io.set("authorization", passportSocketIo.authorize({
+//    //sessionKey:    'connect.sid',      //the cookie where express (or connect) stores its session id.
+//    store:  store,     //the session store that express uses
+//    secret: "secret", //the session secret to parse the cookie
+//    fail: function(data, accept) {     // *optional* callbacks on success or fail
+//      accept(null, false);             // second param takes boolean on whether or not to allow handshake
+//    },
+//    success: function(data, accept) {
+//      accept(null, true);
+//    }
+//}));
+
+//todo: must add filter or something for messages that require auth (whitelisitng?)
+io.of('/auth').authorization(passportSocketIo.authorize({
+    //sessionKey:    'connect.sid',      //the cookie where express (or connect) stores its session id.
+    store:  store,     //the session store that express uses
+    secret: "secret", //the session secret to parse the cookie
     fail: function(data, accept) {     // *optional* callbacks on success or fail
       accept(null, false);             // second param takes boolean on whether or not to allow handshake
     },
     success: function(data, accept) {
       accept(null, true);
     }
-  }));
+})).on('connection',function(socket){
+        logger.info(socket);
+        socket.on('command',function(data){
+           logger.debug(data);
+        });
+
+});
 
 io.sockets.on('connection',function(socket){
+    evtcmdbus.addEventSink(function(event){
+       socket.emit(event.event,event.payload);
+    });
+
     socket.on('message',function(data){
         console.log('received generic:');
                console.log(data);
@@ -445,12 +495,13 @@ io.sockets.on('connection',function(socket){
 
     });
     socket.on('command',function(data){
-           console.log('received command:');
-           console.log(data);
-           var commandData = querystring.parse(data.data);
-           var newUuid = uuid.v4();
-           console.log(commandData);
-           domain.domain.handle({id:newUuid,command:data.command,payload:commandData});
+           logger.debug('received command:' + JSON.stringify(data));
+           evtcmdbus.emitCommand(data);
+           //logger.debug(data);
+           //var commandData = querystring.parse(data.data);
+           //var newUuid = uuid.v4();
+           //console.log(commandData);
+           //domain.domain.handle({id:newUuid,command:data.command,payload:commandData});
 
 
     });
@@ -482,16 +533,4 @@ io.sockets.on('connection',function(socket){
 
 });
 
-// init domain
-domain.initDomain();
-// send message to domain
 
-domain.domain.on('event',function(evt){
-   console.log('event: ' + JSON.stringify(evt));
-});
-//for (var i = 0; i < 10;i++){
-//    var newUuid = uuid.v4();
-//    var objId = uuid.v4();
-//    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
-//    domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"c586c0ee-b7a3-482f-85a4-3d585209d729",email:"e@e.com",password:objId}});
-//}

@@ -11,26 +11,34 @@ var mongoose = require('mongoose')
 ////mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
 //if (!mongoose.connection.readyState)
 //    mongoose.connect(connstring);
+var lineItemSchema = new Schema({
 
-
-var cartItemSchema = new Schema({
-    itemId:String,
+    itemId:Schema.Types.ObjectId,
+    itemVersion:String,
     itemType:String,
     name:String,
+    price:Number,
+    quantity:Number
+});
+//--
+var orderSchema = new Schema({
+    sessionId:String,
+    type:{type:String,enum:['cart','order']},
+    userId:Schema.Types.ObjectId,
+    orderDate:Date,
+    items:[lineItemSchema]
 
-    price:Number
 });
 
-var CartItem = mongoose.model('cartItem',cartItemSchema);
-// = mongoose.model('User');
+var Order = mongoose.model('Order',orderSchema);
+exports.Order = Order;
 
-
-exports.CartItem = CartItem;
-exports.save=function(user) {
-
-};
-
-exports.findOne=function(id) {
-
-};
+var cartSchema = new Schema({
+    sessionId:String,
+    userId:Schema.Types.ObjectId,
+    items:[lineItemSchema],
+    active:Boolean
+});
+var Cart = mongoose.model('Cart',cartSchema);
+exports.Cart = Cart;
 

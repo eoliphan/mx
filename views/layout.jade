@@ -20,6 +20,19 @@ html
         //script(src='/javascripts/kendo/kendo.dataviz.min.js')
         script(src='/javascripts/jqBootstrapValidation.js')
         script(src='/socket.io/socket.io.js')
+        script(src='/javascripts/uuid.js')
+        script(src='/javascripts/underscore.js')
+        script(src='/javascripts/backbone.js')
+        script(src='/javascripts/backboneCQRS-0.5.5.js')
+        script
+            if (!this.uuid){
+                uuid = require('/javascripts/uuid.js');
+            }
+            //setup socket.io
+            socket = io.connect();
+
+
+
 
   body
     // signup dialog

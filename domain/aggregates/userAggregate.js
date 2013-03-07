@@ -21,6 +21,11 @@ module.exports = base.extend({
 
         this.checkBusinessRules(callback);
     },
+    addUserWager:function(data,callback) {
+        this.apply(this.toEvent('userWagerAdded', data));
+
+        this.checkBusinessRules(callback);
+    },
 
 
     // Events
@@ -36,6 +41,9 @@ module.exports = base.extend({
 
     userPasswordChanged: function(data) {
         this.set(data);
+    },
+    userWagerAdded:function(data) {
+        //this.set(data);
     }
 
 });

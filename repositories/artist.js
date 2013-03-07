@@ -12,7 +12,9 @@ var mongoose = require('mongoose')
 //if (!mongoose.connection.readyState)
 //    mongoose.connect(connstring);
 
-
+function getPrice(num) {
+    return parseFloat(num).toFixed(2);
+}
 var song = new Schema({
     name:String,
     genre:String,
@@ -22,7 +24,7 @@ var song = new Schema({
 var album = new Schema({
     name:String,
     genre:String,
-    price:Number,
+    price:{type:Number,get:getPrice},
     releaseDate:Date,
     songs:[song]
 });

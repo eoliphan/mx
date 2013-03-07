@@ -13,7 +13,8 @@ div.navbar.navbar-inverse.navbar-fixed-top
                     li.active: a(href='/') Home
                         i.icon-home.icon-white
                     li: a(href='/store') Store
-                    li: a(href='/cart') Cart
+                    li: a(href='/cart') Cart &nbsp;
+                        span.badge#cartCount 0
                     li: a(href='/about') About
                     li: a(href='/contact') Contact
                 - if (locals.user)
@@ -34,3 +35,10 @@ div.navbar.navbar-inverse.navbar-fixed-top
                         input.span2(type="email",name="email",placeholder="Email",required)
                         input.span2(type="password",name="password",placeholder="Password")
                         button.btn(type="submit") Log In
+    script
+        socket.on('itemAddedToOrder',function(data){
+            //alert('update: '+JSON.stringify(data));
+            // increment
+            var cartBadge = $('#cartCount');
+            cartBadge.text(parseInt(cartBadge.text()) + 1);
+        });

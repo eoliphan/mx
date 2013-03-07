@@ -1,12 +1,13 @@
-var Cart  = require("../repositories/user").Cart,
+var Order  = require("../repositories/order").Order,
     Artist = require("../repositories/artist").Artist,
     mongoose = require('mongoose'),
+    logger = require("../logger"),
     _ = require('underscore');
 
 exports.addToCart = function(req,res){
     // do we have a cart?
     if (!req.session.cart) {
-        req.session.cart = new Cart({sessionId:req.session.id, items:[]});
+        req.session.cart = new Order({sessionId:req.session.id, items:[],status:"order"});
     }
     var itemInfo = req.body;
     var cart = req.session.cart;
@@ -34,11 +35,11 @@ exports.addToCart = function(req,res){
                                     name: artist.albums.name,
                                     price: artist.albums.price
                                 });
-                                console.log(JSON.stringify(cart));
+                                logger.debug(JSON.stringify(cart));
                             }
                             else
                             {
-                                console.log(err);
+                                loger.error(err);
                                 res.send(404);
                             }
     });
@@ -47,6 +48,17 @@ exports.addToCart = function(req,res){
 };
 
 exports.getCart = function(req,res) {
+    res.render("cart",{title:"Cart"});
+//    if(req.session.cart) {
+//        res.send(req.session.cart);
+//    }
+//    else
+//        res.send(404);
+
+};
+
+exports.getCartData = function(req,res) {
+
     if(req.session.cart) {
         res.send(req.session.cart);
     }

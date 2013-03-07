@@ -27,7 +27,7 @@ block content
             height: 200,
             columns: [
                 {title: " ", command: {text: "Delete", click: deleteItem}}
-                {title: "Item Name", field: "itemName"},
+                {title: "Item Name", field: "name"},
                 {title: "Price", field: "price"}
             ],
             dataSource: {
@@ -35,9 +35,9 @@ block content
                 //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
                 //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
                 //],
-                //transport: {
-                //    read: '/api/issues'
-                //},
+                transport: {
+                    read: '/api/cart'
+                },
                 pageSize: 10
             }
         });

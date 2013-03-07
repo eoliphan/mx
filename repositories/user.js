@@ -4,25 +4,7 @@ var mongoose = require('mongoose')
 
 // connect to db
 
-var lineItemSchema = new Schema({
 
-    itemId:Schema.Types.ObjectId,
-    itemVersion:String,
-    itemType:String,
-    name:String,
-    price:Number,
-    quantity:Number
-});
-//--
-var orderSchema = new Schema({
-    userId:Schema.Types.ObjectId,
-    orderDate:Date,
-    items:[lineItemSchema]
-
-});
-
-var Order = mongoose.model('Order',orderSchema);
-exports.Order = Order;
 
 //-- game stuff
 var chipWagerSchema = new Schema({
@@ -54,8 +36,9 @@ var userSchema = new Schema({
     investorClass:String,
     ssn:String,
     einTaxID:String,
-    chipWagers:[chipWagerSchema],
-    orders:[orderSchema]
+    //chipWagers:[chipWagerSchema],
+    //orders:[orderSchema],
+    friends:[Schema.Types.ObjectId]
 
 });
 var User = mongoose.model('User',userSchema);
@@ -63,14 +46,7 @@ var User = mongoose.model('User',userSchema);
 exports.User = User;
 
 
-var cartSchema = new Schema({
-    sessionId:String,
-    userId:Schema.Types.ObjectId,
-    items:[lineItemSchema],
-    active:Boolean
-});
-var Cart = mongoose.model('Cart',cartSchema);
-exports.Cart = Cart;
+
 
 
 
