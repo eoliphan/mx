@@ -6,15 +6,45 @@ block content
                 padding-bottom: 40px;
               }
     include common/topbar
+
     .container
-        table#grid
-            thead
-                tr
-                    th &nbsp;
-                    th Item
-                    th Price
-            tbody
-                td(colspan=3)
+        .row-fluid
+            .span12
+                table#grid
+                    thead
+                        tr
+                            th &nbsp;
+                            th Item
+                            th Type
+                            th Price
+                    tbody
+                        td(colspan=3)
+        .row-fluid
+            .span9 &nbsp;
+            .span2
+                input#total(type="text",width=50)
+            .span1
+        .row-fluid
+            .span9 &nbsp;
+            .span3
+                button#checkOutBtn.btn.btn-primary Checkout!
+
+        #checkOut.hide
+            .row-fluid
+                .span2
+                .span10
+                    hr
+                    form#checkOutForm
+                        legend Enter Credit Card Info
+                        fieldset
+                            label Credit Card
+                            input#ccnum(type="text",name='ccnum',placeholder="Credit Card")
+                            label Security Code
+                            input#seccode(type="text",name='seccode',placeholder="Sec Code")
+                            label Name on Card
+                            input#nameOnCard(type="text",name='nameOnCard',placeholder="Name On Card")
+                        button#buyButton.btn(type='button') Buy!
+
 
 
     script#template(type="text/x-kendo-tmpl")
@@ -23,29 +53,68 @@ block content
             .h3 ${albums.name}
             p ${artistName} $${albums.price} ${albums.genre}
     script
+        var dataSource = new  kendo.data.DataSource({
+            //data:[
+            //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+            //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+            //],
+            transport: {
+                read: '/api/cart'
+            },
+            schema: {
+                data: function(response){
+                    return response.items;
+                }
+            },
+            aggregate: [
+                {field:"price",aggregate:"sum"}
+             ],
+            pageSize: 10,
+            change: function(e) {
+                var aggr = dataSource.aggregates();
+                var total = aggr.price.sum;
+                $("#total").val(parseFloat(total).toFixed(2));
+            }
+        });
         $("#grid").kendoGrid({
             height: 200,
             columns: [
-                {title: " ", command: {text: "Delete", click: deleteItem}}
+                {title: " ", command: {text: "Delete", click: deleteItem},width:100},
                 {title: "Item Name", field: "name"},
-                {title: "Price", field: "price"}
+                {title: "Type", field: "itemType"},
+                {title: "Price", field: "price",width:100,format:"{0:c}"}
             ],
-            dataSource: {
-                //data:[
-                //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
-                //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
-                //],
-                transport: {
-                    read: '/api/cart'
-                },
-                pageSize: 10
-            }
+            dataSource: dataSource
         });
         function deleteItem(e) {
-            e.preventDefault();
-            window.location = "/artist";
+            //e.preventDefault();
+            ///window.location = "/artist";
         };
 
+        $('#checkOutBtn').click(function(event){
+            $('#checkOutBtn').attr('disabled','disabled');
+            $('#checkOut').show();
+        });
+
+        $('#buyButton').click(function(event){
+            $('#buyButton').attr('disabled','disabled');
+            var newUuid = uuid.v4();
+            command = {
+                id: newUuid,
+                command: "buyOrder",
+                payload: {
+                    ccnum: $('#ccnum').val(),
+                    seccode: $('#seccode').val(),
+                    nameOnCard: $('#nameOnCard').val()
+                }
+            };
+            socket.emit("command",command);
+        });
+        socket.on('orderBought',function(data){
+            alert('Thank You For Your Purchase!');
+            window.location="/";
+
+        });
 
     style(scoped="")
         #listView {

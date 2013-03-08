@@ -59,13 +59,39 @@ exports.getCart = function(req,res) {
 
 exports.getCartData = function(req,res) {
 
-    if(req.session.cart) {
-        res.send(req.session.cart);
-    }
-    else
-        res.send(404);
+    Order.findOne({sessionId:req.session.id},function(err,order){
+        if (err) {
+            res.send(400);
+        } else {
+            if (order) {
+                res.send(order);
+            } else {
+                res.send({});
+            }
+        }
+
+
+
+    });
+
+
 
 };
+
+exports.getCartSize = function(req,res) {
+    Order.findOne({sessionId:req.session.id}, function(err,order){
+        if(err) {
+            res.send(404);
+
+        } else {
+            var ret = {
+                cartSize: (!order ? 0 : order.items.length)
+            };
+            res.send(ret);
+        }
+
+    });
+}
 
 exports.buyNow = function(req,res) {
 

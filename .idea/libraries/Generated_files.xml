@@ -3,10 +3,12 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/eventhandlers/order.js" />
+        <item url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/eventhandlers/order.js" />
+      <root url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
     </CLASSES>
     <SOURCES />
   </library>

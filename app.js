@@ -24,11 +24,13 @@ var express = require('express')
     , userrepo = require("./repositories/user")
     , flash = require('connect-flash')
     , User = require("./repositories/user").User
+    , Order = require("./repositories/order").Order
     , Artist = require("./repositories/artist").Artist,
     _ = require('underscore'),
     cart = require("./routes/cart"),
     game = require("./routes/game")
-    , logger = require("winston")
+    , logger = require("winston"),
+    connect = require("connect")
 
     ;
 
@@ -81,6 +83,7 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.set('view options', { pretty: true });
   app.locals.pretty = true;
+
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -92,7 +95,7 @@ app.configure(function(){
   app.use(passport.session());
     app.use(flash());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+
 
   //-- custom middleware
   app.use(function(req,res,next){
@@ -100,6 +103,32 @@ app.configure(function(){
         res.locals.user=req.user;
     next();
   });
+  // make sure we have a cart
+  app.use(function(req,res,next){
+    if(!req.session.order) {
+        // check the db
+        Order.findOne({sessionId:req.session.id},function(err,order){
+            if(order) {
+                req.session.order = order;
+            }
+            else {
+                var newId = uuid.v4();
+
+                var command = {
+                    id:newId,
+                    command:"createOrder",
+                    payload: {
+                        sessionId:req.session.id
+                    }
+                }
+                evtcmdbus.emitCommand(command);
+
+            }
+        });
+    }
+    next();
+  });
+    app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.configure('development', function(){
@@ -170,7 +199,6 @@ app.get('/users', user.list);
 app.get('/store',demoweb.store);
 app.post('/cart/item',cart.addToCart);
 app.get('/cart',cart.getCart);
-app.get('/api/cart',cart.getCartData);
 app.post('/buynow/item',cart.addToCart);
 
 //- game
@@ -243,6 +271,9 @@ app.get('/api/session/user',ensureAuthenticated,function(req,res){
           res.send(jsonData);
       });
 });
+app.get('/api/cart',cart.getCartData);
+
+app.get('/api/cartsize',cart.getCartSize);
 
 app.put('/api/user/:id',function(req,res){
     console.log(req.params.id);
@@ -479,7 +510,18 @@ io.of('/auth').authorization(passportSocketIo.authorize({
         });
 
 });
+var parseSignedCookies = require('connect').utils.parseSignedCookies
+io.set('authorization',function(data,accept){
+    if (data.headers.cookie) {
+        data.cookie=require('cookie').parse(data.headers.cookie);
+        data.cookie = parseSignedCookies(data.cookie,'secret');
+        data.sessionId = data.cookie['connect.sid'];
+    } else {
+        return accept('No Cookie Transmitted',false);
+    }
+    accept(null,true);
 
+});
 io.sockets.on('connection',function(socket){
     evtcmdbus.addEventSink(function(event){
        socket.emit(event.event,event.payload);
@@ -496,6 +538,7 @@ io.sockets.on('connection',function(socket){
     });
     socket.on('command',function(data){
            logger.debug('received command:' + JSON.stringify(data));
+            data.payload.sessionId = socket.handshake.sessionId;
            evtcmdbus.emitCommand(data);
            //logger.debug(data);
            //var commandData = querystring.parse(data.data);

@@ -10,7 +10,7 @@ block content
             .hero-unit
                 h2 #{locals.info.albums.name}
                 h4 Artist: #{locals.info.artistName}
-                .row-fluid
+                .row-fluid(width="800")
                     .span4
                         img(src="/util/rndsmlcvr/1",width=300,height=300)
                     .span8
@@ -25,11 +25,23 @@ block content
                             button#buyNow.btn Buy Now
                             button#investChips.btn.btn-danger Invest 10 Chips!
                         - else
-                            button#addToCart.btn.btn-primary.disabled Add To Cart
-                            button#buyNow.btn.disabled  Buy Now
-                            button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
+                            button#addToCart.btn.btn-primary Add To Cart
+                            button#buyNow.btn  Buy Now
+                            //button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
+                hr
+                .row-fluid
+
+                    .span10
+                        each song in locals.info.albums.songs
+                            h4 #{song.name}
+                            audio(controls="")
+                    .span2
+
 
             hr
+    - if (locals.user)
+        script
+            var userid = "#{locals.user.id}"
     script
         $('#addToCart').click(function(){
             //var formData = $('#investorInfoForm').serialize();
@@ -40,7 +52,9 @@ block content
                 command: "addItemToOrder",
                 payload: {
                     itemType:"album",
-                    itemId: "#{locals.info.albums._id}"
+                    itemId: "#{locals.info.albums._id}",
+                    name: "#{locals.info.albums.name}",
+                    price: #{locals.info.albums.price}
                 }
             };
             socket.emit("command",command);
@@ -69,17 +83,31 @@ block content
             });
 
         });
-        $('#investChips').click(function(){
-            var newUuid = uuid.v4();
-            $.ajax({
-                type:"POST",
-                url:"/user/chips/item",
-                data: {id:newUuid,command:"addUserWager",payload:{itemId: "#{locals.info.albums._id}",chips:10}},
-                //data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
-                success: function(data) {
-                    //alert(sent);
-                    $('#alert').show();
-                }
-            });
 
-        });
+            $('#investChips').click(function(){
+                /*var newUuid = uuid.v4();
+                $.ajax({
+                    type:"POST",
+                    url:"/user/chips/item",
+                    data: {id:newUuid,command:"addUserWager",payload:{itemId: "#{locals.info.albums._id}",chips:10}},
+                    //data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
+                    success: function(data) {
+                        //alert(sent);
+                        $('#alert').show();
+                    }
+                });*/
+                var newUuid = uuid.v4();
+                command = {
+                    id: newUuid,
+                    command: "createChipWager",
+                    payload: {
+
+                        itemId: "#{locals.info.albums._id}",
+                        userId: userid,
+                        chipCount:10
+
+                    }
+                };
+                socket.emit("command",command);
+
+            });

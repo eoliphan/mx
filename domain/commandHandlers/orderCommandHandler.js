@@ -4,7 +4,7 @@ module.exports = commandHandlerBase.extend({
 
     aggregate: 'orderAggregate',
 
-    commands: ['createOrder', 'deleteOrder', 'addItemToOrder','changeOrderStatusToOrder' ]
+    commands: ['createOrder', 'deleteOrder', 'addItemToOrder','changeOrderStatusToOrder','buyOrder' ]
 
 //    fooIt: function(id, cmd) {
 //        var self = this;

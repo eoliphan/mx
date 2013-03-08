@@ -10,8 +10,12 @@ var evtHandlerDir = "./eventhandlers";
 
 fs.readdir(evtHandlerDir,function(err,files){
     if (err) return;
+    var jsFiles = _.filter(files,function(filename){
+        var patt = new RegExp(".*\.js$");
+        return patt.test(filename);
 
-    _.each(files,function(element,index,list){
+    });
+    _.each(jsFiles,function(element,index,list){
         var fullPath = evtHandlerDir + "/" + element;
        logger.debug("processing handlers in: " + fullPath);
         var evtModule = require(fullPath);

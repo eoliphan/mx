@@ -36,9 +36,30 @@ div.navbar.navbar-inverse.navbar-fixed-top
                         input.span2(type="password",name="password",placeholder="Password")
                         button.btn(type="submit") Log In
     script
-        socket.on('itemAddedToOrder',function(data){
-            //alert('update: '+JSON.stringify(data));
-            // increment
+        function checkCart() {
             var cartBadge = $('#cartCount');
-            cartBadge.text(parseInt(cartBadge.text()) + 1);
+            //cartBadge.text(parseInt(cartBadge.text()) + 1);
+            $.ajax({
+                type:"GET",
+                url:"/api/cartsize",
+                data: "",
+                success: function(data) {
+                    var size = parseInt(data.cartSize);
+                    if (size = 0) {
+                        //cartBadge.hide();
+                        cartBadge.css('display','none');
+                    } else {
+                        //cartBadge.show();
+                        cartBadge.css('display','');
+                    }
+                    cartBadge.text(data.cartSize);
+                }
+            });
+        };
+        $(document).ready(function(){
+            checkCart();
+        });
+        socket.on('itemAddedToOrder',function(data){
+            checkCart();
+
         });

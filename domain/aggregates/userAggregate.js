@@ -40,7 +40,7 @@ module.exports = base.extend({
     },
 
     userPasswordChanged: function(data) {
-        this.set(data);
+        this.set('password',data.password);
     },
     userWagerAdded:function(data) {
         //this.set(data);

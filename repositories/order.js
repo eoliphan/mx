@@ -23,12 +23,19 @@ var lineItemSchema = new Schema({
 //--
 var orderSchema = new Schema({
     sessionId:String,
-    type:{type:String,enum:['cart','order']},
+    type:{type:String,enum:['cart','order'],default:"cart"},
     userId:Schema.Types.ObjectId,
     orderDate:Date,
-    items:[lineItemSchema]
+    items:[lineItemSchema],
+    ccnum: String
 
 });
+
+orderSchema.index({sessionId:1},{unique:true});
+orderSchema.index({userId:1});
+orderSchema.index({type:1});
+orderSchema.index({orderDate:1});
+
 
 var Order = mongoose.model('Order',orderSchema);
 exports.Order = Order;
