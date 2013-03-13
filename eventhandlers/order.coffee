@@ -18,11 +18,11 @@ exports.orderBought = (event) ->
       Wager.find {itemId:itemId}, (err,wagers) ->
         logger.error "error finding wagers " + err if err
         if (wagers)
-          _.each(wagers) (wager,index,list) ->
+          _.each wagers, (wager,index,list) ->
             points = wager.points
             # stuff
 
-            wager.points = points + (price * (wager.chipCount/100))
+            wager.points = points + (Math.round(price) * wager.chipCount)
             wager.save (err) ->
               logger.error "error updating wager: " + err if err
               logger.info "wager updated"

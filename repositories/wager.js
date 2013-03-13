@@ -6,9 +6,10 @@ var mongoose = require('mongoose')
 var chipWagerSchema = new Schema({
     userId:Schema.Types.ObjectId,
     orderDate:Date,
-    chipCount:Number,
-    points:Number,
-    itemId:Schema.Types.ObjectId
+    chipCount:{type:Number,default:0},
+    points:{type:Number,default:0},
+    itemId:Schema.Types.ObjectId,
+    itemType:{type:String,enum:['album','song']}
 });
 
 var Wager = mongoose.model('Wager',chipWagerSchema);

@@ -1,6 +1,7 @@
 var domain = require("../domain/domain").domain,
     logger = require("../logger")
     , evdcmdbus = require("../evtcmdbus")
+    , Wager = require("../repositories/wager").Wager
 ;
 
 exports.addChips = function(req,res) {
@@ -15,4 +16,22 @@ exports.addChips = function(req,res) {
 
     //domain.handle(command);
 
-}
+};
+
+exports.getWagerLeaders = function(req,res) {
+
+    Wager.aggregate(
+        {$group:{
+            _id:"$userId",
+            points: {$sum:"$points"}
+        }},function(err,wagers){
+            if(err){
+                return logger.error("Error getting wagers: " + err);
+            } else {
+                res.send(wagers);
+            }
+
+    });
+
+
+};

@@ -1,0 +1,76 @@
+doctype 5
+html
+  head
+    title= title
+    //link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/bs/bootstrap-slate.css')
+    link(rel='stylesheet', href='/stylesheets/bs/bootstrap-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/kendo/kendo.common.min.css')
+    link(rel='stylesheet', href='/stylesheets/kendo/kendo.bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/kendo/kendo.dataviz.min.css')
+    style
+        [class^="icon-"] { background-image: url("/images/bs/glyphicons-halflings.png"); }
+        [class*="icon-white"] { background-image: url("/images/bs/glyphicons-halflings-white.png"); }
+
+    block scripts
+        script(src='http://code.jquery.com/jquery-1.8.2.min.js')
+        script(src='/javascripts/bs/bootstrap.js')
+        script(src='/javascripts/kendo/kendo.web.min.js')
+        //script(src='/javascripts/kendo/kendo.dataviz.min.js')
+        script(src='/javascripts/jqBootstrapValidation.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/javascripts/uuid.js')
+        script(src='/javascripts/underscore.js')
+        script(src='/javascripts/backbone.js')
+        script(src='/javascripts/backboneCQRS-0.5.5.js')
+        script(src="mojitoring/jquerymx/jquerymx-3.2.custom.min.js" )
+        script(src="mojitoring/flot-flot-f0e78fc/jquery.flot.js")
+        script(src="mojitoring/guidely/guidely.min.js")
+        script(src="mojitoring/datetime.js")
+        script(src="mojitoring/mojitoring.js")
+        script(src="widget/widget_init.js")
+        script
+            if (!this.uuid){
+                uuid = require('/javascripts/uuid.js');
+            }
+            //setup socket.io
+            socket = io.connect();
+
+
+
+
+  body
+    // signup dialog
+    div#signupDialog.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signupDialogLabel",aria-hidden="true")
+        div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#signupDialogLabel Join SoundScry!
+        form#signupForm.well(method="POST",action="/signup")
+            div.modal-body
+                label Email
+                input.span3(type="text",placeholder="Email",name="email")
+                label Password
+                input.span3(type="text",placeholder="Password",name="password")
+                label Confirm Password
+                input.span3(type="text",placeholder="Confirm Pass",name="passconfirm")
+                label How do you think you will primarily use SoundScry?
+                a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
+                    select(name="primaryuse")
+                        option(value="musiclover") Music Lover
+                        option(value="artist") Artist
+                        option(value="investor") Investor
+            div.modal-footer
+                button.btn(data-dismiss="modal",aria-hidden="true") Close
+                button.btn.btn-primary(id="signupbtn",type="submit") Sign Up!
+    block content
+    .footer
+        hr
+        p &copy; SoundScry 2012
+        ul
+            li Facebook
+            li Twitter
+            li Jobs
+            li Blog
+            li Terms of Use
+            li Privacy Policy

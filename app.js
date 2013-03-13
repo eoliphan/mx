@@ -440,6 +440,8 @@ app.get('/api/songs/bygenre/:genre',function(req,res){
                 });
 });
 
+app.get('/api/wager/leaders',game.getWagerLeaders);
+
 
 
 passport.use(new LocalStrategy({usernameField:'email'},

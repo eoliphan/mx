@@ -11,7 +11,8 @@ exports.chipWagerCreated = (event) ->
   newWager  = {
     userId: userId,
     itemId: itemId,
-    chipCount: event.payload.chipCount
+    chipCount: event.payload.chipCount,
+    itemType: event.payload.itemType
   }
   wager = new Wager(event.payload)
   wager.save (err) ->

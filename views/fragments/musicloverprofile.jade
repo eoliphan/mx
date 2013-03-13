@@ -3,7 +3,7 @@ div#alert.alert(style="display: none")
     p Data Updated
 div.row-fluid
     div.span12
-        h4 Game Account
+        h4 Game Account (Chips Remaining: 10)
 
 div.row-fluid
     table#gamegrid
@@ -21,49 +21,79 @@ div.row-fluid
 div.row-fluid
     .span4
         strong Leaderboard
-        br
-        em February, 2013
-        ol
-            li John
-            li Chance
-            li Kyle
+        table#leadergrid
+            thead
+                tr
+                    th Rank
+                    th Name
+                    th Points
+                tbody(colspan=3)
+        //
+            br
+            em February, 2013
+            ol
+                li John
+                li Chance
+                li Kyle
 
     .span6
         strong Time Remaining
-    //
-        .span3
-            strong Albums In Portfolio
+        #wTime.mojitoPanel
+            span#wTimeHour
+            span#wTimeMinute
+            span#wTimeSecond
+//
+    .span3
+        strong Albums In Portfolio
 
-            button.btn.btn-mini.btn-danger Top Movers
-            button.btn.btn-mini.btn-primary Full Portfolio
-            hr
-            #albInPortList
-        .span3
-            strong # of Chips Bet
-            br
-            button.btn.btn-mini.btn-danger Top Movers
-            button.btn.btn-mini.btn-primary Full Portfolio
-            hr
-            #numOfChipsBetList
-        .span3
-            strong # of Points Gained
-            br
-            button.btn.btn-mini.btn-danger Top Movers
-            button.btn.btn-mini.btn-primary Full Portfolio
-            hr
-            #numOfPointsList
-        .span3
-            strong % return/Album
-            br
-            button.btn.btn-mini.btn-danger Top Movers
-            button.btn.btn-mini.btn-primary Full Portfolio
-            hr
-            #retPerAlbum
+        button.btn.btn-mini.btn-danger Top Movers
+        button.btn.btn-mini.btn-primary Full Portfolio
+        hr
+        #albInPortList
+    .span3
+        strong # of Chips Bet
+        br
+        button.btn.btn-mini.btn-danger Top Movers
+        button.btn.btn-mini.btn-primary Full Portfolio
+        hr
+        #numOfChipsBetList
+    .span3
+        strong # of Points Gained
+        br
+        button.btn.btn-mini.btn-danger Top Movers
+        button.btn.btn-mini.btn-primary Full Portfolio
+        hr
+        #numOfPointsList
+    .span3
+        strong % return/Album
+        br
+        button.btn.btn-mini.btn-danger Top Movers
+        button.btn.btn-mini.btn-primary Full Portfolio
+        hr
+        #retPerAlbum
 
 script#template(type="text/x-kendo-tmpl")
-        li: small ${band}/${album}
+    li: small ${band}/${album}
 
 script
+    var leaderGrid = $("#leadergrid").kendoGrid({
+        height:200,
+        columns: [
+            {title:"Rank",field:"rank"},
+            {title:"Name",field:"_id"},
+            {title:"Score",field:"points"}
+        ],
+        dataSource: {
+            transport: {
+                read: '/api/wager/leaders'
+            }
+            //data: [
+            //    {rank:1,name:"Luke",points:457},
+            //    {rank:2,name:"Kyle",points:222},
+            //    {rank:3,name:"Stan",points:123}
+            //]
+        }
+    });
     $("#gamegrid").kendoGrid({
         height:200,
         columns: [
@@ -84,6 +114,58 @@ script
         }
 
     });
+script
+    var wTime =
+    {
+        $widget: null,
+        $wTimeHour: null,
+        $wTimeMinute: null,
+        $wTimeSecond: null,
+        Initialize: function ()
+        {
+            var self = wTime;
+
+            //Mojitoring.LoadHTML($("#wMisc"), "widget/misc/time.htm", self.InitializeCB);
+            self.InitializeCB();
+        },
+        InitializeCB: function()
+        {
+            var self = wTime;
+
+            self.$widget = $("#wTime");
+            self.$wTimeHour = $("#wTimeHour", self.$widget);
+            self.$wTimeMinute = $("#wTimeMinute", self.$widget);
+            self.$wTimeSecond = $("#wTimeSecond", self.$widget);
+
+            // Setup tooltip for the rendered template
+            $("[data-title]", self.$widget).tooltip();
+
+            // Refresh every 1000ms
+            window.setInterval(self.Refresh, 1000);
+        },
+        Refresh: function ()
+        {
+            var self = wTime;
+
+            var now = new Date();
+
+            self.$wTimeHour.html(self.ZeroPad(now.getHours()));
+            self.$wTimeMinute.html(self.ZeroPad(now.getMinutes()));
+            self.$wTimeSecond.html(self.ZeroPad(now.getSeconds()));
+        },
+        ZeroPad: function (n)
+        {
+            return (+n < 10 ? '0' : '') + n
+        }
+
+    };
+
+    $(wTime.Initialize);
+script
+    socket.on("orderBought",function(data){
+        leaderGrid.refresh();
+    });
+
 //    $("#albInPortList").kendoListView({
 //        //dataSource: dataSource,
 //        template: kendo.template($("#template").html()),

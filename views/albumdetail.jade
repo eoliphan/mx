@@ -41,7 +41,7 @@ block content
             hr
     - if (locals.user)
         script
-            var userid = "#{locals.user.id}"
+            var userid = "#{locals.user._id}"
     script
         $('#addToCart').click(function(){
             //var formData = $('#investorInfoForm').serialize();
@@ -104,6 +104,7 @@ block content
 
                         itemId: "#{locals.info.albums._id}",
                         userId: userid,
+                        itemType:'album',
                         chipCount:10
 
                     }
