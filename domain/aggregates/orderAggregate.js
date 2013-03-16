@@ -59,6 +59,7 @@ module.exports = base.extend({
         //this.set(data);
     },
     orderStatusChangedToOrder:function(data) {
+        this.set('status','order');
         //this.set(data);
     },
     userAssignedToOrder:function(data) {

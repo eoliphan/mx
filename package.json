@@ -33,7 +33,8 @@
         "amqp-dsl":"1.0.x",
         "redisq":"0.1.x",
         "amqp":"*",
-        "cookie":"*"
+        "cookie":"*",
+        "gridfs-stream":"*"
 
     },
     "engines":{

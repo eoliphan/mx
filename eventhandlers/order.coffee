@@ -52,10 +52,10 @@ exports.itemAddedToOrder = (event) ->
 exports.orderCreated = (event) ->
   logger.debug(event);
   order = new Order(event.payload);
-  order.save((err) ->
+  order.save (err) ->
               logger.error "Error Creating Order" + err if err
               logger.info "Order Created"
-            )
+
 
 exports.userAssignedToOrder = (event) ->
   logger.debug event
