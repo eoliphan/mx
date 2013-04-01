@@ -4,18 +4,32 @@ div#alert.alert(style="display: none")
 div.row-fluid
     div.span12
         h4 Game Account (Chips Remaining: 10)
-
 div.row-fluid
-    table#gamegrid
-        thead
-            tr
-                th Artist
-                th Album Name
-                th # Of Chips Bet
-                th # Of Points Gained
-                th Your % Return
-            tbody
-                td(colspan=5)
+    .span3
+        p Total Chips:
+            #totalChipsSum
+    .span3
+    .span3
+    .span3
+div.row-fluid
+    .span6
+        #currentGameShareDist
+    .span6
+div.row-fluid
+    &nbsp;
+div.row-fluid
+    .span6
+        table#gamegrid
+            thead
+                tr
+                    th Artist
+                    th Album Name
+                    th # Of Chips Bet
+                    th # Of Points Gained
+                    th Your % Return
+                tbody
+                    td(colspan=5)
+    .span6
 div.row-fluid
     &nbsp;
 div.row-fluid
@@ -74,18 +88,77 @@ div.row-fluid
 
 script#template(type="text/x-kendo-tmpl")
     li: small ${band}/${album}
-
 script
-    var leaderGrid = $("#leadergrid").kendoGrid({
-        height:200,
-        columns: [
-            {title:"Rank",field:"rank"},
-            {title:"Name",field:"_id"},
-            {title:"Score",field:"points"}
-        ],
+    // income dist
+    var currentGameShareDist = $("#currentGameShareDist").kendoChart({
+        title: {
+            text: "Wager Distribution"
+        },
         dataSource: {
             transport: {
+                read: {
+                    url: '/api/wagers/byuser/#{locals.user._id}',
+                    dataType: "json"
+                }
+            }
+        },
+        legend: {
+            position: "bottom",
+            visible:true
+        },
+        seriesDefaults: {
+            type: "pie",
+            labels: {
+                visible:true,
+                template: "#= category #"
+            }
+        },
+        series: [
+            {
+                name:"Total Chips",
+                field:"totalChips",
+                type:"pie",
+                categoryField:"name"
+            }
+        ],
+        /*series: [{
+            name: "World",
+            data: [15.7, 16.7, 20, 23.5, 26.6]
+        }, {
+            name: "United States",
+            data: [67.96, 68.93, 75, 74, 78]
+        }],*/
+        valueAxis: {
+            labels: {
+                format: "${0}"
+            }
+        },
+        categoryAxis: {
+            //baseUnit: "weeks",
+            field:"name"
+        },
+        chartArea:{
+
+            height:200
+        }
+    });
+script
+    var leaderGridDS =  new  kendo.data.DataSource(
+        {
+            transport: {
                 read: '/api/wager/leaders'
+            },
+
+            aggregate: [
+                {field:"totalChips",aggregate:"sum"},
+                {field:"totalPoints",aggregate:"sum"},
+
+             ],
+            change: function(e) {
+                //debugger;
+                //var aggr = leaderGridDS.aggregates();
+                //var total = aggr.totalPoint.sum;
+                //$("#totalChipsSum").val(total);
             }
             //data: [
             //    {rank:1,name:"Luke",points:457},
@@ -93,14 +166,24 @@ script
             //    {rank:3,name:"Stan",points:123}
             //]
         }
+
+    );
+    var leaderGrid = $("#leadergrid").kendoGrid({
+        height:200,
+        columns: [
+            {title:"Rank",field:"rank"},
+            {title:"Name",field:"_id"},
+            {title:"Score",field:"points"}
+        ],
+        dataSource: leaderGridDS
     });
     $("#gamegrid").kendoGrid({
         height:200,
         columns: [
             {title: "Band", field: "band"},
             {title: "Album", field: "name"},
-            {title: "# Of Chips Bet", field: "numChipsBet"},
-            {title: "# of Points Gained", field: "numPointsGained"},
+            {title: "# Of Chips Bet", field: "totalChips"},
+            {title: "# of Points Gained", field: "totalPoints"},
             {title: "% return", field: "pctReturn"},
         ],
         dataSource: {
@@ -111,6 +194,16 @@ script
                 {band:"Avant",name:"Garde",numChipsBet:10,numPointsGained:22,pctReturn:20},
 
             ]
+        },
+        dataSource: {
+            //data:[
+            //    {band:"Moop",album:"Trilogy",dolOnOffer:10000,dolPerShare:1000,numOfShares:10},
+            //    {band:"Faith+1",album:"Renewal",dolOnOffer:5000,dolPerShare:100,numOfShares:50}
+            //],
+            transport: {
+                read: '/api/wagers/byuser/#{locals.user._id}'
+            },
+            pageSize: 10
         }
 
     });

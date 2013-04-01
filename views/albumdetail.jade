@@ -17,7 +17,7 @@ block content
                         h4 Genre: <em>#{locals.info.albums.genre}</em>
                         h4 Bio: <em>#{locals.info.bio}</em>
                         h4 # of Tracks: <em>#{locals.info.albums.songs.length}</em>
-                        h4 Release Date: <em>#{locals.info.albums.releaseDate.toString('yyyy-MM-dd')}</em>
+                        h4 Release Date: <em>#{!locals.info.albums.releaseDate ? "" : locals.info.albums.releaseDate.toString('yyyy-MM-dd')}</em>
                         h4 Price: <em> $ #{parseFloat(locals.info.albums.price).toFixed(2)}</em>
                         hr
                         - if (locals.user)
@@ -54,7 +54,8 @@ block content
                     itemType:"album",
                     itemId: "#{locals.info.albums._id}",
                     name: "#{locals.info.albums.name}",
-                    price: #{locals.info.albums.price}
+                    price: #{locals.info.albums.price},
+                    artistId: "#{locals.info._id}"
                 }
             };
             socket.emit("command",command);
@@ -105,7 +106,8 @@ block content
                         itemId: "#{locals.info.albums._id}",
                         userId: userid,
                         itemType:'album',
-                        chipCount:10
+                        chipCount:10,
+                        name: "#{locals.info.albums.name}",
 
                     }
                 };

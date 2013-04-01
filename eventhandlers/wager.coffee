@@ -4,6 +4,7 @@ Wager = require('../repositories/wager').Wager;
 mongoose = require('mongoose')
 _ = require('underscore');
 
+
 exports.chipWagerCreated = (event) ->
   logger.debug event
   userId = mongoose.Types.ObjectId(event.payload.userId)

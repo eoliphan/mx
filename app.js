@@ -2,15 +2,21 @@
 /**
  * Module dependencies.
  */
+// - end schema
 require('nodetime').profile({
     accountKey: '0e70635ffc6e0abdd3e4ae80e85fd15a9a4c1749',
     appName: 'Scry Application'
   });
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , demoweb = require('./routes/demoweb')
-  , http = require('http')
+var express = require('express');
+ var app = express();
+//hub.app = app;
+
+ensureAuthenticated = function (req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+};
+
+var   http = require('http')
   , path = require('path')
   , passport = require('passport')
   , mongoose = require('mongoose')
@@ -29,8 +35,14 @@ var express = require('express')
     _ = require('underscore'),
     cart = require("./routes/cart"),
     game = require("./routes/game")
+    //routes = require('./routes')
+  , user = require('./routes/user')
+  , demoweb = require('./routes/demoweb')
+
     , logger = require("winston"),
-    connect = require("connect")
+    connect = require("connect"),
+    moment = require('moment')
+
 
     ;
 
@@ -66,8 +78,7 @@ var evtcmdbus = require('./evtcmdbus')
 ;
 
 
-// - end schema
-var app = express();
+
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -104,7 +115,7 @@ app.configure(function(){
     next();
   });
   // make sure we have a cart
-  app.use(function(req,res,next){
+  /*app.use(function(req,res,next){
     if(!req.session.order) {
         // check the db
         Order.findOne({sessionId:req.session.id},function(err,order){
@@ -127,7 +138,7 @@ app.configure(function(){
         });
     }
     next();
-  });
+  });*/
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -148,12 +159,10 @@ for (var i = 0; i < 1;i++){
     domain.domain.handle({id:newUuid,command:"changeUserPassword",payload:{id:"50f845e01d3435931b000001",email:"e@e.com",password:objId}});
 }
 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login')
-}
+
 
 /// -- routes
+
 app.get('/', function(req,res){
     res.redirect("/demoweb");
 });
@@ -338,20 +347,35 @@ app.get('/api/issues',function(req,res){
 });
 
 app.get('/api/albums',function(req,res){
-//    Artist.find()
-//        .limit(50)
-//        .select('albums')
-//        .exec(function(err,artists){
-//            if (!err)
-//                 res.send(artists);
-//            else
-//            {
-//                console.log(err);
-//                res.send(404);
-//            }
-//
-//        });
+
     Artist.aggregate({$project:{
+                    'artistName':1,
+                    'albums' : 1
+
+                }},
+                {$unwind: "$albums"},
+                {$limit: 50},
+            function(err,artists){
+                            if (!err)
+                                 res.send(artists);
+                            else
+                            {
+                                console.log(err);
+                                res.send(404);
+                            }
+
+                        });
+
+
+});
+
+app.get('/api/albums/new',function(req,res){
+    var curDate = new moment();
+    curDate.subtract('days',14);
+
+    Artist.aggregate(
+                {$match:{"albums.offerDate" : {$gte:curDate.toDate() }}},
+                {$project:{
                     'artistName':1,
                     'albums' : 1
 
@@ -390,20 +414,36 @@ app.get('/api/albums/bygenre/:genre',function(req,res){
 });
 
 app.get('/api/songs',function(req,res){
-//    Artist.find()
-//            .limit(50)
-//            .select('albums.songs')
-//            .exec(function(err,artists){
-//                if (!err)
-//                     res.send(artists);
-//                else
-//                {
-//                    console.log(err);
-//                    res.send(404);
-//                }
-//
-//            });
+
     Artist.aggregate({$project:{
+                'artistName':1,
+                'bio': 1,
+                'albums' : 1
+            }},
+            {$sort:{_id:-1}},
+            {$unwind: "$albums"},
+            {$limit: 50},
+        function(err,artists){
+                        if (!err)
+                             res.send(artists);
+                        else
+                        {
+                            console.log(err);
+                            res.send(404);
+                        }
+
+                    });
+
+});
+
+app.get('/api/songs/new',function(req,res){
+
+    var curDate = new moment();
+    curDate.subtract('days',14);
+
+    Artist.aggregate(
+        {$match:{"albums.offerDate" : {$gte:curDate.toDate() }}},
+        {$project:{
                 'artistName':1,
                 'bio': 1,
                 'albums' : 1
@@ -441,8 +481,8 @@ app.get('/api/songs/bygenre/:genre',function(req,res){
 });
 
 app.get('/api/wager/leaders',game.getWagerLeaders);
-
-
+var x = require("./routes")(app);
+//-- end routes
 
 passport.use(new LocalStrategy({usernameField:'email'},
     function(username,password,done) {

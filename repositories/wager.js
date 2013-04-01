@@ -8,6 +8,7 @@ var chipWagerSchema = new Schema({
     orderDate:Date,
     chipCount:{type:Number,default:0},
     points:{type:Number,default:0},
+    name:String,
     itemId:Schema.Types.ObjectId,
     itemType:{type:String,enum:['album','song']}
 });

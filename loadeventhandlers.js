@@ -17,11 +17,11 @@ fs.readdir(evtHandlerDir,function(err,files){
     });
     _.each(jsFiles,function(element,index,list){
         var fullPath = evtHandlerDir + "/" + element;
-       logger.debug("processing handlers in: " + fullPath);
+       //logger.debug("processing handlers in: " + fullPath);
         var evtModule = require(fullPath);
         var handlers = _.functions(evtModule);
         _.each(handlers,function(element,index,list){
-            logger.debug("handler: " + element + " : function: " + evtModule[element] );
+            //logger.debug("handler: " + element + " : function: " + evtModule[element] );
             evtcmdbus.addEventSubscriber(element,evtModule[element]);
         });
     });

@@ -58,16 +58,26 @@ block content
                 .tab-content
                     div#tab1.tab-pane.active
                         .k-content.row
-                            .k-pager-wrap#pager
-                            select#genre
+                            .k-pager-wrap#pagerNew
+                            //select#genre
                                 option Hip Hop
                                 option Rock
                                 option Country
                                 option Classical
                                 option R&B
                                 option Electronic
-                            #listView
+                            #listViewNew
                     div#tab2.tab-pane
+                        .k-content.row
+                            .k-pager-wrap#pagerPop
+                            //select#genre
+                                option Hip Hop
+                                option Rock
+                                option Country
+                                option Classical
+                                option R&B
+                                option Electronic
+                            #listViewPop
 
     script
         $('.carousel').carousel({interval:7500})
@@ -79,7 +89,7 @@ block content
 
 
     script
-        $('#genre').kendoDropDownList();
+        //$('#genre').kendoDropDownList();
         $(document).ready(function(){
             var dataSource = new kendo.data.DataSource({
                 transport: {
@@ -89,10 +99,18 @@ block content
                     }
                 }
             });
-            $('#pager').kendoPager({
+            var dataSourceNew = new kendo.data.DataSource({
+                            transport: {
+                                read: {
+                                    url: "/api/songs/new",
+                                    dataType:"json"
+                                }
+                            }
+                        });
+            $('#pagerPop').kendoPager({
                 dataSource: dataSource
             });
-            $('#listView').kendoListView({
+            $('#listViewPop').kendoListView({
                 height: 300,
                 dataSource: dataSource,
                 template: kendo.template($('#template').html()),
@@ -117,6 +135,34 @@ block content
                 }
 
             });
+            /*$('#pagerNew').kendoPager({
+                dataSource: dataSource
+            });
+            $('#listViewNew').kendoListView({
+                height: 300,
+                dataSource: dataSourceNew,
+                template: kendo.template($('#template').html()),
+                dataBound:function(e){
+                    //$(".product").popover();
+                    $(".product").popover({
+                        offset: 10,
+                        trigger: 'manual',
+                        html: true,
+                        placement: 'right',
+                        template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+                    }).mouseenter(function(e) {
+                        $(this).popover('show');
+                    }).mouseleave(function(e) {
+                        var ref = $(this);
+                        timeoutObj = setTimeout(function(){
+                            ref.popover('hide');
+                        }, 50);
+                    });
+
+
+                }
+
+            });*/
         });
 
 

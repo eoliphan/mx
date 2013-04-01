@@ -16,6 +16,11 @@ module.exports = base.extend({
 
         this.checkBusinessRules(callback);
     },
+    addAlbum: function(data, callback) {
+        this.apply(this.toEvent('albumAdded', data));
+
+        this.checkBusinessRules(callback);
+    },
 
 
     // Events
@@ -27,6 +32,16 @@ module.exports = base.extend({
 
     artistDeleted: function(data) {
         this.set('destroyed', true);
+    },
+    albumAdded: function(data) {
+        //this.set('destroyed',false);
+        var albums =  this.get('albums');
+        if (!albums) {
+            albums = [];
+            this.set('albums',albums);
+        }
+        albums.push(data);
+
     }
 
 

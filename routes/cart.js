@@ -2,8 +2,35 @@ var Order  = require("../repositories/order").Order,
     Artist = require("../repositories/artist").Artist,
     mongoose = require('mongoose'),
     logger = require("../logger"),
-    _ = require('underscore');
+    _ = require('underscore'),
+    uuid = require('node-uuid'),
+    evtcmdbus = require('../evtcmdbus'),
+    async = require("async");
 
+
+function validateCart(req,res) {
+    if(!req.session.order) {
+            // check the db
+            Order.findOne({sessionId:req.session.id,type:'cart'},function(err,order){
+                if(order) {
+                    req.session.order = order;
+                }
+                else {
+                    var newId = uuid.v4();
+
+                    var command = {
+                        id:newId,
+                        command:"createOrder",
+                        payload: {
+                            sessionId:req.session.id
+                        }
+                    }
+                    evtcmdbus.emitCommand(command);
+
+                }
+            });
+        }
+}
 exports.addToCart = function(req,res){
     // do we have a cart?
     if (!req.session.cart) {
@@ -59,7 +86,7 @@ exports.getCart = function(req,res) {
 
 exports.getCartData = function(req,res) {
 
-    Order.findOne({sessionId:req.session.id},function(err,order){
+    Order.findOne({sessionId:req.session.id,type:"cart"},function(err,order){
         if (err) {
             res.send(400);
         } else {
@@ -79,7 +106,8 @@ exports.getCartData = function(req,res) {
 };
 
 exports.getCartSize = function(req,res) {
-    Order.findOne({sessionId:req.session.id}, function(err,order){
+    validateCart(req,res);
+    Order.findOne({sessionId:req.session.id,type:"cart"}, function(err,order){
         if(err) {
             res.send(404);
 

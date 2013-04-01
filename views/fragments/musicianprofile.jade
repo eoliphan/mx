@@ -1,72 +1,542 @@
-div.row-fluid
-    .span4
-        form#bandInfo.well
-            label(for="bandName") BandName
-            input#bandName.k-textbox(type="text",name="bandName",placeholder="Band Name", required="", validationMessage="please enter a band name",value=locals.user.bandName)
-            label(for="phone") Phone #
-            input#phone.k-textbox(type="text",name="phone",placeholder="Phone",value=locals.user.bandContactPhone)
-            label(for="bio") Bio
-            textarea#bio.span2(name="bio",placeholder="Bio")
-            button#submitBasic.btn.btn-primary Update Band Information
-        .bandformstatus
-        .well
-            b Pending Offerings
-            select(multiple="multiple")
-                option Offering 1
-                option Offering 2
-                option Offering 3
-        .well
-            b Active Offerings
-            select(multiple="multiple")
-                option Offering 4
-                option Offering 5
-                option Offering 6
-        .well
-            b Completed Offerings
-            select(multiple="multiple")
-                option Offering 4
-                option Offering 5
-                option Offering 6
-    .span8
-        .row-fluid
-            h4 Current Offering
-        .row-fluid
-            .span6
-                label(for="albumName") Offering Name
-                input#offeringName(name="albumName",placeholder="Offering Name")
-                label(for="albumDescription") Offering Description
-                textarea#offeringDescription(name="offeringDescription",placeholder="Offering Description")
-                label(for="totalOfferingValue") Total $ Value of Offering
-                input#totalOfferingValue(type="text",name="totalOfferingValue",placeholder="Total Offering Value")
-                label(for="pctOfferingToSell") % Of Offering To Sell
-                input#pctOfferingToSell(type="text",name="pctOfferingToSell",placeholder="% To Sell")
-                label(for="amtToRaise") Amt you want to Raise
-                input#amtToRaise(type="text",name="amtToRaise")
-                label(for="numShares") # of Shares
-                input#numShares(type="text",name="numShares")
-                hr
-                img(src="http://placehold.it/100x100")
-                button#submitBasic.btn.btn-small Upload Cover Art (JPG 1000x1000 px)
-                b Tracks
-                select(multiple="multiple")
-                    option Track 1
-                    option Track 2
-                    option Track 3
-                button#submitBasic.btn.btn-small Upload Tracks
-            .span6
-                label(for="genre") Genre
-                input#genre(name="genre",placeholder="Genre")
-                label(for="copyrightYear") Copyright Year
-                textarea#copyrightYear(name="copyrightYear",placeholder="Copyright Year")
-                label(for="upcCode") UPC Code
-                input#upcCode(type="text",name="upcCode",placeholder="Total Offering Value")
-                label
-                input#explicitContent(type="checkbox",name="explicitContent") Explicit Content?
-                label
-                button#submitBasic.btn.btn-primary Update Offering Information
+// modal
+.modal.hide.fade#offeringWizardModal
+    .modal-header
+        button.close(type="button",data-dismiss="modal",aria-hidden="true")&times;
+        h3 Add Offering
+    .modal-body
 
+
+
+
+
+
+
+    .modal-footer
+
+
+
+
+div#rootDiv
+
+
+
+    .well.hide#wizardWell
+        h3 Create New Offering(?)!
+        .wizard#newOfferingWizard
+            ul.steps
+                li.active(data-target="#step1")
+                    span.badge.badge-info 1
+                    span Step 1
+                    span.chevron
+                li(data-target="#step2")
+                    span.badge.badge-info 2
+                    span Step 2
+                    span.chevron
+                li(data-target="#step3")
+                    span.badge.badge-info 3
+                    span Step 3
+                    span.chevron
+            .actions
+                button.btn.btn-mini.btn-prev
+                    i.icon-arrow-left
+                        Prev
+                button.btn.btn-mini.btn-next
+                    i.icon-arrow-right
+                        Next
+        .step-content#wizardStep
+            form#newOfferingForm
+                fieldset
+                    .step-pane.active#step1 Basic Information
+                        .well
+                            label Name
+                            input#offeringName(name="name",placeholder="Offering Name")
+                            label Description (e.g. 'Our sophmore release...')
+                            textarea#offerDescription(name='description',rows='5')
+                            label Price
+                            input#price(type="text",name='price');
+                            label Cover Art (JPEG 200 x 200)
+                            input#coverArt(type='file',name='coverArt')
+                            label Tracks
+                            input#tracks(type='file',name='tracks',multiple="multiple")
+
+                    .step-pane#step2 How much do you need? How much will you share?
+                        .well
+                            label Amount to Raise
+                            input#raiseAmount(type='text',name='amtToRaise')
+                            label For what % of your sales
+                            input#pctOfferingToSell(type="text",name="pctOfferingToSell",placeholder="% To Sell")
+                            label # of Shares
+                            input#numShares(type="text",name="numShares")
+                            label#pricePerShareLabel Price Per Share:
+
+                    .step-pane#step3 Review your offer
+                         .well
+                            label#offerSummary
+                            button#submitCreateOffering.btn.btn-large(type='button') Create Offering!
+        button#wizNext(type='button')
+    script
+        function offerWizardToMain(){
+                $('#profileMain').show();
+                //$('#newOfferingWizard').hide();
+                $('#wizardWell').hide();
+                //$('#newOfferingWizard').wizard();
+
+        }
+        $('#submitCreateOffering').click(function(){
+            var formData = $('#newOfferingForm').serialize();
+            //var id = $("#uid").val();
+            $.ajax({
+                type:"POST",
+                url:"/api/offers",
+                data: formData,
+                success: function(data) {
+                    //alert(sent);
+                    //$('#alert').show();
+                    offerWizardToMain();
+                }
+            });
+
+        });
+        $('#newOfferingWizard').on('change',function(e,data){
+            //debugger;
+            if (data.direction ==='next' && data.step === 2) {
+                var summaryText =
+                    "Offering Name: " + $('#newOfferingForm #offeringName').val() + "<br/>" +
+                    "Offering Description: " + $('#newOfferingForm #offerDescription').val() + "<br/>" +
+                    "Price: " + $('#newOfferingForm #price').val() + "<br/>" +
+                    "Raise Amount: $" + $('#newOfferingForm #raiseAmount').val() + "<br/>" +
+                    "Pecentage to sell: " + $('#newOfferingForm #pctOfferingToSell').val() + "%<br/>" +
+                    "Number of Shares: " + $('#newOfferingForm #numShares').val() + "<br/>";
+                $('#offerSummary').html(summaryText);
+               // alert('last page, compute');
+            }
+
+        });
+        function updatePricePerShare(){
+
+            var curRaiseAmount  = $("#newOfferingForm #raiseAmount").val();
+            var curNumShares = $("#newOfferingForm #numShares").val();
+
+            if (!curRaiseAmount || !curNumShares || curRaiseAmount == 0 || curNumShares == 0) {
+                $('#pricePerShareLabel').text('Price Per Share: ');
+            } else {
+
+                var pps = parseFloat(curRaiseAmount) / parseInt(curNumShares);
+                pps = parseFloat(pps).toFixed(2);
+                $('#pricePerShareLabel').text('Price Per Share: ' + pps);
+            }
+        }
+        $('#raiseAmount').keypress(function(){updatePricePerShare();});
+        $('#numShares').keypress(function(){updatePricePerShare();});
+
+    #profileMain
+        .row-fluid
+            .span4
+                .well
+                    a#submitAddOffering.bin.btn-primary.btn-large.btn-danger(role='button') Add Offering!
+            .span8
+        .row-fluid
+            //
+                .span4
+                    form#artistInfoForm.well
+                        fieldset
+                            label(for="bandName") Arist/Band Name
+                            input#artistName.k-textbox(type="text",name="artistName",placeholder="Band Name", required="", validationMessage="please enter a band name",value=locals.user.bandName)
+                            label(for="phone") Phone #
+                            input#phone.k-textbox(type="text",name="phone",placeholder="Phone",value=locals.user.bandContactPhone)
+                            label(for="bio") Bio
+                            textarea#bio(name="bio",placeholder="Bio",rows="5")
+                            label(for="artistImage") Artist Image
+                            input(type='file',name='artistImage')
+                        button#submitCreateArtist.btn.btn-primary.btn-danger(type='button') Create Band Information!
+                        button#submitUpdateArtist.btn.btn-primary(type='button') Update Band Information
+
+                    .bandformstatus
+
+            .span12#dashboard
+                .row-fluid
+                    .span3
+                        h4 Album Stats
+                    .span3
+                        p#albumTotal
+
+                    .span3
+                        h4 Global Stats
+                    .span3
+                        p $
+                            #globalTotal
+                .row-fluid
+                    .span6
+                        #totalSalesByAlbumChart
+                    .span6
+                        #incomeDistributionChart
+                .row-fluid
+                    .span6
+                        #albumSalesChart
+                    .span6
+
+                .row-fluid
+                    .span6
+                        form#offerDetails
+                            fieldset
+                                legend General Info
+                                label Description
+                                input#description(type="text",name='description')
+                                label Offer Date
+                                input#offerDate(type="text",name='offerDate')
+                                label Max Ownership %
+                                input#maxOwnership(type="text",name='maxOwnership')
+                                label Total Offer Amt
+                                input#amtToRaise(type='text',name='amtToRaise')
+                                label Ownership %
+                                input#pctOfferingToSell(type='text',name='pctOfferingToSell')
+                                legend User Album Info
+                                label Total invested in Shares
+                                input#totalInvestedInShares(type='text',name='totalInvestedInShares')
+                                label Shares Sold
+                                input#sharesSold(type='text',name='sharesSold')
+                                label Cost/Share
+                                input#costPerShare(type='text',name='costPerShare')
+                                label Profit/Share
+                                input#profitPerShare(type='text',name='profitPerShare')
+                    .span6
+                        #totalSalesAllAlbumChart
+                .row-fluid
+                    .span6
+                        #recentOffersGrid
+                    .span6
+                        #leaderBoard
 
 script
+    var curAlbumId;
+    var totSalesByAlbumDS = new kendo.data.DataSource({
+        transport: {
+            read: {
+                //url: "/api/orders/total/bydate/byalbum/514a71b879077db37200000a",
+                url: function(params) {
+                    //debugger;
+                    if (!curAlbumId)
+                        return "/api/orders/total/bydate/byalbum/514a71b879077db37200000a";
+                    else
+                        return "/api/orders/total/bydate/byalbum/" + curAlbumId;
+                },
+                dataType: "json"
+            }
+        },
+        sort: {
+            field: "_id",
+            dir: "asc"
+        },
+        schema: {
+            model: {
+                fields: {
+                    _id: {
+                        type: "date"
+                    }
+                }
+            }
+        },
+        aggregate:
+            {field:"totalSales",aggregate:"sum"},
+        change: function(e) {
+            //debugger;
+            console.log("testing running");
+            var totSalesByAlbumAggr = totSalesByAlbumDS.aggregates();
+            var total = totSalesByAlbumAggr.totalSales.sum;
+            $("#albumTotal").text(parseFloat(total).toFixed(2));
+        }
+
+    });
+    //totSalesByAlbumDS.read();
+    var totSalesByAlbum = $("#totalSalesByAlbumChart").kendoChart({
+        title: {
+            text: "Offering Sales"
+        },
+        dataSource: totSalesByAlbumDS,
+        legend: {
+            position: "bottom"
+        },
+        seriesDefaults: {
+            type: "area"
+        },
+        series: [
+            {
+                name:"Total Sales",
+                field:"totalSales"
+            }
+        ],
+        valueAxis: {
+            labels: {
+                format: "${0}"
+            }
+        },
+        categoryAxis: {
+            baseUnit: "weeks",
+            field:"_id"
+        },
+        chartArea:{
+            //width:300,
+            height:200
+        }
+    });
+    //totSalesByAlbumDS.
+    //debugger;
+    //var totSalesByAlbumAggr = totSalesByAlbumDS.aggregates();
+    //var total = totSalesByAlbumAggr.totalSales.sum;
+    //$("#albumTotal").val(parseFloat(total).toFixed(2));
+    var totSalesAllAlbum = $("#totalSalesAllAlbumChart").kendoChart({
+            title: {
+                text: "Total Sales By Album"
+            },
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/api/orders/total/bydate/byartist/5145ec8237f23b0000000006",
+                        dataType: "json"
+                    }
+                },
+                sort: {
+                    field: "orderDate",
+                    dir: "asc"
+                },
+                group: {
+                    field:"name",
+                    dir:"asc"
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            orderDate: {
+                                type: "date"
+                            }
+                        }
+                    }
+                }
+            },
+            legend: {
+                position: "bottom"
+            },
+            /*seriesDefaults: {
+                type: "line"
+            },*/
+            series: [
+                {
+                    name:"Total Sales",
+                    field:"totalSales",
+                    type:"line"
+                }
+            ],
+            /*series: [{
+                name: "World",
+                data: [15.7, 16.7, 20, 23.5, 26.6]
+            }, {
+                name: "United States",
+                data: [67.96, 68.93, 75, 74, 78]
+            }],*/
+            valueAxis: {
+                labels: {
+                    format: "${0}"
+                }
+            },
+            categoryAxis: {
+                baseUnit: "weeks",
+                field:"orderDate"
+            },
+            chartArea:{
+                //width:300,
+                height:200
+            },
+            schema: {
+                model: {
+                    fields: {
+                        orderDate: {
+                            type: "date"
+                        }
+                    }
+                }
+            }
+        });
+    // income dist
+    var incomeDistChart = $("#incomeDistributionChart").kendoChart({
+        title: {
+            text: "Income Distribution"
+        },
+        dataSource: {
+            transport: {
+                read: {
+                    url: "/api/orders/total/bydate/byartist/5145ec8237f23b0000000006",
+                    dataType: "json"
+                }
+            },
+            sort: {
+                field: "orderDate",
+                dir: "asc"
+            },
+            group: {
+                field:"name",
+                dir:"asc"
+            },
+            schema: {
+                model: {
+                    fields: {
+                        orderDate: {
+                            type: "date"
+                        }
+                    }
+                }
+            }
+        },
+        legend: {
+            position: "bottom",
+            visible:true
+        },
+        seriesDefaults: {
+            type: "pie",
+            labels: {
+                //visible:true
+            }
+        },
+        series: [
+            {
+                name:"Total Sales",
+                field:"totalSales",
+                type:"pie"
+            }
+        ],
+        /*series: [{
+            name: "World",
+            data: [15.7, 16.7, 20, 23.5, 26.6]
+        }, {
+            name: "United States",
+            data: [67.96, 68.93, 75, 74, 78]
+        }],*/
+        valueAxis: {
+            labels: {
+                format: "${0}"
+            }
+        },
+        categoryAxis: {
+            baseUnit: "weeks",
+            field:"orderDate"
+        },
+        chartArea:{
+            //width:300,
+            height:200
+        },
+        schema: {
+            model: {
+                fields: {
+                    orderDate: {
+                        type: "date"
+                    }
+                }
+            }
+        }
+    });
+    var recentOffersDS = new kendo.data.DataSource({
+        transport: {
+            read: '/api/offers'
+        },
+        pageSize: 5
+
+    });
+    $("#recentOffersGrid").kendoGrid({
+        height:150,
+        columns: [
+            {title: "Name", field: "name"},
+            {title: "Raise Amount", field: "amtToRaise"},
+            {title: "# Shares", field: "numShares"}
+        ],
+        dataSource: recentOffersDS,
+        selectable:"row",
+        change: function(){
+            var sel = this.select();
+            var data= this.dataItem(sel[0]);
+            console.log('selected: '+ JSON.stringify(data));
+            //set values
+            //todo: refactor
+            $("#offerDetails #amtToRaise").val(data.amtToRaise);
+            $("#offerDetails #pctOfferingToSell").val(data.pctOfferingToSell);
+            $("#offerDetails #costPerShare").val(data.amtToRaise / data.numShares);
+            //debugger;
+            //totSalesByAlbumDS.transport.read.url = "/api/orders/total/bydate/byalbum/"+data.itemId;
+            curAlbumId = data.itemId;
+            totSalesByAlbumDS.read();
+            totSalesByAlbum.data("kendoChart").refresh();
+
+
+        }
+    });
+
+script
+    $('#offeringWizardModal').on('shown',function(){
+        //alert("modal shown");
+        $('#newOfferingWizard').wizard();
+    });
+    function hideOfferDetails(){
+        console.log('hiding');
+        $('#pendOffer').hide();
+        $('#actOffer').hide();
+        $('#compOffer').hide();
+        $('#offerDetail').hide();
+
+    }
+    function getBandInfo(){
+        $.ajax({
+           type:"GET",
+           url:"/api/artist/basicinfo",
+           success: function(data) {
+                if ( _.isEqual(data,{}) ) {
+                    hideOfferDetails();
+                    $('#submitUpdateArtist').hide();
+                    $('#submitAddOffering').hide();
+
+                } else {
+                    $('#artistName').val(data.artistName);
+                    $('#phone').val(data.phone);
+                    $('#bio').val(data.bio);
+                    $('#submitUpdateArtist').show();
+                    $('#submitAddOffering').show();
+                    $('#submitCreateArtist').hide();
+                }
+           }
+
+        });
+
+    };
+    /*$(document).ready(function(){
+        alert('fragment loaded');
+        getBandInfo();
+
+
+    });
+    $('#profileMain').load(function(){
+        alert('fragment loaded (load)');
+    });
+    $('#profileMain').livequery('load',function(event){
+            alert('fragment loaded (load lq)');
+     });*/
+    $('#submitCreateArtist').click(function(){
+        var formData = $('#artistInfoForm').serialize();
+        //var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/artist/basicinfo",
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
+    $('#submitAddOffering').click(function(){
+        $('#profileMain').hide();
+        $('#newOfferingWizard').show();
+        $('#wizardWell').show();
+        $('#newOfferingWizard').wizard();
+
+    });
     $('#submitBasic').click(function(){
         var formData = $('#basicInfoForm').serialize();
         var id = $("#uid").val();
@@ -95,3 +565,6 @@ script
         });
 
     });
+
+    //--todo figrue out page load
+    getBandInfo();

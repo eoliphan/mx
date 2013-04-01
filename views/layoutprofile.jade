@@ -1,23 +1,34 @@
 doctype 5
-html
+html.fuelux
   head
     title= title
     //link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='viewport',content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='/stylesheets/bs/bootstrap-slate.css')
-    link(rel='stylesheet', href='/stylesheets/bs/bootstrap-responsive.css')
+    //link(rel='stylesheet', href='/stylesheets/bs/bootstrap.css')
+    //link(rel='stylesheet', href='/stylesheets/bs/bootstrap-responsive.css')
+    link(rel='stylesheet', href='http://fuelcdn.com/fuelux/2.3/css/fuelux.css')
+    link(rel='stylesheet', href='http://fuelcdn.com/fuelux/2.3/css/fuelux-responsive.css')
+
+
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.common.min.css')
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.dataviz.min.css')
     style
         [class^="icon-"] { background-image: url("/images/bs/glyphicons-halflings.png"); }
         [class*="icon-white"] { background-image: url("/images/bs/glyphicons-halflings-white.png"); }
+          .k-grid {
+            font-size: small;
+          }
 
     block scripts
         script(src='http://code.jquery.com/jquery-1.8.2.min.js')
-        script(src='/javascripts/bs/bootstrap.js')
-        script(src='/javascripts/kendo/kendo.web.min.js')
+        //script(src='/javascripts/jquery.livequery.js')
+        //script(src='/javascripts/bs/bootstrap.js')
+        script(src='http://fuelcdn.com/fuelux/2.3/loader.min.js')
         //script(src='/javascripts/kendo/kendo.dataviz.min.js')
+        //script(src='/javascripts/kendo/kendo.web.min.js')
+        script(src='/javascripts/kendo/kendo.all.min.js')
+
         script(src='/javascripts/jqBootstrapValidation.js')
         script(src='/socket.io/socket.io.js')
         script(src='/javascripts/uuid.js')

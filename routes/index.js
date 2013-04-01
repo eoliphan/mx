@@ -1,9 +1,9 @@
 
-/*
- * GET home page.
- */
+module.exports = function(app){
 
-exports.index = function(req, res){
-    console.log('in index route')
-  res.render('index', { title: 'Express' });
-};
+    require("./artist")(app);
+    require("./offer")(app);
+    require("./order")(app);
+    require("./wager")(app);
+    return {};
+}

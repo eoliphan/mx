@@ -184,6 +184,7 @@ block content
                     return false;
                 });
     script
+        /*
         $("#revenuechart").kendoChart({
             title: {
                 text: "Revenue Over Time"
@@ -196,8 +197,9 @@ block content
                 }
             ],
             seriesDefaults: {type: "line"}
-        });
+        });*/
     script
+        /*
         $("#investchart").kendoChart({
             height: 200,
             title: {
@@ -213,27 +215,28 @@ block content
                 type: "donut",
                 field: "value"
             }]
-        });
+        });*/
     script
-        $("#grid").kendoGrid({
-                    height: 400,
-                    columns: [
-                        {title: "Band", field: "band"},
-                        {title: "Project", field: "project"},
-                        {title: "Shares Owned", field: "sharesOwned"},
-                        {title: "Value", field: "shareValue"},
-                        {title: "Status", field: "status"},
-                        {title: "Revenue", field: "revenue"}
-                    ],
-                    dataSource: {
-                        data:[
-                            {band:"Moop",project:"Trilogy",sharesOwned:5,shareValue:5000,status:"In Production",revenue:"N/A"},
-                            {band:"Faith+1",project:"Renewal",sharesOwned:3,shareValue:3000,status:"Released",revenue:"$675.45"}
 
+            $("#grid").kendoGrid({
+                        height: 400,
+                        columns: [
+                            {title: "Band", field: "band"},
+                            {title: "Project", field: "project"},
+                            {title: "Shares Owned", field: "sharesOwned"},
+                            {title: "Value", field: "shareValue"},
+                            {title: "Status", field: "status"},
+                            {title: "Revenue", field: "revenue"}
                         ],
-                        pageSize: 2
-                    }
-                });
+                        dataSource: {
+                            data:[
+                                {band:"Moop",project:"Trilogy",sharesOwned:5,shareValue:5000,status:"In Production",revenue:"N/A"},
+                                {band:"Faith+1",project:"Renewal",sharesOwned:3,shareValue:3000,status:"Released",revenue:"$675.45"}
+
+                            ],
+                            pageSize: 2
+                        }
+                    });
 
 
 

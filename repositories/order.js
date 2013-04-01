@@ -18,11 +18,13 @@ var lineItemSchema = new Schema({
     itemType:String,
     name:String,
     price:Number,
-    quantity:Number
+    quantity:Number,
+        artistId:Schema.Types.ObjectId
 });
 //--
 var orderSchema = new Schema({
     sessionId:String,
+    sessOrd:{type:Number,default:0},
     type:{type:String,enum:['cart','order'],default:"cart"},
     userId:Schema.Types.ObjectId,
     orderDate:Date,
@@ -31,7 +33,7 @@ var orderSchema = new Schema({
 
 });
 
-orderSchema.index({sessionId:1},{unique:true});
+orderSchema.index({sessionId:1,type:1,sessOrd:1},{unique:true});
 orderSchema.index({userId:1});
 orderSchema.index({type:1});
 orderSchema.index({orderDate:1});

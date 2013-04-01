@@ -21,18 +21,29 @@ var song = new Schema({
     releaseDate:Date,
     price:Number
 });
+
+var ranking = new Schema({
+    value:Number,
+    rankDate: Date
+});
 var album = new Schema({
     name:String,
     genre:String,
     price:{type:Number,get:getPrice},
     releaseDate:Date,
-    songs:[song]
+    offerDate:Date,
+    status:{type:String, enum:['pending','forsale'],default:"pending"},
+    description:String,
+    songs:[song],
+    rankings:[ranking]
 });
 
 var artistSchema = new Schema({
     artistName:String,
     bio:String,
-    albums:[album]
+    phone: String,
+    albums:[album],
+    userId:Schema.Types.ObjectId
 });
 var Artist = mongoose.model('Artist',artistSchema);
 // = mongoose.model('User');

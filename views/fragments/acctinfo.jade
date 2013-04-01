@@ -19,6 +19,25 @@ div.row-fluid
         button.btn Change Password
 div.row-fluid
     hr
+    h4 Artist Information
+div.row-fluid
+    div.span2
+    div.span8
+        form#artistInfoForm.well
+            fieldset
+                label(for="bandName") Arist/Band Name
+                input#artistName.k-textbox(type="text",name="artistName",placeholder="Band Name", required="", validationMessage="please enter a band name",value=locals.user.bandName)
+                label(for="phone") Phone #
+                input#phone.k-textbox(type="text",name="phone",placeholder="Phone",value=locals.user.bandContactPhone)
+                label(for="bio") Bio
+                textarea#bio(name="bio",placeholder="Bio",rows="5")
+                label(for="artistImage") Artist Image
+                input(type='file',name='artistImage')
+            button#submitCreateArtist.btn.btn-primary.btn-danger(type='button') Create Band Information!
+            button#submitUpdateArtist.btn.btn-primary(type='button') Update Band Information
+
+div.row-fluid
+    hr
     h4 Investor Information
 div.row-fluid
     div.span2
@@ -40,6 +59,20 @@ div.row-fluid
         button#submitInvestor.btn.btn-primary Update Investor Information
 
 script
+    $('#submitCreateArtist').click(function(){
+        var formData = $('#artistInfoForm').serialize();
+        //var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/artist/basicinfo",
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
     $('#submitBasic').click(function(){
         var formData = $('#basicInfoForm').serialize();
         var id = $("#uid").val();
