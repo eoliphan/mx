@@ -36,7 +36,8 @@
         "cookie":"*",
         "gridfs-stream":"*",
         "hub":"*",
-        "moment":"*"
+        "moment":"*",
+        "connect":"*"
 
     },
     "engines":{
