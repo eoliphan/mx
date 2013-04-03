@@ -9,6 +9,26 @@ var Order  = require("../repositories/order").Order,
     async = require("async");
 
 module.exports = function(app){
+    app.get('/api/wager/leaders',function(req,res) {
+
+        Wager.aggregate(
+            {$group:{
+                _id:{userId:"$userId",userAlias:"$userAlias"},
+                points: {$sum:"$points"}
+            }},
+            {$sort:{points:-1}},
+
+            function(err,wagers){
+                if(err){
+                    return logger.error("Error getting wagers: " + err);
+                } else {
+                    res.send(wagers);
+                }
+
+        });
+
+
+    });
     app.get('/api/orders/asdfs', function(req,res){
             //logger.debug("works!!!!");
 //            if (!req.user || !req.user._id) {

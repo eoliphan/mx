@@ -2,9 +2,14 @@ logger = require('../logger');
 Order = require('../repositories/order').Order;
 Wager = require('../repositories/wager').Wager;
 Offer = require('../repositories/offer').Offer;
+Artist = require('../repositories/artist').Artist;
 
-_ = require('underscore')
 
+
+mongoose = require('mongoose');
+_ = require('underscore');
+
+ObjectId =mongoose.Types.ObjectId;
 exports.orderBought = (event) ->
   logger.debug event
   Order.findOne {sessionId: event.payload.sessionId}, (err,order) ->
@@ -13,29 +18,39 @@ exports.orderBought = (event) ->
     order.type = 'order'
     #order.sessionId = undefined
     order.sessOrd = parseInt(order.sessOrd) + 1
+    nextSessOrd = order.sessOrd + 1
     #todo now do this here but need to handle chained events better
     #update wagers based on items
 
     _.each order.items, (item ,index ,list) ->
       itemId = item.itemId
       price = item.price
+      orderDate
+      if (!event.payload.orderDate)
+        orderDate = new Date()
+      else
+        orderDate = event.payload.orderDate
+      order.orderDate = orderDate
       Wager.find {itemId:itemId}, (err,wagers) ->
         logger.error "error finding wagers " + err if err
         if (wagers)
           _.each wagers, (wager,index,list) ->
             points = wager.points
             # stuff
-
-            wager.points = points + (Math.round(price) * wager.chipCount)
+            #todo serious concurrency issue here, with the 'upper' points calculation, maybe just summarize the history
+            pointsThisEvent = (Math.round(price) * wager.chipCount)
+            newPoints = points + pointsThisEvent;
+            wager.points = newPoints
+            wager.history.push({eventDate:orderDate,points:pointsThisEvent})
             wager.save (err) ->
               logger.error "error updating wager: " + err if err
               logger.info "wager updated"
-    order.orderDate = new Date()
+
     order.save (err) ->
       logger.error "Error buying order: " + err if err
       logger.info "Order purchased"
       #todo: this needs to be evented
-      neworder = new Order({sessionId: event.payload.sessionId,type:'cart'})
+      neworder = new Order({sessionId: event.payload.sessionId,type:'cart',sessOrd:nextSessOrd})
       neworder.save (err) ->
         logger.error "Error Creating Order" + err if err
         logger.info "Order Created"
@@ -47,20 +62,27 @@ exports.itemAddedToOrder = (event) ->
   #todo: TMI in event, enhance
   Order.findOne {sessionId: event.payload.sessionId}, (err,order) ->
     #logger.error ""
-    order.items.push event.payload
-    order.save (err) ->
-      logger.error "Error Adding Item To Order" + err if err
-      logger.debug "Added Item to Order: " + event.payload
+    # enhance the item with the artist id and name
+    Artist.findOne {"albums._id":event.payload.itemId}, (err,artist) ->
+      return logger.error "Error finding artist: " + err if err
+      return logger.error "Artist not found" if (!artist)
+      newItem = event.payload
+      newItem.artistId = artist._id
+      newItem.artistName = artist.artistName
+      order.items.push event.payload
+      order.save (err) ->
+        logger.error "Error Adding Item To Order" + err if err
+        logger.debug "Added Item to Order: " + event.payload
 
 
 exports.orderCreated = (event) ->
   logger.debug(event);
 
   # seearch for existing orders for this session, in order to bump ordinal
-  Order.find {sessionId: event.payload.sessionId,type:cart}, null,{"sort":"sessOrd"}(err,orders) ->
-    # grab highest
-    highest = orders[orders.length-1]
-    highSess = highest.sessOrd
+  #Order.find {sessionId: event.payload.sessionId,type:cart}, null,{"sort":"sessOrd"}(err,orders) ->
+  #  # grab highest
+  #  highest = orders[orders.length-1]
+  #  highSess = highest.sessOrd
 
 
   order = new Order(event.payload);

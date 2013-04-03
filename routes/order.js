@@ -6,6 +6,7 @@ var Order  = require("../repositories/order").Order,
     _ = require('underscore'),
     uuid = require('node-uuid'),
     evtcmdbus = require('../evtcmdbus'),
+    moment = require('moment'),
     async = require("async");
 
 module.exports = function(app){
@@ -57,6 +58,147 @@ module.exports = function(app){
             });
 
     });
+    app.get('/api/orders/total/byartist/:id', function(req,res){
+                //logger.debug("works!!!!");
+    //            if (!req.user || !req.user._id) {
+    //                return res.send({});
+    //            }
+                var artistId = mongoose.Types.ObjectId(req.params.id);
+
+
+                Order.aggregate(
+                    {$match:{'items.artistId':artistId,orderDate:{$ne:null}}},
+                    {$unwind:"$items"},
+                    //{$sort:{orderDate:1}},
+                    {$project:{
+                        'itemPrice':'$items.price',
+                        "name":'$items.name'
+                        }},
+                    {$group:{
+                        _id:{name:"$name"},
+                        totalSales:{$sum:"$itemPrice"}
+                    }},
+                    //{$sort:{_id:1}},
+                    {$project:{
+                        'name':"$_id.name",
+                        'totalSales':"$totalSales"
+                    }},
+                function(err,orders){
+                    if(!orders) {
+                        return res.send({});
+                    } else {
+                        //todo remvoe this test
+//
+                        return res.send(orders);
+                    }
+                });
+
+        });
+    app.get('/api/orders/topsales/byartist/thisweek', function(req,res){
+            //logger.debug("works!!!!");
+//            if (!req.user || !req.user._id) {
+//                return res.send({});
+//            }
+            var artistId = mongoose.Types.ObjectId(req.params.id);
+            var startDate = new moment().subtract('days',7).toDate(); //todo, grab week refactor since only date range is relevant
+
+            Order.aggregate(
+                {$match:{orderDate:{$gte:startDate}}},
+                {$unwind:"$items"},
+                {$sort:{orderDate:-1}},
+                {$project:{
+                    'itemPrice':'$items.price',
+
+                    "artistId":"$items.artistId",
+                    "artistName":"$items.artistName"
+                    }},
+                {$group:{
+                    _id:{artistId:"$artistId",artistName:"$artistName"},
+                    totalSales:{$sum:"$itemPrice"}
+                }},
+                {$sort:{totalSales:-1}},
+                {$limit:10},
+            function(err,orders){
+                if(!orders) {
+                    return res.send({});
+                } else {
+                    //todo remvoe this test
+//
+                    return res.send(orders);
+                }
+            });
+
+    });
+    app.get('/api/orders/topsales/byartist/thismonth', function(req,res){
+                //logger.debug("works!!!!");
+    //            if (!req.user || !req.user._id) {
+    //                return res.send({});
+    //            }
+                var artistId = mongoose.Types.ObjectId(req.params.id);
+                var startDate = new moment().subtract('days',30).toDate(); //todo, grab week refactor since only date range is relevant
+
+                Order.aggregate(
+                    {$match:{orderDate:{$gte:startDate}}},
+                    {$unwind:"$items"},
+                    {$sort:{orderDate:-1}},
+                    {$project:{
+                        'itemPrice':'$items.price',
+
+                        "artistId":"$items.artistId",
+                        "artistName":"$items.artistName"
+                        }},
+                    {$group:{
+                        _id:{artistId:"$artistId",artistName:"$artistName"},
+                        totalSales:{$sum:"$itemPrice"}
+                    }},
+                    {$sort:{totalSales:-1}},
+                    {$limit:10},
+                function(err,orders){
+                    if(!orders) {
+                        return res.send({});
+                    } else {
+                        //todo remvoe this test
+    //
+                        return res.send(orders);
+                    }
+                });
+
+        });
+    app.get('/api/orders/topsales/byartist/thisyear', function(req,res){
+                    //logger.debug("works!!!!");
+        //            if (!req.user || !req.user._id) {
+        //                return res.send({});
+        //            }
+                    var artistId = mongoose.Types.ObjectId(req.params.id);
+                    var startDate = new moment().subtract('year',1).toDate(); //todo, grab week refactor since only date range is relevant
+
+                    Order.aggregate(
+                        {$match:{orderDate:{$gte:startDate}}},
+                        {$unwind:"$items"},
+                        {$sort:{orderDate:-1}},
+                        {$project:{
+                            'itemPrice':'$items.price',
+
+                            "artistId":"$items.artistId",
+                            "artistName":"$items.artistName"
+                            }},
+                        {$group:{
+                            _id:{artistId:"$artistId",artistName:"$artistName"},
+                            totalSales:{$sum:"$itemPrice"}
+                        }},
+                        {$sort:{totalSales:-1}},
+                        {$limit:10},
+                    function(err,orders){
+                        if(!orders) {
+                            return res.send({});
+                        } else {
+                            //todo remvoe this test
+        //
+                            return res.send(orders);
+                        }
+                    });
+
+            });
     app.get('/api/orders/total/bydate/byalbum/:id', function(req,res){
                 //logger.debug("works!!!!");
 //                if (!req.user || !req.user._id) {

@@ -163,51 +163,118 @@ div#rootDiv
                     .span3
                         h4 Global Stats
                     .span3
-                        p $
-                            #globalTotal
+                        p#globalTotal
                 .row-fluid
                     .span6
                         #totalSalesByAlbumChart
+
                     .span6
                         #incomeDistributionChart
                 .row-fluid
                     .span6
                         #albumSalesChart
+                    //.span1
                     .span6
 
                 .row-fluid
                     .span6
-                        form#offerDetails
-                            fieldset
-                                legend General Info
-                                label Description
-                                input#description(type="text",name='description')
-                                label Offer Date
-                                input#offerDate(type="text",name='offerDate')
-                                label Max Ownership %
-                                input#maxOwnership(type="text",name='maxOwnership')
-                                label Total Offer Amt
-                                input#amtToRaise(type='text',name='amtToRaise')
-                                label Ownership %
-                                input#pctOfferingToSell(type='text',name='pctOfferingToSell')
-                                legend User Album Info
-                                label Total invested in Shares
-                                input#totalInvestedInShares(type='text',name='totalInvestedInShares')
-                                label Shares Sold
-                                input#sharesSold(type='text',name='sharesSold')
-                                label Cost/Share
-                                input#costPerShare(type='text',name='costPerShare')
-                                label Profit/Share
-                                input#profitPerShare(type='text',name='profitPerShare')
+                        #offerDetails.well(style="font-size: small;")
+                            span Amount To Raise: &nbsp
+                            span(data-bind="text: amtToRaise")
+                            br
+                            span Ownership %: &nbsp
+                            span(data-bind="text: pctOfferingToSell")
+                            br
+                            span Price : &nbsp
+                            span(data-bind="text: price")
+                            //
+                                fieldset
+                                    legend General Info
+                                    label Description
+                                        span(data-bind="description")
+                                    input#description(type="text",name='description')
+                                    label Offer Date
+                                    input#offerDate(type="text",name='offerDate')
+                                    label Max Ownership %
+                                    input#maxOwnership(type="text",name='maxOwnership')
+                                    label Total Offer Amt
+                                    input#amtToRaise(type='text',name='amtToRaise')
+                                    label Ownership %
+                                    input#pctOfferingToSell(type='text',name='pctOfferingToSell')
+                                    legend User Album Info
+                                    label Total invested in Shares
+                                    input#totalInvestedInShares(type='text',name='totalInvestedInShares')
+                                    label Shares Sold
+                                    input#sharesSold(type='text',name='sharesSold')
+                                    label Cost/Share
+                                    input#costPerShare(type='text',name='costPerShare')
+                                    label Profit/Share
+                                    input#profitPerShare(type='text',name='profitPerShare')
                     .span6
                         #totalSalesAllAlbumChart
                 .row-fluid
                     .span6
                         #recentOffersGrid
                     .span6
-                        #leaderBoard
+                        .row-fluid
+                            .span4
+                                h5 Top Sales (Week)
+                                #topSalesWeek
+                            .span4
+                                h5 Top Sales (Month)
+                                #topSalesMonth
+                            .span4
+                                h5 Top Sales (Year)
+                                #topSalesYear
+                            //.span3
+                                #topSalesAllTime
 
 script
+    $("#topSalesWeek").kendoGrid({
+        dataSource: {
+            transport:{
+                read:"/api/orders/topsales/byartist/thisweek"
+            }
+        },
+        columns: [
+            {field:"_id.artistName",title:"Artist"},
+            {field:"totalSales",title:"Sales"}
+
+        ],
+        chartArea: {
+            height:200
+        }
+    });
+    $("#topSalesMonth").kendoGrid({
+            dataSource: {
+                transport:{
+                    read:"/api/orders/topsales/byartist/thismonth"
+                }
+            },
+            columns: [
+                {field:"_id.artistName",title:"Artist"},
+                {field:"totalSales",title:"Sales"}
+
+            ],
+            chartArea: {
+                height:200
+            }
+        });
+    $("#topSalesYear").kendoGrid({
+            dataSource: {
+                transport:{
+                    read:"/api/orders/topsales/byartist/thisyear"
+                }
+            },
+            columns: [
+                {field:"_id.artistName",title:"Artist"},
+                {field:"totalSales",title:"Sales"}
+
+            ],
+            chartArea: {
+                height:200
+            }
+        });
     var curAlbumId;
     var totSalesByAlbumDS = new kendo.data.DataSource({
         transport: {
@@ -262,7 +329,8 @@ script
         series: [
             {
                 name:"Total Sales",
-                field:"totalSales"
+                field:"totalSales",
+                missingValues: "interpolate"
             }
         ],
         valueAxis: {
@@ -271,7 +339,7 @@ script
             }
         },
         categoryAxis: {
-            baseUnit: "weeks",
+            baseUnit: "years",
             field:"_id"
         },
         chartArea:{
@@ -323,7 +391,8 @@ script
                 {
                     name:"Total Sales",
                     field:"totalSales",
-                    type:"line"
+                    type:"line",
+                    missingValues: "interpolate"
                 }
             ],
             /*series: [{
@@ -339,7 +408,7 @@ script
                 }
             },
             categoryAxis: {
-                baseUnit: "weeks",
+                baseUnit: "years",
                 field:"orderDate"
             },
             chartArea:{
@@ -357,72 +426,14 @@ script
             }
         });
     // income dist
-    var incomeDistChart = $("#incomeDistributionChart").kendoChart({
-        title: {
-            text: "Income Distribution"
-        },
-        dataSource: {
-            transport: {
-                read: {
-                    url: "/api/orders/total/bydate/byartist/5145ec8237f23b0000000006",
-                    dataType: "json"
-                }
-            },
-            sort: {
-                field: "orderDate",
-                dir: "asc"
-            },
-            group: {
-                field:"name",
-                dir:"asc"
-            },
-            schema: {
-                model: {
-                    fields: {
-                        orderDate: {
-                            type: "date"
-                        }
-                    }
-                }
+    var incomeDistChartDS = new kendo.data.DataSource({
+        transport: {
+            read: {
+                url: "/api/orders/total/byartist/5145ec8237f23b0000000006",
+                dataType: "json"
             }
         },
-        legend: {
-            position: "bottom",
-            visible:true
-        },
-        seriesDefaults: {
-            type: "pie",
-            labels: {
-                //visible:true
-            }
-        },
-        series: [
-            {
-                name:"Total Sales",
-                field:"totalSales",
-                type:"pie"
-            }
-        ],
-        /*series: [{
-            name: "World",
-            data: [15.7, 16.7, 20, 23.5, 26.6]
-        }, {
-            name: "United States",
-            data: [67.96, 68.93, 75, 74, 78]
-        }],*/
-        valueAxis: {
-            labels: {
-                format: "${0}"
-            }
-        },
-        categoryAxis: {
-            baseUnit: "weeks",
-            field:"orderDate"
-        },
-        chartArea:{
-            //width:300,
-            height:200
-        },
+
         schema: {
             model: {
                 fields: {
@@ -431,7 +442,54 @@ script
                     }
                 }
             }
+        },
+        aggregate:
+            {field:"totalSales",aggregate:"sum"},
+        change: function(e) {
+            //debugger;
+            console.log("testing running");
+            var totSalesByAlbumAggr = incomeDistChartDS.aggregates();
+            var total = totSalesByAlbumAggr.totalSales.sum;
+            $("#globalTotal").text("$ "+ parseFloat(total).toFixed(2));
         }
+    });
+    var incomeDistChart = $("#incomeDistributionChart").kendoChart({
+        title: {
+            text: "Income Distribution"
+        },
+        dataSource: incomeDistChartDS,
+        legend: {
+            position: "bottom",
+            visible:true
+        },
+        seriesDefaults: {
+            type: "pie",
+            labels: {
+                visible:true
+            }
+        },
+        series: [
+            {
+                name:"Total Sales",
+                field:"totalSales",
+                type:"pie",
+                categoryField:"name"
+            }
+        ],
+        valueAxis: {
+            labels: {
+                format: "${0}"
+            }
+        },
+        chartArea:{
+            //width:300,
+            height:200
+        },
+        categoryAxis: {
+            //baseUnit: "weeks",
+            field:"name"
+        }
+
     });
     var recentOffersDS = new kendo.data.DataSource({
         transport: {
@@ -455,9 +513,12 @@ script
             console.log('selected: '+ JSON.stringify(data));
             //set values
             //todo: refactor
-            $("#offerDetails #amtToRaise").val(data.amtToRaise);
+            // kendo mvvm
+            var offerDataModel = new kendo.observable(data);
+            kendo.bind($('#offerDetails'),offerDataModel);
+            /*$("#offerDetails #amtToRaise").val(data.amtToRaise);
             $("#offerDetails #pctOfferingToSell").val(data.pctOfferingToSell);
-            $("#offerDetails #costPerShare").val(data.amtToRaise / data.numShares);
+            $("#offerDetails #costPerShare").val(data.amtToRaise / data.numShares);*/
             //debugger;
             //totSalesByAlbumDS.transport.read.url = "/api/orders/total/bydate/byalbum/"+data.itemId;
             curAlbumId = data.itemId;

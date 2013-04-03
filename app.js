@@ -480,7 +480,7 @@ app.get('/api/songs/bygenre/:genre',function(req,res){
                 });
 });
 
-app.get('/api/wager/leaders',game.getWagerLeaders);
+
 var x = require("./routes")(app);
 //-- end routes
 
