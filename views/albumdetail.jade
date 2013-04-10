@@ -81,9 +81,12 @@ block content
             /*setTimeout(function(){
                 checkCart();
              },250);*/
-             alert(JSON.stringify(data));
+             alert("Shares purchased");
              $('#buySharesModal').modal('hide');
 
+        });
+        socket.on('chipWagerCreated',function(data){
+            alert("Wager placed on album");
         });
         $('#buySharesBtn').click(function(){
             var formData = $('#buySharesForm').serialize();

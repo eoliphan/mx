@@ -43,6 +43,7 @@ var eventHandlers = {};
 var eventSinks=[];
 
 function handleEvent(event) {
+    logger.debug("Handling Event: " + event);
     var handlers = eventHandlers[event.event];
     // send to sinks
     _.each(eventSinks,function(sink,index,list){
