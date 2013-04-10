@@ -7,6 +7,6 @@ client.auth("7b8206717498f7a0763079723fcce249",function(){
 });
 
 exports.publish = function(){
-    client.pu
+    //client.pu
 
 };

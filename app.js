@@ -41,7 +41,8 @@ var   http = require('http')
 
     , logger = require("winston"),
     connect = require("connect"),
-    moment = require('moment')
+    moment = require('moment'),
+    coffeescript = require("coffee-script")
 
 
     ;

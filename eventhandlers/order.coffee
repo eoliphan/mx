@@ -2,6 +2,7 @@ logger = require('../logger');
 Order = require('../repositories/order').Order;
 Wager = require('../repositories/wager').Wager;
 Offer = require('../repositories/offer').Offer;
+Revenue = require('../repositories/offer').Revenue;
 Artist = require('../repositories/artist').Artist;
 
 
@@ -31,6 +32,29 @@ exports.orderBought = (event) ->
       else
         orderDate = event.payload.orderDate
       order.orderDate = orderDate
+      # check for offers
+      if item.isActiveOffer
+        Offer.findOne {_id:item.offerId}, (err,offer) ->
+          return logger.error "Error finding offer:" + err if err
+          return logger.warn "No offer found : " + order if !offer
+          _.each offer.investments, (investment,index,list) ->
+            # look at the investment, figure the revenue share, create a revenue entry
+            # figure out pct of the shares, then factor in division
+            pctOfSale = (investment.sharesPurchased / offer.numShares) * (offer.pctOfferingToSell/100)
+            revenueForSale = item.price * pctOfSale
+            revenueForSale = Math.round(revenueForSale*100) / 100
+            rev =
+              orderId: order._id
+              investorId: investment.userId
+              offeringId: offer._id
+              offeringName: offer.name
+              amount: revenueForSale
+              earnDate: orderDate
+
+            newRev = new Revenue(rev)
+            newRev.save()
+
+      # update wagers
       Wager.find {itemId:itemId}, (err,wagers) ->
         logger.error "error finding wagers " + err if err
         if (wagers)
@@ -60,9 +84,20 @@ exports.orderBought = (event) ->
 exports.itemAddedToOrder = (event) ->
   logger.debug(event)
   #todo: TMI in event, enhance
+  Artist.findOne {"albums._id":event.payload.itemId}, (err,artist) ->
+    return logger.error "Error finding artist: " + err if err
+    return logger.error "Artist not found" if (!artist)
+    newItem = event.payload
+    newItem.artistId = artist._id
+    newItem.artistName = artist.artistName
+    Order.findOneAndUpdate {sessionId: event.payload.sessionId}, {$push:{items:newItem}},(err,order) ->
+      return logger.error "Error Adding Item to Order: " + err if err
+      return logger.error "Order not found to update: " + event.payload if !order
+  ###
   Order.findOne {sessionId: event.payload.sessionId}, (err,order) ->
     #logger.error ""
     # enhance the item with the artist id and name
+
     Artist.findOne {"albums._id":event.payload.itemId}, (err,artist) ->
       return logger.error "Error finding artist: " + err if err
       return logger.error "Artist not found" if (!artist)
@@ -73,6 +108,8 @@ exports.itemAddedToOrder = (event) ->
       order.save (err) ->
         logger.error "Error Adding Item To Order" + err if err
         logger.debug "Added Item to Order: " + event.payload
+
+  ###
 
 
 exports.orderCreated = (event) ->

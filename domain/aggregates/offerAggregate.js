@@ -16,6 +16,11 @@ module.exports = base.extend({
 
         this.checkBusinessRules(callback);
     },
+    addInvestmentToOffer: function(data, callback) {
+        this.apply(this.toEvent('investmentAddedToOffer', data));
+
+        this.checkBusinessRules(callback);
+    },
 
 
     // Events
@@ -27,6 +32,14 @@ module.exports = base.extend({
 
     offerDeleted: function(data) {
         this.set('destroyed', true);
+    },
+    investmentAddedToOffer: function(data) {
+        var investments =  this.get('investments');
+        if (!investments) {
+            investments = [];
+            this.set('investments',investments);
+        }
+        investments.push(data);
     }
 
 

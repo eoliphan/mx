@@ -1,47 +1,48 @@
 {
-    "name":"application-name",
-    "version":"0.0.1",
-    "private":true,
-    "scripts":{
-        "start":"node app"
-    },
-    "dependencies":{
-        "express":"3.0.1",
-        "jade":"*",
-        "passport":"*",
-        "passport.socketio":"*",
-        "socket.io":"*",
-        "passport-local":"*",
-        "cqrs-domain":">=0.3.4",
-        "eventstore.mongoDb":">=0.6.1",
-        "rule-validator":">=0.1.3",
-        "cqrs-eventdenormalizer":">=0.2.3",
-        "viewmodel":">=0.4.10",
-        "mongodb":">=1.2.2",
-        "redis":">= 0.0.1",
-        "hiredis":">= 0.0.1",
-        "async":">= 0.0.1",
-        "mongoose":"*",
-        "node-uuid":"*",
-        "nodeunit":"*",
-        "resourceful":"*",
-        "nconf":"*",
-        "connect-flash":"*",
-        "nodetime":"*",
-        "winston":"*",
-        "underscore":"*",
-        "amqp-dsl":"1.0.x",
-        "redisq":"0.1.x",
-        "amqp":"*",
-        "cookie":"*",
-        "gridfs-stream":"*",
-        "hub":"*",
-        "moment":"*",
-        "connect":"*"
-
-    },
-    "engines":{
-        "node":"0.8.x",
-        "npm":"1.1.x"
-    }
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.1",
+    "jade": "*",
+    "passport": "*",
+    "passport.socketio": "*",
+    "socket.io": "*",
+    "passport-local": "*",
+    "cqrs-domain": ">=0.3.4",
+    "eventstore.mongoDb": ">=0.6.1",
+    "rule-validator": ">=0.1.3",
+    "cqrs-eventdenormalizer": ">=0.2.3",
+    "viewmodel": ">=0.4.10",
+    "mongodb": ">=1.2.2",
+    "redis": ">= 0.0.1",
+    "hiredis": ">= 0.0.1",
+    "async": ">= 0.0.1",
+    "mongoose": "*",
+    "node-uuid": "*",
+    "nodeunit": "*",
+    "resourceful": "*",
+    "nconf": "*",
+    "connect-flash": "*",
+    "nodetime": "*",
+    "winston": "*",
+    "underscore": "*",
+    "amqp-dsl": "1.0.x",
+    "redisq": "0.1.x",
+    "amqp": "*",
+    "cookie": "*",
+    "gridfs-stream": "*",
+    "hub": "*",
+    "moment": "*",
+    "connect": "*",
+    "useragent": "~2.0.3",
+      "coffee-script":"*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
 }

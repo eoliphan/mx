@@ -26,6 +26,9 @@ exports.albumAdded = (event) ->
         description: event.payload.description
         price: event.payload.price
         offerDate: event.payload.offerDate
+        isActiveOffer: event.payload.isActiveOffer
+        offerId: event.payload.offerId
+      # todo change to update
       artist.albums.push newAlbum
       artist.save (err) ->
         logger.error "Error adding album: " + err if err

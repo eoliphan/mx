@@ -6,6 +6,37 @@ block content
                 padding-bottom: 40px;
               }
     include common/topbar
+    //-- todo refactor out
+    #buySharesModal.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="buySharesModalLabel",aria-hidden="true")
+        .modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#buySharesModalLabel Buy Shares!
+        .modal-body
+            .row-fluid
+                .span6
+                    pre#offerInfo
+                        | Name : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: name")
+                        br
+                        | Raise Amount : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: amtToRaise")
+                        br
+                        | % Offered : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: pctOfferingToSell")
+                        br
+                        | Shares Avail : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: sharesAvailable")
+
+                .span6
+                    form#buySharesForm
+                        fieldset
+                        label # Shares To Buy
+                        input#sharesPurchased(type="number",name="sharesPurchased")
+
+        .modal-footer
+            button.btn(data-dismiss="modal",aria-hidden="true") Close
+            button#buySharesBtn.btn.btn-primary Buy Shares!
+
     .container
             .hero-unit
                 h2 #{locals.info.albums.name}
@@ -24,6 +55,8 @@ block content
                             button#addToCart.btn.btn-primary Add To Cart
                             button#buyNow.btn Buy Now
                             button#investChips.btn.btn-danger Invest 10 Chips!
+                            - if (locals.info.albums.isActiveOffer)
+                                button#showBuySharesBtn.btn.btn-danger Buy Shares!
                         - else
                             button#addToCart.btn.btn-primary Add To Cart
                             button#buyNow.btn  Buy Now
@@ -43,6 +76,41 @@ block content
         script
             var userid = "#{locals.user._id}"
     script
+        $('#sharesPurchased').kendoNumericTextBox();
+        socket.on('investmentAddedToOffer',function(data){
+            /*setTimeout(function(){
+                checkCart();
+             },250);*/
+             alert(JSON.stringify(data));
+             $('#buySharesModal').modal('hide');
+
+        });
+        $('#buySharesBtn').click(function(){
+            var formData = $('#buySharesForm').serialize();
+            $.ajax({
+                type:"POST",
+                url:"/api/offers/investments/"+"#{locals.info.albums.offerId}",
+                data: formData,
+                success: function(data){
+                    console.log("investment sent: "+data);
+                }
+            });
+
+        });
+        $('#showBuySharesBtn').click(function(){
+            var offerUrl = "/api/offers/info/"+"#{locals.info.albums.offerId}";
+            $.ajax({
+                type:"GET",
+                url:offerUrl,
+                success: function(data) {
+                    console.log(data);
+                    var offerModel = kendo.observable(data);
+                    kendo.bind($('#offerInfo'),offerModel);
+                    $('#buySharesModal').modal('show');
+                }
+            });
+
+        });
         $('#addToCart').click(function(){
             //var formData = $('#investorInfoForm').serialize();
             //var id = $("#uid").val();
@@ -56,6 +124,7 @@ block content
                     name: "#{locals.info.albums.name}",
                     price: #{locals.info.albums.price},
                     artistId: "#{locals.info._id}"
+
                 }
             };
             socket.emit("command",command);

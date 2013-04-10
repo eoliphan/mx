@@ -1,15 +1,38 @@
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
-    , conf = require("../config").conf;
+    , conf = require("../config").conf,
+    ObjectId = Schema.Types.ObjectId;
 
-var investorSchema = new Schema({
+/**
+ * revenue schema
+ *
+ * 'denormalizing' for read path access
+ * to the investor/investmet
+ */
+var revenueSchema = new Schema({
+    orderId:ObjectId,
+    investorId:ObjectId,
+    investmentId:ObjectId,
+    offeringId:ObjectId,
+    offeringName:String,
+    amount:Number,
+    earnDate:Date
+
+
+});
+
+var Revenue = mongoose.model('Revenue',revenueSchema);
+
+exports.Revenue = Revenue;
+var investmentSchema = new Schema({
     userId: Schema.Types.ObjectId,
     sharesPurchased: Number,
+    pctOffering:Number, // what pct of the offering does this represent (for payout calc)
     purchaseDate: Date
 
 });
 var offerSchema = new Schema({
-    artistName:String,
+    artistName:String, //todo: this is too specific to sound scry
     bio:String,
     //albums:[album],
     userId:Schema.Types.ObjectId,
@@ -21,9 +44,9 @@ var offerSchema = new Schema({
     sharePrice: {type:Number,get:function(val){
         return this.amtToRaise / this.numShares;
     }},
-    sharesRemaining: Number,
+    sharesRemaining: Number, //todo: should be computed dynamically
     amtToRaise: Number,
-    investors: [investorSchema],
+    investments: [investmentSchema],
     name:String,
     price:Number
 

@@ -36,6 +36,8 @@ function createOrderForDate(album,orderDate) {
     evt1.payload.name = album.name;
     evt1.payload.price = album.price;
     evt1.payload.sessionId = sessId;
+    evt1.payload.offerId = album.offerId;
+    evt1.payload.isActiveOffer =album.isActiveOffer;
     setTimeout(function () {
         orderHandlers.itemAddedToOrder(evt1);
         var evt2 = {};

@@ -20,7 +20,9 @@ var lineItemSchema = new Schema({
     price:Number,
     quantity:Number,
     artistId:Schema.Types.ObjectId,
-    artistName:String
+    artistName:String,
+    offerId:Schema.Types.ObjectId,
+    isActiveOffer:Boolean
 });
 //--
 var orderSchema = new Schema({

@@ -238,7 +238,7 @@ script
         },
         columns: [
             {field:"_id.artistName",title:"Artist"},
-            {field:"totalSales",title:"Sales"}
+            {field:"totalSales",title:"Sales",format:"{0:c}"}
 
         ],
         chartArea: {
@@ -253,7 +253,7 @@ script
             },
             columns: [
                 {field:"_id.artistName",title:"Artist"},
-                {field:"totalSales",title:"Sales"}
+                {field:"totalSales",title:"Sales",format:"{0:c}"}
 
             ],
             chartArea: {
@@ -268,7 +268,7 @@ script
             },
             columns: [
                 {field:"_id.artistName",title:"Artist"},
-                {field:"totalSales",title:"Sales"}
+                {field:"totalSales",title:"Sales",format:"{0:c}"}
 
             ],
             chartArea: {
@@ -473,13 +473,17 @@ script
                 name:"Total Sales",
                 field:"totalSales",
                 type:"pie",
-                categoryField:"name"
+                categoryField:"name",
+                labels: {
+                    format:"{0:c}"
+                }
+
             }
         ],
         valueAxis: {
             labels: {
-                format: "${0}"
-            }
+                format: "{0:c}"
+        }
         },
         chartArea:{
             //width:300,

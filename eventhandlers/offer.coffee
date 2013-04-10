@@ -25,6 +25,7 @@ exports.offerCreated = (event) ->
       logger.error "Artist not found"
     else
       newAlbumId = ObjectId()
+      newOfferId = ObjectId()
       # pull out the album data
       createAlbumCmd =
         id:uuid.v4()
@@ -36,6 +37,8 @@ exports.offerCreated = (event) ->
           description: event.payload.description
           price: event.payload.price
           offerDate: new Date()
+          isActiveOffer: true
+          offerId:newOfferId
       evtcmdbus.emitCommand createAlbumCmd
       offerData = event.payload
       offerData.itemId = newAlbumId
@@ -43,3 +46,9 @@ exports.offerCreated = (event) ->
       offer.save (err) ->
         logger.error "Error creating offer: " + err if err
         logger.info "Offer Created"
+
+exports.investmentAddedToOffer = (event) ->
+  logger.debug("Handling: " + event)
+  Offer.findOneAndUpdate {_id:event.payload.offerId}, {$push:{investments:event.payload}},(err,offer) ->
+    return logger.error "Error adding investment to offer: " + err if err
+    return logger.error "Offer not found for " + event.payload if !offer

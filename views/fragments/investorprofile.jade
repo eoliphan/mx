@@ -1,5 +1,133 @@
 div.row-fluid
     .span4
+        h2 Total Earnings $
+            span#totalEarnings
+    .span2
+        #summarySpark(style="background-color: #eeeeee;")
+
+
+div.row-fluid
+    .span12#revenueChart
+div.row-fluid
+    .span12#revTab
+        ul
+
+
+script
+
+
+    var revChartDS = new kendo.data.DataSource(
+        {
+            transport: {
+                read: '/api/offers/revenues/byuser/511a8c6ece62e90000000003'
+            },
+            schema: {
+                model: {
+                    fields: {
+                        earnDate: {
+                            type: "date"
+                        }
+                    }
+                }
+            },
+            group: {
+                field:"offeringName"
+            },
+            sort: {
+                field:"earnDate",
+                dir:"asc"
+            },
+            aggregate: {field:"amount",aggregate:"sum"},
+            change: function(e) {
+                //debugger;
+                console.log("testing running");
+                var totSalesByAlbumAggr = revChartDS.aggregates();
+                var total = totSalesByAlbumAggr.amount.sum;
+                $("#totalEarnings").text(parseFloat(total).toFixed(2));
+            }
+        }
+    );
+
+
+
+    var revChartSparkDS = new kendo.data.DataSource(
+            {
+                transport: {
+                    read: '/api/offers/revenues/byoffer/byuser/511a8c6ece62e90000000003'
+                }
+            }
+        );
+    $('#summarySpark').kendoSparkline({
+        dataSource: revChartSparkDS,
+        series: [
+            {
+                type:"pie",
+                field: "totalSales",
+                categoryField:"offeringName",
+                tootip: {
+                           //visible:true,
+                           //format: "{c}",
+                           //template: "|#= value #|"
+                       }
+            }
+
+        ],
+        chartArea: {
+            height: 100,
+            width: 100,
+            background: "#eeeeee"
+        },
+        tooltip: {
+            visible: true,
+            //template: "|#= value #|"
+            format: "{0:c}"
+        }
+
+    });
+    var revChart = $('#revenueChart').kendoChart({
+        title: "Revenue History",
+        dataSource: revChartDS,
+        series: [
+            {
+                name:"Earnings",
+                field: "amount",
+                type:"line",
+                missingValues: "interpolate"
+            }
+        ],
+        categoryAxis: {
+            baseUnit: "months",
+            field:"earnDate"
+        },
+        chartArea: {
+            height:300
+            //,width:1200
+            , margin: {right:0,left:0}
+        }
+    });
+    var tabStrip = $('#revTab').kendoTabStrip().data("kendoTabStrip");
+    function fillInTabs(){
+       $.ajax({
+           url: '/api/offers/revenues/byoffer/byuser/511a8c6ece62e90000000003',
+           method: 'GET',
+           success: function(data) {
+               _.each(data,function(element,index,list){
+                   //debugger;
+                   console.log(element);
+                   tabStrip.append({text:element.offeringName});
+               });
+              }
+       });
+      }
+    //fillInTabs();
+    function fragmentLoaded(){
+        console.log("Fragment Loaded");
+        fillInTabs();
+    }
+
+
+div.hide.row-fluid
+    .span4
         p: small Investor, Promoter, Music Lover: Before being able to buy into the first musician offering you have to fill out the fields below in order to comply with SEC regulations on equity crowdfunding:
         form#bandInfo.well
             label(for="bandName") Company Name

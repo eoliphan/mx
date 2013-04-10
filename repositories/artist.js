@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
-    , conf = require("../config").conf;
+    , conf = require("../config").conf,
+    ObjectId = Schema.Types.ObjectId;
 
 //// connect to db
 //var connstring = "mongodb://"+conf.get('database:user')+":"+conf.get('database:password')+"@"+
@@ -32,6 +33,8 @@ var album = new Schema({
     price:{type:Number,get:getPrice},
     releaseDate:Date,
     offerDate:Date,
+    isActiveOffer:Boolean,
+    offerId:ObjectId,
     status:{type:String, enum:['pending','forsale'],default:"pending"},
     description:String,
     songs:[song],
