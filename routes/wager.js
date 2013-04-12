@@ -9,6 +9,24 @@ var Order  = require("../repositories/order").Order,
     async = require("async");
 
 module.exports = function(app){
+    app.get('/api/chips/user',function(req,res){
+        var userId = mongoose.Types.ObjectId(req.user._id);
+        Wager.aggregate(
+            {$match:{userId:userId}},
+            {$group:{
+                _id:{userId:"$userId"},
+                totalPoints:{$sum:"$points"}
+            }},
+            function(err,wagerpoints) {
+                if (err) {
+                    return logger.error("Error summing user points");
+                } else {
+                    res.send(wagerpoints);
+                }
+            }
+        );
+        // get the
+    });
     app.get('/api/wager/leaders',function(req,res) {
 
         Wager.aggregate(

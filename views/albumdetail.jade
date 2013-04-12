@@ -24,10 +24,20 @@ block content
                         | % Offered : &nbsp;
                         span(style="font-weight: bold;",data-bind="text: pctOfferingToSell")
                         br
+                        | # Shares : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: numShares")
+                        br
                         | Shares Avail : &nbsp;
                         span(style="font-weight: bold;",data-bind="text: sharesAvailable")
+                        br
+                        | Share Price (USD) : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: sharePrice")
+                        br
+                        | Share Buys You (%) : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: shareBuysYou")
 
                 .span6
+                    img.pull-right(src="/images/stock_market-icon.gif",width=64,height=64)
                     form#buySharesForm
                         fieldset
                         label # Shares To Buy
@@ -36,6 +46,29 @@ block content
         .modal-footer
             button.btn(data-dismiss="modal",aria-hidden="true") Close
             button#buySharesBtn.btn.btn-primary Buy Shares!
+    #buyChipsModal.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="buyChipsModalLabel",aria-hidden="true")
+        .modal-header
+            button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+            h3#buyChipsModalLabel Invest Chips!
+        .modal-body
+            .row-fluid
+                .span6
+                    pre#chipsInfo
+                        | Chips Available : &nbsp;
+                        span(style="font-weight: bold;",data-bind="text: name")
+                        br
+
+
+                .span6
+                    img.pull-right(src="/images/Chips-256.png",width=64,height=64)
+                    form#buyChipsForm
+                        fieldset
+                        label # Chips To Buy
+                        input#chipsPurchased(type="number",name="chipsPurchased")
+
+        .modal-footer
+            button.btn(data-dismiss="modal",aria-hidden="true") Close
+            button#buySharesBtn.btn.btn-primary Invest Chips!
 
     .container
             .hero-unit
@@ -54,13 +87,20 @@ block content
                         - if (locals.user)
                             button#addToCart.btn.btn-primary Add To Cart
                             button#buyNow.btn Buy Now
-                            button#investChips.btn.btn-danger Invest 10 Chips!
+                            button#investChips.btn Invest 10 Chips!
                             - if (locals.info.albums.isActiveOffer)
-                                button#showBuySharesBtn.btn.btn-danger Buy Shares!
+                                button#showBuySharesBtn.btn Buy Shares!
                         - else
                             button#addToCart.btn.btn-primary Add To Cart
                             button#buyNow.btn  Buy Now
-                            //button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
+                            button#investChips.btn.disabled(data-content="Join SoundScry to play the investment game") Invest 10 Chips!
+                            script
+                                $('#investChips').popover({trigger: 'hover'});
+                            - if (locals.info.albums.isActiveOffer)
+                                button#showBuySharesBtn.btn.disabled(data-content="Join SoundScry as an investor, to  invest in this offering") Buy Shares!
+                                script
+                                    $("#showBuySharesBtn").popover({trigger:'hover'});
+                                //button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
                 hr
                 .row-fluid
 
@@ -77,6 +117,7 @@ block content
             var userid = "#{locals.user._id}"
     script
         $('#sharesPurchased').kendoNumericTextBox();
+        $('#chipsPurchased').kendoNumericTextBox();
         socket.on('investmentAddedToOffer',function(data){
             /*setTimeout(function(){
                 checkCart();
@@ -107,11 +148,34 @@ block content
                 url:offerUrl,
                 success: function(data) {
                     console.log(data);
+                    // enhance model
+                    data.sharePrice = (data.amtToRaise / data.numShares).toFixed(2);
+                    data.shareBuysYou = (data.pctOfferingToSell / 100) * (100/data.numShares);
                     var offerModel = kendo.observable(data);
                     kendo.bind($('#offerInfo'),offerModel);
                     $('#buySharesModal').modal('show');
                 }
             });
+
+        });
+        $('#investChips').click(function(){
+            var chipInfoUrl = "/api/game/user/chipsavailble";
+            $('#buyChipsModal').modal('show');
+            /*var newUuid = uuid.v4();
+            command = {
+                id: newUuid,
+                command: "createChipWager",
+                payload: {
+
+                    itemId: "#{locals.info.albums._id}",
+                    userId: userid,
+                    itemType:'album',
+                    chipCount:10,
+                    name: "#{locals.info.albums.name}",
+
+                }
+            };
+            socket.emit("command",command);*/
 
         });
         $('#addToCart').click(function(){
@@ -157,32 +221,3 @@ block content
 
         });
 
-            $('#investChips').click(function(){
-                /*var newUuid = uuid.v4();
-                $.ajax({
-                    type:"POST",
-                    url:"/user/chips/item",
-                    data: {id:newUuid,command:"addUserWager",payload:{itemId: "#{locals.info.albums._id}",chips:10}},
-                    //data: {itemType:"album",itemId: "#{locals.info.albums._id}"},
-                    success: function(data) {
-                        //alert(sent);
-                        $('#alert').show();
-                    }
-                });*/
-                var newUuid = uuid.v4();
-                command = {
-                    id: newUuid,
-                    command: "createChipWager",
-                    payload: {
-
-                        itemId: "#{locals.info.albums._id}",
-                        userId: userid,
-                        itemType:'album',
-                        chipCount:10,
-                        name: "#{locals.info.albums.name}",
-
-                    }
-                };
-                socket.emit("command",command);
-
-            });

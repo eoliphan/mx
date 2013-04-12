@@ -63,11 +63,11 @@ function handleEvent(event) {
 
 //-- rabbit mq for events
 var amqpConn = amqp.createConnection({
-    host:"tiger.cloudamqp.com",
-    port:"5672",
-    login:"gttbyzfy",
-    password:"s5etXP7ROddzMvncxZU5-LW29KRJlyWZ",
-    vhost:"gttbyzfy"
+    host:conf.get("evtbusamqp:host"),
+    port:conf.get("evtbusamqp:port"),
+    login:conf.get("evtbusamqp:login"),
+    password:conf.get("evtbusamqp:password"),
+    vhost:conf.get("evtbusamqp:vhost")
 
 });
 

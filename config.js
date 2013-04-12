@@ -14,6 +14,14 @@ conf.set("redis:port",9725);
 conf.set("redis:pass","7b8206717498f7a0763079723fcce249");
 
 // rabbit mq
+conf.set("evtbusamqp:host","tiger.cloudamqp.com");
+conf.set("evtbusamqp:port","5672");
+conf.set("evtbusamqp:login","gttbyzfy");
+conf.set("evtbusamqp:password","s5etXP7ROddzMvncxZU5-LW29KRJlyWZ");
+conf.set("evtbusamqp:vhost","gttbyzfy");
+
+conf.set("testvar","local");
+
 
 console.log('database: ' + conf.get('database'));
 exports.conf=conf;
