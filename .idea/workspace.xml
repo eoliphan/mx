@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/store/store1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/store/store2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/store/store3.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/analytics.htm" afterPath="$PROJECT_DIR$/public/widget/statistics/analytics.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/data_server.js" afterPath="$PROJECT_DIR$/public/widget/data_server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" afterPath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/datetime.js" afterPath="$PROJECT_DIR$/public/mojitoring/datetime.js" />
@@ -43,9 +42,9 @@
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365801668370" ignored="false" />
+    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365802181731" ignored="false" />
     <file path="/evtcmdbus.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365800265128" ignored="false" />
-    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365800774060" ignored="false" />
+    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365802561007" ignored="false" />
     <file path="/topbar.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365615813838" ignored="false" />
     <file path="/order.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365250978722" ignored="false" />
     <file path="/order.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365249542696" ignored="false" />
@@ -88,7 +87,7 @@
     <file path="$PROJECT_DIR$/../jabsnoop/package.json" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365120988820" ignored="false" />
     <file path="/investorprofile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365609018734" ignored="false" />
     <file path="/demoweb.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365779926028" ignored="false" />
-    <file path="/config.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365800712163" ignored="false" />
+    <file path="/config.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365802454978" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +190,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="evtcmdbus.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="evtcmdbus.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="69" column="36" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.6420233">
@@ -222,10 +221,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="617" column="7" selection-start="18190" selection-end="18190" vertical-scroll-proportion="0.0">
+                <state line="623" column="56" selection-start="18296" selection-end="18296" vertical-scroll-proportion="0.32960895">
                   <folding />
                 </state>
               </provider>
@@ -267,10 +266,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="25" selection-start="458" selection-end="473" vertical-scroll-proportion="0.2877095">
+                <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -318,9 +317,9 @@
         <option value="$PROJECT_DIR$/views/demoweb.jade" />
         <option value="$PROJECT_DIR$/routes/wager.js" />
         <option value="$PROJECT_DIR$/views/albumdetail.jade" />
+        <option value="$PROJECT_DIR$/evtcmdbus.js" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/evtcmdbus.js" />
       </list>
     </option>
   </component>
@@ -894,7 +893,11 @@
       <created>1365801685129</created>
       <updated>1365801685129</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="latest updates for controlpanel etc">
+      <created>1365802185455</created>
+      <updated>1365802185455</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1143,23 +1146,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="617" column="7" selection-start="18190" selection-end="18190" vertical-scroll-proportion="0.0">
+        <state line="69" column="36" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.6420233">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="458" selection-end="473" vertical-scroll-proportion="0.2877095">
+        <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="36" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.6420233">
+        <state line="623" column="56" selection-start="18296" selection-end="18296" vertical-scroll-proportion="0.32960895">
           <folding />
         </state>
       </provider>

@@ -22,6 +22,8 @@ conf.set("evtbusamqp:vhost","gttbyzfy");
 
 conf.set("testvar","local");
 
+conf.set("deployenv","local");
+
 
 console.log('database: ' + conf.get('database'));
 exports.conf=conf;

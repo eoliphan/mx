@@ -619,6 +619,15 @@ io.sockets.on('connection',function(socket){
 
 });
 
+if (conf.get("deployenv") === "heroku") {
+
+    console.log("updating socket.io config for heroku");
+    io.configure(function () {
+      io.set("transports", ["xhr-polling"]);
+      io.set("polling duration", 10);
+    });
+}
+
 console.log("test conf var: " + conf.get("testvar"));
 
 
