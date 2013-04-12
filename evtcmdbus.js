@@ -71,6 +71,9 @@ var amqpConn = amqp.createConnection({
 
 });
 
+amqpConn.on('error',function(err){
+   logger.error("error logging into amqp: " + err);
+});
 amqpConn.on('ready',function(){
     logger.info("amqp connection ready");
     amqpConn.queue(evtTopic,
