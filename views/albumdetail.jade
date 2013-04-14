@@ -76,7 +76,7 @@ block content
                 h4 Artist: #{locals.info.artistName}
                 .row-fluid(width="800")
                     .span4
-                        img(src="/util/rndsmlcvr/1",width=300,height=300)
+                        img(src="/util/rndsmlcvr/1",width="100%")
                     .span8
                         h4 Genre: <em>#{locals.info.albums.genre}</em>
                         h4 Bio: <em>#{locals.info.bio}</em>
@@ -116,8 +116,8 @@ block content
         script
             var userid = "#{locals.user._id}"
     script
-        $('#sharesPurchased').kendoNumericTextBox();
-        $('#chipsPurchased').kendoNumericTextBox();
+        $('#sharesPurchased').kendoNumericTextBox({min:0});
+        $('#chipsPurchased').kendoNumericTextBox({min:0});
         socket.on('investmentAddedToOffer',function(data){
             /*setTimeout(function(){
                 checkCart();
