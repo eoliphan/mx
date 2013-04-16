@@ -43,6 +43,7 @@ var   http = require('http')
     connect = require("connect"),
     moment = require('moment')
     ,coffeescript = require("coffee-script")
+    ,upload = require('jquery-file-upload-middleware')
 
 
     ;
@@ -79,6 +80,17 @@ var evtcmdbus = require('./evtcmdbus')
 ;
 
 
+upload.configure({
+        uploadDir: __dirname + '/public/uploads',
+        uploadUrl: '/uploads',
+        imageVersions: {
+            thumbnail: {
+                width: 80,
+                height: 80
+            }
+        }
+    });
+
 
 
 app.configure('development', function(){
@@ -98,6 +110,7 @@ app.configure(function(){
 
   app.use(express.favicon());
   app.use(express.logger('dev'));
+  app.use('/upload', upload.fileHandler());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('secret'));

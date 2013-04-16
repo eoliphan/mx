@@ -159,23 +159,18 @@ div#rootDiv
                         h4 Album Stats
                     .span3
                         p#albumTotal
-
                     .span3
                         h4 Global Stats
                     .span3
                         p#globalTotal
                 .row-fluid
-                    .span6
-                        #totalSalesByAlbumChart
-
+                    .span6#totalSalesByAlbumChart
                     .span6
                         #incomeDistributionChart
                 .row-fluid
                     .span6
                         #albumSalesChart
-                    //.span1
                     .span6
-
                 .row-fluid
                     .span6
                         #offerDetails.well(style="font-size: small;")
@@ -309,8 +304,10 @@ script
             //debugger;
             console.log("testing running");
             var totSalesByAlbumAggr = totSalesByAlbumDS.aggregates();
-            var total = totSalesByAlbumAggr.totalSales.sum;
-            $("#albumTotal").text(parseFloat(total).toFixed(2));
+            if (totSalesByAlbumAggr.totalSales) {
+                var total = totSalesByAlbumAggr.totalSales.sum;
+                $("#albumTotal").text(parseFloat(total).toFixed(2));
+            }
         }
 
     });
@@ -347,6 +344,7 @@ script
             height:200
         }
     });
+
     //totSalesByAlbumDS.
     //debugger;
     //var totSalesByAlbumAggr = totSalesByAlbumDS.aggregates();
@@ -395,13 +393,7 @@ script
                     missingValues: "interpolate"
                 }
             ],
-            /*series: [{
-                name: "World",
-                data: [15.7, 16.7, 20, 23.5, 26.6]
-            }, {
-                name: "United States",
-                data: [67.96, 68.93, 75, 74, 78]
-            }],*/
+
             valueAxis: {
                 labels: {
                     format: "${0}"
@@ -449,8 +441,11 @@ script
             //debugger;
             console.log("testing running");
             var totSalesByAlbumAggr = incomeDistChartDS.aggregates();
-            var total = totSalesByAlbumAggr.totalSales.sum;
-            $("#globalTotal").text("$ "+ parseFloat(total).toFixed(2));
+            //debugger;
+            if (totSalesByAlbumAggr.totalSales) {
+                var total = totSalesByAlbumAggr.totalSales.sum;
+                $("#globalTotal").text("$ "+ parseFloat(total).toFixed(2));
+            }
         }
     });
     var incomeDistChart = $("#incomeDistributionChart").kendoChart({
@@ -483,7 +478,7 @@ script
         valueAxis: {
             labels: {
                 format: "{0:c}"
-        }
+            }
         },
         chartArea:{
             //width:300,
@@ -631,5 +626,13 @@ script
 
     });
 
+    // standin for document.ready()
+    function fragmentLoaded(){
+        // have to do this to make sure the graphs are sized appropriately
+        totSalesByAlbum.data('kendoChart').refresh();
+        totSalesAllAlbum.data('kendoChart').refresh();
+        //incomeDistChart.data('kendoChart').refresh();
+
+    }
     //--todo figrue out page load
     getBandInfo();

@@ -31,10 +31,15 @@ block content
                         li.active: a(href="#") Active Offerings
                         - if (locals.user.isArtist)
                             li: a(href="/fragments/musicianprofile") Musician
+                                ul.nav.nav-list
+                                    li: a(href="/fragments/managealbums") Manage Albums
+                                    li: a(href="/fragments/musicianreports") Reports
                         - else
                             li: a(href="/fragments/musiciansignup") Musician
                         - if (locals.user.isInvestor)
                             li: a(href="/fragments/investorprofile") Investor
+                                ul.nav.nav-list
+                                    li: a(href="/fragments/investorreports") Reports
                         - else
                             li: a(href="/fragments/investorsignup") Investor
                         li: a(href="/fragments/musicloverprofile") Music Lover
@@ -129,8 +134,10 @@ block content
                        // data is ur summary
                       $('#profileContent').hide();
                       $('#profileContent').html(data);
-                      $('#profileContent').fadeIn();
-                      fragmentLoaded();
+                      $('#profileContent').fadeIn('fast',function(){
+                          fragmentLoaded();
+                      });
+
                  }
 
                });

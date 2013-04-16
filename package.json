@@ -39,7 +39,8 @@
     "moment": "*",
     "connect": "*",
     "useragent": "~2.0.3",
-      "coffee-script":"*"
+      "coffee-script":"*",
+      "jquery-file-upload-middleware":"*"
   },
   "engines": {
     "node": "0.8.x",

@@ -47,6 +47,27 @@ script
             }
         }
     );
+    var revChart = $('#revenueChart').kendoChart({
+        title: "Revenue History",
+        dataSource: revChartDS,
+        series: [
+            {
+                name:"Earnings",
+                field: "amount",
+                type:"line",
+                missingValues: "interpolate"
+            }
+        ],
+        categoryAxis: {
+            baseUnit: "months",
+            field:"earnDate"
+        },
+        chartArea: {
+            height:300
+            //,width:1200
+            , margin: {right:0,left:0}
+        }
+    });
 
 
 
@@ -84,27 +105,7 @@ script
         }
 
     });
-    var revChart = $('#revenueChart').kendoChart({
-        title: "Revenue History",
-        dataSource: revChartDS,
-        series: [
-            {
-                name:"Earnings",
-                field: "amount",
-                type:"line",
-                missingValues: "interpolate"
-            }
-        ],
-        categoryAxis: {
-            baseUnit: "months",
-            field:"earnDate"
-        },
-        chartArea: {
-            height:300
-            //,width:1200
-            , margin: {right:0,left:0}
-        }
-    });
+
     var tabStrip = $('#revTab').kendoTabStrip().data("kendoTabStrip");
     function fillInTabs(){
        $.ajax({

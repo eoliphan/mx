@@ -6,7 +6,7 @@ div.row-fluid
         h4 Game Account (Chips Remaining: 10)
 div.row-fluid
     .span3
-        p Total Chips:
+        //p Total Chips:
             #totalChipsSum
     .span3
     .span3
@@ -15,6 +15,7 @@ div.row-fluid
     .span6
         #currentGameShareDist
     .span6
+        #pointsOverTimeChart
 div.row-fluid
     &nbsp;
 div.row-fluid
@@ -89,6 +90,58 @@ div.row-fluid
 script#template(type="text/x-kendo-tmpl")
     li: small ${band}/${album}
 script
+    var pointsOverTimeChartDS = new kendo.data.DataSource(
+            {
+                transport: {
+                    read: '/api/wager/points/byitem/bydate/byuser/511a8c6ece62e90000000003'
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            pointDate: {
+                                type: "date"
+                            }
+                        }
+                    }
+                },
+                group: {
+                    field:"name"
+                },
+                sort: {
+                    field:"pointDate",
+                    dir:"asc"
+                },
+                //aggregate: {field:"amount",aggregate:"sum"},
+                /*change: function(e) {
+                    //debugger;
+                    console.log("testing running");
+                    var totSalesByAlbumAggr = revChartDS.aggregates();
+                    var total = totSalesByAlbumAggr.amount.sum;
+                    $("#totalEarnings").text(parseFloat(total).toFixed(2));
+                }*/
+            }
+        );
+        var pointsOverTimeChart = $('#pointsOverTimeChart').kendoChart({
+            title: "Game Points Over Time",
+            dataSource: pointsOverTimeChartDS,
+            series: [
+                {
+                    name:"Points",
+                    field: "totalPoints",
+                    type:"line",
+                    missingValues: "interpolate"
+                }
+            ],
+            categoryAxis: {
+                baseUnit: "months",
+                field:"earnDate"
+            },
+            chartArea: {
+                height:300
+                //,width:1200
+                , margin: {right:0,left:0}
+            }
+        });
     // income dist
     var currentGameShareDist = $("#currentGameShareDist").kendoChart({
         title: {
@@ -133,7 +186,7 @@ script
         },
         chartArea:{
 
-            height:200
+            height:300
         }
     });
 script
@@ -252,6 +305,8 @@ script
     socket.on("orderBought",function(data){
         leaderGrid.refresh();
     });
+    function fragmentLoaded() {
+    }
 
 //    $("#albInPortList").kendoListView({
 //        //dataSource: dataSource,

@@ -96,6 +96,52 @@ module.exports = function(app){
 
     });
 
+    app.get('/api/wager/points/byitem/bydate/byuser/:id',function(req,res){
+        var user = mongoose.Types.ObjectId(req.params.id);
+        Wager.aggregate(
+            {$match:{userId:user}},
+
+            {$unwind:"$history"},
+            //{$sort:"$history.eventDate"},
+            {$project:{
+                'points':'$history.points',
+                "name":'$name',
+                year:{$year:'$history.eventDate'},
+                month:{$month:'$history.eventDate'},
+                day:{$dayOfMonth:'$history.eventDate'},
+                'eventDate':'$history.eventDate'}},
+            //{$sort:"$eventDate"},
+            {$group: {
+                _id:{eventDate:"$eventDate", year:"$year",month:"$month",day:"$day",name:"$name"}, //todo date
+                totalPoints:{$sum:"$points"}
+
+            }},
+            {$project:{
+                _id:0,
+                year:"$_id.year",
+                month:"$_id.month",
+                day:"$_id.day",
+                name:"$_id.name",
+                totalPoints:"$totalPoints"
+
+            }},
+            function(err,wagers){
+                if (err) {
+                    return logger.error("Error getting wager summary: " + err);
+                }
+                if(!wagers) {
+                    return res.send({});
+                } else {
+                    _.each(wagers,function(wager,index,list){
+                        wager.pointDate = wager.month + "/" + wager.day + "/" + wager.year;
+                    });
+                    return res.send(wagers);
+                }
+            }
+
+        );
+    });
+
     app.get('/api/wagers/byuser/:id',function(req,res){
 
         var user = mongoose.Types.ObjectId(req.params.id);
@@ -122,18 +168,7 @@ module.exports = function(app){
 
             }
         );
-//        var newOffer = req.body;
-//        newOffer.userId = req.user._id;
-        // need to sent event via cqrs
-//        logger.debug("new Offer Info"+JSON.stringify(newOffer));
-//        var cmd = {
-//            id: uuid.v4(),
-//            command:'createOffer',
-//            payload: newOffer
-//
-//        }
-//        evtcmdbus.emitCommand(cmd);
-//        res.send(200);
+
     });
 
 }

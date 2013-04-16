@@ -8,6 +8,8 @@ var Order  = require("../repositories/order").Order,
     async = require("async");
 
 
+//todo: refactor to newer route handling apporach
+
 function validateCart(req,res) {
     if(!req.session.order) {
             // check the db
@@ -75,12 +77,7 @@ exports.addToCart = function(req,res){
 };
 
 exports.getCart = function(req,res) {
-    res.render("cart",{title:"Cart"});
-//    if(req.session.cart) {
-//        res.send(req.session.cart);
-//    }
-//    else
-//        res.send(404);
+    res.render("cart",{title:"Cart",user:req.user});
 
 };
 
