@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="music lover updates">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/analytics.htm" afterPath="$PROJECT_DIR$/public/widget/statistics/analytics.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/data_server.js" afterPath="$PROJECT_DIR$/public/widget/data_server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" afterPath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/datetime.js" afterPath="$PROJECT_DIR$/public/mojitoring/datetime.js" />
@@ -16,11 +16,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/user/login.html" afterPath="$PROJECT_DIR$/public/widget/user/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/mojitoring.js" afterPath="$PROJECT_DIR$/public/mojitoring/mojitoring.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/monitoring.css" afterPath="$PROJECT_DIR$/public/mojitoring/monitoring.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.coffee" afterPath="$PROJECT_DIR$/eventhandlers/order.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.js.map" afterPath="$PROJECT_DIR$/eventhandlers/order.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.js" afterPath="$PROJECT_DIR$/eventhandlers/order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/flot-flot-f0e78fc/examples/pie.html" afterPath="$PROJECT_DIR$/public/mojitoring/flot-flot-f0e78fc/examples/pie.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.jade" afterPath="$PROJECT_DIR$/views/profile.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.htm" afterPath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.js" afterPath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/server_status.ejs" afterPath="$PROJECT_DIR$/public/widget/server_status/server_status.ejs" />
@@ -45,7 +41,7 @@
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366175828384" ignored="false" />
+    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366178279517" ignored="false" />
     <file path="/evtcmdbus.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365805226891" ignored="false" />
     <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366178030722" ignored="false" />
     <file path="/topbar.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365615813838" ignored="false" />
@@ -90,7 +86,7 @@
     <file path="$PROJECT_DIR$/../jabsnoop/package.json" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365120988820" ignored="false" />
     <file path="/investorprofile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365609018734" ignored="false" />
     <file path="/demoweb.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366149980858" ignored="false" />
-    <file path="/config.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365802454978" ignored="false" />
+    <file path="/config.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366179068911" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,7 @@
     <favorites_list name="mx" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.62537766">
+    <splitter split-orientation="vertical" split-proportion="0.407279">
       <split-first>
         <leaf>
           <file leaf-file-name="offer.js" pinned="false" current="false" current-in-tab="false">
@@ -196,7 +192,7 @@
           <file leaf-file-name="evtcmdbus.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.49848944">
+                <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.80487806">
                   <folding />
                 </state>
               </provider>
@@ -272,7 +268,7 @@
           <file leaf-file-name="config.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.8287293">
+                <state line="3" column="18" selection-start="65" selection-end="65" vertical-scroll-proportion="0.1465798">
                   <folding />
                 </state>
               </provider>
@@ -317,7 +313,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/views/common/topbar.jade" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/evtcmdbus.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/cart.js" />
@@ -332,6 +327,7 @@
         <option value="$PROJECT_DIR$/views/profile.jade" />
         <option value="$PROJECT_DIR$/eventhandlers/order.coffee" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/config.js" />
       </list>
     </option>
   </component>
@@ -956,7 +952,11 @@
       <created>1366175835726</created>
       <updated>1366175835726</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added amqp logging profile errors on unimplemented functions">
+      <created>1366178285934</created>
+      <updated>1366178285934</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1026,7 +1026,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated socket push to browser, fixed  front page sign up buttons post login" />
+    <option name="LAST_COMMIT_MESSAGE" value="added amqp logging profile errors on unimplemented functions" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1040,7 +1040,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="integrated CQRS modules" />
     <MESSAGE value="cqrs updates" />
     <MESSAGE value="latest form updates" />
     <MESSAGE value="latest form updates, more domain work" />
@@ -1065,6 +1064,7 @@
     <MESSAGE value="updated image with to size to parent div" />
     <MESSAGE value="music lover updates" />
     <MESSAGE value="updated socket push to browser, fixed  front page sign up buttons post login" />
+    <MESSAGE value="added amqp logging profile errors on unimplemented functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1207,7 +1207,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.49848944">
+        <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.80487806">
           <folding />
         </state>
       </provider>
@@ -1221,7 +1221,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.8287293">
+        <state line="3" column="18" selection-start="65" selection-end="65" vertical-scroll-proportion="0.1465798">
           <folding />
         </state>
       </provider>
