@@ -190,7 +190,9 @@ block content
                     itemId: "#{locals.info.albums._id}",
                     name: "#{locals.info.albums.name}",
                     price: #{locals.info.albums.price},
-                    artistId: "#{locals.info._id}"
+                    artistId: "#{locals.info._id}",
+                    isActiveOffer: #{locals.info.albums.isActiveOffer},
+                    offerId: "#{locals.info.albums.offerId}"
 
                 }
             };
