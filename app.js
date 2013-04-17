@@ -642,10 +642,10 @@ if (conf.get("deployenv") === "heroku") {
 }
 
 console.log("test conf var: " + conf.get("testvar"));
-logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
-logger.debug("ampq port: " + conf.get("evtbusamqp:port"));
-logger.debug("ampq login: " + conf.get("evtbusamqp:login"));
-logger.debug("ampq vhost: " + conf.get("evtbusamqp:vhost"));
+logger.debug("ampq host: " + conf.get("evtbusamqp_host"));
+logger.debug("ampq port: " + conf.get("evtbusamqp_port"));
+logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
+logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
 //logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
 
 

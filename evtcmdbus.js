@@ -63,11 +63,11 @@ function handleEvent(event) {
 
 //-- rabbit mq for events
 var amqpConn = amqp.createConnection({
-    host:conf.get("evtbusamqp:host"),
-    port:conf.get("evtbusamqp:port"),
-    login:conf.get("evtbusamqp:login"),
-    password:conf.get("evtbusamqp:password"),
-    vhost:conf.get("evtbusamqp:vhost")
+    host:conf.get("evtbusamqp_host"),
+    port:conf.get("evtbusamqp_port"),
+    login:conf.get("evtbusamqp_login"),
+    password:conf.get("evtbusamqp_password"),
+    vhost:conf.get("evtbusamqp_vhost")
 
 });
 
