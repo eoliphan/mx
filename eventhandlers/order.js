@@ -64,7 +64,8 @@
                 earnDate: orderDate
               };
               newRev = new Revenue(rev);
-              return newRev.save();
+              newRev.save();
+              return logger.debug("Revenue added: " + newRev);
             });
           });
         }

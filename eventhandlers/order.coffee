@@ -53,6 +53,7 @@ exports.orderBought = (event) ->
 
             newRev = new Revenue(rev)
             newRev.save()
+            logger.debug("Revenue added: " + newRev)
 
       # update wagers
       Wager.find {itemId:itemId}, (err,wagers) ->

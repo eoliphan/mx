@@ -7,7 +7,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/data_server.js" afterPath="$PROJECT_DIR$/public/widget/data_server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" afterPath="$PROJECT_DIR$/public/widget/server_status/database_status.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/datetime.js" afterPath="$PROJECT_DIR$/public/mojitoring/datetime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demoweb.jade" afterPath="$PROJECT_DIR$/views/demoweb.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/tracker/error_tracker.js" afterPath="$PROJECT_DIR$/public/widget/tracker/error_tracker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/tracker/error_view.htm" afterPath="$PROJECT_DIR$/public/widget/tracker/error_view.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/guidely/guidely.css" afterPath="$PROJECT_DIR$/public/mojitoring/guidely/guidely.css" />
@@ -17,6 +16,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/user/login.html" afterPath="$PROJECT_DIR$/public/widget/user/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/mojitoring.js" afterPath="$PROJECT_DIR$/public/mojitoring/mojitoring.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/monitoring.css" afterPath="$PROJECT_DIR$/public/mojitoring/monitoring.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.coffee" afterPath="$PROJECT_DIR$/eventhandlers/order.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.js.map" afterPath="$PROJECT_DIR$/eventhandlers/order.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/order.js" afterPath="$PROJECT_DIR$/eventhandlers/order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mojitoring/flot-flot-f0e78fc/examples/pie.html" afterPath="$PROJECT_DIR$/public/mojitoring/flot-flot-f0e78fc/examples/pie.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.jade" afterPath="$PROJECT_DIR$/views/profile.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.htm" afterPath="$PROJECT_DIR$/public/widget/statistics/realtime_graph.htm" />
@@ -24,7 +26,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/server_status.ejs" afterPath="$PROJECT_DIR$/public/widget/server_status/server_status.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/server_status/server_status.js" afterPath="$PROJECT_DIR$/public/widget/server_status/server_status.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/statistics/statistics.js" afterPath="$PROJECT_DIR$/public/widget/statistics/statistics.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/store.jade" afterPath="$PROJECT_DIR$/views/store.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/table/table.ejs" afterPath="$PROJECT_DIR$/public/widget/table/table.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/table/table.js" afterPath="$PROJECT_DIR$/public/widget/table/table.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/widget/theme/theme.html" afterPath="$PROJECT_DIR$/public/widget/theme/theme.html" />
@@ -44,12 +45,12 @@
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366170538916" ignored="false" />
+    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366175828384" ignored="false" />
     <file path="/evtcmdbus.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365805226891" ignored="false" />
-    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366160341521" ignored="false" />
+    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366178030722" ignored="false" />
     <file path="/topbar.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365615813838" ignored="false" />
     <file path="/order.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365250978722" ignored="false" />
-    <file path="/order.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365249542696" ignored="false" />
+    <file path="/order.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366177790574" ignored="false" />
     <file path="/loadeventhandlers.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362671889019" ignored="false" />
     <file path="/fragment.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365250740210" ignored="false" />
     <file path="/userAggregate.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362673107284" ignored="false" />
@@ -67,7 +68,7 @@
     <file path="/wager.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366146609862" ignored="false" />
     <file path="/wager.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362791453826" ignored="false" />
     <file path="/layout.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362786752233" ignored="false" />
-    <file path="/profile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365983227879" ignored="false" />
+    <file path="/profile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366177370584" ignored="false" />
     <file path="/layoutprofile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366153851276" ignored="false" />
     <file path="/musicloverprofile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366147186239" ignored="false" />
     <file path="/game.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1363126613851" ignored="false" />
@@ -108,22 +109,22 @@
     <favorites_list name="mx" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.51054215">
+    <splitter split-orientation="vertical" split-proportion="0.62537766">
       <split-first>
         <leaf>
-          <file leaf-file-name="albumdetail.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/albumdetail.jade">
+          <file leaf-file-name="offer.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/offer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="78" column="29" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="offer.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/offer.js">
+          <file leaf-file-name="order.coffee" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/eventhandlers/order.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                <state line="55" column="45" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -147,10 +148,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="topbar.jade" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="topbar.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="34" selection-start="736" selection-end="754" vertical-scroll-proportion="0.24193548">
+                <state line="19" column="34" selection-start="736" selection-end="754" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -192,10 +193,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="evtcmdbus.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="evtcmdbus.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="51" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
+                <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.49848944">
                   <folding />
                 </state>
               </provider>
@@ -217,7 +218,7 @@
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="599" column="60" selection-start="17721" selection-end="17721" vertical-scroll-proportion="0.0">
+                <state line="648" column="2" selection-start="19076" selection-end="19076" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -244,16 +245,16 @@
           <file leaf-file-name="profile.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/profile.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="137" column="45" selection-start="6349" selection-end="6349" vertical-scroll-proportion="0.0">
+                <state line="254" column="10" selection-start="10481" selection-end="10481" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="demoweb.jade" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="demoweb.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="141" column="32" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.70397115">
+                <state line="141" column="32" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -268,10 +269,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="config.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
+                <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.8287293">
                   <folding />
                 </state>
               </provider>
@@ -289,7 +290,7 @@
           <file leaf-file-name="investorprofile.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/fragments/investorprofile.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="7" selection-start="253" selection-end="1760" vertical-scroll-proportion="0.0">
+                <state line="27" column="29" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -315,7 +316,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/routes/offer.js" />
         <option value="$PROJECT_DIR$/views/common/topbar.jade" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/evtcmdbus.js" />
@@ -327,10 +327,11 @@
         <option value="$PROJECT_DIR$/routes/wager.js" />
         <option value="$PROJECT_DIR$/views/fragments/musicloverprofile.jade" />
         <option value="$PROJECT_DIR$/views/layoutprofile.jade" />
-        <option value="$PROJECT_DIR$/views/profile.jade" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/store.jade" />
         <option value="$PROJECT_DIR$/views/demoweb.jade" />
+        <option value="$PROJECT_DIR$/views/profile.jade" />
+        <option value="$PROJECT_DIR$/eventhandlers/order.coffee" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -951,29 +952,33 @@
       <created>1366154352157</created>
       <updated>1366154352157</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="updated socket push to browser, fixed  front page sign up buttons post login">
+      <created>1366175835726</created>
+      <updated>1366175835726</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1705" y="7" width="1701" height="1058" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.4963112" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33922997" sideWeight="0.49438202" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19288537" sideWeight="0.22624877" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1389728" sideWeight="0.706383" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.293617" sideWeight="0.58429" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1389728" sideWeight="0.6151386" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3848614" sideWeight="0.58429" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20049658" sideWeight="0.1994302" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.293617" sideWeight="0.41087613" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23189823" sideWeight="0.99670833" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3848614" sideWeight="0.41148037" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23134328" sideWeight="0.910574" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49966466" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089268" sideWeight="0.49966466" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.4963112" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1021,7 +1026,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="music lover updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated socket push to browser, fixed  front page sign up buttons post login" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1035,7 +1040,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="latest updates of interactive content" />
     <MESSAGE value="integrated CQRS modules" />
     <MESSAGE value="cqrs updates" />
     <MESSAGE value="latest form updates" />
@@ -1060,6 +1064,7 @@
     <MESSAGE value="latest updates for controlpanel etc" />
     <MESSAGE value="updated image with to size to parent div" />
     <MESSAGE value="music lover updates" />
+    <MESSAGE value="updated socket push to browser, fixed  front page sign up buttons post login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1091,12 +1096,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/eventhandlers/order.coffee</url>
-          <line>124</line>
+          <line>125</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/eventhandlers/order.coffee</url>
-          <line>73</line>
+          <line>74</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1109,27 +1114,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/fragments/musicloverprofile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/fragments/musicianprofile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="407" column="24" selection-start="14992" selection-end="14992" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layoutprofile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="57" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1151,23 +1135,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="45" selection-start="6349" selection-end="6349" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/confval.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1179,20 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/fragments/investorprofile.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="7" selection-start="253" selection-end="1760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="599" column="60" selection-start="17721" selection-end="17721" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/store.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="44" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.0">
@@ -1200,23 +1156,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
+    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="51" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
+        <state line="141" column="32" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/profile.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="254" column="10" selection-start="10481" selection-end="10481" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/common/topbar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="736" selection-end="754" vertical-scroll-proportion="0.24193548">
+        <state line="19" column="34" selection-start="736" selection-end="754" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/demoweb.jade">
+    <entry file="file://$PROJECT_DIR$/routes/offer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="32" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.70397115">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/albumdetail.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="29" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/fragments/investorprofile.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="29" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhandlers/order.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="45" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evtcmdbus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="36" selection-start="1850" selection-end="1855" vertical-scroll-proportion="0.49848944">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="648" column="2" selection-start="19076" selection-end="19076" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="30" selection-start="746" selection-end="746" vertical-scroll-proportion="0.8287293">
           <folding />
         </state>
       </provider>

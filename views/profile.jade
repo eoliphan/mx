@@ -32,20 +32,20 @@ block content
                         - if (locals.user.isArtist)
                             li: a(href="/fragments/musicianprofile") Musician
                                 ul.nav.nav-list
-                                    li: a(href="/fragments/managealbums") Manage Albums
-                                    li: a(href="/fragments/musicianreports") Reports
+                                    li: a.notimpl(href="/fragments/managealbums") Manage Albums
+                                    li: a.notimpl(href="/fragments/musicianreports") Reports
                         - else
                             li: a(href="/fragments/musiciansignup") Musician
                         - if (locals.user.isInvestor)
                             li: a(href="/fragments/investorprofile") Investor
                                 ul.nav.nav-list
-                                    li: a(href="/fragments/investorreports") Reports
+                                    li: a.notimpl(href="/fragments/investorreports") Reports
                         - else
                             li: a(href="/fragments/investorsignup") Investor
                         li: a(href="/fragments/musicloverprofile") Music Lover
-                        li: a(href="/fragments/financialinfo") Financial Info
-                        li: a(href="/profile/genres") Music Genres
-                        li: a(href="/profile/bandsearch") Band Search
+                        li: a.notimpl(href="/fragments/financialinfo") Financial Info
+                        li: a.notimpl(href="/profile/genres") Music Genres
+                        li: a.notimpl(href="/profile/bandsearch") Band Search
                 //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
                 .container
                     a.btn.btn-primary.span2(id="addProjectBtn",href="/fragments/addoffering") Add Offering!
@@ -146,6 +146,7 @@ block content
             return false;
         });
     script
+
         $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
         var socket = io.connect();
         //socket.emit('newIssue',{name:"test"});
@@ -246,5 +247,10 @@ block content
                         }
                     });
 
-
+    script
+        $(".notimpl").click(function(event){
+            event.preventDefault();
+            alert("Function Not Implemented.  Check Back Soon!");
+        });
+        //$(".notimpl").css("border","3px solid red");
 
