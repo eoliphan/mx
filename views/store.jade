@@ -52,11 +52,11 @@ block content
         .tabbable
             ul.nav.nav-tabs
                 li.active
-                    a(href="#tab1",data-toggle="tab") New Releases
-                li
                     a(href="#tab2",data-toggle="tab") Most Popular
+                li
+                    a(href="#tab1",data-toggle="tab") New Releases
                 .tab-content
-                    div#tab1.tab-pane.active
+                    div#tab1.tab-pane
                         .k-content.row
                             .k-pager-wrap#pagerNew
                             //select#genre
@@ -67,7 +67,7 @@ block content
                                 option R&B
                                 option Electronic
                             #listViewNew
-                    div#tab2.tab-pane
+                    div#tab2.tab-pane.active
                         .k-content.row
                             .k-pager-wrap#pagerPop
                             //select#genre

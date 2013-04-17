@@ -580,7 +580,7 @@ io.set('authorization',function(data,accept){
 });
 io.sockets.on('connection',function(socket){
     evtcmdbus.addEventSink(function(event){
-       socket.emit(event.event,event.payload);
+       io.sockets.socket(socket.id).emit(event.event,event.payload);
     });
 
     socket.on('message',function(data){
