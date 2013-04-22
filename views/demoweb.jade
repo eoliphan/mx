@@ -74,7 +74,7 @@ block content
 
     div.container
         p <i>Enabling the creative</i>&trade; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        div.row-fluid
+        div.row
             ul.thumbnails
                 li.span4
                     div.thumbnail(style="width: 300px; height: 550px;")
@@ -193,7 +193,7 @@ block content
                     div.tab-content
                         div#tab1.tab-pane.active
                             p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                            div.row-fluid
+                            div
                                 ul.thumbnails
                                     li
                                         a(href="#")
@@ -204,12 +204,12 @@ block content
                                     li
                                         a(href="#")
                                             img.thumbnail(src="http://ecx.images-amazon.com/images/I/61iKyNi5UKL._SL500_AA300_.jpg",width="90")
-                                    li
+                                    //li
                                         a(href="#")
                                             img.thumbnail(src="http://ecx.images-amazon.com/images/I/41ZsWDiEvfL._SL500_AA300_.jpg",width="90")
                         div#tab2.tab-pane
                             p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesen doloremque laudantium, totam
-                            div.row-fluid
+                            div
                                 ul.thumbnails
                                     li
                                         a(href="#")
@@ -220,7 +220,7 @@ block content
                                     li
                                         a(href="#")
                                             img.thumbnail(src="http://ecx.images-amazon.com/images/I/5135bFFBrWL._AA160_.jpg",width="90")
-                                    li
+                                    //li
                                         a(href="#")
                                             img.thumbnail(src="http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg",width="90")
                         a.btn.btn-large.btn-primary(href="/store") See All Music!
@@ -231,24 +231,7 @@ block content
 
 
 
-    //blocks
-        div.container.marketing
-            div.row
-                div.span4
-                    img.img-circle(src='http://placehold.it/140x140')
-                    h2 Artists
-                    p Artist stuff
-                    p: a.btn(href="#") View Details &raquo;
-                div.span4
-                    img.img-circle(src='http://placehold.it/140x140')
-                    h2 Promoters
-                    p promoter stuff
-                    p: a.btn(href="#") View Details &raquo;
-                div.span4
-                    img.img-circle(src='http://placehold.it/140x140')
-                    h2 Music Lovers
-                    p Music stuff
-                    p: a.btn(href="#") View Details &raquo;
+
     // init carousel
     script
             $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );

@@ -1,0 +1,161 @@
+extends layout
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+        .edit-border {
+            border:2px dashed blue;
+
+
+        }
+    include common/topbar
+    //-- todo refactor out
+
+    .container
+            .hero-unit
+                //a(href="#", id="username", data-type="text", data-pk="1", data-url="/post", data-original-title="Enter username") superuser
+                h2: a.edit-border(href="#", id="name",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter album name",data-placement="right") #{locals.info.albums.name}
+                h4 Artist: #{locals.info.artistName}
+                .row-fluid(width="800")
+                    .span4
+                        h4: i Click To Upload Album Image (300x300)
+                        - if (locals.info.albums.image)
+                            img.edit-border(src="#{locals.info.albums.img}",width="100%")
+                        - else
+                            img.edit-border(src="/util/rndsmlcvr/1",width="100%")
+
+                    .span8
+                        h4 Genre:
+                            em
+                                a#genre.edit-border(href="#", data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Genres name",data-placement="right") #{locals.info.albums.genre}
+                        h4 Description:
+                            em
+                                a.edit-border(href="#", id="description",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Description",data-placement="right") #{locals.info.albums.description}
+                        h4 # of Tracks: <em>#{locals.info.albums.songs.length}</em>
+                        h4 Release Date:
+                            em
+                                a.edit-border(href="#", id="releaseDate",data-type="date",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Release Date ",data-placement="right") #{!locals.info.albums.releaseDate ? "" : locals.info.albums.releaseDate.toString('yyyy-MM-dd')}
+                        h4 Price:
+                            em
+                                a.edit-border(href="#", id="price",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Price ",data-placement="right") #{parseFloat(locals.info.albums.price).toFixed(2)}
+                        hr
+
+                        button#addToCart.btn.btn-primary.disabled Add To Cart
+                        button#buyNow.btn.disabled Buy Now
+                        button#investChips.btn.disabled Invest 10 Chips!
+                        button#showBuySharesBtn.btn.disabled Buy Shares!
+
+                hr
+                form
+                    span.btn.btn-success.fileinput-button
+                        i.icon-plus.icon-white
+                        span Add Tracks...
+                        input(type="file", name="files[]",multiple="")
+
+                    .row
+                        .span6
+                            table.table.table-striped(role="presentation"): tbody.files(data-toggle="modal-gallery",data-target="#modal-gallery")
+                            //each song in locals.info.albums.songs
+                                h4 {song.name}
+                                audio(controls="")
+                        .span6
+
+
+            hr
+    - if (locals.user)
+        script
+            var userid = "#{locals.user._id}"
+    script
+        function prepEditorPayload(params) {
+            var retParam = {};
+            retParam[params.name] = params.value;
+            retParam.itemId = "#{locals.info.albums._id}";
+            retParam.id = "#{locals.info._id}";
+            return retParam;
+        }
+        $(document).ready(function() {
+            $('#genre').editable({
+                params: function(params) {
+                    return prepEditorPayload(params);
+                }
+            });
+            $("#name").editable({
+                params: function(params) {
+                    return prepEditorPayload(params);
+                }
+            });
+            $("#price").editable({
+                params: function(params) {
+                    return prepEditorPayload(params);
+                }
+            });
+            $("#description").editable({
+                params: function(params) {
+                    return prepEditorPayload(params);
+                }
+            });
+            /*$("#releaseDate").editable({
+                params: function(params) {
+                    return prepEditorPayload(params);
+                }
+            });*/
+
+        });
+    script#template-upload(type="text/x-tmpl")
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+            <tr class="template-upload fade">
+                <td class="preview"><span class="fade"></span></td>
+                <td class="name"><span>{%=file.name%}</span></td>
+                <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+                {% if (file.error) { %}
+                    <td class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</td>
+                {% } else if (o.files.valid && !i) { %}
+                    <td>
+                        <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
+                    </td>
+                    <td>{% if (!o.options.autoUpload) { %}
+                        <button class="btn btn-primary start">
+                            <i class="icon-upload icon-white"></i>
+                            <span>Start</span>
+                        </button>
+                    {% } %}</td>
+                {% } else { %}
+                    <td colspan="2"></td>
+                {% } %}
+                <td>{% if (!i) { %}
+                    <button class="btn btn-warning cancel">
+                        <i class="icon-ban-circle icon-white"></i>
+                        <span>Cancel</span>
+                    </button>
+                {% } %}</td>
+            </tr>
+        {% } %}
+    script#template-download(type="text/x-tmpl")
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+            <tr class="template-download fade">
+                {% if (file.error) { %}
+                    <td></td>
+                    <td class="name"><span>{%=file.name%}</span></td>
+                    <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+                    <td class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</td>
+                {% } else { %}
+                    <td class="preview">{% if (file.thumbnail_url) { %}
+                        <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+                    {% } %}</td>
+                    <td class="name">
+                        <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+                    </td>
+                    <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+                    <td colspan="2"></td>
+                {% } %}
+                <td>
+                    <button class="btn btn-danger delete" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"{% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                        <i class="icon-trash icon-white"></i>
+                        <span>Delete</span>
+                    </button>
+                    <input type="checkbox" name="delete" value="1" class="toggle">
+                </td>
+            </tr>
+        {% } %}

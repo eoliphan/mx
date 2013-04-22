@@ -5,6 +5,7 @@ Artist = require('../repositories/artist').Artist;
 
 mongoose = require('mongoose');
 _ = require('underscore');
+ObjectId =mongoose.Types.ObjectId;
 
 exports.artistCreated = (event) ->
   logger.debug event
@@ -33,4 +34,24 @@ exports.albumAdded = (event) ->
       artist.save (err) ->
         logger.error "Error adding album: " + err if err
         logger.info "Album Saved"
+
+exports.albumUpdated = (event) ->
+  logger.debug event
+  Artist.findOne {"albums._id":event.payload.itemId}, (err,artist)->
+    logger.error "Error updating album: " + err if err
+    if artist
+      #dosomething
+      album = _.find artist.albums, (album) ->
+        return album._id.toString() == event.payload.itemId
+      # copy fields over, drop the id
+      newFields = _.omit event.payload,"id"
+      updatedAlbum = _.extend album,newFields
+      artist.save (err,artist) ->
+        logger.error "Error updating artist" + err
+
+    else
+      logger.error "Artist Not Found"
+
+
+
 

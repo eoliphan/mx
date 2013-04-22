@@ -5,5 +5,6 @@ module.exports = function(app){
     require("./offer")(app);
     require("./order")(app);
     require("./wager")(app);
+    require("./album")(app);
     return {};
 }

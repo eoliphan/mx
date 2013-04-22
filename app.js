@@ -108,8 +108,9 @@ app.configure(function(){
   app.set('view options', { pretty: true });
   app.locals.pretty = true;
 
-  app.use(express.favicon());
+    app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
   app.use(express.logger('dev'));
+
   app.use('/upload', upload.fileHandler());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
@@ -229,41 +230,7 @@ app.post('/user/chips/item',game.addChips);
 
 
 
-app.get('/album/:id',function(req,res){
-    // grab the album
-    var albumId = mongoose.Types.ObjectId(req.params.id);
-    console.log(albumId);
-    Artist.aggregate(
-        {$match: {'albums._id':albumId}},
-                    {$project:{
-                    'artistName':1,
-                    'bio': 1,
-                    'albums' : 1
-                }},
-                {$unwind: "$albums"},
-            function(err,artists){
-                            if (!err) {
-                                //TODO: clunky to have to filter here
-                                var match = _.where(artists,{'albums._id':req.params.id});
-                                var artist = _.find(artists,function(element){
-                                    return (element.albums._id == req.params.id)
-                                });
 
-                                var pageData = {title:"Title",info:artist};
-                                if (req.user)
-                                    pageData.user = req.user;
-                                res.render("albumdetail",pageData);
-                            }
-                            else
-                            {
-                                console.log(err);
-                                res.send(404);
-                            }
-
-            });
-
-
-});
 app.get('/cart',demoweb.cart);
 app.get('/about',demoweb.about);
 app.get('/contact',demoweb.contact);
@@ -360,72 +327,6 @@ app.get('/api/issues',function(req,res){
     });
 });
 
-app.get('/api/albums',function(req,res){
-
-    Artist.aggregate({$project:{
-                    'artistName':1,
-                    'albums' : 1
-
-                }},
-                {$unwind: "$albums"},
-                {$limit: 50},
-            function(err,artists){
-                            if (!err)
-                                 res.send(artists);
-                            else
-                            {
-                                console.log(err);
-                                res.send(404);
-                            }
-
-                        });
-
-
-});
-
-app.get('/api/albums/new',function(req,res){
-    var curDate = new moment();
-    curDate.subtract('days',14);
-
-    Artist.aggregate(
-                {$match:{"albums.offerDate" : {$gte:curDate.toDate() }}},
-                {$project:{
-                    'artistName':1,
-                    'albums' : 1
-
-                }},
-                {$unwind: "$albums"},
-                {$limit: 50},
-            function(err,artists){
-                            if (!err)
-                                 res.send(artists);
-                            else
-                            {
-                                console.log(err);
-                                res.send(404);
-                            }
-
-                        });
-
-
-});
-app.get('/api/albums/bygenre/:genre',function(req,res){
-    Artist.find({'albums.genre':req.params.genre})
-            .limit(50)
-            //.where('albums.genre').equals(req.params.genre)
-            .select('albums')
-            .exec(function(err,artists){
-                if (!err)
-                     res.send(artists);
-                else
-                {
-                    console.log(err);
-                    res.send(404);
-                }
-
-            });
-
-});
 
 app.get('/api/songs',function(req,res){
 
@@ -572,6 +473,7 @@ io.set('authorization',function(data,accept){
         data.cookie=require('cookie').parse(data.headers.cookie);
         data.cookie = parseSignedCookies(data.cookie,'secret');
         data.sessionId = data.cookie['connect.sid'];
+        data.randdata = 'test';
     } else {
         return accept('No Cookie Transmitted',false);
     }
@@ -579,6 +481,7 @@ io.set('authorization',function(data,accept){
 
 });
 io.sockets.on('connection',function(socket){
+    console.log("Socket established: " + socket);
     evtcmdbus.addEventSink(function(event){
        io.sockets.socket(socket.id).emit(event.event,event.payload);
     });

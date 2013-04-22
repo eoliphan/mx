@@ -39,24 +39,9 @@ module.exports = function(app){
         res.send(200);
     });
 
+
+
+
+
 }
-//exports.getArtistInfo = function(req,res){
-//        //logger.debug("works!!!!");
-//        if (!req.user || !req.user._id) {
-//            return res.send({});
-//        }
-//        // todo add limit of fields
-//        Artist.findOne({userId: req.user._id},function(err,artist){
-//            if(err) {
-//                return res.send(400);
-//            }
-//            return res.send(artist);
-//        });
-//
-//
-//
-//}
-//exports.getArtistInfo = function(req,res) {
-//
-//};
 

@@ -38,7 +38,8 @@ var album = new Schema({
     status:{type:String, enum:['pending','forsale'],default:"pending"},
     description:String,
     songs:[song],
-    rankings:[ranking]
+    rankings:[ranking],
+    img:String
 });
 
 var artistSchema = new Schema({

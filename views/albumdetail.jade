@@ -76,7 +76,10 @@ block content
                 h4 Artist: #{locals.info.artistName}
                 .row-fluid(width="800")
                     .span4
-                        img(src="/util/rndsmlcvr/1",width="100%")
+                        - if (locals.info.albums.image)
+                            img(src="#{locals.info.albums.img}",width="100%")
+                        - else
+                            img(src="/util/rndsmlcvr/1",width="100%")
                     .span8
                         h4 Genre: <em>#{locals.info.albums.genre}</em>
                         h4 Bio: <em>#{locals.info.bio}</em>

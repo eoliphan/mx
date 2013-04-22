@@ -6,12 +6,18 @@ html
     meta(name='viewport',content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/stylesheets/bs/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/bs/bootstrap-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/bs-editable/bootstrap-editable.css')
+    link(rel='stylesheet', href='/stylesheets/jquery.fileupload-ui.css')
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.common.min.css')
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/kendo/kendo.dataviz.min.css')
     style
         [class^="icon-"] { background-image: url("/images/bs/glyphicons-halflings.png"); }
         [class*="icon-white"] { background-image: url("/images/bs/glyphicons-halflings-white.png"); }
+        .icon-sslogo-white {
+            background-image: url("/images/sslogo-white-ico.png");
+            background-position: center center;
+        }
 
     block scripts
         script(src='http://code.jquery.com/jquery-1.8.2.min.js')
@@ -24,6 +30,14 @@ html
         script(src='/javascripts/underscore.js')
         script(src='/javascripts/backbone.js')
         script(src='/javascripts/backboneCQRS-0.5.5.js')
+        //script(src='/javascripts/jquery.jeditable.js')
+        script(src='/javascripts/bs-editable/bootstrap-editable.js')
+        script(src='/javascripts/jquery-ui-1.10.2.custom.js')
+        script(src='/javascripts/jquery.iframe-transport.js')
+        script(src='/javascripts/jquery.fileupload.js')
+        script(src='/javascripts/jquery.fileupload-fp.js')
+        script(src='/javascripts/jquery.fileupload-ui.js')
+
         script
             if (!this.uuid){
                 uuid = require('/javascripts/uuid.js');
