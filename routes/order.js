@@ -236,6 +236,7 @@ module.exports = function(app){
     app.post('/api/orders',function(req,res){
         var newOffer = req.body;
         newOffer.userId = req.user._id;
+        newOffer.sessionId = req.session.id;
         // need to sent event via cqrs
         logger.debug("new Offer Info"+JSON.stringify(newOffer));
         var cmd = {

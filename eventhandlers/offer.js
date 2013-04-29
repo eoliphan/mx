@@ -47,7 +47,8 @@
             price: event.payload.price,
             offerDate: new Date(),
             isActiveOffer: true,
-            offerId: newOfferId
+            offerId: newOfferId,
+            sessionId: event.payload.sessionId
           }
         };
         evtcmdbus.emitCommand(createAlbumCmd);

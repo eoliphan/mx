@@ -23,6 +23,7 @@ function validateCart(req,res) {
                     var command = {
                         id:newId,
                         command:"createOrder",
+
                         payload: {
                             sessionId:req.session.id
                         }

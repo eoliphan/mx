@@ -77,6 +77,7 @@ module.exports = function (app) {
      */
     app.post('/api/album/:id', function (req, res) {
         var albumUpdate = req.body;
+        albumUpdate.sessionId=req.session.id
         //albumUpdate[req.body.name] = req.body.value;
         //newOffer.userId = req.user._id;
         //albumUpdate.id = req.params.id;

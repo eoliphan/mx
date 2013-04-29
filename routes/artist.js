@@ -27,6 +27,7 @@ module.exports = function(app){
     app.put('/api/artist/basicinfo',function(req,res){
         var newArtist = req.body;
         newArtist.userId = req.user._id;
+        newArtist.sessionId = req.session.id;
         // need to sent event via cqrs
         logger.debug("new Artist Info"+JSON.stringify(newArtist));
         var cmd = {

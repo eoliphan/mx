@@ -88,6 +88,7 @@ module.exports = function(app){
         newInvestment.userId = req.user._id;
         newInvestment.purchaseDate  = new Date();
         newInvestment.offerId = req.params.id;
+        newInvestment.sessionId = req.session.id;
 
         // need to sent event via cqrs
         logger.debug("new Investment  Info"+JSON.stringify(newInvestment));
@@ -121,6 +122,7 @@ module.exports = function(app){
     app.post('/api/offers',function(req,res){
         var newOffer = req.body;
         newOffer.userId = req.user._id;
+        newOffer.sessionId = req.session.id;
         // need to sent event via cqrs
         logger.debug("new Offer Info"+JSON.stringify(newOffer));
         var cmd = {

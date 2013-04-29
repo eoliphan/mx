@@ -79,8 +79,8 @@ var evtcmdbus = require('./evtcmdbus')
     , evthandlers = require("./loadeventhandlers")
 ;
 
-
-upload.configure({
+// break upload stuff into another module
+/*upload.configure({
         uploadDir: __dirname + '/public/uploads',
         uploadUrl: '/uploads',
         imageVersions: {
@@ -90,8 +90,13 @@ upload.configure({
             }
         }
     });
+upload.on('begin',function(fileInfo){
+    console.log('Uploaded File Info: ' + JSON.stringify(fileInfo));
+});
 
-
+upload.on('begin',function(fileInfo){
+    console.log('Uploaded File Info: ' + JSON.stringify(fileInfo));
+});*/
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -111,8 +116,19 @@ app.configure(function(){
     app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
   app.use(express.logger('dev'));
 
-  app.use('/upload', upload.fileHandler());
-  app.use(express.bodyParser());
+  //app.use('/uploads', upload.fileHandler());
+//  app.use('/uploads',function(req,res,next){
+//      upload.fileHandler({
+//          uploadDir: function () {
+//              return __dirname + '/public/uploads/' + req.sessionID
+//          },
+//          uploadUrl: function () {
+//              return '/uploads/' + req.sessionID
+//          }
+//      })(req, res, next);
+//
+//  });
+  app.use(express.bodyParser({ uploadDir: __dirname + '/public/uploads' }));
   app.use(express.methodOverride());
   app.use(express.cookieParser('secret'));
   app.use(express.session({ secret: 'secret', store: store }));
@@ -129,31 +145,7 @@ app.configure(function(){
         res.locals.user=req.user;
     next();
   });
-  // make sure we have a cart
-  /*app.use(function(req,res,next){
-    if(!req.session.order) {
-        // check the db
-        Order.findOne({sessionId:req.session.id},function(err,order){
-            if(order) {
-                req.session.order = order;
-            }
-            else {
-                var newId = uuid.v4();
 
-                var command = {
-                    id:newId,
-                    command:"createOrder",
-                    payload: {
-                        sessionId:req.session.id
-                    }
-                }
-                evtcmdbus.emitCommand(command);
-
-            }
-        });
-    }
-    next();
-  });*/
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -182,6 +174,9 @@ app.get('/', function(req,res){
     res.redirect("/demoweb");
 });
 
+app.post('/uploads',function(req,res){
+   console.log(req);
+});
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated,demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated,demoweb.profiledetail);
@@ -480,11 +475,21 @@ io.set('authorization',function(data,accept){
     accept(null,true);
 
 });
+
+//todo: needs to go to redis for clustering
+clients={};
+evtcmdbus.addEventSink(function(event){
+        if (event.payload.sessionId && clients[event.payload.sessionId])
+            clients[event.payload.sessionId].emit(event.event,event.payload);
+    });
 io.sockets.on('connection',function(socket){
     console.log("Socket established: " + socket);
-    evtcmdbus.addEventSink(function(event){
-       io.sockets.socket(socket.id).emit(event.event,event.payload);
+    clients[socket.handshake.sessionId] = socket;
+
+    socket.on('disconnect',function(){
+        delete clients[socket.handshake.sessionId];
     });
+
 
     socket.on('message',function(data){
         console.log('received generic:');
