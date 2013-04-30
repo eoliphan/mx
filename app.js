@@ -476,7 +476,7 @@ io.set('authorization',function(data,accept){
 
 });
 
-//todo: needs to go to redis for clustering
+//todo: needs to go to redis for clustering next rev
 clients={};
 evtcmdbus.addEventSink(function(event){
         if (event.payload.sessionId && clients[event.payload.sessionId])
