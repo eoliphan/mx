@@ -49,17 +49,45 @@ module.exports = function(app){
                     res.send(revenues);
                 }
             );
-//            Revenue.find({investorId:userId},function(err,revenues){
-//                if (err){
-//                    return res.send(400);
-//                }
-//                if (!revenues) {
-//                    res.send({});
-//                }
-//                res.send(revenues);
-//            });
 
         });
+    app.get('/api/offers/summary/byuser/:id',function(req,res){
+        var userId = ObjectId(req.params.id);
+        Offer.aggregate(
+            {$match:{"investments.userId":userId}},
+            {$unwind:"$investments"},
+            {$group:{
+                _id:{name:"$name",numShares:"$numShares",pctOfferingToSell:"$pctOfferingToSell",price:"$price",amtToRaise:"$amtToRaise"},
+                totalShares:{$sum:"$investments.sharesPurchased"}
+            }},
+            {$project:{
+                name:"$_id.name",
+                numShares:"$_id.numShares",
+                pctOfferingToSell:"$_id.pctOfferingToSell",
+                price:"$_id.price",
+                amtToRaise:"$_id.amtToRaise",
+                totalShares:"$totalShares",
+                _id:0
+            }},
+            {$sort:{name:1}},
+            function(err,offers){
+                if (err){
+                    return res.send(400);
+                }
+                if (!offers) {
+                    res.send({});
+                }
+                res.send(offers);
+
+            }
+            /*{$project:{
+
+            }}*/
+
+
+        );
+
+    });
     app.get('/api/offers/info/:id',function(req,res){
 
         var offerId = ObjectId(req.params.id);
@@ -119,6 +147,8 @@ module.exports = function(app){
                     return res.send(offers);
             });
     });
+
+
     app.post('/api/offers',function(req,res){
         var newOffer = req.body;
         newOffer.userId = req.user._id;

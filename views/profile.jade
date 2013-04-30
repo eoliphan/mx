@@ -135,7 +135,8 @@ block content
                       $('#profileContent').hide();
                       $('#profileContent').html(data);
                       $('#profileContent').fadeIn('fast',function(){
-                          //fragmentLoaded();
+                          if (jQuery.isFunction(fragmentLoaded))
+                            fragmentLoaded();
                       });
 
                  }

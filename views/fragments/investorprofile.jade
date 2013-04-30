@@ -108,15 +108,22 @@ script
 
     var tabStrip = $('#revTab').kendoTabStrip().data("kendoTabStrip");
     function fillInTabs(){
+        var offerTmpl = kendo.template($('#offeringTpl').html());
        $.ajax({
-           url: '/api/offers/revenues/byoffer/byuser/511a8c6ece62e90000000003',
+           url: '/api/offers/summary/byuser/511a8c6ece62e90000000003',
            method: 'GET',
            success: function(data) {
                _.each(data,function(element,index,list){
                    //debugger;
                    console.log(element);
-                   tabStrip.append({text:element.offeringName});
+                   tabStrip.append({
+                    text:element.name,
+                    encoded:false,
+                    content:offerTmpl(element)
+                    });
                });
+               // select the first one
+               tabStrip.select(tabStrip.tabGroup.children("li").eq(0));
               }
        });
       }
@@ -125,6 +132,25 @@ script
         console.log("Fragment Loaded");
         fillInTabs();
     }
+
+script#offeringTpl(type="text/x-kendo-template")
+    .row-fluid
+        .span3
+            ul.unstyled
+                li Shares Owned: #= totalShares #
+                li Total Shares Offered: #= numShares #
+        .span3
+            ul.unstyled
+                li % Owned:     #= (totalShares / numShares) * 100 #
+                li % On Market: #= pctOfferingToSell #
+        .span3
+            ul.unstyled
+                li Total Raise: #= amtToRaise #
+                li Unit Price: #= price #
+
+
+
+
 
 
 div.hide.row-fluid
