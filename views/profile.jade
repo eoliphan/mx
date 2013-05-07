@@ -132,12 +132,18 @@ block content
                  //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
                  success: function(data) {
                        // data is ur summary
-                      $('#profileContent').hide();
-                      $('#profileContent').html(data);
-                      $('#profileContent').fadeIn('fast',function(){
-                          if (jQuery.isFunction(fragmentLoaded))
-                            fragmentLoaded();
+                      //$('#profileContent').hide();
+                      $('#profileContent').html(data).promise().done(function(){
+                          if (jQuery.isFunction(fragmentLoaded)) {
+
+                            //fragmentLoaded();
+                          }
+                        /*$('#profileContent').show('fast',function(){
+                              if (jQuery.isFunction(fragmentLoaded))
+                                fragmentLoaded();
+                        });*/
                       });
+
 
                  }
 

@@ -37,6 +37,22 @@ exports.orderBought = (event) ->
         Offer.findOne {_id:item.offerId}, (err,offer) ->
           return logger.error "Error finding offer:" + err if err
           return logger.warn "No offer found : " + order if !offer
+          # todo this needs to be reevaluated but good for demo, going to just do give the split at this point
+          # in reality revenue can come from multiple sources, (e.g. straight sales need to modify a bit to handle this
+          pctOfferingToSell = offer.pctOfferingToSell
+          revenueForSale = item.price * (pctOfferingToSell/100)
+          revenueForSale = Math.round(revenueForSale*100) / 100
+          rev =
+            earnedBy: offer.userId
+            orderId: order._id
+            #investorId: investment.userId
+            offeringId: offer._id
+            offeringName: offer.name
+            amount: revenueForSale
+            earnDate: orderDate
+            revenueType: "offeror"
+          newRev = new Revenue(rev)
+          newRev.save()
           _.each offer.investments, (investment,index,list) ->
             # look at the investment, figure the revenue share, create a revenue entry
             # figure out pct of the shares, then factor in division
@@ -45,11 +61,14 @@ exports.orderBought = (event) ->
             revenueForSale = Math.round(revenueForSale*100) / 100
             rev =
               orderId: order._id
+              #todo remove this
               investorId: investment.userId
+              earnedBy: investment.userId
               offeringId: offer._id
               offeringName: offer.name
               amount: revenueForSale
               earnDate: orderDate
+              revenueType: "investor"
 
             newRev = new Revenue(rev)
             newRev.save()

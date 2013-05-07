@@ -44,24 +44,41 @@
           Offer.findOne({
             _id: item.offerId
           }, function(err, offer) {
+            var newRev, pctOfferingToSell, rev, revenueForSale;
             if (err) {
               return logger.error("Error finding offer:" + err);
             }
             if (!offer) {
               return logger.warn("No offer found : " + order);
             }
+            pctOfferingToSell = offer.pctOfferingToSell;
+            revenueForSale = item.price * (pctOfferingToSell / 100);
+            revenueForSale = Math.round(revenueForSale * 100) / 100;
+            rev = {
+              earnedBy: offer.userId,
+              orderId: order._id,
+              offeringId: offer._id,
+              offeringName: offer.name,
+              amount: revenueForSale,
+              earnDate: orderDate,
+              revenueType: "offeror"
+            };
+            newRev = new Revenue(rev);
+            newRev.save();
             return _.each(offer.investments, function(investment, index, list) {
-              var newRev, pctOfSale, rev, revenueForSale;
+              var pctOfSale;
               pctOfSale = (investment.sharesPurchased / offer.numShares) * (offer.pctOfferingToSell / 100);
               revenueForSale = item.price * pctOfSale;
               revenueForSale = Math.round(revenueForSale * 100) / 100;
               rev = {
                 orderId: order._id,
                 investorId: investment.userId,
+                earnedBy: investment.userId,
                 offeringId: offer._id,
                 offeringName: offer.name,
                 amount: revenueForSale,
-                earnDate: orderDate
+                earnDate: orderDate,
+                revenueType: "investor"
               };
               newRev = new Revenue(rev);
               newRev.save();
