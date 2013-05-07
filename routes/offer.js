@@ -8,7 +8,8 @@ var Order  = require("../repositories/order").Order,
     uuid = require('node-uuid'),
     evtcmdbus = require('../evtcmdbus'),
     async = require("async"),
-    ObjectId = mongoose.Types.ObjectId
+    ObjectId = mongoose.Types.ObjectId,
+    moment = require('moment')
     ;
 
 module.exports = function(app){
@@ -25,10 +26,37 @@ module.exports = function(app){
         });
 
     });
-    app.get('/api/offers/revenues/byoffer/byuser/:id',function(req,res){
+    app.get('/api/offers/revenues/byuser/:revenueType/:id',function(req,res){
             var userId = ObjectId(req.params.id);
+            var revenueType=  req.params.revenueType;
+            Revenue.find({earnedBy:userId,revenueType:revenueType},function(err,revenues){
+                if (err){
+                    return res.send(400);
+                }
+                if (!revenues) {
+                    res.send({});
+                } else {
+                    var retArray = _.map(revenues,function(elem){
+                        return elem.toObject()
+                    });
+                    _.each(retArray, function(element,index,list){
+                        //element.newDate = new Date();
+                        // make a string date
+                        var dateStr = moment(element.earnDate).format("MM/DD/YYYY");
+                        element.earnDate = dateStr;
+                    });
+                    res.send(retArray);
+                }
+
+
+            });
+
+        });
+    app.get('/api/offers/revenues/byoffer/byuser/:revenueType/:id',function(req,res){
+            var userId = ObjectId(req.params.id);
+            var revenueType=  req.params.revenueType;
             Revenue.aggregate(
-                {$match:{investorId:userId}},
+                {$match:{earnedBy:userId,revenueType:revenueType}},
                 //{$sort:{earnDate:1}},
                 {$group:{
                     _id:{offeringName:"$offeringName"},

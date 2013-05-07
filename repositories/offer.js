@@ -9,14 +9,17 @@ var mongoose = require('mongoose')
  * 'denormalizing' for read path access
  * to the investor/investmet
  */
+    //todo: generalize for all kinds of revenue
 var revenueSchema = new Schema({
     orderId:ObjectId,
     investorId:ObjectId,
+    earnedBy:ObjectId,
     investmentId:ObjectId,
     offeringId:ObjectId,
     offeringName:String,
     amount:Number,
-    earnDate:Date
+    earnDate:Date,
+    revenueType:{type:String, enum:['investor','offeror']}
 
 
 });
@@ -31,6 +34,7 @@ var investmentSchema = new Schema({
     purchaseDate: Date
 
 });
+
 var offerSchema = new Schema({
     artistName:String, //todo: this is too specific to sound scry
     bio:String,

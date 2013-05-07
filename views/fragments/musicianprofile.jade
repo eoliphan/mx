@@ -165,7 +165,9 @@ div#rootDiv
                         p#globalTotal
                 .row-fluid
                     .span6#totalSalesByAlbumChart
-                    .span6
+                    .span3
+                        #revenueDistributionChart
+                    .span3
                         #incomeDistributionChart
                 .row-fluid
                     .span6
@@ -205,7 +207,9 @@ div#rootDiv
                                     input#costPerShare(type='text',name='costPerShare')
                                     label Profit/Share
                                     input#profitPerShare(type='text',name='profitPerShare')
-                    .span6
+                    .span3
+                        #totalRevAllAlbumChart
+                    .span3
                         #totalSalesAllAlbumChart
                 .row-fluid
                     .span6
@@ -225,6 +229,90 @@ div#rootDiv
                                 #topSalesAllTime
 
 script
+    var totalRevAllAlbumChartDS = new kendo.data.DataSource(
+        {
+            transport: {
+                read: '/api/offers/revenues/byuser/offeror/511a8c6ece62e90000000003'
+            },
+
+            schema: {
+                model: {
+                    fields: {
+                        earnDate: {
+                            type: "date"
+                        }
+                    }
+                }
+            },
+            group: {
+                field:"offeringName"
+            },
+            sort: {
+                field: "earnDate",
+                dir: "asc"
+            }
+        }
+    );
+    var totalRevAllAlbumChart = $('#totalRevAllAlbumChart').kendoSparkline({
+        //autoBind:false,
+        dataSource: totalRevAllAlbumChartDS,
+        series: [
+            {
+                type:"line",
+                field: "amount",
+                //categoryField:"offeringName",
+                missingValues: "interpolate"
+                //name:"Earnings"
+            }
+
+        ],
+        chartArea: {
+            height: 150,
+            width: 150,
+            background: "#eeeeee"
+        },
+        tooltip: {
+             visible: true
+             //template: "#= dataItem.offeringName # - #=  numeral(dataItem.amount).format('$0,0.00') #"
+            //format: "{0:c}"
+        },
+
+        categoryAxis: {
+            baseUnit: "months",
+            field:"earnDate"
+        }
+
+    });
+    var revChartSparkDS = new kendo.data.DataSource(
+        {
+            transport: {
+                read: '/api/offers/revenues/byoffer/byuser/offeror/511a8c6ece62e90000000003'
+            }
+        }
+    );
+    var revDistChart = $('#revenueDistributionChart').kendoSparkline({
+        //autoBind: false,
+        dataSource: revChartSparkDS,
+        series: [
+            {
+                type:"pie",
+                field: "totalSales",
+                categoryField:"offeringName"
+            }
+
+        ],
+        chartArea: {
+            height: 100,
+            width: 100,
+            background: "#eeeeee"
+        },
+        tooltip: {
+            visible: true,
+            template: "#= dataItem.offeringName # - #=  numeral(dataItem.totalSales).format('$0,0.00') #"
+            //format: "{0:c}"
+        }
+
+    });
     $("#topSalesWeek").kendoGrid({
         dataSource: {
             transport:{
@@ -304,7 +392,7 @@ script
             //debugger;
             console.log("testing running");
             var totSalesByAlbumAggr = totSalesByAlbumDS.aggregates();
-            if (totSalesByAlbumAggr.totalSales) {
+            if (totSalesByAlbumAggr && totSalesByAlbumAggr.totalSales) {
                 var total = totSalesByAlbumAggr.totalSales.sum;
                 $("#albumTotal").text(parseFloat(total).toFixed(2));
             }
@@ -313,6 +401,7 @@ script
     });
     //totSalesByAlbumDS.read();
     var totSalesByAlbum = $("#totalSalesByAlbumChart").kendoChart({
+        autoBind: false,
         title: {
             text: "Offering Sales"
         },
@@ -380,11 +469,10 @@ script
                 }
             },
             legend: {
-                position: "bottom"
+                position: "bottom",
+                visible:false
             },
-            /*seriesDefaults: {
-                type: "line"
-            },*/
+
             series: [
                 {
                     name:"Total Sales",
@@ -400,7 +488,7 @@ script
                 }
             },
             categoryAxis: {
-                baseUnit: "years",
+                baseUnit: "months",
                 field:"orderDate"
             },
             chartArea:{
@@ -415,6 +503,11 @@ script
                         }
                     }
                 }
+            },
+            tooltip: {
+                 visible: true,
+                 template: "#= series.name # - #=  value #"
+                //format: "{0:c}"
             }
         });
     // income dist
@@ -426,15 +519,7 @@ script
             }
         },
 
-        schema: {
-            model: {
-                fields: {
-                    orderDate: {
-                        type: "date"
-                    }
-                }
-            }
-        },
+
         aggregate:
             {field:"totalSales",aggregate:"sum"},
         change: function(e) {
@@ -449,13 +534,14 @@ script
         }
     });
     var incomeDistChart = $("#incomeDistributionChart").kendoChart({
+        //autoBind: false,
         title: {
             text: "Income Distribution"
         },
         dataSource: incomeDistChartDS,
         legend: {
             position: "bottom",
-            visible:true
+            visible:false
         },
         seriesDefaults: {
             type: "pie",
@@ -470,15 +556,16 @@ script
                 type:"pie",
                 categoryField:"name",
                 labels: {
-                    format:"{0:c}"
+                    format:"{0:c}",
+                    visible:false
                 }
 
             }
         ],
         valueAxis: {
-            labels: {
-                format: "{0:c}"
-            }
+            //labels: {
+            //    format: "{0:c}"
+            //}
         },
         chartArea:{
             //width:300,
@@ -487,6 +574,11 @@ script
         categoryAxis: {
             //baseUnit: "weeks",
             field:"name"
+        },
+        tooltip: {
+             visible: true,
+             template: "#= dataItem.name # - #=  numeral(dataItem.totalSales).format('$0,0.00') #"
+            //format: "{0:c}"
         }
 
     });
@@ -498,6 +590,7 @@ script
 
     });
     $("#recentOffersGrid").kendoGrid({
+        //autoBind: false,
         height:150,
         columns: [
             {title: "Name", field: "name"},
@@ -630,9 +723,10 @@ script
     function fragmentLoaded(){
         // have to do this to make sure the graphs are sized appropriately
         totSalesByAlbum.data('kendoChart').refresh();
-        totSalesAllAlbum.data('kendoChart').refresh();
+        //totSalesAllAlbum.data('kendoChart').refresh();
+        revDistChart.data('kendoChart').refresh();
         //incomeDistChart.data('kendoChart').refresh();
 
     }
     //--todo figrue out page load
-    getBandInfo();
+    //getBandInfo();
