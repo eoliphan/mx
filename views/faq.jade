@@ -1,0 +1,151 @@
+extends layout
+
+block content
+    style
+        body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+    include common/topbar
+    div.container
+        h2 FAQ
+        .tabbable
+            ul.nav.nav-tabs
+                li.active: a(href="#general",data-toggle="tab"): h3 General
+                li: a(href="#listener",data-toggle="tab"): h3 Listener
+                li: a(href="#artist",data-toggle="tab"): h3 Artist
+                li: a(href="#investor",data-toggle="tab"): h3 Investor
+            .tab-content
+                .tab-pane.active(id="general")
+
+                    p: b Do you have exclusive rights to distribute my music?
+
+                    p Absolutely not! You’re free to distribute your music through whatever sources you think are worthy. We’re here to help not to hinder.
+
+                    p: b Am I limited to signing up as only a Listener, an Investor, or a Band?
+
+                    p Not at all. Anyone can be any combo of the three user types. We’ve just set it up so you can jump directly into whatever category best describes you right now. If you want to start discovering new music you can just buy directly using PayPal or you can sign up for an account and we’ll give you your own customizable page with options to do so much more. If you do want to invest or sell music, however, you’ll need to provide us with some additional info so we can actually pay you. Just jump over to our sign-up detail page HERE and we’ll tell you what else is involved.
+
+                    p: b What’s this about me making money when my favorite bands do well?
+
+                    p That’s the beauty of our distribution model! You get to sample new music from great bands before it’s released for sale. If you like it, you can throw down on the band and start sharing in some of the profits they make when they sell music through our site. You help them out, they help you out.  Everybody wins. They get to buy that new van they’ve needed and you get to say you discovered them first (not to mention you mint some green that you can sink into more music).
+
+                    p: b No, seriously. How does that actually work?
+
+                    p There’s some detail involved, but it’s pretty simple really. The band uploads samples of their newest album. You sample the music and decide if it’s something you can get behind and tell your friends about. The band decides how much money they want to raise and how much of their profits from our site they want to let their listeners buy into (say 50%). Once they’ve decided, they split that portion of the pie into smaller pieces that you can buy (say 1% pieces). You’ll take a percentage of their profits from our site equal to the number of slices you’ve bought.
+
+                    p: b So how much will it cost me for a slice of the pie?
+
+                    p That depends on how much money the band is asking for and how thinly they’ve sliced the pie. We’ve seen 1% slices go for as low as $20 and 0.1% slices go for as high as $100. If that seems like a lot, just consider that you get to keep making money for as long as the album sells on our site. We can’t guarantee you’ll make your money back, but we know people who have. Either way, you’re supporting a good cause.
+
+                    p: b How much is the music?
+
+                    p Depends on how much the band is asking. They get to price their own music. We do, however, ask them to maintain a minimum price of $0.5 per song (we have to keep the lights on, bandwidth ain’t free). Usually you’ll be getting a better deal than you would with some of our competitors.
+
+                    p: b Can I buy songs one at a time?
+
+                    p Depends on the band. They get to decide whether they want to sell a la carte or only as a full album. Some songs are standalone but other albums are meant to be heard as a whole. Would you get the same experience if you viewed the Mona Lisa a piece at a time? Even if the band lets you buy singles, you’ll often get a per song discount when you buy the full album.
+
+                    p: b How are you getting paid?
+
+                    p We take a percentage of each song sale (15%) and a commission (15%) when the artist raises money from their listeners.
+
+                    p: b How much can I invest?
+
+                    p: Depending on your annual income, there are limits on how much you can invest. We are a crowdfunding portal which make things easy for all involved when it comes to reduced reporting requirements and paperwork. In return for these reduced requirements, federal law limits how much any individual can invest. We provide more details HERE if you decide to sign up as an investor.
+                .tab-pane(id="listener")
+                    p: b What is this game I keep hearing about?
+
+                    p Try your hand at predicting which albums will be most successful. If your picks are good, then you can win prizes like concert tickets, backstage passes, a party with the band, and so forth. If you keep winning then you can even earn the right to post full reviews of new albums as a featured SoundScry reviewer.
+
+                    p: b How does the game actually work?
+
+                    p Each user who signs up for a SoundScry account starts with 100 Confidence Chips that can be placed on any album offered for sale through SoundScry. Each chip pays points proportional to 1% of album sales. You can place as many chips as you want on any one or combination of albums and you’ll start accumulating points as soon as you place your chips. You’ll be automatically entered into our weekly, monthly, and yearly contests and you can track your progress on your personal dashboard page. You can change the arrangement of your chips at any time. See more HERE.
+
+                    p: b How do I keep track of my points?
+
+                    p You’ll have a personal game dashboard where you can see which albums have paid you the most points among other fun facts like which album has made the most points overall and over each current contest period.
+
+                    p: b I downloaded some music a while ago but then my hard drive crashed. How do I replace the music I downloaded?
+
+                    p Go to your personal download manager and songs you previously purchased will be listed. Just select and download the songs you lost. There are no download limits (within reason).
+
+                .tab-pane(id="artist")
+                    p: b What is an Offering?
+
+                    p You are Offering a percentage ownership of the album to your fans (which they have to purchase). They get to share in the revenues made from sales of music through SoundScry. You get to decide what percentage to sell and how much to ask for that percentage. You also determine how many shares are offered and whether there are any ownership limits.
+
+                    p: b Do I have to do an Offering?
+
+                    p No, you can just sell your music directly, but we’ll take a bigger percentage (25% rather than 15%) and you’ll miss out on the advertising benefits of motivated fan networks.
+
+                    p: b What is the value of me posting an Offering on the SoundScry platform?
+
+                    p You will offset your expenses from making the album by raising money from numerous small- and mid-sized investors who like your music and will heavily promote it through their networks. In short, you get a chunk of change that you don’t have to pay back and an army of citizen advertisers.
+
+                    p: b Does the money I raise through my Offering go against the royalties I make through purchases in the SoundScry store?
+
+                    p Nope. You keep what you raise.
+
+                    p: b What percentage of the Offering should I sell to my fans?
+
+                    p Up to you. We recommend that you start small on the total dollar amount raised and Offer 25% to 50% at first.
+
+                    p: b When can I post an Offering?
+
+                    p When you have a completed album to offer the fans.
+
+                    p: b How do I determine the dollar amount of my Offering?
+
+                    p We have a wizard (link) that can help you determine how to price the Offering, but as a rule of thumb the Offering should be a percentage of the expenses you incurred while making the album along with some touring costs. Ultimately, it is up to you to determine the actual amount of the Offering, but another good rule of thumb is to keep it reasonable until you have built a track record.
+
+                    p: b What determines how much money I need to raise in my Offering?
+
+                    p It depends. Since you are posting your music to SoundScry in order to gain investment you have already incurred expenses for developing your music. We recommend that you value your Offering as some percentage of your expenses along with some operating cash for touring, equipment cost, etc. (See our link to a wizard that might help you figure this out.)
+
+                    p For example:
+                    ul
+                        li Total cost of producing your album for sale: $7,500
+                        li Estimated Touring costs for 3 months: $2,500
+                        li Total cost or producing and promoting my album: $10,000
+                        li Total value of my Offering on SoundScry: $10,000
+                        li Amount I want to raise from investors in my Offering on SoundScry: $5,000
+                        li This example will split the proceeds with the musician and investors 50/50 through music and merchandising sales in the SoundScry store
+                        li The musician gets to keep all of the money raised. It is not deducted against royalties.
+
+                    p: b Can I still post my music to the SoundScry store even if I did not raise any money from my Offering?
+
+                    p Yes, but you will need to try for success in raising an Offering. When you sign up for an Offering, and the Offering has been approved, your music will go live on the website for purchase and remain there. Once you have committed to an Offering then you have to at least wait out the minimum time for the Offering to be completed. In other words, if you have offered a 50/50 Offering for $10,000 then the Investors have at least the minimum amount of time to purchase your Offering. However, during the time between the launch of your Offering and the time of your Offering being completed, those music sales will be distributed only to you, not retroactively split according to the Offering.
+
+                    p: b If I am already signed with a music label, how do they factor into the SoundScry payment equation?
+
+                    p That is to be worked out between you and your label. We allow you to directly select who will own shares in your album, thus, you could assign shares to your label as required.
+
+                .tab-pane(id="investor")
+                    p: b How much money can I invest on an annual basis?
+
+                    p Depends on your annual income. In order to comply with federal law, investors with less than $40,000 in annual income and assets may only invest up to $2000 across ALL crowdfunding sites. Investors with $40,000 -$100,000 in annual income and assets may invest up to 5% of their income across all platforms. Investors with more than $100,000 have no limit on their crowdfunding capability.
+
+                    p: b How do I track my investments?
+
+                    p We provide you with a personal real-time dashboard where you can track the progress of each of your investments. Statistics such as revenue per share, price per percentage ownership, and total profit are provided for individual investments and in aggregate. You can also access, save, and print reports that describe all the relevant information.
+
+                    p: b Can I purchase music from my Investor account?
+
+                    p Yes. Think of the Investor account as a Listener account with the added bonus that you can invest in the albums (as long as you’ve provided the information required by the taxman).
+
+                    p: b I am going to invest in a musician. What does the process of doing so look like?
+
+                    p Once you’ve identified an album to invest in, you can either click the “Invest” button directly from the musician’s main page, click directly on the album in the Offering market, or you can scroll over the album in the SoundScry store and click the “Invest” button after you go to the “See More” page for that album. You’ll be given the opportunity to specify the number of shares to purchase. Once you’ve confirmed your desired number of shares, the purchase goes into your cart where it awaits final payment confirmation.
+
+                    p: b How often is my account updated?
+
+                    p Your analytics dashboard updates automatically every minute. You can hit refresh to update more frequently.
+
+                    p: b Some of the information required to sign-up is sensitive. Do you sell my information?
+
+                    p Not at all! We are regulated and keep tight security on all the information under our control.
+
+                    p: b Why do I have to give you my tax ID/social security number and my annual income?
+
+                    p We are required by the SEC to do so. We are a regulated platform with rules that we have to abide by, but they exist solely for your protection or for tax purposes.
