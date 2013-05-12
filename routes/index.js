@@ -9,5 +9,11 @@ module.exports = function(app){
     app.get("/faq",function(req,res){
        res.render('faq',{title:"FAQ"});
     });
-    return {};
+    return {
+        partials: function(req,res){
+                var name = req.params.name;
+                res.render('partials/' + name);
+            }
+    };
+
 }

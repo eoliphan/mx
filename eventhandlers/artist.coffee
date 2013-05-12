@@ -3,6 +3,7 @@ Order = require('../repositories/order').Order;
 Wager = require('../repositories/wager').Wager;
 Artist = require('../repositories/artist').Artist;
 
+
 mongoose = require('mongoose');
 _ = require('underscore');
 ObjectId =mongoose.Types.ObjectId;
