@@ -1,5 +1,6 @@
 extends layout
 block content
+
     style
         body {
                 padding-top: 60px;
@@ -21,10 +22,17 @@ block content
                 .row-fluid(width="800")
                     .span4
                         h4: i Click To Upload Album Image (300x300)
+                            //input#imgupload(type="file", name="image",data-url="/uploads")
                         - if (locals.info.albums.image)
                             img.edit-border(src="#{locals.info.albums.img}",width="100%")
+                                //input#imgupload(type="file", name="image",data-url="/uploads")
                         - else
-                            img.edit-border(src="/util/rndsmlcvr/1",width="100%")
+                            div
+                                form#imgupload
+                                    img.edit-border(src="/util/rndsmlcvr/1",width="100%")
+                                    input(type="file", name="image",data-url="/uploads")
+                                    input(type="hidden", name="itemId", value="#{locals.info.albums._id}" )
+                                    input(type="hidden", name="command", value="updateAlbumPhoto" )
 
                     .span8
                         h4 Genre:
@@ -48,11 +56,18 @@ block content
                         button#showBuySharesBtn.btn.disabled Buy Shares!
 
                 hr
-                form
-                    span.btn.btn-success.fileinput-button
-                        i.icon-plus.icon-white
-                        span Add Tracks...
-                        input(type="file", name="files[]",multiple="")
+                form#fileupload(action='/upload',method="POST", enctype="multipart/form-data")
+                    input(type="hidden", name="itemId", value="#{locals.info.albums._id}" )
+                    .row.fileupload-buttonbar
+                        .span6
+                            span.btn.btn-success.fileinput-button
+                                i.icon-plus.icon-white
+                                span Add Tracks...
+                                input(type="file", name="files[]",multiple="")
+                            button.btn.btn-primary.start(type="submit")
+                                i.icon-upload.icon-white
+                                span Start Upload
+
 
                     .row
                         .span6
@@ -67,6 +82,23 @@ block content
     - if (locals.user)
         script
             var userid = "#{locals.user._id}"
+    script(src='/javascripts/jquery.iframe-transport.js')
+    script(src='/javascripts/jquery.fileupload.js')
+    script(src='/javascripts/jquery.fileupload-fp.js')
+    script
+        $(document).ready(function(){
+           $('#imgupload').fileupload ({
+                url:"/uploads",
+                dataType: 'json',
+                done: function(e,data) {
+                    $.each(data.result.files, function (index, file) {
+                        $('<p/>').text(file.name).appendTo(document.body);
+                    });
+                }
+
+
+            });
+        });
     script
         function prepEditorPayload(params) {
             var retParam = {};
@@ -103,7 +135,7 @@ block content
             });*/
 
         });
-    script#template-upload(type="text/x-tmpl")
+    script#template-upload(type="text/x-tmpl").
         {% for (var i=0, file; file=o.files[i]; i++) { %}
             <tr class="template-upload fade">
                 <td class="preview"><span class="fade"></span></td>
@@ -132,7 +164,7 @@ block content
                 {% } %}</td>
             </tr>
         {% } %}
-    script#template-download(type="text/x-tmpl")
+    script#template-download(type="text/x-tmpl").
         {% for (var i=0, file; file=o.files[i]; i++) { %}
             <tr class="template-download fade">
                 {% if (file.error) { %}
@@ -159,3 +191,4 @@ block content
                 </td>
             </tr>
         {% } %}
+    //script(src="/javascripts/testupload.js")

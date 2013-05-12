@@ -22,6 +22,7 @@ var http = require('http')
     , passport = require('passport')
     , mongoose = require('mongoose')
     , Schema = mongoose.Schema
+    , ObjectId =mongoose.Types.ObjectId
     , LocalStrategy = require('passport-local').Strategy
     , querystring = require('querystring')
     , domain = require("./domain/domain")
@@ -45,6 +46,8 @@ var http = require('http')
     moment = require('moment')
     , coffeescript = require("coffee-script")
     , upload = require('jquery-file-upload-middleware')
+    , gridfs =  require('gridfs-stream')
+    , fs = require("fs");
 
 
     ;
@@ -70,8 +73,17 @@ var connstring = "mongodb://" + conf.get('database:user') + ":" + conf.get('data
 console.log(connstring);
 //var opts ={'user':conf.get('database:user'),'pass':conf.get('database:password')};
 //mongoose.connect("mongodb://mxuser:mxusertest@linus.mongohq.com:10022/mxdemo");
-mongoose.connect(connstring);
+var gfs;
+
+var conn = mongoose.connect(connstring);
+
+mongoose.connection.once("open",function(conn){
+     gfs = gridfs(mongoose.connection.db,mongoose.mongo);
+    console.log(conn);
+});
+
 //-- end setup dbs
+
 
 var evtcmdbus = require('./evtcmdbus')
     , evthandlers = require("./loadeventhandlers")
@@ -130,7 +142,6 @@ app.configure(function () {
     app.use(express.methodOverride());
     app.use(express.cookieParser('secret'));
     app.use(express.session({ secret: 'secret', store: store }));
-
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(flash());
@@ -185,8 +196,18 @@ app.get('/', function (req, res) {
 });
 
 app.post('/uploads', function (req, res) {
-    console.log(req);
+
+    var fileInfo = {};
+    fileInfo._id = new ObjectId();
+    fileInfo.itemId = req.body.itemId;
+    fileInfo.filename = uuid.v4();
+    fileInfo.content_type = req.files.image.type;
+    var writestream = gfs.createWriteStream([fileInfo]);
+    fs.createReadStream(req.files.image.path).pipe(writestream);
+    //console.log(req.files);
 });
+
+app.get('/partials/:name',index.partials);
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated, demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated, demoweb.profiledetail);
@@ -490,7 +511,7 @@ evtcmdbus.addEventSink(function (event) {
         clients[event.payload.sessionId].emit(event.event, event.payload);
 });
 io.sockets.on('connection', function (socket) {
-    console.log("Socket established: " + socket);
+    //console.log("Socket established: " + socket);
     clients[socket.handshake.sessionId] = socket;
 
     socket.on('disconnect', function () {
