@@ -194,9 +194,9 @@ for (var i = 0; i < 1; i++) {
 
 /// -- routes
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
     res.redirect("/demoweb");
-});
+});*/
 
 app.post('/uploads', function (req, res) {
 
@@ -538,26 +538,26 @@ logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
 logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
 //logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
 
-User.findById("511a8c6ece62e90000000003",function(err,user){
-        if(err){
-            logger.error("Error finding password:" +err);
-            return;
-        }
-        // now use the passport-local stuff to update
-        var retVal = user.setPassword("test",function(err){
-            if(err) {
-                logger.error("Error updating password:" + err);
-            }
-            user.save(function(err){
-                        if(err){
-                            logger.error("error saving user: " + err);
-                        }
-                    });
-        });
-
-        logger.debug(user);
-
-    });
+//User.findById("511a8c6ece62e90000000003",function(err,user){
+//        if(err){
+//            logger.error("Error finding password:" +err);
+//            return;
+//        }
+//        // now use the passport-local stuff to update
+//        var retVal = user.setPassword("test",function(err){
+//            if(err) {
+//                logger.error("Error updating password:" + err);
+//            }
+//            user.save(function(err){
+//                        if(err){
+//                            logger.error("error saving user: " + err);
+//                        }
+//                    });
+//        });
+//
+//        logger.debug(user);
+//
+//    });
 
 
 

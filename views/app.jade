@@ -1,0 +1,68 @@
+extends applayout
+
+block content
+    div(ng-controller="MainCtrl")
+
+        div.navbar.navbar-inverse.navbar-fixed-top
+          div.navbar-inner
+              div.container-fluid
+                  a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  a.brand(href='/') SoundScry
+                      i.icon-sslogo
+                  div.nav-collapse.collapse
+
+                      ul.nav.test
+                          li.active(ng-class="{active: $location.path() == '/'}"): a(href='/') Home
+                              i.icon-home.icon-white
+                          li(ng-class="{active: $location.path() == '/store'}"): a(href='store') Store
+                          li(ng-class="{active: $location.path() == '/cart'}"): a(href='cart') Cart &nbsp;
+                              span.badge#cartCount 0
+                          li(ng-class="{active: $location.path() == '/about'}"): a(href='about') About
+                          li(ng-class="{active: $location.path() == '/faq'}"): a(href='faq') FAQ
+                          li(ng-class="{active: $location.path() == '/contact'}"): a(href='contact') Contact
+                      - if (locals.user)
+                          p.navbar-text.pull-right
+                                                  a.navbar-link.pull-right(href='/logout') &nbsp;(Logout)
+                          p.navbar-text.pull-right Logged in as
+                              - if (locals.user.firstName)
+                                  a.navbar-link(href='/profile')  #{locals.user.firstName} #{locals.user.lastName}
+                              - else
+                                  a.navbar-link(href='/profile')  #{locals.user.email}
+                              - if((locals.user.primaryuse =='artist' && !locals.user.isArtist) || (locals.user.primaryuse =='investor' && !locals.user.isInvestor))
+                                  span.badge.badge-warning 1
+
+                      - else
+                          div.navbar-text.pull-right
+                              a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
+                          form.navbar-form.pull-right(method="POST",action="/login")
+                              input.span2(type="email",name="email",placeholder="Email",required)
+                              input.span2(type="password",name="password",placeholder="Password")
+                              button.btn(type="submit") Log In
+
+        div(ng-view)
+        br
+        pre $location.path() = {{$location.path()}}
+    //pre $scope.$route = {{$scope.$route}}
+    script(src="http://code.jquery.com/jquery-1.9.1.min.js")
+    script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
+    script(src="javascripts/bs/bootstrap.js")
+    //
+    script(src='/javascripts/kendo/kendo.web.min.js')
+    //script(src='/javascripts/kendo/kendo.dataviz.min.js')
+    script(src='/javascripts/jqBootstrapValidation.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/uuid.js')
+    script(src='/javascripts/underscore.js')
+    //script(src='/javascripts/jquery.jeditable.js')
+    script(src='/javascripts/bs-editable/bootstrap-editable.js')
+    script(src='/javascripts/jquery-ui-1.10.2.custom.js')
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js")
+    script(src="javascripts/ui-bootstrap-tpls-0.3.0.js")
+    script(src='javascripts/app/app.js')
+    script(src='javascripts/app/services.js')
+    script(src='javascripts/app/controllers.js')
+    script(src='javascripts/app/filters.js')
+    script(src='javascripts/app/directives.js')

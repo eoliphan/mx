@@ -54,6 +54,9 @@ module.exports = function(app){
         var name = req.params.name;
         res.render('partials/' + name);
     });
+    app.get('/',function(req,res){
+        res.render('app');
+    });
 
 
 }
