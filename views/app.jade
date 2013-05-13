@@ -39,7 +39,8 @@ block content
                               input.span2(type="email",name="email",placeholder="Email",required,ng-model="email")
                               input.span2(type="password",name="password",placeholder="Password",ng-model="password")
                               button.btn(ng-click="loginButtonClick()") Log In
-        pre user.isAuthenticated() = {{user.isAuthenticated()}}
+        //pre user.isAuthenticated() = {{user.isAuthenticated()}}
+        //pre $state = {{$state}}
         div(ui-view)
         br
         //pre $location.path() = {{$location.path()}}
@@ -48,8 +49,8 @@ block content
     script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
     script(src="javascripts/bs/bootstrap.js")
     //
-    script(src='/javascripts/kendo/kendo.web.min.js')
-    //script(src='/javascripts/kendo/kendo.dataviz.min.js')
+    //script(src='/javascripts/kendo/kendo.web.min.js')
+    script(src='http://cdn.kendostatic.com/2013.1.319/js/kendo.all.min.js')
     script(src='/javascripts/jqBootstrapValidation.js')
     script(src='/socket.io/socket.io.js')
     script(src='/javascripts/uuid.js')
@@ -62,8 +63,12 @@ block content
     script(src="javascripts/angular-authentication.js")
     script(src="javascripts/ui-bootstrap-tpls-0.3.0.js")
     script(src="javascripts/angular-ui-states.min.js")
+    script(src="javascripts/angular-kendo.js")
     script(src='javascripts/app/app.js')
     script(src='javascripts/app/services.js')
     script(src='javascripts/app/controllers.js')
+    script(src='javascripts/app/profile/investorprofilectrl.js')
+    script(src='javascripts/app/profile/musicianprofilectrl.js')
+    script(src='javascripts/app/profile/musicloverprofilectrl.js')
     script(src='javascripts/app/filters.js')
     script(src='javascripts/app/directives.js')

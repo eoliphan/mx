@@ -1,0 +1,69 @@
+div.row-fluid
+    .span4
+        h2 Total Earnings $
+            span#totalEarnings
+    .span2
+        #summarySpark(style="background-color: #eeeeee;")
+
+
+
+div.row-fluid
+    .span12#revenueChart
+div.row-fluid
+    .span12#revTab
+        ul
+
+
+script
+
+
+script#offeringTpl(type="text/x-kendo-template")
+    .row-fluid
+        .span3
+            ul.unstyled
+                li Shares Owned: #= totalShares #
+                li Total Shares Offered: #= numShares #
+        .span3
+            ul.unstyled
+                li % Owned:     #= (totalShares / numShares) * 100 #
+                li % On Market: #= pctOfferingToSell #
+        .span3
+            ul.unstyled
+                li Total Raise: #= amtToRaise #
+                li Unit Price: #= price #
+
+
+
+
+
+
+
+script
+    $('#submitBasic').click(function(){
+        var formData = $('#basicInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });
+    $('#submitInvestor').click(function(){
+        var formData = $('#investorInfoForm').serialize();
+        var id = $("#uid").val();
+        $.ajax({
+            type:"PUT",
+            url:"/api/user/"+id,
+            data: formData,
+            success: function(data) {
+                //alert(sent);
+                $('#alert').show();
+            }
+        });
+
+    });

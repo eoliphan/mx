@@ -1,0 +1,122 @@
+div#alert.alert(style="display: none")
+    button(type="button",class="close",data-dismiss="alert") &times;
+    p Data Updated
+div.row-fluid
+    div.span12
+        h4 Game Account (Chips Remaining: 10)
+div.row-fluid
+    .span3
+        //p Total Chips:
+            #totalChipsSum
+    .span3
+    .span3
+    .span3
+div.row-fluid
+    .span6
+        #currentGameShareDist
+    .span6
+        #pointsOverTimeChart
+div.row-fluid
+    &nbsp;
+div.row-fluid
+    .span6
+        table#gamegrid
+            thead
+                tr
+                    th Artist
+                    th Album Name
+                    th # Of Chips Bet
+                    th # Of Points Gained
+                    th Your % Return
+                tbody
+                    td(colspan=5)
+    .span6
+div.row-fluid
+    &nbsp;
+div.row-fluid
+    .span4
+        strong Leaderboard
+        table#leadergrid
+            thead
+                tr
+
+                    th Name
+                    th Points
+                tbody(colspan=3)
+        //
+            br
+            em February, 2013
+            ol
+                li John
+                li Chance
+                li Kyle
+
+    .span6
+        strong Time Remaining
+        #wTime.mojitoPanel
+            span#wTimeHour
+            span#wTimeMinute
+            span#wTimeSecond
+
+
+script#template(type="text/x-kendo-tmpl")
+    li: small ${band}/${album}
+script
+
+script
+
+script
+    /*var wTime =
+    {
+        $widget: null,
+        $wTimeHour: null,
+        $wTimeMinute: null,
+        $wTimeSecond: null,
+        Initialize: function ()
+        {
+            var self = wTime;
+
+            //Mojitoring.LoadHTML($("#wMisc"), "widget/misc/time.htm", self.InitializeCB);
+            self.InitializeCB();
+        },
+        InitializeCB: function()
+        {
+            var self = wTime;
+
+            self.$widget = $("#wTime");
+            self.$wTimeHour = $("#wTimeHour", self.$widget);
+            self.$wTimeMinute = $("#wTimeMinute", self.$widget);
+            self.$wTimeSecond = $("#wTimeSecond", self.$widget);
+
+            // Setup tooltip for the rendered template
+            $("[data-title]", self.$widget).tooltip();
+
+            // Refresh every 1000ms
+            window.setInterval(self.Refresh, 1000);
+        },
+        Refresh: function ()
+        {
+            var self = wTime;
+
+            var now = new Date();
+
+            self.$wTimeHour.html(self.ZeroPad(now.getHours()));
+            self.$wTimeMinute.html(self.ZeroPad(now.getMinutes()));
+            self.$wTimeSecond.html(self.ZeroPad(now.getSeconds()));
+        },
+        ZeroPad: function (n)
+        {
+            return (+n < 10 ? '0' : '') + n
+        }
+
+    };
+
+    $(wTime.Initialize);*/
+script
+    socket.on("orderBought",function(data){
+        leaderGrid.refresh();
+    });
+    function fragmentLoaded() {
+    }
+
+//    $("#albInPortList").kendoListView({

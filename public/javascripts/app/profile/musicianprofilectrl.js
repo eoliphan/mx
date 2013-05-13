@@ -1,0 +1,3 @@
+function MusicianProfileCtrl($http,$scope) {
+
+}

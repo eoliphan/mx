@@ -1,4 +1,4 @@
-function MainCtrl($http,$scope, $route, $routeParams, $location, principal, authority, authService) {
+function MainCtrl($http, $scope, $route, $routeParams, $location, principal, authority, authService) {
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
@@ -12,14 +12,14 @@ function MainCtrl($http,$scope, $route, $routeParams, $location, principal, auth
     // check for current auth on reload
     $http
         .get(authUrl)
-        .success(function(data){
+        .success(function (data) {
             // we have a good session
             authService.loginConfirmed();
             authority.authorize(data);
 
             $scope.email = '';
             $scope.password = '';
-            $scope.curUser=data;
+            $scope.curUser = data;
 
         });
 
@@ -36,7 +36,7 @@ function MainCtrl($http,$scope, $route, $routeParams, $location, principal, auth
 
                 $scope.email = '';
                 $scope.password = '';
-                $scope.curUser=data;
+                $scope.curUser = data;
 
             })
             .error(function (data) {
@@ -50,8 +50,8 @@ function MainCtrl($http,$scope, $route, $routeParams, $location, principal, auth
 
     $scope.logoutButtonClick = function () {
         $http
-        ['delete'](authUrl)
-            .success(function(){
+            ['delete'](authUrl)
+            .success(function () {
                 authority.deauthorize();
             });
 
@@ -73,3 +73,8 @@ function AboutCtrl() {
 function FaqCtrl() {
 
 }
+
+function ProfileCtrl() {
+
+}
+

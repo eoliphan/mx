@@ -10,12 +10,12 @@ style
 div.container-fluid
     div.row-fluid
         div.span2
-            - if(locals.user.primaryuse =='artist' && !locals.user.isArtist)
+            //- if(locals.user.primaryuse =='artist' && !locals.user.isArtist)
                 .container
                     .alert.span4
                         button(type="button",data-dismiss="alert") &times;
                         message Click "Musician" to Complete Signup
-            - if(locals.user.primaryuse =='investor' && !locals.user.isInvestor)
+            //- if(locals.user.primaryuse =='investor' && !locals.user.isInvestor)
                 .container
                     .alert.span4
                         button(type="button",data-dismiss="alert") &times;
@@ -23,27 +23,28 @@ div.container-fluid
             div.well.sidebar-nav
                 ul#sidenav.nav.nav-list
                     li.nav-header Options
-                    li: a(href="/fragments/acctinfo") Edit Profile
+                    li: a(href="/profile/details") Edit Profile
                     li.active: a(href="#") Active Offerings
-                    - if (locals.user.isArtist)
+                    //- if (locals.user.isArtist)
                         li: a(href="/fragments/musicianprofile") Musician
                             ul.nav.nav-list
                                 li: a.notimpl(href="/fragments/managealbums") Manage Albums
                                 li: a.notimpl(href="/fragments/musicianreports") Reports
-                    - else
+                    //- else
                         li: a(href="/fragments/musiciansignup") Musician
-                    - if (locals.user.isInvestor)
+                    //- if (locals.user.isInvestor)
                         li: a(href="/fragments/investorprofile") Investor
                             ul.nav.nav-list
                                 li: a.notimpl(href="/fragments/investorreports") Reports
-                    - else
+                    //- else
                         li: a(href="/fragments/investorsignup") Investor
-                    li: a(href="/fragments/musicloverprofile") Music Lover
-                    li: a.notimpl(href="/fragments/financialinfo") Financial Info
-                    li: a.notimpl(href="/profile/genres") Music Genres
-                    li: a.notimpl(href="/profile/bandsearch") Band Search
+                    li: a(href="/profile/investor") Investor
+                    li: a(href="/profile/musiclover") Music Lover
+                    //li: a.notimpl(href="/fragments/financialinfo") Financial Info
+                    //li: a.notimpl(href="/profile/genres") Music Genres
+                    //li: a.notimpl(href="/profile/bandsearch") Band Search
             //a.btn.btn-primary.span2(href="#addOfferDialog",role="button",data-toggle="modal") Add Project!
-            .container
+            //.container
                 a.btn.btn-primary.span2(id="addProjectBtn",href="/fragments/addoffering") Add Offering!
             // alerts
             // musician sign up
@@ -53,27 +54,9 @@ div.container-fluid
 
 
         div.span10
-            div#profileContent.hero-unit
-                div.row-fluid
-                    div.span8
-                        table#grid
-                            thead
-                                tr
-                                    th Band
-                                    th Project
-                                    th Shares Owned
-                                    th Value
-                                    th Status
-                                    th Revenue
-                            tbody
-                                td(colspan=6)
-                    div.span4
-                        div#investchart
-                div.row-fluid
-                br
-                div.row-fluid
-                    div.span12
-                        div#revenuechart
+            //todo the jade tag was generating the ui-view with a value that was messing things up
+            <div class="well" ui-view></div>
+
 
 script
     //$('#sidenav a').css("border", "2px dotted blue");
@@ -92,41 +75,41 @@ script
 
        });
     }
-    $('#sidenav a').click(function(evt){
-        evt.preventDefault();
-        //alert(evt.target);
-        $('#sidenav li[class="active"]').toggleClass('active');
-        var tgt = $(evt.target);
-        tgt.parent().toggleClass('active');
-        console.log(tgt.context.href);
-        $.ajax({
-
-             type: "GET",
-             url: tgt.context.href,
-             //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
-             success: function(data) {
-                   // data is ur summary
-                  $('#profileContent').html(data);
-                  //$('#profileContent').hide();
-                  //$('#profileContent').html(data).promise().done(function(){
-                      /*if (jQuery.isFunction(fragmentLoaded)) {
-
-                        //fragmentLoaded();
-                      }*/
-                    /*$('#profileContent').show('fast',function(){
-                          if (jQuery.isFunction(fragmentLoaded))
-                            fragmentLoaded();
-                    });*/
-                  //});
-
-
-             }
-
-           });
-        //alert(evn.data);
-        //evt.target.parentElement.toggleClass('active');
-        return false;
-    });
+//    $('#sidenav a').click(function(evt){
+//        evt.preventDefault();
+//        //alert(evt.target);
+//        $('#sidenav li[class="active"]').toggleClass('active');
+//        var tgt = $(evt.target);
+//        tgt.parent().toggleClass('active');
+//        console.log(tgt.context.href);
+//        $.ajax({
+//
+//             type: "GET",
+//             url: tgt.context.href,
+//             //data: "id=" + id, // appears as $_GET['id'] @ ur backend side
+//             success: function(data) {
+//                   // data is ur summary
+//                  $('#profileContent').html(data);
+//                  //$('#profileContent').hide();
+//                  //$('#profileContent').html(data).promise().done(function(){
+//                      /*if (jQuery.isFunction(fragmentLoaded)) {
+//
+//                        //fragmentLoaded();
+//                      }*/
+//                    /*$('#profileContent').show('fast',function(){
+//                          if (jQuery.isFunction(fragmentLoaded))
+//                            fragmentLoaded();
+//                    });*/
+//                  //});
+//
+//
+//             }
+//
+//           });
+//        //alert(evn.data);
+//        //evt.target.parentElement.toggleClass('active');
+//        return false;
+//    });
 script
 
     $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
@@ -176,27 +159,7 @@ script
             });
 
 
-script
 
-        $("#grid").kendoGrid({
-                    height: 400,
-                    columns: [
-                        {title: "Band", field: "band"},
-                        {title: "Project", field: "project"},
-                        {title: "Shares Owned", field: "sharesOwned"},
-                        {title: "Value", field: "shareValue"},
-                        {title: "Status", field: "status"},
-                        {title: "Revenue", field: "revenue"}
-                    ],
-                    dataSource: {
-                        data:[
-                            {band:"Moop",project:"Trilogy",sharesOwned:5,shareValue:5000,status:"In Production",revenue:"N/A"},
-                            {band:"Faith+1",project:"Renewal",sharesOwned:3,shareValue:3000,status:"Released",revenue:"$675.45"}
-
-                        ],
-                        pageSize: 2
-                    }
-                });
 
 script
     $(".notimpl").click(function(event){

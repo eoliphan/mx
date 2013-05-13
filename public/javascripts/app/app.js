@@ -1,4 +1,8 @@
-angular.module('soundscry',['soundscry.filters','soundscry.services','soundscry.directives','ui.bootstrap','ui.compat','http-auth-interceptor', 'authentication']).
+angular.module('soundscry',
+        ['soundscry.filters','soundscry.services','soundscry.directives',
+            'ui.bootstrap','ui.compat','http-auth-interceptor', 'authentication',
+            'kendo'
+        ]).
     config(['$stateProvider','$routeProvider','$locationProvider',
         function($stateProvider,$routeProvider,$locationProvider) {
             $stateProvider.
@@ -44,9 +48,24 @@ angular.module('soundscry',['soundscry.filters','soundscry.services','soundscry.
                 }).
                 state("profile",{
                     url:"/profile",
-                    templateUrl: 'partials/profile'
-                    //controller: FaqCtrl
-                });;
+                    templateUrl: 'partials/profile',
+                    controller: ProfileCtrl
+                }).
+                state("profile.investor",{
+                    url:"/investor",
+                    templateUrl: 'partials/investorprofile',
+                    controller: InvestorProfileCtrl
+                }).
+                state("profile.musician",{
+                    url:"/musician",
+                    templateUrl: 'partials/musicianprofile',
+                    controller: MusicianProfileCtrl
+                }).
+                state("profile.musiclover",{
+                    url:"/musiclover",
+                    templateUrl: 'partials/musicloverprofile',
+                    controller: MusicLoverProfileCtrl
+                });
             $locationProvider.html5Mode(true);
         }]).run(
           [        '$rootScope', '$state', '$stateParams',
