@@ -33,13 +33,15 @@ var http = require('http')
     , flash = require('connect-flash')
     , User = require("./repositories/user").User
     , Order = require("./repositories/order").Order
-    , Artist = require("./repositories/artist").Artist,
-    _ = require('underscore'),
+    , Artist = require("./repositories/artist").Artist
+    , _ = require('underscore')
+    , routes = require('./routes')
     cart = require("./routes/cart"),
     game = require("./routes/game")
 //routes = require('./routes')
     , user = require('./routes/user')
     , demoweb = require('./routes/demoweb')
+
 
     , logger = require("winston"),
     connect = require("connect"),
@@ -47,7 +49,8 @@ var http = require('http')
     , coffeescript = require("coffee-script")
     , upload = require('jquery-file-upload-middleware')
     , gridfs =  require('gridfs-stream')
-    , fs = require("fs");
+    , fs = require("fs")
+    , passportconf = require('./util/passportconf');
 
 
     ;
@@ -207,34 +210,16 @@ app.post('/uploads', function (req, res) {
     //console.log(req.files);
 });
 
-app.get('/partials/:name',index.partials);
+
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated, demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated, demoweb.profiledetail);
 app.get('/artist', ensureAuthenticated, demoweb.artist);
-app.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect("/");
-});
-app.get('/login', demoweb.login);
-app.post('/login',
-    passport.authenticate('local', { successRedirect: '/demoweb',
-        failureRedirect: '/login',
-        failureFlash: true })
-);
+
 app.get('/artistinfo', demoweb.artistinfo);
 app.get('/investorinfo', demoweb.investorinfo);
 app.get('/musicloverinfo', demoweb.musicloverinfo);
-app.get('/signup', demoweb.signup);
-app.post('/signup', function (req, res) {
-    console.log(JSON.stringify(req.body));
 
-    var newUser = new userrepo.User(req.body);
-    newUser.save();
-    req.flash('info', "Account Created. Welcome to SoundSrcy.  Please Log In");
-    res.redirect("/login");
-
-});
 
 app.get('/fragments/:frag', ensureAuthenticated, function (req, res) {
     User.findById(req.user._id, function (err, user) {
@@ -420,37 +405,6 @@ app.get('/api/songs/bygenre/:genre', function (req, res) {
 var x = require("./routes")(app);
 //-- end routes
 
-passport.use(new LocalStrategy({usernameField: 'email'},
-    function (username, password, done) {
-
-        userrepo.User.findOne({email: username}, function (err, user) {
-            if (err) {
-                return done(err);
-            }
-            if (!user) {
-                return done(null, false, {message: "Incorrect user."});
-            }
-            if (!user.password == password) {
-                return done(null, false, {message: "Incorrect password"});
-            }
-            return done(null, user);
-        });
-//        if (username == 'sscry' || password == "sscry")
-//        return done(null,{id:1,"username":username});
-
-    }
-
-));
-
-passport.serializeUser(function (user, done) {
-    done(null, user);
-});
-
-passport.deserializeUser(function (id, done) {
-    //User.findById(id, function(err, user) {
-    done(null, id);
-    //});
-});
 
 var server = http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port')
@@ -583,6 +537,27 @@ logger.debug("ampq port: " + conf.get("evtbusamqp_port"));
 logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
 logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
 //logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
+
+User.findById("511a8c6ece62e90000000003",function(err,user){
+        if(err){
+            logger.error("Error finding password:" +err);
+            return;
+        }
+        // now use the passport-local stuff to update
+        var retVal = user.setPassword("test",function(err){
+            if(err) {
+                logger.error("Error updating password:" + err);
+            }
+            user.save(function(err){
+                        if(err){
+                            logger.error("error saving user: " + err);
+                        }
+                    });
+        });
+
+        logger.debug(user);
+
+    });
 
 
 

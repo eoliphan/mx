@@ -1,6 +1,9 @@
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
-    , conf = require("../config").conf;
+    , conf = require("../config").conf
+    ,  passportLocalMongoose = require('passport-local-mongoose')
+
+    ;
 
 // connect to db
 
@@ -18,7 +21,6 @@ var chipWagerSchema = new Schema({
 var userSchema = new Schema({
     firstName: String,
     lastName: String,
-    email: String,
     password: String,
     address1: String,
     address2: String,
@@ -36,12 +38,15 @@ var userSchema = new Schema({
     investorClass:String,
     ssn:String,
     einTaxID:String,
-    //chipWagers:[chipWagerSchema],
-    //orders:[orderSchema],
     friends:[Schema.Types.ObjectId]
 
 });
+
+userSchema.plugin(passportLocalMongoose,{usernameField:'email'});
+
 var User = mongoose.model('User',userSchema);
+
+
 
 exports.User = User;
 

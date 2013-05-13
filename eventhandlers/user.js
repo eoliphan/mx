@@ -6,12 +6,18 @@ var User = require("../repositories/user").User
 exports.userPasswordChanged = function(event){
     var userId = mongoose.Types.ObjectId(event.payload.id);
     var newPass = event.payload.password;
-    User.findByIdAndUpdate(userId,{'password':newPass},function(err,data){
+    User.findById(userId,function(err,user){
         if(err){
-            logger.error("Error updating password:" +err);
+            logger.error("Error finding password:" +err);
             return;
         }
-        logger.debug(data);
+        // now use the passport-local stuff to update
+        user.setPassword(newPass,function(err){
+            if(err) {
+                logger.error("Error updating password:" + err);
+            }
+        });
+        logger.debug(user);
 
     });
 
