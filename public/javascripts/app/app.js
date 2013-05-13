@@ -1,41 +1,56 @@
-angular.module('soundscry',['soundscry.filters','soundscry.services','soundscry.directives','ui.bootstrap']).
-    config(['$routeProvider','$locationProvider',
-        function($routeProvider,$locationProvider) {
-            $routeProvider.
-                when("/",{
+angular.module('soundscry',['soundscry.filters','soundscry.services','soundscry.directives','ui.bootstrap','ui.compat','http-auth-interceptor', 'authentication']).
+    config(['$stateProvider','$routeProvider','$locationProvider',
+        function($stateProvider,$routeProvider,$locationProvider) {
+            $stateProvider.
+                state("home",{
+                    url:"/",
                     templateUrl: 'partials/home',
                     controller: HomeCtrl
                 }).
-                when("/store",{
+                state("store",{
+                    url: "/store",
                     templateUrl: 'partials/store',
                     controller: StoreCtrl
                 }).
-                when("/cart",{
+                state("cart",{
+                    url:"/cart",
                     templateUrl: 'partials/cart',
                     controller: CartCtrl
                 }).
-                when("/about",{
+                state("about",{
+                    url:"/about",
                     templateUrl: 'partials/about',
                     controller: AboutCtrl
                 }).
-                when("/faq",{
+                state("faq",{
+                    url:"/faq",
                     templateUrl: 'partials/faq',
                     controller: FaqCtrl
                 }).
-                when("/artistinfo",{
-                    templateUrl: 'partials/artistinfo',
+                state("artistinfo",{
+                    url:"/artistinfo",
+                    templateUrl: 'partials/artistinfo'
                     //controller: FaqCtrl
                 }).
-                when("/musicloverinfo",{
-                    templateUrl: 'partials/musicloverinfo',
+                state("musicloverinfo",{
+                    url:"/musicloverinfo",
+                    templateUrl: 'partials/musicloverinfo'
                     //controller: FaqCtrl
                 }).
-                when("/investorinfo",{
-                    templateUrl: 'partials/investorinfo',
+                state("investorinfo",{
+                    url:"/investorinfo",
+                    templateUrl: 'partials/investorinfo'
                     //controller: FaqCtrl
                 }).
-                otherwise({
-                    redirectTo: '/'
-                });
+                state("profile",{
+                    url:"/profile",
+                    templateUrl: 'partials/profile'
+                    //controller: FaqCtrl
+                });;
             $locationProvider.html5Mode(true);
-        }]);
+        }]).run(
+          [        '$rootScope', '$state', '$stateParams',
+          function ($rootScope,   $state,   $stateParams) {
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
+          }]);

@@ -11,6 +11,15 @@ var User = require('../repositories/user').User
 
 ;
 
+ensureAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        res.send(401);
+    }
+
+};
+
 module.exports = function(app){
 
     require("./artist")(app);
@@ -50,6 +59,28 @@ module.exports = function(app){
             failureRedirect: '/login',
             failureFlash: true })
     );
+    function cleanUser(user) {
+        delete user.salt;
+        delete user.hash;
+        delete user.password;
+        return user;
+
+    }
+    app.post('/api/auth',passport.authenticate('local'),function(req,res){
+
+        var user = cleanUser(req.user);
+        res.send(user);
+
+    });
+    app.get('/api/auth',ensureAuthenticated,function(req,res){
+        res.send(cleanUser(req.user));
+    });
+    app.delete('/api/auth',passport.authenticate('local'),function(req,res){
+        req.logout();
+
+        res.send(200);
+
+    });
     app.get('/partials/:name',function(req,res){
         var name = req.params.name;
         res.render('partials/' + name);

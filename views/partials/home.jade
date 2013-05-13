@@ -94,8 +94,8 @@ block content
                             br
                             br
                             div(style=" bottom: 0; left: 0;")
-                                - if (!locals.user)
-                                    a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+
+                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                                 &nbsp;
                                 a.btn(href="/musicloverinfo") Learn More
 
@@ -114,8 +114,8 @@ block content
                                 li Let fans fund your music allowing you both to benefit
                                 li Stay independent, control your content and your pricing
                                 li Expand your audience and your creativity
-                            - if (!locals.user)
-                                a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+
+                            a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                             &nbsp;
                             a.btn(href="/artistinfo") Learn More
                 li.span4
@@ -136,8 +136,8 @@ block content
                                 li Invest in music you love
                                 li Use your and others networks to benefit from the music you have invested in
                                 li Support independence by increasing its' exposure and variety
-                            - if (!locals.user)
-                                a.btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+
+                            a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
                             &nbsp;
                             a.btn(href="/investorinfo") Learn More
 
