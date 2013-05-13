@@ -22,6 +22,18 @@ angular.module('soundscry',['soundscry.filters','soundscry.services','soundscry.
                     templateUrl: 'partials/faq',
                     controller: FaqCtrl
                 }).
+                when("/artistinfo",{
+                    templateUrl: 'partials/artistinfo',
+                    //controller: FaqCtrl
+                }).
+                when("/musicloverinfo",{
+                    templateUrl: 'partials/musicloverinfo',
+                    //controller: FaqCtrl
+                }).
+                when("/investorinfo",{
+                    templateUrl: 'partials/investorinfo',
+                    //controller: FaqCtrl
+                }).
                 otherwise({
                     redirectTo: '/'
                 });
