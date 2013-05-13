@@ -4,7 +4,7 @@ function MusicLoverProfileCtrl($http, $scope) {
     var pointsOverTimeChartDS = new kendo.data.DataSource(
         {
             transport: {
-                read: '/api/wager/points/byitem/bydate/byuser/511a8c6ece62e90000000003'
+                read: '/api/wager/points/byitem/bydate/byuser/' +$scope.curUser._id
             },
             schema: {
                 model: {

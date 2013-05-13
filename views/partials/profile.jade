@@ -38,8 +38,9 @@ div.container-fluid
                                 li: a.notimpl(href="/fragments/investorreports") Reports
                     //- else
                         li: a(href="/fragments/investorsignup") Investor
-                    li: a(href="/profile/investor") Investor
-                    li: a(href="/profile/musiclover") Music Lover
+                    li(ng-class="{active: $location.path() == '/profile/musician'}"): a(href="/profile/musician") Musician
+                    li(ng-class="{active: $location.path() == '/profile/investor'}"): a(href="/profile/investor") Investor
+                    li(ng-class="{active: $location.path() == '/profile/musiclover'}"): a(href="/profile/musiclover") Music Lover
                     //li: a.notimpl(href="/fragments/financialinfo") Financial Info
                     //li: a.notimpl(href="/profile/genres") Music Genres
                     //li: a.notimpl(href="/profile/bandsearch") Band Search

@@ -1,0 +1,162 @@
+// modal
+.modal.hide.fade#offeringWizardModal
+    .modal-header
+        button.close(type="button",data-dismiss="modal",aria-hidden="true")&times;
+        h3 Add Offering
+    .modal-body
+
+
+
+
+
+
+
+    .modal-footer
+
+
+
+
+div#rootDiv
+
+
+
+    .well.hide#wizardWell
+        h3 Create New Offering(?)!
+        .wizard#newOfferingWizard
+            ul.steps
+                li.active(data-target="#step1")
+                    span.badge.badge-info 1
+                    span Step 1
+                    span.chevron
+                li(data-target="#step2")
+                    span.badge.badge-info 2
+                    span Step 2
+                    span.chevron
+                li(data-target="#step3")
+                    span.badge.badge-info 3
+                    span Step 3
+                    span.chevron
+            .actions
+                button.btn.btn-mini.btn-prev
+                    i.icon-arrow-left
+                        Prev
+                button.btn.btn-mini.btn-next
+                    i.icon-arrow-right
+                        Next
+        .step-content#wizardStep
+            form#newOfferingForm
+                fieldset
+                    .step-pane.active#step1 Basic Information
+                        .well
+                            label Name
+                            input#offeringName(name="name",placeholder="Offering Name")
+                            label Description (e.g. 'Our sophmore release...')
+                            textarea#offerDescription(name='description',rows='5')
+                            label Price
+                            input#price(type="text",name='price');
+                            label Cover Art (JPEG 200 x 200)
+                            input#coverArt(type='file',name='coverArt')
+                            label Tracks
+                            input#tracks(type='file',name='tracks',multiple="multiple")
+
+                    .step-pane#step2 How much do you need? How much will you share?
+                        .well
+                            label Amount to Raise
+                            input#raiseAmount(type='text',name='amtToRaise')
+                            label For what % of your sales
+                            input#pctOfferingToSell(type="text",name="pctOfferingToSell",placeholder="% To Sell")
+                            label # of Shares
+                            input#numShares(type="text",name="numShares")
+                            label#pricePerShareLabel Price Per Share:
+
+                    .step-pane#step3 Review your offer
+                         .well
+                            label#offerSummary
+                            button#submitCreateOffering.btn.btn-large(type='button') Create Offering!
+        button#wizNext(type='button')
+    script
+
+
+    #profileMain
+        .row-fluid
+            .span4
+                .well
+                    a#submitAddOffering.bin.btn-primary.btn-large.btn-danger(role='button') Add Offering!
+            .span8
+        .row-fluid
+            .span12#dashboard
+                .row-fluid
+                    .span3
+                        h4 Album Stats
+                    .span3
+                        p#albumTotal
+                    .span3
+                        h4 Global Stats
+                    .span3
+                        p#globalTotal
+                .row-fluid
+                    .span6#totalSalesByAlbumChart
+                    .span3
+                        #revenueDistributionChart
+                    .span3
+                        #incomeDistributionChart
+                .row-fluid
+                    .span6
+                        #albumSalesChart
+                    .span6
+                .row-fluid
+                    .span6
+                        #offerDetails.well(style="font-size: small;")
+                            span Amount To Raise: &nbsp
+                            span(data-bind="text: amtToRaise")
+                            br
+                            span Ownership %: &nbsp
+                            span(data-bind="text: pctOfferingToSell")
+                            br
+                            span Price : &nbsp
+                            span(data-bind="text: price")
+                            //
+                                fieldset
+                                    legend General Info
+                                    label Description
+                                        span(data-bind="description")
+                                    input#description(type="text",name='description')
+                                    label Offer Date
+                                    input#offerDate(type="text",name='offerDate')
+                                    label Max Ownership %
+                                    input#maxOwnership(type="text",name='maxOwnership')
+                                    label Total Offer Amt
+                                    input#amtToRaise(type='text',name='amtToRaise')
+                                    label Ownership %
+                                    input#pctOfferingToSell(type='text',name='pctOfferingToSell')
+                                    legend User Album Info
+                                    label Total invested in Shares
+                                    input#totalInvestedInShares(type='text',name='totalInvestedInShares')
+                                    label Shares Sold
+                                    input#sharesSold(type='text',name='sharesSold')
+                                    label Cost/Share
+                                    input#costPerShare(type='text',name='costPerShare')
+                                    label Profit/Share
+                                    input#profitPerShare(type='text',name='profitPerShare')
+                    .span3
+                        #totalRevAllAlbumChart
+                    .span3
+                        #totalSalesAllAlbumChart
+                .row-fluid
+                    .span6
+                        #recentOffersGrid
+                    .span6
+                        .row-fluid
+                            .span4
+                                h5 Top Sales (Week)
+                                #topSalesWeek
+                            .span4
+                                h5 Top Sales (Month)
+                                #topSalesMonth
+                            .span4
+                                h5 Top Sales (Year)
+                                #topSalesYear
+                            //.span3
+                                #topSalesAllTime
+
+
