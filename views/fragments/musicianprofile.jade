@@ -287,10 +287,10 @@ script
         {
             transport: {
                 read: '/api/offers/revenues/byoffer/byuser/offeror/511a8c6ece62e90000000003'
-            }
-        },
-        aggregate:
-            {field:"totalSales",aggregate:"sum"}
+            },
+            aggregate:
+                {field:"totalSales",aggregate:"sum"}
+        }
     );
     var revDistChart = $('#revenueDistributionChart').kendoSparkline({
         //autoBind: false,
