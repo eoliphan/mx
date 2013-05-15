@@ -27,7 +27,7 @@ block content
                       div(ng-show="user.isAuthenticated()")
                           p.navbar-text.pull-right
                               a.navbar-link.pull-right(href='/logout') &nbsp;(Logout)
-                          p.navbar-text.pull-right Logged in as
+                          p.navbar-text.pull-right Logged in as &nbsp;
                               a.navbar-link(href='/profile') {{curUser.email}}
                               //- if((locals.user.primaryuse =='artist' && !locals.user.isArtist) || (locals.user.primaryuse =='investor' && !locals.user.isInvestor))
                                   span.badge.badge-warning 1
@@ -64,6 +64,8 @@ block content
     script(src="javascripts/ui-bootstrap-tpls-0.3.0.js")
     script(src="javascripts/angular-ui-states.min.js")
     script(src="javascripts/angular-kendo.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js")
+
     script(src='javascripts/app/app.js')
     script(src='javascripts/app/services.js')
     script(src='javascripts/app/controllers.js')

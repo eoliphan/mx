@@ -9,30 +9,13 @@ style
             width: 870px;
           }
 
-#storeCarousel.carousel.slide
-    //
-        ol.carousel-indicators
-            li.active(data-target="#storeCarousel",data-slide-to="0")
-            li(data-target="#storeCarousel",data-slide-to="1")
-            li(data-target="#storeCarousel",data-slide-to="2")
-    .carousel-inner
-        .item.active
-            img(src="images/store/store1.jpg")
-            .carousel-caption
-                h4 Label
-                p Lorem ipsum text here
-        .item
-            img(src="images/store/store2.jpg")
-            .carousel-caption
-                h4 Label
-                p Lorem ipsum text here
-        .item
-            img(src="images/store/store3.jpg")
-            .carousel-caption
-                h4 Label
-                p Lorem ipsum text here
-    a.carousel-control.left(href="#storeCarousel",data-slide="prev") &lsaquo;
-    a.carousel-control.right(href="#storeCarousel",data-slide="next") &rsaquo;
+//pre user.isAuthenticated() = {{user.isAuthenticated()}}
+carousel(interval="carInterval")
+    slide(ng-repeat="slide in slides", active="slide.active")
+        img(ng-src="{{slide.image}}", style="margin:auto;")
+        .carousel-caption
+            h4 {{slide.title}}
+            p {{slide.text}}
 .container
 
 
@@ -77,8 +60,8 @@ style
                             option Electronic
                         #listViewPop
 
-script
-    $('.carousel').carousel({interval:7500})
+
+
 script#template(type="text/x-kendo-tmpl")
     .product(data-title="<b><i>${albums.name} (${artistName}) </i></b>",data-content=" <b>Bio: </b>${bio} <br> <b>Genre </b> ${albums.genre} <br> <b>Price: </b> ${albums.price}  <br> <button class='btn'> Add To Cart </button> <a href='/album/${albums._id}' class='btn btn-primary'> See More</a>")
         img(src="util/rndsmlcvr/${Math.random()}")

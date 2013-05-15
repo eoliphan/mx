@@ -46,6 +46,11 @@ angular.module('soundscry',
                     templateUrl: 'partials/investorinfo'
                     //controller: FaqCtrl
                 }).
+                state("album",{
+                    url:"/album/:albumId",
+                    templateUrl: 'partials/album',
+                    controller: AlbumCtrl
+                }).
                 state("profile",{
                     url:"/profile",
                     templateUrl: 'partials/profile',

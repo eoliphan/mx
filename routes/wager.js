@@ -141,7 +141,22 @@ module.exports = function(app){
 
         );
     });
+    app.post('/api/wagers',function(req,res){
+        var newWager = req.body;
+        newWager.userId = req.user._id;
+        newWager.sessionId = req.session.id;
+        // need to sent event via cqrs
+        logger.debug("new Wager Info"+JSON.stringify(newWager));
+        var cmd = {
+            id: uuid.v4(),
+            command:'createChipWager',
+            payload: newWager
 
+        }
+        evtcmdbus.emitCommand(cmd);
+        res.send(200);
+
+    });
     app.get('/api/wagers/byuser/:id',function(req,res){
 
         var user = mongoose.Types.ObjectId(req.params.id);

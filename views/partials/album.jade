@@ -1,0 +1,69 @@
+
+style
+    body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+
+//-- todo refactor out
+
+.container
+        .hero-unit
+            h2 {{albumInfo.albums.name}}
+            h4 Artist: {{albumInfo.artistName}}
+            .row-fluid(width="800")
+                .span4
+                     img(src="/util/rndsmlcvr/1",width="100%")
+                .span8
+                    h4 Genre: <em>{{albumInfo.albums.genre}}</em>
+                    h4 Description: <em>{{albumInfo.albums.description}}</em>
+                    h4 # of Tracks: <em>{{albumInfo.albums.songs.length}}</em>
+                    h4 Release Date: <em>{{albumInfo.albums.releaseDate | date:'mediumDate'}}</em>
+                    h4 Price: <em>{{albumInfo.albums.price | currency}}</em>
+                    hr
+                    div(ng-show="user.isAuthenticated()")
+                        button#addToCart.btn.btn-primary Add To Cart
+                        button#buyNow.btn Buy Now
+                        button.btn(ng-click="openBuyChipsDialog()") Invest 10 Chips!
+                        button#showBuySharesBtn.btn(ng-click="openBuySharesDialog()",ng-show="albumInfo.albums.isActiveOffer") Buy Shares!
+
+                    div(ng-show="!user.isAuthenticated()")
+                        button#addToCart.btn.btn-primary Add To Cart
+                        button#buyNow.btn  Buy Now
+                        button.btn.disabled(data-content="Join SoundScry to play the investment game") Invest 10 Chips!
+                        button#showBuySharesBtn.btn.disabled(ng-show="albumInfo.albums.isActiveOffer",data-content="Join SoundScry as an investor, to  invest in this offering") Buy Shares!
+
+                    //- if (locals.user)
+                        button#addToCart.btn.btn-primary Add To Cart
+                        button#buyNow.btn Buy Now
+                        button#investChips.btn Invest 10 Chips!
+                        //- if (locals.info.albums.isActiveOffer)
+                            button#showBuySharesBtn.btn Buy Shares!
+                    //- else
+                        button#addToCart.btn.btn-primary Add To Cart
+                        button#buyNow.btn  Buy Now
+                        button#investChips.btn.disabled(data-content="Join SoundScry to play the investment game") Invest 10 Chips!
+                        script
+                            $('#investChips').popover({trigger: 'hover'});
+                        - if (locals.info.albums.isActiveOffer)
+                            button#showBuySharesBtn.btn.disabled(data-content="Join SoundScry as an investor, to  invest in this offering") Buy Shares!
+                            script
+                                $("#showBuySharesBtn").popover({trigger:'hover'});
+                            //button#investChips.btn.btn-danger.disabled  Invest 10 Chips!
+            hr
+            .row-fluid
+
+                .span10
+                    div(ng-repeat="song in albumInfo.albums.songs")
+                        h4 {{song.name}}
+                        audio(controls="")
+                .span2
+
+
+        hr
+//- if (locals.user)
+    script
+        var userid = "#{locals.user._id}"
+script
+
+

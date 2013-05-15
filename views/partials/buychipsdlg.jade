@@ -1,0 +1,22 @@
+.modal-header
+        button.close(type="button",data-dismiss="modal",aria-hidden="true",ng-click="close()") x
+        h3#buyChipsModalLabel Invest Chips!
+    .modal-body
+        .row-fluid
+            .span6
+                pre#chipsInfo
+                    | Chips Available : &nbsp;
+                    span(style="font-weight: bold;",data-bind="text: name")
+                    br
+
+
+            .span6
+                img.pull-right(src="/images/Chips-256.png",width=64,height=64)
+                form#buyChipsForm
+                    fieldset
+                    label # Chips To Buy
+                    input#chipsPurchased(ng-model="chipsPurchased",type="number",name="chipsPurchased")
+
+    .modal-footer
+        button.btn(data-dismiss="modal",aria-hidden="true",ng-click="close()") Close
+        button#buySharesBtn.btn.btn-primary(ng-click="close(chipsPurchased)") Invest Chips!

@@ -35,7 +35,7 @@ var http = require('http')
     , Order = require("./repositories/order").Order
     , Artist = require("./repositories/artist").Artist
     , _ = require('underscore')
-    , routes = require('./routes')
+
     cart = require("./routes/cart"),
     game = require("./routes/game")
 //routes = require('./routes')
