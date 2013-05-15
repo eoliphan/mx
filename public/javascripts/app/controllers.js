@@ -90,7 +90,7 @@ function BuySharesDlgCtrl($scope, dialog, $http) {
 
     // get the offer info
 
-    var offerUrl = "/api/offers/info/" + $scope.albumInfo.albums.offerId;
+    var offerUrl = "/api/offers/info/" + dialog.options.offerId;
     $http
         .get(offerUrl)
         .success(function (data) {
@@ -142,6 +142,7 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
         controller: 'BuyChipsDlgCtrl'
     }
     $scope.openBuyChipsDialog = function () {
+
         var d = $dialog.dialog($scope.buychipsopts);
         d.open().then(function (chipsPurchased) {
             if (chipsPurchased) {
@@ -175,7 +176,13 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
     }
 
     $scope.openBuySharesDialog = function () {
-        var d = $dialog.dialog($scope.buysharesopts);
+        var opts = $scope.buysharesopts; //todo: copy?
+//        opts.resolve = {
+//            offerId: $scope.albumInfo.albums.offerId
+//
+//        }
+        opts.offerId = $scope.albumInfo.albums.offerId;
+        var d = $dialog.dialog(opts);
         d.open().then(function (sharesPurchased) {
             if (sharesPurchased) {
                 console.log(sharesPurchased);
