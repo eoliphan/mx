@@ -64,10 +64,7 @@ function MusicianProfileCtrl($http, $scope) {
 
     var totalRevAllAlbumChartDS = new kendo.data.DataSource(
         {
-            transport: {
-                read: '/api/offers/revenues/byuser/offeror/' + $scope.curUser._id
-            },
-
+            transport: {read: '/api/offers/revenues/byuser/offeror/' + $scope.curUser._id},
             schema: {
                 model: {
                     fields: {
@@ -77,43 +74,21 @@ function MusicianProfileCtrl($http, $scope) {
                     }
                 }
             },
-            group: {
-                field: "offeringName"
-            },
-            sort: {
-                field: "earnDate",
-                dir: "asc"
-            }
+            group: {field: "offeringName"},
+            sort: {field: "earnDate", dir: "asc"}
         }
     );
-    var totalRevAllAlbumChart = $('#totalRevAllAlbumChart').kendoSparkline({
+    var totalRevAllAlbumChart = $('#totalRevAllAlbumChart').kendoChart({
         //autoBind:false,
+        title: {text: "Total Revenue By Album"},
         dataSource: totalRevAllAlbumChartDS,
         series: [
-            {
-                type: "line",
-                field: "amount",
-                //categoryField:"offeringName",
-                missingValues: "interpolate"
-                //name:"Earnings"
-            }
+            {type: "line", field: "amount", missingValues: "interpolate"}
 
         ],
-        chartArea: {
-            height: 150,
-            width: 150,
-            background: "#eeeeee"
-        },
-        tooltip: {
-            visible: true
-            //template: "#= dataItem.offeringName # - #=  numeral(dataItem.amount).format('$0,0.00') #"
-            //format: "{0:c}"
-        },
-
-        categoryAxis: {
-            baseUnit: "months",
-            field: "earnDate"
-        }
+        chartArea: { height: 200},
+        tooltip: {visible: true},
+        categoryAxis: {baseUnit: "months", field: "earnDate"}
 
     });
     var revChartSparkDS = new kendo.data.DataSource(
@@ -124,43 +99,27 @@ function MusicianProfileCtrl($http, $scope) {
             aggregate: {field: "totalSales", aggregate: "sum"}
         }
     );
-    var revDistChart = $('#revenueDistributionChart').kendoSparkline({
+    var revDistChart = $('#revenueDistributionChart').kendoChart({
         //autoBind: false,
         dataSource: revChartSparkDS,
+        title: {text: "Revenue Distribution"},
         series: [
-            {
-                type: "pie",
-                field: "totalSales",
-                categoryField: "offeringName"
-            }
-
+            {type: "pie", field: "totalSales", categoryField: "offeringName" }
         ],
-        chartArea: {
-            height: 100,
-            width: 100,
-            background: "#eeeeee"
-        },
-        tooltip: {
-            visible: true,
-            template: "#= dataItem.offeringName # - #=  numeral(dataItem.totalSales).format('$0,0.00') #"
-            //format: "{0:c}"
-        }
+        chartArea: {height: 200},
+        tooltip: {visible: true, template: "#= dataItem.offeringName # - #=  numeral(dataItem.totalSales).format('$0,0.00') #"},
+        legend: {visible: false}
 
     });
     $("#topSalesWeek").kendoGrid({
         dataSource: {
-            transport: {
-                read: "/api/orders/topsales/byartist/thisweek"
-            }
+            transport: {read: "/api/orders/topsales/byartist/thisweek"}
         },
         columns: [
             {field: "_id.artistName", title: "Artist"},
             {field: "totalSales", title: "Sales", format: "{0:c}"}
-
         ],
-        chartArea: {
-            height: 200
-        }
+        chartArea: { height: 200}
     });
     $("#topSalesMonth").kendoGrid({
         dataSource: {

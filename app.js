@@ -213,6 +213,7 @@ app.post('/uploads', function (req, res) {
 
 app.get('/demoweb', demoweb.index);
 app.get('/profile', ensureAuthenticated, demoweb.profile);
+app.get('/profile/*', ensureAuthenticated, demoweb.profile);
 app.get('/profile/detail', ensureAuthenticated, demoweb.profiledetail);
 app.get('/artist', ensureAuthenticated, demoweb.artist);
 
