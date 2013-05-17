@@ -2,17 +2,17 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
-        <item url="file://$PROJECT_DIR$/eventhandlers/order.js" />
         <item url="file://$PROJECT_DIR$/eventhandlers/offer.js" />
         <item url="file://$PROJECT_DIR$/eventhandlers/artist.js" />
+        <item url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
+        <item url="file://$PROJECT_DIR$/eventhandlers/order.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
-      <root url="file://$PROJECT_DIR$/eventhandlers/order.js" />
       <root url="file://$PROJECT_DIR$/eventhandlers/offer.js" />
       <root url="file://$PROJECT_DIR$/eventhandlers/artist.js" />
+      <root url="file://$PROJECT_DIR$/eventhandlers/wager.js" />
+      <root url="file://$PROJECT_DIR$/eventhandlers/order.js" />
     </CLASSES>
     <SOURCES />
   </library>

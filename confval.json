@@ -1,0 +1,9 @@
+{
+    "aws": {
+        "accessKeyId":"1450KS5R8P41M28D6RG2",
+        "secretAccessKey":"ZQUyADNL+ElIeOkvlzgFj7z84xt6fcRVUeDKSrGi",
+        "region":"us-east-1",
+        "bucketName":"sscry",
+        "bucketUrl" : "http://sscry.s3-website-us-east-1.amazonaws.com/"
+    }
+}

@@ -42,10 +42,13 @@
         "useragent": "2.0.x",
         "coffee-script": "1.6.x",
         "jquery-file-upload-middleware": "0.0.x",
-        "passport-local-mongoose": "0.2.x"
+        "passport-local-mongoose": "0.2.x",
+        "aws-sdk":"1.1.x",
+        "tmp":"0.0.x",
+        "request":"2.21.x"
     },
     "engines": {
-        "node": "0.8.x",
-        "npm": "1.1.x"
+        "node": "0.10.x",
+        "npm": "1.2.x"
     }
 }
