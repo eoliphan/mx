@@ -45,7 +45,8 @@
         "passport-local-mongoose": "0.2.x",
         "aws-sdk":"1.1.x",
         "tmp":"0.0.x",
-        "request":"2.21.x"
+        "request":"2.21.x",
+        "nodemailer":"0.4.x"
     },
     "engines": {
         "node": "0.10.x",

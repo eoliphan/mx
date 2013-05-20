@@ -51,6 +51,11 @@ angular.module('soundscry',
                     templateUrl: 'partials/album',
                     controller: AlbumCtrl
                 }).
+                state("editalbum",{
+                    url:"/album/edit/:albumId",
+                    templateUrl: 'partials/editalbum',
+                    controller: EditAlbumCtrl
+                }).
                 state("profile",{
                     url:"/profile",
                     templateUrl: 'partials/profile',
@@ -77,4 +82,22 @@ angular.module('soundscry',
           function ($rootScope,   $state,   $stateParams) {
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
-          }]);
+
+          }]).directive('ngEnter', function() {
+              return function(scope, elm, attrs) {
+                  elm.bind('keypress', function(e) {
+                      if (e.charCode === 13) scope.$apply(attrs.ngEnter);
+                  });
+              };
+          }).directive('inlineEdit', function() {
+              return {
+                  restrict: 'E',
+                  // can be in-lined or async loaded by xhr
+                  // or inlined as JS string (using template property)
+                  templateUrl: 'inlineTxtEdit',
+                  scope: {
+                      model: '='
+                  }
+              };
+          })
+;

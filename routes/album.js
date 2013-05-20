@@ -166,36 +166,39 @@ module.exports = function (app) {
     });*/
 
     app.get('/album/edit/:id', function (req, res) {
-
-        var albumId = mongoose.Types.ObjectId(req.params.id);
-        console.log(albumId);
-        Artist.aggregate(
-            {$match: {'albums._id': albumId}},
-            {$project: {
-                'artistName': 1,
-                'bio': 1,
-                'albums': 1
-            }},
-            {$unwind: "$albums"},
-            function (err, artists) {
-                if (!err) {
-                    //TODO: clunky to have to filter here
-                    var match = _.where(artists, {'albums._id': req.params.id});
-                    var artist = _.find(artists, function (element) {
-                        return (element.albums._id == req.params.id)
-                    });
-
-                    var pageData = {title: "Title", info: artist};
-                    if (req.user)
-                        pageData.user = req.user;
-                    res.render("editalbum", pageData);
-                }
-                else {
-                    console.log(err);
-                    res.send(404);
-                }
-
-            });
+        res.render("app");
     });
+//    app.get('/album/edit/:id', function (req, res) {
+//
+//        var albumId = mongoose.Types.ObjectId(req.params.id);
+//        console.log(albumId);
+//        Artist.aggregate(
+//            {$match: {'albums._id': albumId}},
+//            {$project: {
+//                'artistName': 1,
+//                'bio': 1,
+//                'albums': 1
+//            }},
+//            {$unwind: "$albums"},
+//            function (err, artists) {
+//                if (!err) {
+//                    //TODO: clunky to have to filter here
+//                    var match = _.where(artists, {'albums._id': req.params.id});
+//                    var artist = _.find(artists, function (element) {
+//                        return (element.albums._id == req.params.id)
+//                    });
+//
+//                    var pageData = {title: "Title", info: artist};
+//                    if (req.user)
+//                        pageData.user = req.user;
+//                    res.render("editalbum", pageData);
+//                }
+//                else {
+//                    console.log(err);
+//                    res.send(404);
+//                }
+//
+//            });
+//    });
 
 }

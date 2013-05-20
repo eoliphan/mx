@@ -1,4 +1,4 @@
-logger = require('../logger');
+logger = require('winston');
 Order = require('../repositories/order').Order;
 Wager = require('../repositories/wager').Wager;
 Artist = require('../repositories/artist').Artist;

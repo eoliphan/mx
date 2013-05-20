@@ -13,7 +13,9 @@ style
             h4 Artist: {{albumInfo.artistName}}
             .row-fluid(width="800")
                 .span4
-                     img(src="/util/rndsmlcvr/1",width="100%")
+
+                     img(ng-hide="albumInfo.albums.img",ng-src="/util/rndsmlcvr/1",width="100%")
+                     img(ng-show="albumInfo.albums.img",ng-src="{{albumInfo.albums.img}}",width="100%")
                 .span8
                     h4 Genre: <em>{{albumInfo.albums.genre}}</em>
                     h4 Description: <em>{{albumInfo.albums.description}}</em>

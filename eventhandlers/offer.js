@@ -2,7 +2,7 @@
 (function() {
   var Artist, ObjectId, Offer, Order, Wager, evtcmdbus, logger, mongoose, uuid, _;
 
-  logger = require('../logger');
+  logger = require('winston');
 
   Order = require('../repositories/order').Order;
 
@@ -47,8 +47,7 @@
             price: event.payload.price,
             offerDate: new Date(),
             isActiveOffer: true,
-            offerId: newOfferId,
-            sessionId: event.payload.sessionId
+            offerId: newOfferId
           }
         };
         evtcmdbus.emitCommand(createAlbumCmd);

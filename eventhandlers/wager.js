@@ -2,7 +2,7 @@
 (function() {
   var Order, Wager, logger, mongoose, _;
 
-  logger = require('../logger');
+  logger = require('winston');
 
   Order = require('../repositories/order').Order;
 

@@ -6,15 +6,7 @@ style
 
 
 
-div#signUpModal.modal.hide.fade(tabindex="-1",role="dialog",aria-labelledby="signUpModalLabel",aria-hidden="true")
-    div.modal-header
-        button.close(type="button",data-dismiss="modal",aria-hidden="true") x
-        h3#signUpModalLabel SignUp
-    div.modal-body
-        p -
-    div.modal-footer
-        button.btn(data-dismiss="modal",aria-hidden="true") Close
-        button.btn.btn-primary Save Changes
+
 div.container
     div.hero-unit
         h2 Artist
@@ -50,4 +42,4 @@ div.container
         p: i There are NO up front fees.
         p: i Our fees are dependent upon your success
         p: i Try us out. There is nothing to lose.
-        p: a.btn.btn-primary.btn-large(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+        p: a.btn.btn-primary.btn-large(ng-hide="user.isAuthenticated()",role="button",ng-click="openSignUpDialog()") Sign Up!

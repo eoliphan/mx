@@ -38,7 +38,9 @@ var userSchema = new Schema({
     investorClass:String,
     ssn:String,
     einTaxID:String,
-    friends:[Schema.Types.ObjectId]
+    friends:[Schema.Types.ObjectId],
+    confirmationCode:String,
+    isConfirmed:{type:Boolean, default:false}
 
 });
 

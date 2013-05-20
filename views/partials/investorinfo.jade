@@ -26,4 +26,4 @@ div.container
         p: i For any merchandise on offer you would receive a corresponding split of the profits
         ul
             li Profits defined as the difference between the “selling price” and “cost to make”, for example, $15 (selling price) - $7.50 (cost to make) =$7.50 (profit) which in this example is split 50% by the musician and 50% by the investors for $3.75 each minus the SoundScry commission.
-        p: a.btn.btn-primary.btn-large(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+        p: a.btn.btn-primary.btn-large(ng-hide="user.isAuthenticated()",role="button",ng-click="openSignUpDialog()") Sign Up!

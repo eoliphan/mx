@@ -1,4 +1,4 @@
-logger = require('../logger');
+logger = require('winston');
 Order = require('../repositories/order').Order;
 Wager = require('../repositories/wager').Wager;
 Artist = require('../repositories/artist').Artist;
@@ -48,7 +48,7 @@ exports.albumUpdated = (event) ->
       newFields = _.omit event.payload,"id"
       updatedAlbum = _.extend album,newFields
       artist.save (err,artist) ->
-        logger.error "Error updating artist" + err
+        logger.error "Error updating artist" + err if err
 
     else
       logger.error "Artist Not Found"

@@ -1,4 +1,13 @@
-function MainCtrl($http, $scope, $route, $routeParams, $location, principal, authority, authService) {
+function SignUpDlgCtrl($scope,dialog,$http){
+    //todo add read of current chip data
+        $scope.close = function (chipWager) {
+            dialog.close(chipWager);
+        };
+
+
+}
+
+function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $dialog,principal, authority, authService) {
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
@@ -48,7 +57,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, principal, aut
 
     }
 
-    $scope.logoutButtonClick = function () {
+    $scope.logout = function () {
         $http
             ['delete'](authUrl)
             .success(function () {
@@ -56,6 +65,32 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, principal, aut
             });
 
     }
+
+    // setup signup dialog
+    $rootScope.signupopts = {
+        backdrop: true,
+        keyboard: true,
+        backdropClick:true,
+        templateUrl:'/partials/signupdlg',
+        controller:'SignUpDlgCtrl'
+    }
+    $rootScope.openSignUpDialog = function(){
+        var d = $dialog.dialog($rootScope.signupopts);
+        d.open().then(function(userInfo){
+            console.log(userInfo);
+            if (userInfo) {
+                $http
+                    .post('/api/signup',userInfo)
+                    .success(function(data){
+
+                    })
+                    .error(function(data){
+
+                    });
+            }
+        })
+    }
+
 }
 
 function HomeCtrl() {
@@ -84,6 +119,7 @@ function FaqCtrl() {
 function ProfileCtrl() {
 
 }
+
 
 
 function BuySharesDlgCtrl($scope, dialog, $http) {
@@ -121,7 +157,7 @@ function BuyChipsDlgCtrl($scope, dialog) {
  * @param $state
  * @constructor
  */
-function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
+function AlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
 
 
     var albumId = $stateParams.albumId;
@@ -150,7 +186,7 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
             } else {
                 return;
             }
-            command = {
+            var command = {
                 itemId: albumId,
                 itemType: "album",
                 chipCount: chipsPurchased,
@@ -224,7 +260,7 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
         //var formData = $('#investorInfoForm').serialize();
         //var id = $("#uid").val();
         var newUuid = uuid.v4();
-        command = {
+        var command = {
             id: newUuid,
             command: "addItemToOrder",
             payload: {
@@ -264,6 +300,83 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog,socket) {
         });
 
     });
+
+}
+
+function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
+    var albumId = $stateParams.albumId;
+
+    function refreshAlbum() {
+        $http
+            .get('/api/album/' + albumId)
+            .success(function (data) {
+                $scope.albumInfo = data;
+                // format price and releasedate
+
+
+            })
+    }
+
+    refreshAlbum();
+    socket.on('albumUpdated',function(){
+        console.log("refresh");
+        setTimeout(function(){
+            refreshAlbum();
+        },2000);
+
+    });
+
+    //---- todo: legacy code for refactoring
+    function prepEditorPayload(params) {
+        var retParam = {};
+        retParam[params.name] = params.value;
+        retParam.itemId = "#{locals.info.albums._id}";
+        retParam.id = "#{locals.info._id}";
+        return retParam;
+    }
+
+    $(document).ready(function () {
+        $('#genre').editable({
+            params: function (params) {
+                return prepEditorPayload(params);
+            }
+        });
+        $("#name").editable({
+            params: function (params) {
+                return prepEditorPayload(params);
+            }
+        });
+        $("#price").editable({
+            params: function (params) {
+                return prepEditorPayload(params);
+            }
+        });
+        $("#description").editable({
+            params: function (params) {
+                return prepEditorPayload(params);
+            }
+        });
+        /*$("#releaseDate").editable({
+         params: function(params) {
+         return prepEditorPayload(params);
+         }
+         });*/
+
+    });
+    //-- todo: angular-fileupload stuff seems a little sketchy right now.  will stick to this for time being.
+
+    $('#imgupload').fileupload({
+        url: "/uploads",
+        dataType: 'json',
+        done: function (e, data) {
+//            $.each(data.result.files, function (index, file) {
+//                $('<p/>').text(file.name).appendTo(document.body);
+//            });
+        }
+
+
+    });
+
 
 }
 

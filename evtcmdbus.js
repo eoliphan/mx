@@ -1,7 +1,7 @@
 var redis = require("redis")
 , domain = require("./domain/domain").domain
 , conf = require('./config').conf
-    , logger = require("./logger")
+    , logger = require("winston")
     ,  _ = require('underscore')
 //    , amqpDsl = require("ampq-dsl")
     , amqp = require("amqp")
@@ -43,7 +43,7 @@ var eventHandlers = {};
 var eventSinks=[];
 
 function handleEvent(event) {
-    logger.debug("Handling Event: " + event);
+    logger.debug("Handling Event: " + JSON.stringify(event));
     var handlers = eventHandlers[event.event];
     // send to sinks
     _.each(eventSinks,function(sink,index,list){

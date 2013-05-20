@@ -1,5 +1,5 @@
 var User = require("../repositories/user").User
-, logger = require("../logger"),
+, logger = require("winston"),
     mongoose = require('mongoose');
 
 

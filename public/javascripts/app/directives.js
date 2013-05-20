@@ -1,3 +1,5 @@
 'use strict';
 
-angular.module('soundscry.directives',[]);
+angular.module('soundscry.directives', [])
+
+;

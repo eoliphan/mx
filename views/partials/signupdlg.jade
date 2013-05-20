@@ -1,0 +1,20 @@
+div.modal-header
+    button.close(type="button",data-dismiss="modal",aria-hidden="true",ng-click="close()") x
+    h3#signupDialogLabel Join SoundScry!
+form#signupForm.well(novalidate="")
+    div.modal-body
+        label Email
+        input.span3(type="email",placeholder="Email",name="email",ng-model="user.email",required="")
+        label Password
+        input.span3(type="password",placeholder="Password",name="password",ng-model="user.password",required="")
+        label Confirm Password
+        input.span3(type="text",placeholder="Confirm Pass",name="passconfirm")
+        label How do you think you will primarily use SoundScry?
+        a(href="#",rel="tooltip",title="Music Lovers listen to and purchase music, Artists seek funding, connect with fans and seek investment, Promoters support their bands and fan base....")
+            select(name="primaryuse",ng-model="user.primaryuse")
+                option(value="musiclover") Music Lover
+                option(value="artist") Artist
+                option(value="investor") Investor
+    div.modal-footer
+        button.btn(data-dismiss="modal",aria-hidden="true",ng-click="close()") Close
+        button.btn.btn-primary(id="signupbtn",ng-click="close(user)") Sign Up!

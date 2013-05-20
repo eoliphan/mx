@@ -1,7 +1,7 @@
 var evtcmdbus = require('./evtcmdbus'),
     _ = require('underscore'),
     //user = require("./user"),
-    logger = require("./logger"),
+    logger = require("winston"),
     fs = require('fs'),
     async = require('async')
 ;

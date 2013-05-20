@@ -87,15 +87,10 @@ block content
                                 li Muscians price their own music
                                 li Muscians share their royalties with you!
                                 li Buy music from us, share the artist with your friends, find the next hot bands
-                            br
-                            br
-                            br
-                            br
-                            br
-                            br
-                            div(style=" bottom: 0; left: 0;")
 
-                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+
+                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
                                 &nbsp;
                                 a.btn(href="/musicloverinfo") Learn More
 
@@ -107,17 +102,16 @@ block content
                             //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             //p Are you the one who’s always on the lookout for the next best thing? You’re friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
                             p We all know the system’s broken: streaming doesn’t pay, pirating is rampant, and they’ll eat your soul just to produce an album. We have a better way. Crowdfund your album costs, sell your music, and build fan support by letting them share in your success. If that wasn’t enough, you have total control of your content. Join us and help build a better system.
-                            br
-                            br
+
 
                             //ul
                                 li Let fans fund your music allowing you both to benefit
                                 li Stay independent, control your content and your pricing
                                 li Expand your audience and your creativity
-
-                            a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
-                            &nbsp;
-                            a.btn(href="/artistinfo") Learn More
+                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
+                                &nbsp;
+                                a.btn(href="/artistinfo") Learn More
                 li.span4
                     div.thumbnail(style="width: 300px; height: 550px;")
                         img(src="images/promoter_sm.jpg")
@@ -125,21 +119,16 @@ block content
                             h3 Promoters/Investor
                             //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             p Are you the one who’s always on the lookout for the next best thing? Your friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
-                            br
-                            br
-                            br
-                            br
-                            br
-                            br
+
 
                             //ul
                                 li Invest in music you love
                                 li Use your and others networks to benefit from the music you have invested in
                                 li Support independence by increasing its' exposure and variety
-
-                            a(ng-hide="user.isAuthenticated()").btn.btn-primary(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
-                            &nbsp;
-                            a.btn(href="/investorinfo") Learn More
+                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
+                                &nbsp;
+                                a.btn(href="/investorinfo") Learn More
 
 
     // market

@@ -8,6 +8,11 @@
 var User = require('../repositories/user').User
     , passport = require('passport')
     , logger = require('../logger')
+    , awsfilestore = require('../services/awsfilestore')
+    , uuid = require("node-uuid")
+    , evtcmdbus = require('../evtcmdbus')
+
+    ;
 
 ;
 
@@ -20,7 +25,7 @@ ensureAuthenticated = function (req, res, next) {
 
 };
 
-module.exports = function(app){
+module.exports = function (app) {
 
     require("./artist")(app);
     require("./offer")(app);
@@ -28,25 +33,31 @@ module.exports = function(app){
     require("./wager")(app);
     require("./album")(app);
 
-    app.get("/faq",function(req,res){
-       res.render('faq',{title:"FAQ"});
+    app.get("/faq", function (req, res) {
+        res.render('faq', {title: "FAQ"});
     });
 
 
     app.get('/signup', demoweb.signup);
-    app.post('/signup', function (req, res) {
+    /**
+     * @todo refactor to command
+     */
+    app.post('/api/signup', function (req, res) {
         logger.debug(JSON.stringify(req.body));
-        User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
+        var confirmationCode = uuid.v4();
+        User.register(new User({ email: req.body.email, confirmationCode: confirmationCode }),
+            req.body.password, function (err, account) {
             if (err) {
-                return res.render('register', { account : account });
+                logger.error("Error creating account: " + err);
+                return res.send(400,{message:"Error creating account"});
             }
-
-            res.redirect('/');
+            res.send(200);
+            //res.redirect('/');
         });
         //var newUser = new userrepo.User(req.body);
         //newUser.save();
-        req.flash('info', "Account Created. Welcome to SoundSrcy.  Please Log In");
-        res.redirect("/login");
+//        req.flash('info', "Account Created. Welcome to SoundSrcy.  Please Log In");
+//        res.redirect("/login");
 
     });
     app.get('/logout', function (req, res) {
@@ -66,28 +77,49 @@ module.exports = function(app){
         return user;
 
     }
-    app.post('/api/auth',passport.authenticate('local'),function(req,res){
+
+    app.post('/api/auth', passport.authenticate('local'), function (req, res) {
 
         var user = cleanUser(req.user);
         res.send(user);
 
     });
-    app.get('/api/auth',ensureAuthenticated,function(req,res){
+    app.get('/api/auth', ensureAuthenticated, function (req, res) {
         res.send(cleanUser(req.user));
     });
-    app.delete('/api/auth',passport.authenticate('local'),function(req,res){
+    app.delete('/api/auth',  function (req, res) {
         req.logout();
 
         res.send(200);
 
     });
-    app.get('/partials/:name',function(req,res){
+    app.get('/partials/:name', function (req, res) {
         var name = req.params.name;
         res.render('partials/' + name);
     });
-    app.get('/',function(req,res){
+    app.get('/', function (req, res) {
         res.render('app');
     });
+    app.post('/trackupl',function(req,res){
 
+    });
+    app.post('/uploads', function (req, res) {
+        awsfilestore.store(req.files.image.path, uuid.v4(), function (err, url) {
+
+            var command = {
+                command: req.body.command,
+                id: uuid.v4(),
+                payload: {
+                    itemId: req.body.itemId,
+                    sessionId: req.session.id,
+                    img:url
+                }
+            }
+            evtcmdbus.emitCommand(command);
+            //console.log(command);
+        });
+        res.send(200);
+
+    });
 
 }

@@ -1,7 +1,7 @@
 var conf = require('nconf');
 
 //conf.env('_');
-conf.argv().env().file({file:"./confval.js"});
+conf.argv().env().file({file:"./confval.json"});
 //-- mongo
 conf.set("database:host","linus.mongohq.com");
 conf.set("database:port",10022);

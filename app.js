@@ -50,10 +50,11 @@ var http = require('http')
     , upload = require('jquery-file-upload-middleware')
     , gridfs =  require('gridfs-stream')
     , fs = require("fs")
-    , passportconf = require('./util/passportconf');
+    , passportconf = require('./util/passportconf')
+    , awsfilestore = require('./services/awsfilestore');
 
 
-    ;
+
 
 
 var issueSchema = new Schema({
@@ -198,17 +199,7 @@ for (var i = 0; i < 1; i++) {
     res.redirect("/demoweb");
 });*/
 
-app.post('/uploads', function (req, res) {
 
-    var fileInfo = {};
-    fileInfo._id = new ObjectId();
-    fileInfo.itemId = req.body.itemId;
-    fileInfo.filename = uuid.v4();
-    fileInfo.content_type = req.files.image.type;
-    var writestream = gfs.createWriteStream([fileInfo]);
-    fs.createReadStream(req.files.image.path).pipe(writestream);
-    //console.log(req.files);
-});
 
 
 app.get('/demoweb', demoweb.index);

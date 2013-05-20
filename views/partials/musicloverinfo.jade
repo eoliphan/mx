@@ -30,4 +30,4 @@ div.container
                 li This means that the musician receives $3.75 per album sold as opposed to $1.10-$1.40 per album or 0.040¢ per stream from existing sites.
                 li You make money based on your purchased shares (which is more than you’ll get anywhere else!).
 
-        p: a.btn.btn-primary.btn-large(href="#signupDialog",role="button",data-toggle="modal") Sign Up!
+        p: a.btn.btn-primary.btn-large(ng-hide="user.isAuthenticated()",role="button",ng-click="openSignUpDialog()") Sign Up!

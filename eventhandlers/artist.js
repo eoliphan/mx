@@ -2,7 +2,7 @@
 (function() {
   var Artist, ObjectId, Order, Wager, logger, mongoose, _;
 
-  logger = require('../logger');
+  logger = require('winston');
 
   Order = require('../repositories/order').Order;
 
@@ -76,7 +76,9 @@
         newFields = _.omit(event.payload, "id");
         updatedAlbum = _.extend(album, newFields);
         return artist.save(function(err, artist) {
-          return logger.error("Error updating artist" + err);
+          if (err) {
+            return logger.error("Error updating artist" + err);
+          }
         });
       } else {
         return logger.error("Artist Not Found");

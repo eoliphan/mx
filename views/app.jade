@@ -26,7 +26,7 @@ block content
                       //todo 'hide' class added to prevent 'flash' of this section. might be a better way
                       div(ng-show="user.isAuthenticated()")
                           p.navbar-text.pull-right
-                              a.navbar-link.pull-right(href='/logout') &nbsp;(Logout)
+                              a.navbar-link.pull-right(ng-click="logout()") &nbsp;(Logout)
                           p.navbar-text.pull-right Logged in as &nbsp;
                               a.navbar-link(href='/profile') {{curUser.email}}
                               //- if((locals.user.primaryuse =='artist' && !locals.user.isArtist) || (locals.user.primaryuse =='investor' && !locals.user.isInvestor))
@@ -34,7 +34,7 @@ block content
 
                       div(ng-hide="user.isAuthenticated()")
                           div.navbar-text.pull-right
-                              a.btn.btn-primary.span1(href="#signupDialog",role="button",data-toggle="modal") Sign Up
+                              a.btn.btn-primary.span1(role="button",ng-click="openSignUpDialog()") Sign Up
                           form.navbar-form.pull-right()
                               input.span2(type="email",name="email",placeholder="Email",required,ng-model="email")
                               input.span2(type="password",name="password",placeholder="Password",ng-model="password")
@@ -65,6 +65,17 @@ block content
     script(src="javascripts/angular-ui-states.min.js")
     script(src="javascripts/angular-kendo.js")
     script(src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js")
+    script(src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js")
+    script(src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js")
+    script(src="javascripts/jquery.fileupload.js")
+    script(src="javascripts/jquery.fileupload-process.js")
+    script(src="javascripts/jquery.fileupload-resize.js")
+    script(src="javascripts/jquery.fileupload-validate.js")
+
+    script#inlineTxtEdit(type="text/ng-template")
+        span(ng-hide="editMode",ng-click="editMode=true;value=model"){{model}}
+        input(type="text",ng-model="value",ng-show="editMode", ng-model-instant, ng-enter="editMode=false" ,ng-change="model(value)")
+
 
     script(src='javascripts/app/app.js')
     script(src='javascripts/app/services.js')
