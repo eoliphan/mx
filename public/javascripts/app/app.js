@@ -1,103 +1,121 @@
 angular.module('soundscry',
-        ['soundscry.filters','soundscry.services','soundscry.directives',
-            'ui.bootstrap','ui.compat','http-auth-interceptor', 'authentication',
+        ['soundscry.filters', 'soundscry.services', 'soundscry.directives',
+            'ui.bootstrap', 'ui.compat', 'http-auth-interceptor', 'authentication',
             'kendo'
         ]).
-    config(['$stateProvider','$routeProvider','$locationProvider',
-        function($stateProvider,$routeProvider,$locationProvider) {
+    config(['$stateProvider', '$routeProvider', '$locationProvider',
+        function ($stateProvider, $routeProvider, $locationProvider) {
             $stateProvider.
-                state("home",{
-                    url:"/",
+                state("home", {
+                    url: "/",
                     templateUrl: 'partials/home',
                     controller: HomeCtrl
                 }).
-                state("store",{
+                state("store", {
                     url: "/store",
                     templateUrl: 'partials/store',
                     controller: StoreCtrl
                 }).
-                state("cart",{
-                    url:"/cart",
+                state("cart", {
+                    url: "/cart",
                     templateUrl: 'partials/cart',
                     controller: CartCtrl
                 }).
-                state("about",{
-                    url:"/about",
+                state("about", {
+                    url: "/about",
                     templateUrl: 'partials/about',
                     controller: AboutCtrl
                 }).
-                state("faq",{
-                    url:"/faq",
+                state("faq", {
+                    url: "/faq",
                     templateUrl: 'partials/faq',
                     controller: FaqCtrl
                 }).
-                state("artistinfo",{
-                    url:"/artistinfo",
+                state("artistinfo", {
+                    url: "/artistinfo",
                     templateUrl: 'partials/artistinfo'
                     //controller: FaqCtrl
                 }).
-                state("musicloverinfo",{
-                    url:"/musicloverinfo",
+                state("musicloverinfo", {
+                    url: "/musicloverinfo",
                     templateUrl: 'partials/musicloverinfo'
                     //controller: FaqCtrl
                 }).
-                state("investorinfo",{
-                    url:"/investorinfo",
+                state("investorinfo", {
+                    url: "/investorinfo",
                     templateUrl: 'partials/investorinfo'
                     //controller: FaqCtrl
                 }).
-                state("album",{
-                    url:"/album/:albumId",
+                state("album", {
+                    url: "/album/:albumId",
                     templateUrl: 'partials/album',
                     controller: AlbumCtrl
                 }).
-                state("editalbum",{
-                    url:"/album/edit/:albumId",
+                state("editalbum", {
+                    url: "/album/edit/:albumId",
                     templateUrl: 'partials/editalbum',
                     controller: EditAlbumCtrl
                 }).
-                state("profile",{
-                    url:"/profile",
+                state("profile", {
+                    url: "/profile",
                     templateUrl: 'partials/profile',
                     controller: ProfileCtrl
                 }).
-                state("profile.investor",{
-                    url:"/investor",
+                state("profile.investor", {
+                    url: "/investor",
                     templateUrl: 'partials/investorprofile',
                     controller: InvestorProfileCtrl
                 }).
-                state("profile.musician",{
-                    url:"/musician",
+                state("profile.musician", {
+                    url: "/musician",
                     templateUrl: 'partials/musicianprofile',
                     controller: MusicianProfileCtrl
                 }).
-                state("profile.musiclover",{
-                    url:"/musiclover",
+                state("profile.musiclover", {
+                    url: "/musiclover",
                     templateUrl: 'partials/musicloverprofile',
                     controller: MusicLoverProfileCtrl
                 });
             $locationProvider.html5Mode(true);
         }]).run(
-          [        '$rootScope', '$state', '$stateParams',
-          function ($rootScope,   $state,   $stateParams) {
-            $rootScope.$state = $state;
-            $rootScope.$stateParams = $stateParams;
+        [        '$rootScope', '$state', '$stateParams',
+            function ($rootScope, $state, $stateParams) {
+                $rootScope.$state = $state;
+                $rootScope.$stateParams = $stateParams;
 
-          }]).directive('ngEnter', function() {
-              return function(scope, elm, attrs) {
-                  elm.bind('keypress', function(e) {
-                      if (e.charCode === 13) scope.$apply(attrs.ngEnter);
-                  });
-              };
-          }).directive('inlineEdit', function() {
-              return {
-                  restrict: 'E',
-                  // can be in-lined or async loaded by xhr
-                  // or inlined as JS string (using template property)
-                  templateUrl: 'inlineTxtEdit',
-                  scope: {
-                      model: '='
-                  }
-              };
-          })
+            }]).directive('ngEnter',function () {
+        return function (scope, elm, attrs) {
+            elm.bind('keypress', function (e) {
+                if (e.charCode === 13) scope.$apply(attrs.ngEnter);
+            });
+        };
+    }).directive('inlineEdit',function () {
+        return {
+            restrict: 'E',
+            // can be in-lined or async loaded by xhr
+            // or inlined as JS string (using template property)
+            templateUrl: 'inlineTxtEdit',
+            scope: {
+                model: '='
+            }
+        };
+    }).directive('xeditable', function ($timeout) {
+        return {
+            restrict: 'A',
+            require: "ngModel",
+            link: function (scope, element, attrs, ngModel) {
+                var loadXeditable = function () {
+                    angular.element(element).editable({
+                        display: function (value, srcData) {
+                            ngModel.$setViewValue(value);
+                            scope.$apply();
+                        }
+                    });
+                }
+                $timeout(function () {
+                    loadXeditable();
+                },500);
+            }
+        };
+    })
 ;

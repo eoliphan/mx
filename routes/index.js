@@ -11,6 +11,7 @@ var User = require('../repositories/user').User
     , awsfilestore = require('../services/awsfilestore')
     , uuid = require("node-uuid")
     , evtcmdbus = require('../evtcmdbus')
+    , gfsfilestore = require('../services/gfsfilestore')
 
     ;
 
@@ -47,13 +48,13 @@ module.exports = function (app) {
         var confirmationCode = uuid.v4();
         User.register(new User({ email: req.body.email, confirmationCode: confirmationCode }),
             req.body.password, function (err, account) {
-            if (err) {
-                logger.error("Error creating account: " + err);
-                return res.send(400,{message:"Error creating account"});
-            }
-            res.send(200);
-            //res.redirect('/');
-        });
+                if (err) {
+                    logger.error("Error creating account: " + err);
+                    return res.send(400, {message: "Error creating account"});
+                }
+                res.send(200);
+                //res.redirect('/');
+            });
         //var newUser = new userrepo.User(req.body);
         //newUser.save();
 //        req.flash('info', "Account Created. Welcome to SoundSrcy.  Please Log In");
@@ -87,7 +88,7 @@ module.exports = function (app) {
     app.get('/api/auth', ensureAuthenticated, function (req, res) {
         res.send(cleanUser(req.user));
     });
-    app.delete('/api/auth',  function (req, res) {
+    app.delete('/api/auth', function (req, res) {
         req.logout();
 
         res.send(200);
@@ -100,7 +101,7 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         res.render('app');
     });
-    app.post('/trackupl',function(req,res){
+    app.post('/trackupl', function (req, res) {
 
     });
     app.post('/uploads', function (req, res) {
@@ -112,13 +113,32 @@ module.exports = function (app) {
                 payload: {
                     itemId: req.body.itemId,
                     sessionId: req.session.id,
-                    img:url
+                    img: url
                 }
             }
             evtcmdbus.emitCommand(command);
             //console.log(command);
         });
         res.send(200);
+
+    });
+    app.post('/fileuploads', function (req, res) {
+      var fileId = uuid.v4();
+      gfsfilestore.store(req.files.files[0].path,fileId,function(){
+        var command = {
+          command: 'addSongToAlbum',
+          id: uuid.v4(),
+          payload: {
+            itemId: req.body.itemId,
+            id: req.body.albumId,
+            mediaId: fileId,
+            mediaIdType:'gridfs'
+
+          }
+        }
+        res.send(200);
+      });
+
 
     });
 

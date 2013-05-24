@@ -1,4 +1,21 @@
 {
+    "database": {
+      "host":"linus.mongohq.com",
+      "port":10022,
+      "name":"mxdemo",
+      "user":"mxuser",
+      "password":"mxusertest"
+    },
+    "redis": {
+      "host":"slimehead.redistogo.com",
+      "port":9725,
+      "pass":"7b8206717498f7a0763079723fcce249"
+    },
+    "evtbusamqp_host":"tiger.cloudamqp.com",
+    "evtbusamqp_port":"5672",
+    "evtbusamqp_login":"gttbyzfy",
+    "evtbusamqp_password":"s5etXP7ROddzMvncxZU5-LW29KRJlyWZ",
+    "evtbusamqp_vhost":"gttbyzfy",
     "aws": {
         "accessKeyId":"1450KS5R8P41M28D6RG2",
         "secretAccessKey":"ZQUyADNL+ElIeOkvlzgFj7z84xt6fcRVUeDKSrGi",

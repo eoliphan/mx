@@ -1,13 +1,13 @@
-function SignUpDlgCtrl($scope,dialog,$http){
+function SignUpDlgCtrl($scope, dialog, $http) {
     //todo add read of current chip data
-        $scope.close = function (chipWager) {
-            dialog.close(chipWager);
-        };
+    $scope.close = function (chipWager) {
+        dialog.close(chipWager);
+    };
 
 
 }
 
-function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $dialog,principal, authority, authService) {
+function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $dialog, principal, authority, authService) {
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
@@ -70,21 +70,21 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
     $rootScope.signupopts = {
         backdrop: true,
         keyboard: true,
-        backdropClick:true,
-        templateUrl:'/partials/signupdlg',
-        controller:'SignUpDlgCtrl'
+        backdropClick: true,
+        templateUrl: '/partials/signupdlg',
+        controller: 'SignUpDlgCtrl'
     }
-    $rootScope.openSignUpDialog = function(){
+    $rootScope.openSignUpDialog = function () {
         var d = $dialog.dialog($rootScope.signupopts);
-        d.open().then(function(userInfo){
+        d.open().then(function (userInfo) {
             console.log(userInfo);
             if (userInfo) {
                 $http
-                    .post('/api/signup',userInfo)
-                    .success(function(data){
+                    .post('/api/signup', userInfo)
+                    .success(function (data) {
 
                     })
-                    .error(function(data){
+                    .error(function (data) {
 
                     });
             }
@@ -119,7 +119,6 @@ function FaqCtrl() {
 function ProfileCtrl() {
 
 }
-
 
 
 function BuySharesDlgCtrl($scope, dialog, $http) {
@@ -306,6 +305,11 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
 function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
     var albumId = $stateParams.albumId;
 
+    $scope.testvar = "TESTVAR";
+    $scope.nest = {
+        test: "NESTEDVAR"
+    };
+
     function refreshAlbum() {
         $http
             .get('/api/album/' + albumId)
@@ -318,11 +322,17 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
     }
 
     refreshAlbum();
-    socket.on('albumUpdated',function(){
+    socket.on('albumUpdated', function () {
         console.log("refresh");
-        setTimeout(function(){
+        setTimeout(function () {
             refreshAlbum();
-        },2000);
+        }, 2000);
+
+    });
+
+    // handle model changes
+    $scope.$watch('albumInfo.albums.name', function (newVal, oldVal) {
+        console.log("Old Val: " + oldVal + " : newVal " + newVal);
 
     });
 
@@ -375,6 +385,45 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
         }
 
 
+    });
+
+    $scope.files = [];
+    $('#fileupload').fileupload({
+        url: "/fileuploads",
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+            });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .bar').css(
+                'width',
+                progress + '%'
+            );
+        },
+        progress: function(e,data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .bar').css(
+                'width',
+                progress + '%'
+            );
+
+        },
+        add: function (e, data) {
+            //data.context = $('<p/>').text('Uploading...'+data.files[0].name).appendTo("#files");
+
+            $scope.$apply(function(){
+                $scope.files.push(data.files[0].name);
+            });
+            //data.files[0].itemId=uuid.v4();
+            data.formData = {
+              itemId: uuid.v4(),
+              albumId: $scope.albumInfo.albums._id
+            }
+            data.submit();
+        }
     });
 
 

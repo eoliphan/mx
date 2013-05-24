@@ -51,7 +51,9 @@ var http = require('http')
     , gridfs =  require('gridfs-stream')
     , fs = require("fs")
     , passportconf = require('./util/passportconf')
-    , awsfilestore = require('./services/awsfilestore');
+    , awsfilestore = require('./services/awsfilestore')
+    , mongosetup = require('./util/mongosetup')
+    ;
 
 
 
@@ -70,7 +72,10 @@ var issueSchema = new Schema({
 mongoose.model("Issue", issueSchema);
 var Issue = mongoose.model("Issue");
 
+var mongoconf = conf.get('database');
+mongosetup.init(mongoconf);
 //-- setup dbs
+/*
 var connstring = "mongodb://" + conf.get('database:user') + ":" + conf.get('database:password') + "@" +
     conf.get('database:host') + ":" + conf.get('database:port') + "/" + conf.get('database:name');
 
@@ -85,7 +90,7 @@ mongoose.connection.once("open",function(conn){
      gfs = gridfs(mongoose.connection.db,mongoose.mongo);
     console.log(conn);
 });
-
+*/
 //-- end setup dbs
 
 
@@ -93,24 +98,7 @@ var evtcmdbus = require('./evtcmdbus')
     , evthandlers = require("./loadeventhandlers")
     ;
 
-// break upload stuff into another module
-/*upload.configure({
- uploadDir: __dirname + '/public/uploads',
- uploadUrl: '/uploads',
- imageVersions: {
- thumbnail: {
- width: 80,
- height: 80
- }
- }
- });
- upload.on('begin',function(fileInfo){
- console.log('Uploaded File Info: ' + JSON.stringify(fileInfo));
- });
 
- upload.on('begin',function(fileInfo){
- console.log('Uploaded File Info: ' + JSON.stringify(fileInfo));
- });*/
 
 app.configure('development', function () {
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -130,18 +118,7 @@ app.configure(function () {
     app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
     app.use(express.logger('dev'));
 
-    //app.use('/uploads', upload.fileHandler());
-//  app.use('/uploads',function(req,res,next){
-//      upload.fileHandler({
-//          uploadDir: function () {
-//              return __dirname + '/public/uploads/' + req.sessionID
-//          },
-//          uploadUrl: function () {
-//              return '/uploads/' + req.sessionID
-//          }
-//      })(req, res, next);
-//
-//  });
+
     app.use(express.bodyParser({ uploadDir: __dirname + '/public/uploads' }));
     app.use(express.methodOverride());
     app.use(express.cookieParser('secret'));
@@ -308,14 +285,7 @@ app.post('/api/issue', function (req, res) {
         else
             res.redirect("/profile");
     });
-//    userrepo.User.update({_id:req.params.id},{$set: body},function(err,numAffected,raw){
-//        if (err)
-//            res.send(400);
-//        else
-//            res.send(200);
-//
-//
-//    });
+
 
 });
 app.get('/api/issues', function (req, res) {
@@ -529,27 +499,4 @@ logger.debug("ampq port: " + conf.get("evtbusamqp_port"));
 logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
 logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
 //logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
-
-//User.findById("511a8c6ece62e90000000003",function(err,user){
-//        if(err){
-//            logger.error("Error finding password:" +err);
-//            return;
-//        }
-//        // now use the passport-local stuff to update
-//        var retVal = user.setPassword("test",function(err){
-//            if(err) {
-//                logger.error("Error updating password:" + err);
-//            }
-//            user.save(function(err){
-//                        if(err){
-//                            logger.error("error saving user: " + err);
-//                        }
-//                    });
-//        });
-//
-//        logger.debug(user);
-//
-//    });
-
-
 

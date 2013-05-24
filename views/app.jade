@@ -12,7 +12,7 @@ block content
                       span.icon-bar
                   a.brand(href='/') SoundScry
                       i.icon-sslogo
-                  div.nav-collapse.collapse
+                  div.nav-collapse.collapse(ng-cloak="")
 
                       ul.nav.test
                           li.active(ng-class="{active: $location.path() == '/'}"): a(href='/') Home
@@ -24,7 +24,7 @@ block content
                           li(ng-class="{active: $location.path() == '/faq'}"): a(href='faq') FAQ
                           li(ng-class="{active: $location.path() == '/contact'}"): a(href='contact') Contact
                       //todo 'hide' class added to prevent 'flash' of this section. might be a better way
-                      div(ng-show="user.isAuthenticated()")
+                      div(ng-show="user.isAuthenticated()",ng-cloak='')
                           p.navbar-text.pull-right
                               a.navbar-link.pull-right(ng-click="logout()") &nbsp;(Logout)
                           p.navbar-text.pull-right Logged in as &nbsp;
@@ -32,7 +32,7 @@ block content
                               //- if((locals.user.primaryuse =='artist' && !locals.user.isArtist) || (locals.user.primaryuse =='investor' && !locals.user.isInvestor))
                                   span.badge.badge-warning 1
 
-                      div(ng-hide="user.isAuthenticated()")
+                      div(ng-hide="user.isAuthenticated()",ng-cloak='')
                           div.navbar-text.pull-right
                               a.btn.btn-primary.span1(role="button",ng-click="openSignUpDialog()") Sign Up
                           form.navbar-form.pull-right()
@@ -56,6 +56,11 @@ block content
     script(src='/javascripts/uuid.js')
     script(src='/javascripts/underscore.js')
     //script(src='/javascripts/jquery.jeditable.js')
+    script(src="http://vitalets.github.io/x-editable/assets/momentjs/moment.min.js")
+    link(href="http://vitalets.github.io/x-editable/assets/bootstrap-datetimepicker/css/datetimepicker.css",rel="stylesheet")
+    script(src="http://vitalets.github.io/x-editable/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js")
+    link(href="http://vitalets.github.io/x-editable/assets/select2/select2.css",rel="stylesheet")
+    script(src="http://vitalets.github.io/x-editable/assets/select2/select2.js")
     script(src='/javascripts/bs-editable/bootstrap-editable.js')
     script(src='/javascripts/jquery-ui-1.10.2.custom.js')
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js")
@@ -74,7 +79,7 @@ block content
 
     script#inlineTxtEdit(type="text/ng-template")
         span(ng-hide="editMode",ng-click="editMode=true;value=model"){{model}}
-        input(type="text",ng-model="value",ng-show="editMode", ng-model-instant, ng-enter="editMode=false" ,ng-change="model(value)")
+        input(type="text",ng-model="value",ng-show="editMode", ng-model-instant, ng-enter="editMode=false" ,ng-change="model = value")
 
 
     script(src='javascripts/app/app.js')

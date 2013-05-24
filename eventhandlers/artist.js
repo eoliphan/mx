@@ -86,4 +86,20 @@
     });
   };
 
+  exports.songAddedToAlbum = function(event) {
+    return Artist.findOne({}, function(err, artist) {
+      var album;
+      if (err) {
+        logger.error("Error finding artist/album");
+      }
+      if (artist) {
+        return album = _.find(artist.albums, function(album) {
+          return album._id.toString() === event.payload.itemId;
+        });
+      } else {
+        return logger("Artist not found");
+      }
+    });
+  };
+
 }).call(this);

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
-    , Schema = mongoose.Schema
-    , conf = require("../config").conf,
-    ObjectId = Schema.Types.ObjectId;
+  , Schema = mongoose.Schema
+  , conf = require("../config").conf,
+  ObjectId = Schema.Types.ObjectId;
 
 //// connect to db
 //var connstring = "mongodb://"+conf.get('database:user')+":"+conf.get('database:password')+"@"+
@@ -14,42 +14,45 @@ var mongoose = require('mongoose')
 //    mongoose.connect(connstring);
 
 function getPrice(num) {
-    return parseFloat(num).toFixed(2);
+  return parseFloat(num).toFixed(2);
 }
 var song = new Schema({
-    name:String,
-    genre:String,
-    releaseDate:Date,
-    price:Number
+  name: String,
+  genre: String,
+  releaseDate: Date,
+  price: Number,
+  mediaId: String,
+  mediaIdType: {type: String, enum: ['gridfs'], default: 'gridfs'},
+  itemId:String
 });
 
 var ranking = new Schema({
-    value:Number,
-    rankDate: Date
+  value: Number,
+  rankDate: Date
 });
 var album = new Schema({
-    name:String,
-    genre:String,
-    price:{type:Number,get:getPrice},
-    releaseDate:Date,
-    offerDate:Date,
-    isActiveOffer:Boolean,
-    offerId:ObjectId,
-    status:{type:String, enum:['pending','forsale'],default:"pending"},
-    description:String,
-    songs:[song],
-    rankings:[ranking],
-    img:String
+  name: String,
+  genre: String,
+  price: {type: Number, get: getPrice},
+  releaseDate: Date,
+  offerDate: Date,
+  isActiveOffer: Boolean,
+  offerId: ObjectId,
+  status: {type: String, enum: ['pending', 'forsale'], default: "pending"},
+  description: String,
+  songs: [song],
+  rankings: [ranking],
+  img: String
 });
 
 var artistSchema = new Schema({
-    artistName:String,
-    bio:String,
-    phone: String,
-    albums:[album],
-    userId:Schema.Types.ObjectId
+  artistName: String,
+  bio: String,
+  phone: String,
+  albums: [album],
+  userId: Schema.Types.ObjectId
 });
-var Artist = mongoose.model('Artist',artistSchema);
+var Artist = mongoose.model('Artist', artistSchema);
 // = mongoose.model('User');
 
 
@@ -57,25 +60,25 @@ exports.Artist = Artist;
 
 
 var cartItemSchema = new Schema({
-    itemId:String,
-    itemType:String,
-    name:String,
+  itemId: String,
+  itemType: String,
+  name: String,
 
-    price:Number
+  price: Number
 });
 
-var CartItem = mongoose.model('cartItem',cartItemSchema);
+var CartItem = mongoose.model('cartItem', cartItemSchema);
 // = mongoose.model('User');
 
 
 exports.CartItem = CartItem;
 
 
-exports.save=function(user) {
+exports.save = function (user) {
 
 };
 
-exports.findOne=function(id) {
+exports.findOne = function (id) {
 
 };
 
