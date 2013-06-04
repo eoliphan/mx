@@ -53,14 +53,67 @@ exports.albumUpdated = (event) ->
     else
       logger.error "Artist Not Found"
 
-exports.songAddedToAlbum = (event) ->
-  Artist.findOne {}, (err, artist) ->
+exports.albumUpdated = (event) ->
+  Artist.findOne {"albums._id":event.payload.albumId}, (err, artist) ->
     logger.error "Error finding artist/album" if err
     if artist
-      album = _.find artist.albums, (album) ->
-        return album._id.toString() == event.payload.itemId
+      theAlbum = _.find artist.albums, (album) ->
+        return album._id.toString() == event.payload.albumId
+      # in this case replace everything but the id
+      albumNoId = _.omit(event.payload.album,"_id")
+      # copy
+      theAlbum = _.extend(theAlbum,albumNoId);
+      logger.debug theAlbum
+
+exports.songAddedToAlbum = (event) ->
+  Artist.findOne {"albums._id":event.payload.albumId}, (err, artist) ->
+    logger.error "Error finding artist/album" if err
+    if artist
+      theAlbum = _.find artist.albums, (album) ->
+        return album._id.toString() == event.payload.albumId
+      #todo add err handling
+      theAlbum.songs.push event.payload.song
+      artist.save (err,artist) ->
+        logger.error "Error updating artist: " + err if err
     else
-      logger "Artist not found"
+      logger.info "Artist not found"
+
+findAlbumForSong = (albums,itemId) ->
+  _.find albums, (album) ->
+    return _.find album.songs, (song)  ->
+      return song.itemId == itemId
+
+findSong = (songs,itemId) ->
+  _.find songs, (song) ->
+    return song.itemId == itemId
+
+
+exports.songUpdated = (event) ->
+  logger.debug JSON.stringify(event)
+  #Artist.update {}
+  Artist.findOne {"albums.songs.itemId":event.payload.itemId}, (err,artist) ->
+    logger.error "Error/finding artist album for event: " + event if err
+    logger.debug JSON.stringify artist
+    # super ugly, mongo positional updates via $ don't support more than one level of nesting
+    # find the album
+    #album = _.find artist.albums, (album) ->
+    #  return _.find album.songs, (song)  ->
+    #    return song.itemId == event.payload.itemId
+    #song = _.find album.songs, (song) ->
+    #  return song.itemId == event.payload.itemId
+    album = findAlbumForSong artist.albums,event.payload.itemId
+    song = findSong album.songs,event.payload.itemId
+    # todo add error handling
+    #update the song
+    eventData = _.omit(event.payload,['itemId'])
+    updatedSong = _.extend(song,eventData)
+    artist.save (err)  ->
+      logger.error "Error saving artist for event: " + event if err
+    logger.debug album
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@ module.exports = commandHandlerBase.extend({
 
     aggregate: 'artistAggregate',
 
-    commands: ['createArtist', 'deleteArtist', 'addAlbum', 'updateAlbum','addSongToAlbum' ]
+    commands: ['createArtist', 'deleteArtist', 'addAlbum', 'updateAlbum','addSongToAlbum','updateSong', 'updateAlbum']
 
 //    fooIt: function(id, cmd) {
 //        var self = this;

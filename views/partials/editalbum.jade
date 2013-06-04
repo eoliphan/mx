@@ -11,108 +11,137 @@ style
 
 
 .container
-        .hero-unit
-            //a(href="#", id="username", data-type="text", data-pk="1", data-url="/post", data-original-title="Enter username") superuser
-            //h2: a.edit-border(href="#", id="name",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter album name",data-placement="right") #{locals.info.albums.name}
-            //h4 Artist: #{locals.info.artistName}
-            h2: a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
-                data-name="name",data-ng-model="albumInfo.albums.name",data-placement="right",
-                data-placeholder="Required",data-showbuttons="true",data-original-title="Album Title") {{albumInfo.albums.name}}
+    .hero-unit
+        tabs
+            pane(heading="Album")
+                h5: a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
+                    data-name="name",data-ng-model="albumInfo.albums.name",data-placement="right",
+                    data-placeholder="Required",data-showbuttons="true",data-original-title="Album Title") {{albumInfo.albums.name}}
 
-            h4 Artist:
-                a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",
-                data-name="albumInfo.artistName",data-ng-model="albumInfo.artistName",data-placement="right",
-                data-placeholder="Required",data-showbuttons="true",data-original-title="Album Title") {{albumInfo.artistName}}
+                h6 Artist:
+                    a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",
+                    data-name="albumInfo.artistName",data-ng-model="albumInfo.artistName",data-placement="right",
+                    data-placeholder="Required",data-showbuttons="true",data-original-title="Album Title") {{albumInfo.artistName}}
 
-            .row-fluid(width="800")
-                .span4
-                    h4: i Click To Upload Album Image (300x300)
-                    //input#imgupload(type="file", name="image",data-url="/uploads")
-
-                    form#imgupload
-                        img(ng-hide="albumInfo.albums.img").edit-border(ng-src="/util/rndsmlcvr/1",width="100%")
-                        img(ng-show="albumInfo.albums.img").edit-border(ng-src="{{albumInfo.albums.img}}",width="100%")
-                        input(type="file", name="image",data-url="/uploads")
-                        input(type="hidden", name="itemId", value="{{albumInfo.albums._id}}" )
-                        input(type="hidden",name="id",value="{{albumInfo._id}}")
-                        input(type="hidden", name="command", value="updateAlbum" )
-
+                .row-fluid(width="800")
+                    .span4
+                        p: small: i Click To Upload Album Image (300x300)
                         //input#imgupload(type="file", name="image",data-url="/uploads")
-                    //- if (locals.info.albums.image)
-                        ///img.edit-border(src="#{locals.info.albums.img}",width="100%")
+
+                        form#imgupload
+                            img(ng-hide="albumInfo.albums.img").edit-border(ng-src="/util/rndsmlcvr/1",width="100%")
+                            img(ng-show="albumInfo.albums.img").edit-border(ng-src="{{albumInfo.albums.img}}",width="100%")
+                            input(type="file", name="image",data-url="/uploads")
+                            input(type="hidden", name="itemId", value="{{albumInfo.albums._id}}" )
+                            input(type="hidden",name="id",value="{{albumInfo._id}}")
+                            input(type="hidden", name="command", value="updateAlbum" )
+
                             //input#imgupload(type="file", name="image",data-url="/uploads")
-                    //- else
-                        div
+                        //- if (locals.info.albums.image)
+                            ///img.edit-border(src="#{locals.info.albums.img}",width="100%")
+                                //input#imgupload(type="file", name="image",data-url="/uploads")
+                        //- else
+                            div
 
 
-                .span8
-                    h4 Genre:
-                        em
-                            //a#genre.edit-border(href="#", data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Genres name",data-placement="right") #{locals.info.albums.genre}
-                            a.editable.editable-click(xeditable="",href="javascript:;",data-type="select2",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
-                                data-name="genre",data-ng-model="albumInfo.albums.genre",data-placement="right",
-                                data-showbuttons="true",
-                                data-select2='eval({tags:["Rock","Hip-Hop","Country","Easy Listening"]})',
-                                data-original-title="Album Genres") {{albumInfo.albums.genre}}
+                    .span8
+                        h6 Genre:
+                            em
+                                //a#genre.edit-border(href="#", data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Genres name",data-placement="right") #{locals.info.albums.genre}
+                                a.editable.editable-click(xeditable="",href="javascript:;",data-type="select2",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
+                                    data-name="genre",data-ng-model="albumInfo.albums.genre",data-placement="right",
+                                    data-showbuttons="true",
+                                    data-select2='eval({tags:["Rock","Hip-Hop","Country","Easy Listening"]})',
+                                    data-original-title="Album Genres") {{albumInfo.albums.genre}}
 
-                    h4 Description:
-                        em
-                            a.editable.editable-click(xeditable="",href="javascript:;",data-type="textarea",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
-                                data-name="description",data-ng-model="albumInfo.albums.description",data-placement="right",
-                                data-placeholder="Required",data-showbuttons="true",data-original-title="Album Description") {{albumInfo.albums.description}}
-                            //a.edit-border(href="#", id="description",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Description",data-placement="right") #{locals.info.albums.description}
-                    h4 # of Tracks:
-                    h4 Release Date: &nbsp;
-                        em: a.editable.editable-click(xeditable="",href="javascript:;",data-type="date",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
-                                data-name="releaseDate",data-ng-model="albumInfo.albums.releaseDate",data-placement="right",
-                                data-format="mm/dd/yyyy",data-viewformat="mm/dd/yyyy",
-                                data-placeholder="Required",data-showbuttons="true",data-original-title="Album Release Date") {{albumInfo.albums.releaseDate | date:'mediumDate'}}
-                            //a.edit-border(href="#", id="releaseDate",data-type="date",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Release Date ",data-placement="right") #{!locals.info.albums.releaseDate ? "" : locals.info.albums.releaseDate.toString('yyyy-MM-dd')}
-                    h4 Price:
-                        em {{albumInfo.albums.price | currency}}
-                            //a.edit-border(href="#", id="price",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Price ",data-placement="right") #{parseFloat(locals.info.albums.price).toFixed(2)}
-                    hr
+                        h6 Description:
+                            em
+                                a.editable.editable-click(xeditable="",href="javascript:;",data-type="textarea",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
+                                    data-name="description",data-ng-model="albumInfo.albums.description",data-placement="right",
+                                    data-placeholder="Required",data-showbuttons="true",data-original-title="Album Description") {{albumInfo.albums.description}}
+                                //a.edit-border(href="#", id="description",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Description",data-placement="right") #{locals.info.albums.description}
+                        h6 # of Tracks:
+                        h6 Release Date: &nbsp;
+                            //todo:  for now this is a text to avoid js errors
+                            em: a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
+                                    data-name="releaseDate",data-ng-model="albumInfo.albums.releaseDate",data-placement="right",
+                                    data-format="mm/dd/yyyy",data-viewformat="mm/dd/yyyy",
+                                    data-placeholder="Required",data-showbuttons="true",data-original-title="Album Release Date") {{albumInfo.albums.releaseDate | date:'mediumDate'}}
+                                //a.edit-border(href="#", id="releaseDate",data-type="date",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Release Date ",data-placement="right") #{!locals.info.albums.releaseDate ? "" : locals.info.albums.releaseDate.toString('yyyy-MM-dd')}
+                        h6 Price:
+                            em {{albumInfo.albums.price | currency}}
+                                //a.edit-border(href="#", id="price",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Price ",data-placement="right") #{parseFloat(locals.info.albums.price).toFixed(2)}
+                        hr
 
-                    //button#addToCart.btn.btn-primary.disabled Add To Cart
-                    //button#buyNow.btn.disabled Buy Now
-                    //button#investChips.btn.disabled Invest 10 Chips!
-                    //button#showBuySharesBtn.btn.disabled Buy Shares!
+                        //button#addToCart.btn.btn-primary.disabled Add To Cart
+                        //button#buyNow.btn.disabled Buy Now
+                        //button#investChips.btn.disabled Invest 10 Chips!
+                        //button#showBuySharesBtn.btn.disabled Buy Shares!
 
-            hr
-            form#fileupload(action='/upload',method="POST", enctype="multipart/form-data")
-                input(type="hidden", name="itemId" )
-                .row.fileupload-buttonbar
-                    .span6
-                        span.btn.btn-success.fileinput-button
-                            i.icon-plus.icon-white
-                            span Add Tracks...
-                            input(type="file", name="files[]",multiple="")
-                        button.btn.btn-primary.start(type="submit")
-                            i.icon-upload.icon-white
-                            span Start Upload
+                hr
+                form
+                    input(type="hidden", name="itemId" )
+                    .row.fileupload-buttonbar
+                        .span6
+                            button.btn.btn-success.fileinput-button(type="button",ng-click="addTrack()")
+                                i.icon-plus.icon-white
+                                span Add Track...
+                                //input(type="file", name="files[]",multiple="",ng-click="addTrack()")
+                            button.btn.btn-success(ng-click="saveChanges()",ng-class="{disabled: editing.isDirty == false}") Save Changes
+
+
 
 
                 .row
-                    .span6
-                        #progress.progress.progress-success.progress-striped
+                    .span5
+                        #progress.progress.progress-success.progress-striped.hide
                             .bar
                         //table.table.table-striped(role="presentation"): tbody.files(data-toggle="modal-gallery",data-target="#modal-gallery")
-                        table.table.table-striped.table-bordered
-                            tr(ng-repeat="file in files")
-                                td: input
-                                td: {{file}}
+                        ul.unstyled
+                            li(ng-repeat="song in albumInfo.albums.songs",ng-click="selectTrack(song.itemId)")
+                                div(style="background-color: whitesmoke;",data-fileupload="options",data-url="/fileuploads",
+                                    data-ng-controller="TrackCtrl")
+                                    span.btn.btn-success.btn-small.pull-right.fileinput-button(style="float: right;")
+                                        i.icon-plus.icon-white
+                                        span Update...
+                                        input(type="file", name="file")
+                                    strong {{song.name}}
+
+                                    br
+                                    small {{song.origFileName}}
+                                    .progress.progress-success.progress-striped
+                                        .bar(ng-style="progstyle")
+
+
+                                    hr
+
 
                         #files
                         //each song in locals.info.albums.songs
                             h4 {song.name}
                             audio(controls="")
-                    .span6
+                    .span5
+                        form
+                            fieldset
+                                label Name
+                                input(ng-model="curTrack.name")
+                                label Price
+                                input(ng-model="curTrack.price")
+                                label About
+                                textarea(ng-model="curTrack.about")
+                                label Lyrics
+                                textarea(ng-model="curTrack.lyrics")
+                                label Credits
+                                textarea(ng-model="curTrack.credits")
+            pane(heading="Offering")
+                p create offering
 
 
-        hr
 
 
 
+script#template-tracklist(type="text/x-kendo-tmpl")
+    p #:name#
 script#template-upload(type="text/x-tmpl").
     {% for (var i=0, file; file=o.files[i]; i++) { %}
         <tr class="template-upload fade">

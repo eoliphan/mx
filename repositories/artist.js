@@ -23,7 +23,11 @@ var song = new Schema({
   price: Number,
   mediaId: String,
   mediaIdType: {type: String, enum: ['gridfs'], default: 'gridfs'},
-  itemId:String
+  itemId:String,
+  about:String,
+  lyrics:String,
+  credits:String,
+  origFileName:String
 });
 
 var ranking = new Schema({

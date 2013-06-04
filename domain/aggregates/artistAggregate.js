@@ -32,6 +32,16 @@ module.exports = base.extend({
 
     this.checkBusinessRules(callback);
   },
+  updateSong: function (data, callback) {
+    this.apply(this.toEvent('songUpdated', data));
+
+    this.checkBusinessRules(callback);
+  },
+  updateAlbum: function (data, callback) {
+    this.apply(this.toEvent('albumUpdated', data));
+
+    this.checkBusinessRules(callback);
+  },
 
 
   // Events
@@ -81,22 +91,41 @@ module.exports = base.extend({
     _.extend(albumToUpdate, newData);
     this.set('albums', albums);
 
-  },
+  }, // todo:  this is buggy as hell, used key value or something
   songAddedToAlbum: function (data) {
-    var albums = this.get('albums');
-    // clone so we can clean
-    // todo this is messy
-    var newData = _.clone(data);
-    // clean the item id
-    newData.id = newData.itemId;
-    delete newData.itemId;
-    if (!albums) {
-      albums = [];
-      this.set('albums', albums);
-    }
-    var albumToUpdate = _.find(albums, function (album) {
-      return newData.id === album.id;
-    });
+//    var albums = this.get('albums');
+//    // clone so we can clean
+//    // todo this is messy
+//    var newData = _.clone(data);
+//    // clean the item id
+//    newData.id = newData.itemId;
+//    delete newData.itemId;
+//    if (!albums) {
+//      albums = [];
+//      this.set('albums', albums);
+//    }
+//    var albumToUpdate = _.find(albums, function (album) {
+//      return newData.id === album.id;
+//    });
+//    albumToUpdate.songs.push( newData);
+  },
+  songUpdated:function(data){
+    // todo for now just update the read model
+//    var albums = this.get(albums);
+//    var song = _.find(albums.songs,function(song){return song.itemId === data.itemId});
+//    if (!song) {
+//      song = {itemId: data.itemId}l
+//      a
+//    }
+//    var newData = _.clone(data);
+//    delete newData.itemId;
+//    _.extend(song,newData);
+
+
+
+  },
+  albumUpdated: function(data) {
+
   }
 
 

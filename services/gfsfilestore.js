@@ -5,13 +5,15 @@ var gridfs = require("gridfs-stream")
   , async = require('async')
   , conf = require('nconf')
   , mongosetup = require("../util/mongosetup")
+  , logger = require('winston')
   ;
 
 
-exports.store = function (file, id, cb) {
+exports.store = function (file, type, id, cb) {
   var gfs = mongosetup.gfs();
   var gfsWs = gfs.createWriteStream({
-    filename:id,
+    filename: id,
+    contentType: type,
     metadata: {
       test: "meta"
     }
@@ -19,7 +21,7 @@ exports.store = function (file, id, cb) {
   fs.createReadStream(file)
     .pipe(gfsWs)
     .on('close', function () {
-      logger.debug("File: " + id +" written to gfs");
+      logger.debug("File: " + id + " written to gfs");
       cb();
     });
 
@@ -36,9 +38,14 @@ exports.deleteByName = function (name, cb) {
 
 exports.getStreamByName = function (name) {
   var gfs = mongosetup.gfs();
-  var readstream = gfs.createReadStream({
-    filename:name
-  });
+  try {
+    var readstream = gfs.createReadStream({
+      filename: name
+    });
+  } catch (err) {
+    logger.error("Error getting file: " + err);
+    return null;
+  }
 
   return readstream;
 

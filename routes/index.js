@@ -35,7 +35,7 @@ module.exports = function (app) {
     require("./album")(app);
 
     app.get("/faq", function (req, res) {
-        res.render('faq', {title: "FAQ"});
+        res.render('app');
     });
 
 
@@ -124,18 +124,20 @@ module.exports = function (app) {
     });
     app.post('/fileuploads', function (req, res) {
       var fileId = uuid.v4();
-      gfsfilestore.store(req.files.files[0].path,fileId,function(){
+      gfsfilestore.store(req.files.file.path,req.files.file.type,fileId,function(){
         var command = {
-          command: 'addSongToAlbum',
+          command: 'updateSong',
           id: uuid.v4(),
           payload: {
             itemId: req.body.itemId,
-            id: req.body.albumId,
+            //id: req.body.albumId,
             mediaId: fileId,
-            mediaIdType:'gridfs'
+            mediaIdType:'gridfs',
+            origFileName:req.body.origFileName
 
           }
         }
+        evtcmdbus.emitCommand(command);
         res.send(200);
       });
 

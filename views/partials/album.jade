@@ -9,19 +9,21 @@ style
 
 .container
         .hero-unit
-            h2 {{albumInfo.albums.name}}
-            h4 Artist: {{albumInfo.artistName}}
+            h4 {{albumInfo.albums.name}}
+            h6 Artist: {{albumInfo.artistName}}
             .row-fluid(width="800")
                 .span4
 
                      img(ng-hide="albumInfo.albums.img",ng-src="/util/rndsmlcvr/1",width="100%")
                      img(ng-show="albumInfo.albums.img",ng-src="{{albumInfo.albums.img}}",width="100%")
                 .span8
-                    h4 Genre: <em>{{albumInfo.albums.genre}}</em>
-                    h4 Description: <em>{{albumInfo.albums.description}}</em>
-                    h4 # of Tracks: <em>{{albumInfo.albums.songs.length}}</em>
-                    h4 Release Date: <em>{{albumInfo.albums.releaseDate | date:'mediumDate'}}</em>
-                    h4 Price: <em>{{albumInfo.albums.price | currency}}</em>
+                    h6 Genre: <em>{{albumInfo.albums.genre}}</em>
+                    h6 Description: <em>{{albumInfo.albums.description}}</em>
+                    h6 # of Tracks: <em>{{albumInfo.albums.songs.length}}</em>
+                    h6 Release Date: <em>{{albumInfo.albums.releaseDate | date:'mediumDate'}}</em>
+                    h6 Price: <em>{{albumInfo.albums.price | currency}}</em>
+                    h6 Rating:
+                        rating(value='rate',max='5')
                     hr
                     div(ng-show="user.isAuthenticated()")
                         button#addToCart.btn.btn-primary Add To Cart
@@ -57,8 +59,9 @@ style
 
                 .span10
                     div(ng-repeat="song in albumInfo.albums.songs")
-                        h4 {{song.name}}
+                        h6 {{song.name}}
                         audio(controls="")
+                            source(src="{{'/album/song/' + song.mediaId + '/stream'}}")
                 .span2
 
 

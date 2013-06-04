@@ -1,7 +1,7 @@
 angular.module('soundscry',
         ['soundscry.filters', 'soundscry.services', 'soundscry.directives',
             'ui.bootstrap', 'ui.compat', 'http-auth-interceptor', 'authentication',
-            'kendo'
+            'kendo','blueimp.fileupload','ngGrid'
         ]).
     config(['$stateProvider', '$routeProvider', '$locationProvider',
         function ($stateProvider, $routeProvider, $locationProvider) {
@@ -75,6 +75,11 @@ angular.module('soundscry',
                     url: "/musiclover",
                     templateUrl: 'partials/musicloverprofile',
                     controller: MusicLoverProfileCtrl
+                }).
+                state("profile.albumsongs", {
+                    url: "/albumsongs",
+                    templateUrl: 'partials/albumsongs',
+                    controller: AlbumSongsProfileCtrl
                 });
             $locationProvider.html5Mode(true);
         }]).run(

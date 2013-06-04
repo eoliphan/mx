@@ -16,5 +16,9 @@ form#signupForm.well(novalidate="")
                 option(value="artist") Artist
                 option(value="investor") Investor
     div.modal-footer
+        a(href="#fakeLink").btn.btn-small.btn-social-facebook
+            i.fui-facebook
+            | Connect With Facebook
+
         button.btn(data-dismiss="modal",aria-hidden="true",ng-click="close()") Close
         button.btn.btn-primary(id="signupbtn",ng-click="close(user)") Sign Up!

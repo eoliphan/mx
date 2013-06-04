@@ -39,6 +39,9 @@ div.container-fluid
                     //- else
                         li: a(href="/fragments/investorsignup") Investor
                     li(ng-class="{active: $location.path() == '/profile/musician'}"): a(href="/profile/musician") Musician
+                        ul.nav.nav-list
+                            li: a(href="/profile/albumsongs") Albums/Songs
+                            li: a(href="/profile/myartistprofile") Artist Profile
                     li(ng-class="{active: $location.path() == '/profile/investor'}"): a(href="/profile/investor") Investor
                     li(ng-class="{active: $location.path() == '/profile/musiclover'}"): a(href="/profile/musiclover") Music Lover
                     //li: a.notimpl(href="/fragments/financialinfo") Financial Info
