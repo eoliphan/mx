@@ -368,8 +368,17 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
       .get('/api/album/' + albumId)
       .success(function (data) {
         $scope.albumInfo = data;
-        // format price and releasedate
 
+        //do we have any offer info?
+        if ($scope.albumInfo.albums.isActiveOffer) {
+          $http
+            .get('/api/offers/info/'+$scope.albumInfo.albums.offerId)
+            .success(function(data){
+              $scope.offerInfo = data;
+
+            });
+
+        }
 
       })
   }

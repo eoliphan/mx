@@ -134,7 +134,17 @@ style
                                 label Credits
                                 textarea(ng-model="curTrack.credits")
             pane(heading="{{albumInfo.albums.isActiveOffer && 'Offering' || 'Add Offering!'}}")
-                p create offering
+                form.span4.well
+                    fieldset
+                        legend Offer Info
+                        label Amount To Raise
+                        input(type="text", ng-model="offerInfo.amtToRaise")
+                        label Percentage of Offering to Sell
+                        input(type="text", ng-model="offerInfo.pctOfferingToSell")
+                        label Number Of Shares
+                        input(type="text",ng-model="offerInfo.numShares")
+                    button.btn.btn-primary(type="button") Update!
+
 
 
 
