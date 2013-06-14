@@ -17,12 +17,12 @@ exports.artistCreated = (event) ->
 
 exports.albumAdded = (event) ->
   logger.debug event
-  Artist.findOne {_id: event.payload.id}, (err, artist) ->
+  Artist.findOne {userId: event.payload.id}, (err, artist) ->
     logger.error "error searching for artist: " + err if err
     if (artist)
       logger.debug "adding album: " + JSON.stringify(event.payload) + "to artistId: " + artist._id
       newAlbum =
-        id: event.payload.albumId
+        #id: event.payload.albumId
         _id: event.payload.albumId
         name: event.payload.name
         description: event.payload.description
@@ -35,6 +35,8 @@ exports.albumAdded = (event) ->
       artist.save (err) ->
         logger.error "Error adding album: " + err if err
         logger.info "Album Saved"
+    else
+      logger.error "Artist for not found for id: " + event.payload.id
 
 exports.albumUpdated = (event) ->
   logger.debug event
@@ -53,17 +55,17 @@ exports.albumUpdated = (event) ->
     else
       logger.error "Artist Not Found"
 
-exports.albumUpdated = (event) ->
-  Artist.findOne {"albums._id":event.payload.albumId}, (err, artist) ->
-    logger.error "Error finding artist/album" if err
-    if artist
-      theAlbum = _.find artist.albums, (album) ->
-        return album._id.toString() == event.payload.albumId
-      # in this case replace everything but the id
-      albumNoId = _.omit(event.payload.album,"_id")
+#exports.albumUpdated = (event) ->
+#  Artist.findOne {"albums._id":event.payload.albumId}, (err, artist) ->
+#    logger.error "Error finding artist/album" if err
+#    if artist
+#      theAlbum = _.find artist.albums, (album) ->
+#        return album._id.toString() == event.payload.albumId
+#      # in this case replace everything but the id
+#      albumNoId = _.omit(event.payload.album,"_id")
       # copy
-      theAlbum = _.extend(theAlbum,albumNoId);
-      logger.debug theAlbum
+#      theAlbum = _.extend(theAlbum,albumNoId);
+#      logger.debug theAlbum
 
 exports.songAddedToAlbum = (event) ->
   Artist.findOne {"albums._id":event.payload.albumId}, (err, artist) ->

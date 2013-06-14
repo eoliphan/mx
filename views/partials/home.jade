@@ -70,151 +70,200 @@ block content
             line-height: 1.3;
             font-size: 95%;
         }
+        .gridStyle {
+            border: 1px solid rgb(212,212,212);
+            height: 300px
+        }
 
 
-
-
-    div.container
-        p <i>Empowering the creative</i>&trade; Where fans fund artists and share in their success.
-        div.row
-            ul.thumbnails
-                li.span4
-                    div.thumbnail(style="width: 300px; height: 550px;")
-                        img(src="images/mlover_sm.jpg")
-                        div.caption
+    #auth(ng-show="user.isAuthenticated()")
+        .row
+            .span1
+            .span7
+                .tabbable.tabs-left
+                    ul.nav.nav-tabs.nav-stacked
+                        li.active: a(data-target="#musiclover",data-toggle="tab") Music Lover
+                        li: a(data-target="#musician",data-toggle="tab") Musician
+                        li: a(data-target="#investor",data-toggle="tab") Investor
+                    .tab-content
+                        #musiclover.tab-pane.active
                             h6 Music Lover
-                            //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            p.thumb-text Are you a music fanatic? You love to find and experience new music? Look no further, we’ve got what you need. Support independent artists, share playlists, and win prizes, music, and more. Find out how it works.
+                            p -->  Move selected profile stuff
+                        #musician.tab-pane
+                            h6 Musician
+                            p -->  Move selected profile stuff
+                        #investor.tab-pane
+                            h6 Investor
+                            p -->  Move selected profile stuff
 
-                            //ul
-                                li Explore new sounds
-                                li Muscians price their own music
-                                li Muscians share their royalties with you!
-                                li Buy music from us, share the artist with your friends, find the next hot bands
-
-                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
-
-                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
-                                &nbsp;
-                                a.btn(href="/musicloverinfo") Learn More
-
-                li.span4
-                    div.thumbnail(style="width:300px; height:550px;")
-                        img(src="images/artistsq_sm.jpg")
-                        div.caption
-                            h6 Artist
-                            //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            //p Are you the one who’s always on the lookout for the next best thing? You’re friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
-                            p.thumb-text We all know the system’s broken: streaming doesn’t pay, pirating is rampant, and they’ll eat your soul just to produce an album. We have a better way. Crowdfund your album costs, sell your music, and build fan support by letting them share in your success. If that wasn’t enough, you have total control of your content. Join us and help build a better system.
-
-
-                            //ul
-                                li Let fans fund your music allowing you both to benefit
-                                li Stay independent, control your content and your pricing
-                                li Expand your audience and your creativity
-                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
-                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
-                                &nbsp;
-                                a.btn(href="/artistinfo") Learn More
-                li.span4
-                    div.thumbnail(style="width: 300px; height: 550px;")
-                        img(src="images/promoter_sm.jpg")
-                        div.caption
-                            h6 Promoters/Investor
-                            //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            p.thumb-text Are you the one who’s always on the lookout for the next best thing? Your friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
-
-
-                            //ul
-                                li Invest in music you love
-                                li Use your and others networks to benefit from the music you have invested in
-                                li Support independence by increasing its' exposure and variety
-                            div(style=" bottom: 0; left: 0; vertical-align: bottom;")
-                                a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
-                                &nbsp;
-                                a.btn(href="/investorinfo") Learn More
-
-
-    // market
-    div.container
-    hr
-    div.container
-
-        div.row
-            div.span6
-
-            div.span6
-
-        div.row
-        div.row
-            div.span6
-                h5 Marketplace
-                p  Support musicians by investing in their albums and you’ll win when they win. Browse recent and upcoming albums for investment opportunities.
-                table#grid
-                    thead
-                        tr
-                            th Band
-                            th Album
-                            th $ on Offer
-                            th $ per share
-                            th # of shares
-                            th Listen!
-                            th More Info
-                    tbody
-                        td(colspan=7)
-                div.container
-                div.media
-                    a.pull-left(href="#")
-                        .thumbnail
-                            img.media-object(src="images/band.jpg",width="100")
-                    div.media-body
-                        h4.media-heading Featured Offering
-                        p Trilogy (Moop) $500/share (Only 4 shares left!)
-                        a.btn.btn-primary(href="#") Buy Now !
-            div.span6
-                h5 Shop Music
-                p  Music priced by musicians for your listening pleasure. Shop and sample the latest albums.
-                div.tabbable
-                    ul.nav.nav-tabs
-                        li.active
-                            a(href="#tab1",data-toggle="tab") This Week
+                //tabs
+                    pane(heading="Music Lover")
+                    pane(heading="Musician")
+                    pane(heading="Investor")
+            .span1
+            .span3
+                h6 Friends
+                .todo.mrm
+                    ul
                         li
-                            a(href="#tab2",data-toggle="tab") New Releases
+                            .todo-icon.fui-user
+                            .todo-content
+                                small.todo-name
+                                    | Colin Olson
+                        li
+                            .todo-icon.fui-user
+                            .todo-content
+                                small.todo-name
+                                    | Brett Sechrest
 
-                    div.tab-content
-                        div#tab1.tab-pane.active
-                            p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                            div
-                                ul.thumbnails
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Jc2v9ndpL._SL500_AA300_.jpg",width="90")
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61e3FaHueCL._SL500_AA300_.jpg",width="90")
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61iKyNi5UKL._SL500_AA300_.jpg",width="90")
-                                    //li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/41ZsWDiEvfL._SL500_AA300_.jpg",width="90")
-                        div#tab2.tab-pane
-                            p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesen doloremque laudantium, totam
-                            div
-                                ul.thumbnails
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/61DAJ0zqFhL._AA160_.jpg",width="90")
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Xb620XzWL._AA160_.jpg",width="90")
-                                    li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/5135bFFBrWL._AA160_.jpg",width="90")
-                                    //li
-                                        a(href="#")
-                                            img.thumbnail(src="http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg",width="90")
-                        a.btn.btn-large.btn-primary(href="/store") See All Music!
+
+
+    #noAuth(ng-hide="user.isAuthenticated()")
+        div.container
+            p <i>Empowering the creative</i>&trade; Where fans fund artists and share in their success.
+            div.row
+                ul.thumbnails
+                    li.span4
+                        div.thumbnail(style="width: 300px; height: 550px;")
+                            img(src="images/mlover_sm.jpg")
+                            div.caption
+                                h6 Music Lover
+                                //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                p.thumb-text Are you a music fanatic? You love to find and experience new music? Look no further, we’ve got what you need. Support independent artists, share playlists, and win prizes, music, and more. Find out how it works.
+
+                                //ul
+                                    li Explore new sounds
+                                    li Muscians price their own music
+                                    li Muscians share their royalties with you!
+                                    li Buy music from us, share the artist with your friends, find the next hot bands
+                                br
+                                br
+                                div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+
+                                    a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
+                                    &nbsp;
+                                    a.btn(href="/musicloverinfo") Learn More
+
+                    li.span4
+                        div.thumbnail(style="width:300px; height:550px;")
+                            img(src="images/artistsq_sm.jpg")
+                            div.caption
+                                h6 Artist
+                                //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                //p Are you the one who’s always on the lookout for the next best thing? You’re friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
+                                p.thumb-text We all know the system’s broken: streaming doesn’t pay, pirating is rampant, and they’ll eat your soul just to produce an album. We have a better way. Crowdfund your album costs, sell your music, and build fan support by letting them share in your success. If that wasn’t enough, you have total control of your content. Join us and help build a better system.
+
+
+                                //ul
+                                    li Let fans fund your music allowing you both to benefit
+                                    li Stay independent, control your content and your pricing
+                                    li Expand your audience and your creativity
+                                div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+                                    a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
+                                    &nbsp;
+                                    a.btn(href="/artistinfo") Learn More
+                    li.span4
+                        div.thumbnail(style="width: 300px; height: 550px;")
+                            img(src="images/promoter_sm.jpg")
+                            div.caption
+                                h6 Promoters/Investor
+                                //p Enabling the creative Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                p.thumb-text Are you the one who’s always on the lookout for the next best thing? Your friends ask you what you’re listening to these days? Put your money where your mouth is and get paid for your good taste. You’ll be supporting independent music too. Find out more.
+
+
+                                //ul
+                                    li Invest in music you love
+                                    li Use your and others networks to benefit from the music you have invested in
+                                    li Support independence by increasing its' exposure and variety
+                                br
+                                br
+                                div(style=" bottom: 0; left: 0; vertical-align: bottom;")
+                                    a(ng-hide="user.isAuthenticated()").btn.btn-primary(role="button",ng-click="openSignUpDialog()") Sign Up!
+                                    &nbsp;
+                                    a.btn(href="/investorinfo") Learn More
+
+
+        // market
+        div.container
+        hr
+        div.container
+
+            div.row
+                div.span6
+
+                div.span6
+
+            div.row
+            div.row
+                div.span6
+                    h5 Marketplace
+                    p  Support musicians by investing in their albums and you’ll win when they win. Browse recent and upcoming albums for investment opportunities.
+                    .gridStyle(ng-grid='gridOptions')
+                    //table#grid
+                        thead
+                            tr
+                                th Band
+                                th Album
+                                th $ on Offer
+                                th $ per share
+                                th # of shares
+                                th Listen!
+                                th More Info
+                        tbody
+                            td(colspan=7)
+                    div.container
+                    div.media
+                        a.pull-left(href="#")
+                            .thumbnail
+                                img.media-object(src="images/band.jpg",width="100")
+                        div.media-body
+                            h4.media-heading Featured Offering
+                            p Trilogy (Moop) $500/share (Only 4 shares left!)
+                            a.btn.btn-primary(href="#") Buy Now !
+                div.span6
+                    h5 Shop Music
+                    p  Music priced by musicians for your listening pleasure. Shop and sample the latest albums.
+                    div.tabbable
+                        ul.nav.nav-tabs
+                            li.active
+                                a(href="#tab1",data-toggle="tab") This Week
+                            li
+                                a(href="#tab2",data-toggle="tab") New Releases
+
+                        div.tab-content
+                            div#tab1.tab-pane.active
+                                p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                                div
+                                    ul.thumbnails
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Jc2v9ndpL._SL500_AA300_.jpg",width="90")
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/61e3FaHueCL._SL500_AA300_.jpg",width="90")
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/61iKyNi5UKL._SL500_AA300_.jpg",width="90")
+                                        //li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/41ZsWDiEvfL._SL500_AA300_.jpg",width="90")
+                            div#tab2.tab-pane
+                                p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesen doloremque laudantium, totam
+                                div
+                                    ul.thumbnails
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/61DAJ0zqFhL._AA160_.jpg",width="90")
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/51Xb620XzWL._AA160_.jpg",width="90")
+                                        li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/5135bFFBrWL._AA160_.jpg",width="90")
+                                        //li
+                                            a(href="#")
+                                                img.thumbnail(src="http://ecx.images-amazon.com/images/I/51DcM7PBuhL._AA160_.jpg",width="90")
+                            a.btn.btn-large.btn-primary(href="/store") See All Music!
 
 
 

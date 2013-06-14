@@ -31,7 +31,7 @@
   exports.albumAdded = function(event) {
     logger.debug(event);
     return Artist.findOne({
-      _id: event.payload.id
+      userId: event.payload.id
     }, function(err, artist) {
       var newAlbum;
       if (err) {
@@ -40,7 +40,6 @@
       if (artist) {
         logger.debug("adding album: " + JSON.stringify(event.payload) + "to artistId: " + artist._id);
         newAlbum = {
-          id: event.payload.albumId,
           _id: event.payload.albumId,
           name: event.payload.name,
           description: event.payload.description,
@@ -56,6 +55,8 @@
           }
           return logger.info("Album Saved");
         });
+      } else {
+        return logger.error("Artist for not found for id: " + event.payload.id);
       }
     });
   };
@@ -82,25 +83,6 @@
         });
       } else {
         return logger.error("Artist Not Found");
-      }
-    });
-  };
-
-  exports.albumUpdated = function(event) {
-    return Artist.findOne({
-      "albums._id": event.payload.albumId
-    }, function(err, artist) {
-      var albumNoId, theAlbum;
-      if (err) {
-        logger.error("Error finding artist/album");
-      }
-      if (artist) {
-        theAlbum = _.find(artist.albums, function(album) {
-          return album._id.toString() === event.payload.albumId;
-        });
-        albumNoId = _.omit(event.payload.album, "_id");
-        theAlbum = _.extend(theAlbum, albumNoId);
-        return logger.debug(theAlbum);
       }
     });
   };

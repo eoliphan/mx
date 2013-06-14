@@ -133,7 +133,7 @@ style
                                 textarea(ng-model="curTrack.lyrics")
                                 label Credits
                                 textarea(ng-model="curTrack.credits")
-            pane(heading="Offering")
+            pane(heading="{{albumInfo.albums.isActiveOffer && 'Offering' || 'Add Offering!'}}")
                 p create offering
 
 

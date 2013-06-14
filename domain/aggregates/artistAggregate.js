@@ -37,11 +37,6 @@ module.exports = base.extend({
 
     this.checkBusinessRules(callback);
   },
-  updateAlbum: function (data, callback) {
-    this.apply(this.toEvent('albumUpdated', data));
-
-    this.checkBusinessRules(callback);
-  },
 
 
   // Events
@@ -122,9 +117,6 @@ module.exports = base.extend({
 //    _.extend(song,newData);
 
 
-
-  },
-  albumUpdated: function(data) {
 
   }
 

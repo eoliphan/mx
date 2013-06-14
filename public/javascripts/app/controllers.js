@@ -93,7 +93,29 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
 
 }
 
-function HomeCtrl() {
+function HomeCtrl($scope,$http) {
+  $scope.offers = [];
+  $scope.gridOptions = {
+    data: 'offers',
+    columnDefs: [
+      {field: "name", displayName: "Album/Song"},
+      {field: "amtToRaise", displayName: "Raise Amount"},
+      {field: "numShares", displayName: "# Shares"},
+      {field: "pctOfferingToSell",displayName: "% For Sale"},
+      {cellTemplate: "<div><a ng-click='editAlbum(row)' class='btn btn-small btn-primary' style='margin-left: float; margin-right: float'>More Info</a></div>"}
+    ]
+  };
+  $http.get('/api/offers')
+    .success(function (data) {
+      console.log(data);
+      $scope.offers = data;
+      //$scope.gridOptions.data = $scope.albums;
+
+      if (!$scope.$$phase) {
+        $scope.$apply();
+      }
+
+    })
 
 }
 function StoreCtrl($scope) {
@@ -303,7 +325,21 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   });
 
 }
+function ArtistPageCtrl($http, $scope, $stateParams){
+  var artistId = $stateParams.artistId;
+  function refreshAlbum() {
+      $http
+        .get('/api/artist/' + albumId)
+        .success(function (data) {
+          $scope.albumInfo = data;
+          // format price and releasedate
 
+        })
+    }
+
+    refreshAlbum();
+
+}
 function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   var albumId = $stateParams.albumId;
 
@@ -347,11 +383,13 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   $scope.saveChanges = function () {
 
     console.log("saveChanges");
-    var album = $scope.albumInfo.albums;
+    var album = _.clone($scope.albumInfo.albums);
+    album.itemId = $scope.albumInfo.albums._id;
     var cmd = {
-      commmand: "updateAlbum",
       id: uuid.v4(),
-      album: album
+      command: "updateAlbum",
+
+      payload: album
     }
     socket.emit("command", cmd);
     $scope.editing.isDirty = false;
@@ -503,7 +541,7 @@ function TrackCtrl($scope) {
 
 }
 
-function AlbumSongsProfileCtrl($http, $scope,$location) {
+function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
   $scope.myData = [
     {name: "Moroni", age: 50},
     {name: "Tiancum", age: 43},
@@ -511,19 +549,45 @@ function AlbumSongsProfileCtrl($http, $scope,$location) {
     {name: "Nephi", age: 29},
     {name: "Enos", age: 34}
   ];
-  $scope.editAlbum = function(row) {
+  $scope.addAlbum = function () {
+    var payload = {
+      id: $scope.curUser._id,
+      albumId: (new ObjectId()).toString(),
+      name: "New Album...",
+      description: "Add A Description...",
+      price: 0
+
+    }
+    cmd = {
+      id: uuid.v4(),
+      command: "addAlbum",
+      payload: payload
+
+    }
+    socket.emit("command", cmd);
+
+  }
+  socket.on('albumAdded', function (data) {
+    console.log("album added: " + JSON.stringify(data));
+    //todo: need positive ack
+    setTimeout(function () {
+      $location.path('/album/edit/' + data.albumId);
+    }, 1000);
+
+  });
+  $scope.editAlbum = function (row) {
     console.log("edit album");
     console.log(row.entity.albums._id);
-    $location.path('/album/edit/'+row.entity.albums._id);
+    $location.path('/album/edit/' + row.entity.albums._id);
   }
   $scope.albums = [];
   $scope.gridOptions = {
     data: 'albums',
     columnDefs: [
-      {field:"albums.name",displayName:"Album/Song"},
-      {field:"albums.price",displayName:"Price"},
-      {field:"albums.isActiveOffer",displayName:"Active Offer"},
-      {cellTemplate:"<div><a ng-click='editAlbum(row)' class='btn btn-small btn-primary'>Edit</a></div>"}
+      {field: "albums.name", displayName: "Album/Song"},
+      {field: "albums.price", displayName: "Price"},
+      {field: "albums.isActiveOffer", displayName: "Active Offer"},
+      {cellTemplate: "<div><a ng-click='editAlbum(row)' class='btn btn-small btn-primary'>Edit</a></div>"}
     ]
   };
   $http.get('/api/albums/byuser/' + $scope.curUser._id)

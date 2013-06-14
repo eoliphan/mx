@@ -30,7 +30,10 @@ carousel(interval="carInterval")
                         img(src="http://placehold.it/700x200")
                 .span2 &nbsp;
     hr
-    .tabbable
+    .k-content.row
+        .k-pager-wrap#pagerPop
+        #listViewPop
+    //.tabbable
         ul.nav.nav-tabs
             li.active
                 a(href="#tab2",data-toggle="tab") Most Popular
@@ -65,7 +68,7 @@ carousel(interval="carInterval")
 script#template(type="text/x-kendo-tmpl")
     .product(data-title="<b><i>${albums.name} (${artistName}) </i></b>",data-content=" <b>Bio: </b>${bio} <br> <b>Genre </b> ${albums.genre} <br> <b>Price: </b> ${albums.price}  <br> <button class='btn'> Add To Cart </button> <a href='/album/${albums._id}' class='btn btn-primary'> See More</a>")
         img(src="util/rndsmlcvr/${Math.random()}")
-        .h6 ${albums.name}
+        h6 ${albums.name}
         p ${artistName} $${albums.price} ${albums.genre}
 
 

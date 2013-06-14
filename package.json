@@ -48,7 +48,9 @@
         "request":"2.21.x",
         "nodemailer":"0.4.x",
         "should":"1.2.x",
-        "streamline":"0.4.x"
+        "streamline":"0.4.x",
+        "slug":"0.2.2"
+
     },
     "engines": {
         "node": "0.10.x",

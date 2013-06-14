@@ -80,7 +80,12 @@ angular.module('soundscry',
                     url: "/albumsongs",
                     templateUrl: 'partials/albumsongs',
                     controller: AlbumSongsProfileCtrl
-                });
+                }).
+                state("artistpage", {
+                    url: "/artist/:artistId",
+                    templateUrl: 'partials/artistpage',
+                    controller: ArtistPageCtrl
+                });;
             $locationProvider.html5Mode(true);
         }]).run(
         [        '$rootScope', '$state', '$stateParams',
