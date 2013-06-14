@@ -327,17 +327,19 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
 }
 function ArtistPageCtrl($http, $scope, $stateParams){
   var artistId = $stateParams.artistId;
-  function refreshAlbum() {
+  function refreshArtist() {
       $http
-        .get('/api/artist/' + albumId)
+        .get('/api/artist/' + artistId)
         .success(function (data) {
-          $scope.albumInfo = data;
+          $scope.artist = data;
           // format price and releasedate
 
         })
     }
 
-    refreshAlbum();
+    refreshArtist();
+
+  $scope.random = Math.random;
 
 }
 function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {

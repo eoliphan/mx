@@ -1,0 +1,28 @@
+style
+    body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+            background-image: url("{{artist.pageInfo.backgroundUrl}}");
+          }
+
+.container
+    .row
+        .span2
+        .span8(style="height: 180px;")
+            img(ng-src="{{artist.pageInfo.headerUrl}}",height="180")
+        .span2
+    .row
+        .span2
+        .span8
+            h5 {{artist.artistName}}
+            p {{artist.bio}}
+            hr
+            //album covers
+            ul.thumbnails
+                li.span2(ng-repeat="album in artist.albums")
+                    a.thumbnail(href="/album/{{album._id}}")
+                        img(ng-hide="album.img",src="util/rndsmlcvr/{{random()}}",width="100%")
+                        img(ng-show="album.img",ng-src="{{album.img}}",width="100%")
+                        .caption
+                            small {{album.name}}
+        .span2

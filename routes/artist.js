@@ -26,9 +26,9 @@ module.exports = function (app) {
   });
   app.get('/api/artist/:id', function (req, res) {
 
-
+    var artistId = req.params.id;
     // todo add limit of fields
-    Artist.findOne({userId: req.user._id}, function (err, artist) {
+    Artist.findOne({_id: artistId}, function (err, artist) {
       if (err) {
         return res.send(400);
       }
@@ -37,6 +37,9 @@ module.exports = function (app) {
       else
         return res.send(artist);
     });
+  });
+  app.get('/artist/:id',function(req,res){
+    res.render('app');
   });
   app.put('/api/artist/basicinfo', function (req, res) {
     var newArtist = req.body;

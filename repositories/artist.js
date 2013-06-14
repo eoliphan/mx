@@ -49,11 +49,16 @@ var album = new Schema({
   img: String
 });
 
+
 var artistSchema = new Schema({
   artistName: String,
   bio: String,
   phone: String,
   albums: [album],
+  pageInfo:{
+    headerUrl:String,
+    backgroundUrl:String
+  },
   userId: Schema.Types.ObjectId
 });
 var Artist = mongoose.model('Artist', artistSchema);

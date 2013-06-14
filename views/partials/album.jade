@@ -10,7 +10,7 @@ style
 .container
         .hero-unit
             h4 {{albumInfo.albums.name}}
-            h6 Artist: {{albumInfo.artistName}}
+            h6: a(href="/artist/{{albumInfo._id}}") Artist: {{albumInfo.artistName}}
             .row-fluid(width="800")
                 .span4
 
