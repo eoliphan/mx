@@ -7,7 +7,6 @@
           <option name="label" value="mxtest-mongohq" />
           <option name="serverName" value="localhost" />
           <option name="serverPort" value="27017" />
-          <option name="serverVersion" value="2.2.2" />
         </ServerConfiguration>
       </list>
     </option>

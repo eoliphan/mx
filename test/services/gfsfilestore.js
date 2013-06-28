@@ -39,7 +39,7 @@ describe("gfsfilestore", function () {
       var fileId = uuid.v4();
       async.series([
         function (cb) {
-          gfsfilestore.store(file, fileId, function () {
+          gfsfilestore.store(file, 'text/plain',fileId ,function () {
             cb();
           });
 

@@ -17,7 +17,9 @@ ensureAuthenticated = function (req, res, next) {
   res.redirect('/login')
 };
 
-var http = require('http')
+var
+  conf = require('./config').conf
+  , http = require('http')
   , path = require('path')
   , passport = require('passport')
   , mongoose = require('mongoose')
@@ -28,7 +30,7 @@ var http = require('http')
   , domain = require("./domain/domain")
   , passportSocketIo = require("passport.socketio")
   , uuid = require('node-uuid')
-  , conf = require('./config').conf
+
   , userrepo = require("./repositories/user")
   , flash = require('connect-flash')
   , User = require("./repositories/user").User
@@ -53,6 +55,7 @@ cart = require("./routes/cart"),
   , passportconf = require('./util/passportconf')
   , awsfilestore = require('./services/awsfilestore')
   , mongosetup = require('./util/mongosetup')
+  , multipart = require('connect-multiparty').multipart
 ;
 
 
@@ -133,6 +136,7 @@ app.configure(function () {
 
 
   app.use(express.bodyParser({ uploadDir: __dirname + '/public/uploads' }));
+  //app.use(multipart({autoFiles:false}));
   app.use(express.methodOverride());
   app.use(express.cookieParser('secret'));
   app.use(express.session({ secret: 'secret', store: store }));
@@ -174,7 +178,18 @@ app.configure('development', function () {
 
 //-- domain
 // init domain
-domain.initDomain();
+var domainConf = {
+  dbHost: conf.get("database:host"),
+  dbPort: conf.get("database:port"),
+  db_name: conf.get("database:name"),
+  dbUser: conf.get("database:user"),
+  dbPass: conf.get("database:password"),
+  domainType: conf.get("domainType")
+
+}
+domain.initDomain(domainConf,function(){
+  logger.info("Domain Initialized");
+});
 // send message to domain
 
 
@@ -184,6 +199,7 @@ for (var i = 0; i < 1; i++) {
 //    //domain.domain.handle({id:newUuid,command:"createUser",payload:{id:objId,email:"e@e.com",password:"blah"}});
   domain.domain.handle({id: newUuid, command: "changeUserPassword", payload: {id: "50f845e01d3435931b000001", email: "e@e.com", password: objId}});
 }
+//domain.domain.handle({id: newUuid, command: "changeUserPassword", payload: {id: "511a8c6ece62e90000000003", email: "testinvestor@e.com", password: "test"}});
 
 
 /// -- routes
@@ -507,10 +523,28 @@ if (conf.get("deployenv") === "heroku") {
   });
 }
 
-console.log("test conf var: " + conf.get("testvar"));
-logger.debug("ampq host: " + conf.get("evtbusamqp_host"));
-logger.debug("ampq port: " + conf.get("evtbusamqp_port"));
-logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
-logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
-//logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
+//console.log("test conf var: " + conf.get("testvar"));
+//logger.debug("ampq host: " + conf.get("evtbusamqp_host"));
+//logger.debug("ampq port: " + conf.get("evtbusamqp_port"));
+//logger.debug("ampq login: " + conf.get("evtbusamqp_login"));
+//logger.debug("ampq vhost: " + conf.get("evtbusamqp_vhost"));
+////logger.debug("ampq host: " + conf.get("evtbusamqp:host"));
 
+
+//User.findById("511a8c6ece62e90000000003",function(err,user){
+//        if(err){
+//            logger.error("Error finding password:" +err);
+//            return;
+//        }
+//        // now use the passport-local stuff to update
+//        user.setPassword("test",function(err){
+//            if(err) {
+//                logger.error("Error updating password:" + err);
+//              return;
+//            }
+//            user.save();
+//            logger.info("Password changed for: "+ user);
+//        });
+//        logger.debug(user);
+//
+//    });

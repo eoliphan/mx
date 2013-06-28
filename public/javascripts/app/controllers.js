@@ -93,7 +93,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
 
 }
 
-function HomeCtrl($scope,$http) {
+function HomeCtrl($scope, $http) {
   $scope.offers = [];
   $scope.gridOptions = {
     data: 'offers',
@@ -101,7 +101,7 @@ function HomeCtrl($scope,$http) {
       {field: "name", displayName: "Album/Song"},
       {field: "amtToRaise", displayName: "Raise Amount"},
       {field: "numShares", displayName: "# Shares"},
-      {field: "pctOfferingToSell",displayName: "% For Sale"},
+      {field: "pctOfferingToSell", displayName: "% For Sale"},
       {cellTemplate: "<div><a ng-click='editAlbum(row)' class='btn btn-small btn-primary' style='margin-left: float; margin-right: float'>More Info</a></div>"}
     ]
   };
@@ -325,19 +325,20 @@ function AlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   });
 
 }
-function ArtistPageCtrl($http, $scope, $stateParams){
+function ArtistPageCtrl($http, $scope, $stateParams) {
   var artistId = $stateParams.artistId;
+
   function refreshArtist() {
-      $http
-        .get('/api/artist/' + artistId)
-        .success(function (data) {
-          $scope.artist = data;
-          // format price and releasedate
+    $http
+      .get('/api/artist/' + artistId)
+      .success(function (data) {
+        $scope.artist = data;
+        // format price and releasedate
 
-        })
-    }
+      })
+  }
 
-    refreshArtist();
+  refreshArtist();
 
   $scope.random = Math.random;
 
@@ -372,8 +373,8 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
         //do we have any offer info?
         if ($scope.albumInfo.albums.isActiveOffer) {
           $http
-            .get('/api/offers/info/'+$scope.albumInfo.albums.offerId)
-            .success(function(data){
+            .get('/api/offers/info/' + $scope.albumInfo.albums.offerId)
+            .success(function (data) {
               $scope.offerInfo = data;
 
             });
@@ -440,58 +441,81 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   }
 
 
+  $scope.$on('fileuploadadd', function (e, data) {
+    console.log('image uploading' + data);
+    //console.log("song: " + $scope.song)
+    data.formData = {
+      //albumId: $scope.albumInfo.albums._id,
+      itemId: $scope.albumInfo.albums._id
+      //origFileName: data.files[0].name
+    }
+    // set the file name locally
+    //$scope.song.origFileName = data.files[0].name;
+    data.submit();
+  });
+//  $scope.progstyle = {};
+//  $scope.$on('fileuploadprogress', function (e, data) {
+//
+//    var progress = parseInt(data.loaded / data.total * 100, 10);
+//    $scope.progstyle = {
+//      width: progress + "%"
+//
+//    };
+//    console.log("file upload progress: " + data);
+//    //
+//  });
   //-- todo: angular-fileupload stuff seems a little sketchy right now.  will stick to this for time being.
 
-  $('#imgupload').fileupload({
-    url: "/uploads",
-    dataType: 'json',
-    done: function (e, data) {
-//            $.each(data.result.files, function (index, file) {
-//                $('<p/>').text(file.name).appendTo(document.body);
-//            });
-    }
-
-
-  });
-
-  $scope.files = [];
-  $('#fileupload').fileupload({
-    url: "/fileuploads",
-    dataType: 'json',
-    done: function (e, data) {
-      $.each(data.result.files, function (index, file) {
-        $('<p/>').text(file.name).appendTo('#files');
-      });
-    },
-    progressall: function (e, data) {
-      var progress = parseInt(data.loaded / data.total * 100, 10);
-      $('#progress .bar').css(
-        'width',
-        progress + '%'
-      );
-    },
-    progress: function (e, data) {
-      var progress = parseInt(data.loaded / data.total * 100, 10);
-      $('#progress .bar').css(
-        'width',
-        progress + '%'
-      );
-
-    },
-    add: function (e, data) {
-      //data.context = $('<p/>').text('Uploading...'+data.files[0].name).appendTo("#files");
-
-      $scope.$apply(function () {
-        $scope.files.push(data.files[0].name);
-      });
-      //data.files[0].itemId=uuid.v4();
-      data.formData = {
-        itemId: uuid.v4(),
-        albumId: $scope.albumInfo.albums._id
-      }
-      data.submit();
-    }
-  });
+//  $('#imgupload').fileupload({
+//    url: "/uploads",
+//    dataType: 'json',
+//    done: function (e, data) {
+////            $.each(data.result.files, function (index, file) {
+////                $('<p/>').text(file.name).appendTo(document.body);
+////            });
+//    }
+//
+//
+//  });
+//
+//  $scope.files = [];
+//  $('#fileupload').fileupload({
+//    url: "/fileuploads",
+//    dataType: 'json',
+//    done: function (e, data) {
+//      $.each(data.result.files, function (index, file) {
+//        $('<p/>').text(file.name).appendTo('#files');
+//      });
+//    },
+//    progressall: function (e, data) {
+//      var progress = parseInt(data.loaded / data.total * 100, 10);
+//      $('#progress .bar').css(
+//        'width',
+//        progress + '%'
+//      );
+//    },
+//    progress: function (e, data) {
+//      var progress = parseInt(data.loaded / data.total * 100, 10);
+//      $('#progress .bar').css(
+//        'width',
+//        progress + '%'
+//      );
+//
+//    },
+//    add: function (e, data) {
+//      //data.context = $('<p/>').text('Uploading...'+data.files[0].name).appendTo("#files");
+//
+//      $scope.$apply(function () {
+//        $scope.files.push(data.files[0].name);
+//      });
+//      //data.files[0].itemId=uuid.v4();
+//      data.formData = {
+//        itemId: uuid.v4(),
+//        albumId: $scope.albumInfo.albums._id
+//      }
+//      data.submit();
+//    }
+//  });
 
 
 }

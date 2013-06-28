@@ -24,7 +24,7 @@ describe('awsfilestore', function () {
             tmp.file(function (err, path) {
                 console.log(path);
                 fs.writeFileSync(path, fileData);
-                awsfilestore.store(path, fileName, function (err, url) {
+                awsfilestore.store(path, fileName, 'text/plain',function (err, url) {
 
 
                     console.log(url);

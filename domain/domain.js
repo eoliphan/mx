@@ -1,11 +1,8 @@
 var domain = require('cqrs-domain').domain;
+  //conf = require('nconf');
 exports.domain = domain;
 //mongo linus.mongohq.com:10022/mxdemo -u <user> -p<password>
-var dbHost="linus.mongohq.com";
-var dbPort=10022;
-var db_name="mxdemo";
-var dbUser="mxuser";
-var dbPass="mxusertest";
+
 
 exports.killDomain = function() {
 
@@ -13,7 +10,13 @@ exports.killDomain = function() {
     //process.kill(pid);
 
 };
-exports.initDomain = function(callback) {
+exports.initDomain = function(conf,callback) {
+  var dbHost=conf.dbHost;
+  var dbPort=conf.dbPort;
+  var db_name=conf.db_name;
+  var dbUser=conf.dbUser;
+  var dbPass=conf.dbPass;
+  var domainType=conf.domainType;
 
     domain.initialize({
         commandHandlersPath: __dirname + '/commandHandlers',
@@ -24,7 +27,7 @@ exports.initDomain = function(callback) {
         snapshotThreshold: 10,
         forkEventDispatching: false,                          // optional
         commandQueue: {                                 // optional
-            type: 'mongoDb',                            // example with mongoDb
+            type: domainType,                            // example with mongoDb
             dbName: db_name,
             collectionName: 'commands',                 // optional
             host: dbHost,                          // optional
@@ -33,7 +36,7 @@ exports.initDomain = function(callback) {
             password: dbPass                             // optional
         },
         repository: {                                   // optional
-            type: 'mongoDb',                            // example with mongoDb
+            type: domainType,                            // example with mongoDb
             dbName: db_name,
             collectionName: 'sagas',                    // optional
             host: dbHost,                          // optional
@@ -46,7 +49,7 @@ exports.initDomain = function(callback) {
 //                dbName: 'cqrssample'
 //            }
         eventStore: {                                   // optional
-            type: 'mongoDb',                            // example with mongoDb
+            type: domainType,                            // example with mongoDb
             dbName: db_name,
             eventsCollectionName: 'events',             // optional
             snapshotsCollectionName: 'snapshots',       // optional

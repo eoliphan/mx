@@ -17,7 +17,7 @@ var User = require('../repositories/user').User
 
 ;
 
-ensureAuthenticated = function (req, res, next) {
+var ensureAuthenticated = function (req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     } else {
@@ -25,6 +25,14 @@ ensureAuthenticated = function (req, res, next) {
     }
 
 };
+
+var testAuth = function(req,res,next) {
+
+  var func =  passport.authenticate('local');
+
+  return func;
+
+}
 
 module.exports = function (app) {
 
@@ -105,10 +113,10 @@ module.exports = function (app) {
 
     });
     app.post('/uploads', function (req, res) {
-        awsfilestore.store(req.files.image.path, uuid.v4(), function (err, url) {
+        awsfilestore.store(req.files.image.path, uuid.v4(), req.files.image.headers['content-type'], function (err, url) {
 
             var command = {
-                command: req.body.command,
+                command: "updateAlbum",
                 id: uuid.v4(),
                 payload: {
                     itemId: req.body.itemId,

@@ -28,10 +28,10 @@ style
                         p: small: i Click To Upload Album Image (300x300)
                         //input#imgupload(type="file", name="image",data-url="/uploads")
 
-                        form#imgupload
+                        form#imgupload(data-fileupload="options",data-url="/uploads")
                             img(ng-hide="albumInfo.albums.img").edit-border(ng-src="/util/rndsmlcvr/1",width="100%")
                             img(ng-show="albumInfo.albums.img").edit-border(ng-src="{{albumInfo.albums.img}}",width="100%")
-                            input(type="file", name="image",data-url="/uploads")
+                            input(type="file", name="image")
                             input(type="hidden", name="itemId", value="{{albumInfo.albums._id}}" )
                             input(type="hidden",name="id",value="{{albumInfo._id}}")
                             input(type="hidden", name="command", value="updateAlbum" )
@@ -73,10 +73,7 @@ style
                                 //a.edit-border(href="#", id="price",data-type="text",data-url="/api/album/#{locals.info.albums._id}",data-pk="1",data-original-title="Enter Price ",data-placement="right") #{parseFloat(locals.info.albums.price).toFixed(2)}
                         hr
 
-                        //button#addToCart.btn.btn-primary.disabled Add To Cart
-                        //button#buyNow.btn.disabled Buy Now
-                        //button#investChips.btn.disabled Invest 10 Chips!
-                        //button#showBuySharesBtn.btn.disabled Buy Shares!
+
 
                 hr
                 form
@@ -88,9 +85,6 @@ style
                                 span Add Track...
                                 //input(type="file", name="files[]",multiple="",ng-click="addTrack()")
                             button.btn.btn-success(ng-click="saveChanges()",ng-class="{disabled: editing.isDirty == false}") Save Changes
-
-
-
 
                 .row
                     .span5

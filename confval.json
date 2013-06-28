@@ -6,6 +6,7 @@
       "user":"mxuser",
       "password":"mxusertest"
     },
+    "domainType":"mongoDb",
     "redis": {
       "host":"slimehead.redistogo.com",
       "port":9725,

@@ -28,11 +28,12 @@ function getS3PrefixUrl(bucket,region) {
     return "http://"+bucket+".s3-website-"+region+".amazonaws.com/"
 }
 
-exports.store = function (file, identifier,cb) {
+exports.store = function (file, identifier,contentType, cb) {
     //var filePath = path.join(toProcessDir, file);
+    var ext = path.extname(file);
     var fileStr = fs.createReadStream(file);
-    var filename = uuid.v4();
-    s3.putObject({Bucket: awsconf.bucketName, Key: filename, ACL: "public-read", Body: fileStr}, function (err, data) {
+    var filename = uuid.v4() + ext;
+    s3.putObject({Bucket: awsconf.bucketName, Key: filename, ACL: "public-read", ContentType: contentType, Body: fileStr}, function (err, data) {
         if (err) {
             console.log("Error pushing file to S3" + err);
             cb(err);

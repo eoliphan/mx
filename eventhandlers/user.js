@@ -15,7 +15,10 @@ exports.userPasswordChanged = function(event){
         user.setPassword(newPass,function(err){
             if(err) {
                 logger.error("Error updating password:" + err);
+              return;
             }
+            user.save();
+            logger.info("Password changed for: "+ user);
         });
         logger.debug(user);
 
