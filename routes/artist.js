@@ -1,7 +1,10 @@
+/* jslint node: true */
+"use strict";
+
 var Order = require("../repositories/order").Order,
   Artist = require("../repositories/artist").Artist,
   mongoose = require('mongoose'),
-  logger = require("../logger"),
+  logger = require("winston"),
   _ = require('underscore'),
   uuid = require('node-uuid'),
   evtcmdbus = require('../evtcmdbus'),
@@ -18,10 +21,12 @@ module.exports = function (app) {
       if (err) {
         return res.send(400);
       }
-      if (artist == null)
+      if (artist === null) {
         return res.send({});
-      else
+      }
+      else {
         return res.send(artist);
+      }
     });
   });
   app.get('/api/artist/:id', function (req, res) {
@@ -32,10 +37,12 @@ module.exports = function (app) {
       if (err) {
         return res.send(400);
       }
-      if (artist == null)
+      if (artist === null) {
         return res.send({});
-      else
+      }
+      else {
         return res.send(artist);
+      }
     });
   });
   app.get('/artist/:id',function(req,res){
@@ -52,11 +59,11 @@ module.exports = function (app) {
       command: 'createArtist',
       payload: newArtist
 
-    }
+    };
     evtcmdbus.emitCommand(cmd);
     res.send(200);
   });
 
 
-}
+};
 

@@ -1,7 +1,7 @@
 angular.module('soundscry',
         ['soundscry.filters', 'soundscry.services', 'soundscry.directives',
             'ui.bootstrap', 'ui.compat', 'http-auth-interceptor', 'authentication',
-            'kendo','blueimp.fileupload','ngGrid'
+            'kendo.directives','blueimp.fileupload','ngGrid','wijmo'
         ]).
     config(['$stateProvider', '$routeProvider', '$locationProvider',
         function ($stateProvider, $routeProvider, $locationProvider) {

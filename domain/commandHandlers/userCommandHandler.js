@@ -4,7 +4,7 @@ module.exports = commandHandlerBase.extend({
 
     aggregate: 'userAggregate',
 
-    commands: ['createUser', 'destroyUser', 'changeUserPassword','addUserWager','fooIt' ],
+    commands: ['createUser', 'destroyUser', 'changeUserPassword','addUserWager','addInvestorInfo', 'updateUser','fooIt' ],
 
     fooIt: function(id, cmd) {
         var self = this;

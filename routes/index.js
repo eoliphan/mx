@@ -5,17 +5,19 @@
  * @param app
  * @returns {{partials: Function}}
  */
-var User = require('../repositories/user').User
-    , passport = require('passport')
+var //User = require('../repositories/user').User
+     passport = require('passport')
     , logger = require('../logger')
     , awsfilestore = require('../services/awsfilestore')
     , uuid = require("node-uuid")
     , evtcmdbus = require('../evtcmdbus')
     , gfsfilestore = require('../services/gfsfilestore')
+  , userService = require('../services/application/user')({evtcmdbus:evtcmdbus})
+  , _ = require('underscore')
 
     ;
 
-;
+//var userService = new UserService({evtcmdbus:evtcmdbus});
 
 var ensureAuthenticated = function (req, res, next) {
     if (req.isAuthenticated()) {
@@ -53,20 +55,8 @@ module.exports = function (app) {
      */
     app.post('/api/signup', function (req, res) {
         logger.debug(JSON.stringify(req.body));
-        var confirmationCode = uuid.v4();
-        User.register(new User({ email: req.body.email, confirmationCode: confirmationCode }),
-            req.body.password, function (err, account) {
-                if (err) {
-                    logger.error("Error creating account: " + err);
-                    return res.send(400, {message: "Error creating account"});
-                }
-                res.send(200);
-                //res.redirect('/');
-            });
-        //var newUser = new userrepo.User(req.body);
-        //newUser.save();
-//        req.flash('info', "Account Created. Welcome to SoundSrcy.  Please Log In");
-//        res.redirect("/login");
+        var userInfo = req.body;
+        userService.createUser(userInfo);
 
     });
     app.get('/logout', function (req, res) {
@@ -151,5 +141,26 @@ module.exports = function (app) {
 
 
     });
+    app.post('/api/investor',function(req,res){
+      var info = _.omit(req.body,['email','password']);
+      info.isInvestor=true;
+      // strip out stuff we dont need
+      var command = {
+        id: uuid.v4(),
+        command: "addInvestorInfo",
+        payload:info
+      }
 
+      evtcmdbus.emitCommand(command);
+      res.send(200);
+
+
+
+
+    });
+    app.post('/api/artist',function(req,red){
+
+      // we need to update the user info as well as the artist info
+
+    });
 }

@@ -1,27 +1,46 @@
 var _ = require('underscore')
-  ,should = require("should")
+  , should = require("should")
   , uuid = require('node-uuid')
-;
+  //, User = require('../../repositories/User').User
+  ;
 
 
-exports = UserApplicationService = function(config) {
+module.exports  = function (config) {
   // validate config
   should.exist(config.evtcmdbus);
   this.evtcmdbus = config.evtcmdbus;
   should.exist(this.evtcmdbus.emitCommand);
 
+  return {
+    createUser: function (userinfo) {
+      var confirmationCode = uuid.v4();
 
 
-//  /unction create
-//  function changePassword(username,newPassword) {
-//
-//  }
+      var cmd = {
+        id: uuid.v4(),
+        command: 'createUser',
+        payload: userinfo
 
-}
-UserApplicationService.prototype.create = function (username,password) {
-    var cmd = {
+      }
+      evtcmdbus.emitCommand(cmd);
 
     }
-
   }
+
+
+}
+//UserApplicationService.prototype.createUser = function (userinfo) {
+//  var confirmationCode = uuid.v4();
+//
+//
+//  var cmd = {
+//    id: uuid.v4(),
+//    command: 'createUser',
+//    payload: userinfo
+//
+//  }
+//  evtcmdbus.emitCommand(cmd);
+//
+//
+//}
 

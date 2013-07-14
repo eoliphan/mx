@@ -22,7 +22,7 @@ block content
                                   span.badge#cartCount 0
                               li(ng-class="{active: $location.path() == '/about'}"): a(href='about') About
                               li(ng-class="{active: $location.path() == '/faq'}"): a(href='faq') FAQ
-                              li(ng-class="{active: $location.path() == '/contact'}"): a(href='contact') Contact
+                              //li(ng-class="{active: $location.path() == '/contact'}"): a(href='contact') Contact
                           //todo 'hide' class added to prevent 'flash' of this section. might be a better way
                           div(ng-show="user.isAuthenticated()",ng-cloak='')
                               p.navbar-text.pull-right
@@ -36,9 +36,7 @@ block content
                               div.navbar-text.pull-right
                                   a.btn.btn-primary.span1(role="button",ng-click="openSignUpDialog()") Sign Up
                               form.navbar-form.pull-right()
-                                  input.span2(type="email",name="email",placeholder="Email",required,ng-model="email",
-                                    popover="{{emailPopoverText}}", popover-placement="bottom",
-                                    popover-title="{{emailPopoverTitle}}",popover-trigger="manual")
+                                  input.span2(type="email",name="email",placeholder="Email",required,ng-model="email")
                                   input.span2(type="password",name="password",placeholder="Password",ng-model="password")
                                   button.btn(ng-click="loginButtonClick()") Log In
             //pre user.isAuthenticated() = {{user.isAuthenticated()}}
@@ -47,17 +45,16 @@ block content
             br
             //pre $location.path() = {{$location.path()}}
         //pre $scope.$route = {{$scope.$route}}
-        script(src="http://code.jquery.com/jquery-1.9.1.min.js")
-        script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+
         script(src="javascripts/bs/bootstrap.js")
         script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
         //
         //script(src='/javascripts/kendo/kendo.web.min.js')
-        script(src='http://cdn.kendostatic.com/2013.1.319/js/kendo.all.min.js')
+
         script(src='/javascripts/jqBootstrapValidation.js')
         script(src='/socket.io/socket.io.js')
         script(src='/javascripts/uuid.js')
-        script(src='/javascripts/underscore.js')
+
         //script(src='/javascripts/jquery.jeditable.js')
         script(src="http://vitalets.github.io/x-editable/assets/momentjs/moment.min.js")
         link(href="http://vitalets.github.io/x-editable/assets/bootstrap-datetimepicker/css/datetimepicker.css",rel="stylesheet")
@@ -65,13 +62,13 @@ block content
         link(href="http://vitalets.github.io/x-editable/assets/select2/select2.css",rel="stylesheet")
         script(src="http://vitalets.github.io/x-editable/assets/select2/select2.js")
         script(src='/javascripts/bs-editable/bootstrap-editable.js')
-        script(src='/javascripts/jquery-ui-1.10.2.custom.js')
-        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js")
+        //script(src='/javascripts/jquery-ui-1.10.2.custom.js')
+
         script(src="javascripts/http-auth-interceptor.js")
         script(src="javascripts/angular-authentication.js")
         script(src="javascripts/ui-bootstrap-tpls-0.3.0.js")
         script(src="javascripts/angular-ui-states.min.js")
-        script(src="javascripts/angular-kendo.js")
+
         script(src="javascripts/ng-grid-2.0.5.min.js")
         script(src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js")
         script(src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js")
@@ -82,18 +79,40 @@ block content
         script(src="javascripts/jquery.fileupload-validate.js")
         script(src="javascripts/jquery.fileupload-angular.js")
         script(src="javascripts/objectid.js")
-        script(src="src="http://d3js.org/d3.v3.min.js")
+        script(src="http://d3js.org/d3.v3.min.js")
+        // wijmo
+        // flat ui
+        //script(src="javascripts/flatui-checkbox.js")
+        //script(src="javascripts/flatui-radio.js")
+
+
 
         script#inlineTxtEdit(type="text/ng-template")
             span(ng-hide="editMode",ng-click="editMode=true;value=model"){{model}}
             input(type="text",ng-model="value",ng-show="editMode", ng-model-instant, ng-enter="editMode=false" ,ng-change="model = value")
 
-
         script(src='javascripts/app/app.js')
         script(src='javascripts/app/services.js')
         script(src='javascripts/app/controllers.js')
-        script(src='javascripts/app/profile/investorprofilectrl.js')
-        script(src='javascripts/app/profile/musicianprofilectrl.js')
-        script(src='javascripts/app/profile/musicloverprofilectrl.js')
+        script(src='javascripts/app/controllers/investorprofilectrl.js')
+        script(src='javascripts/app/controllers/musicianprofilectrl.js')
+        script(src='javascripts/app/controllers/musicloverprofilectrl.js')
+        script(src='javascripts/app/controllers/signupdlg.js')
+        script(src='javascripts/app/controllers/main.js')
+        script(src='javascripts/app/controllers/home.js')
+        script(src='javascripts/app/controllers/store.js')
+        script(src='javascripts/app/controllers/cart.js')
+        script(src='javascripts/app/controllers/about.js')
+        script(src='javascripts/app/controllers/faq.js')
+        script(src='javascripts/app/controllers/profile.js')
+        script(src='javascripts/app/controllers/buysharesdlg.js')
+        script(src='javascripts/app/controllers/buychipsdlg.js')
+        script(src='javascripts/app/controllers/album.js')
+        script(src='javascripts/app/controllers/artistpage.js')
+        script(src='javascripts/app/controllers/editalbum.js')
+        script(src='javascripts/app/controllers/album.js')
+        script(src='javascripts/app/controllers/fileupload.js')
+        script(src='javascripts/app/controllers/track.js')
+        script(src='javascripts/app/controllers/albumsongsprofile.js')
         script(src='javascripts/app/filters.js')
         script(src='javascripts/app/directives.js')
