@@ -1,8 +1,12 @@
+/* jshint browser:true, developer: true */
+
+
 function MusicianProfileCtrl($http, $scope) {
+  "use strict";
 
   console.log("running musician profile controller");
 
-   setupCharts = function () {
+   var setupCharts = function () {
       //todo, refactor out jquery, use angular-kendo, etc
       function offerWizardToMain() {
         $('#profileMain').show();

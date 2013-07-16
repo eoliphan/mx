@@ -17,6 +17,8 @@ style
             h5 {{artist.artistName}}
             p {{artist.bio}}
             hr
+            a.btn.btn-primary.btn-large(ng-click='addAlbum()') Add Album/Song!
+            hr
             //album covers
             ul.thumbnails
                 li.span2(ng-repeat="album in artist.albums")

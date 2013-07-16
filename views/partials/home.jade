@@ -113,7 +113,7 @@ block content
                             div(ng-show="curUser.isArtist")
                                 .row
                                     .span3
-                                        a.btn.btn-large.btn-block.btn-primary(href="/artist/5145ec8237f23b0000000006") Edit Artist Profile
+                                        a.btn.btn-large.btn-block.btn-primary(href="/artist/{{curArtist._id}}") Edit Artist Profile
                                 .row
                                     .span4
                                         div(kendo-chart,k-options="revenueDistributionOptions")
@@ -122,34 +122,47 @@ block content
                             div(ng-hide="curUser.isArtist")
                                 .row
                                     .span6
-                                        form.form-horizontal
+                                        form
                                             legend Create your Artist Profile
-                                            .control-group
-                                                label.control-label(for="inputFirstName") First Name
-                                                .controls
-                                                    input#inputFirstName(ng-model="curUser.firstName",type="text",placeholder="First Name")
-                                            .control-group
-                                                label.control-label(for="inputLastName") Last Name
-                                                .controls
-                                                    input#inputLastName(ng-model="curUser.lastName",type="text",placeholder="Last Name")
-                                            .control-group
-                                                    label.control-label(for="inputAddress") Address
-                                                    .controls
-                                                        input#inputAddress(ng-model="curUser.address",type="text",placeholder="Address")
-                                            .control-group
-                                                    label.control-label(for="inputCity") City
-                                                    .controls
-                                                        input#inputCity(ng-model="curUser.city",type="text",placeholder="City")
-                                            .control-group
-                                                    label.control-label(for="inputState") State
-                                                    .controls
-                                                        input#inputState(ng-model="curUser.state",type="text",placeholder="State")
-                                            .control-group
-                                                    label.control-label(for="inputFirstName") Zip
-                                                    .controls
-                                                        input#inputZip(ng-model="curUser.zip",type="text",placeholder="Zip")
+                                            .row
+                                                .span3
+                                                    .control-group
+                                                        label.control-label(for="inputFirstName") First Name
+                                                        .controls
+                                                            input#inputFirstName(ng-model="curUser.firstName",type="text",placeholder="First Name")
+                                                    .control-group
+                                                        label.control-label(for="inputLastName") Last Name
+                                                        .controls
+                                                            input#inputLastName(ng-model="curUser.lastName",type="text",placeholder="Last Name")
+                                                    .control-group
+                                                            label.control-label(for="inputAddress") Address
+                                                            .controls
+                                                                input#inputAddress(ng-model="curUser.address",type="text",placeholder="Address")
+                                                    .control-group
+                                                            label.control-label(for="inputCity") City
+                                                            .controls
+                                                                input#inputCity(ng-model="curUser.city",type="text",placeholder="City")
+                                                    .control-group
+                                                            label.control-label(for="inputState") State
+                                                            .controls
+                                                                input#inputState(ng-model="curUser.state",type="text",placeholder="State")
+                                                    .control-group
+                                                            label.control-label(for="inputFirstName") Zip
+                                                            .controls
+                                                                input#inputZip(ng-model="curUser.zip",type="text",placeholder="Zip")
+                                                .span3
+                                                    .control-group
+                                                        label.control-label(for="inputBandName") Artist/Band Name
+                                                        .controls
+                                                            input#inputBandName(ng-model="curArtist.artistName",type="text",placeholder="Artist/Band Name")
+                                                    .control-group
+                                                        label.control-label(for="inputBio") Bio
+                                                        .controls
+                                                            textarea#inputBio(ng-model="curArtist.bio",placeholder="Artist/Band Bio",rows="3")
+
+
                                             .form-actions
-                                                button.btn.btn-primary Become an Artist!
+                                                button.btn.btn-primary(ng-click="addArtistInfo()") Become an Artist!
 
 
 
@@ -204,7 +217,7 @@ block content
                                                         option(value="moreThan100k") More than 100K
                                                         option(value="moreThan100k") More than 200K -or- > 1M net worth
                                             .form-actions
-                                                button.btn.btn-primary Become an Investor!
+                                                button.btn.btn-primary(ng-click="addInvestorInfo()") Become an Investor!
 
                 //tabs
                     pane(heading="Music Lover")

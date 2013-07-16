@@ -1,9 +1,31 @@
-var User = require("../repositories/user").User
-  , logger = require("winston")
-  , uuid= require("node-uuid")
+/* jshint node:true */
+"use strict";
 
-  ,mongoose = require('mongoose');
+var User = require("../repositories/user").User,
+   logger = require("winston"),
+   uuid= require("node-uuid"),
+  _ = require('underscore'),
 
+  mongoose = require('mongoose');
+
+
+exports.investorInfoAdded = function(event) {
+  var userId = mongoose.Types.ObjectId(event.payload.id);
+  var investorInfo = _.omit(event.payload,['id']);
+  User.update({_id:userId},{$set:investorInfo},function(err,user){
+    logger.debug("user: " + user.toObject + " updated for event: " + event);
+  });
+
+};
+
+exports.userUpdated = function(event) {
+  var userId = mongoose.Types.ObjectId(event.payload.id);
+  var investorInfo = _.omit(event.payload,['id']);
+  User.update({_id:userId},{$set:investorInfo},function(err,user){
+    logger.debug("user: " + user.toObject + " updated for event: " + event);
+  });
+
+};
 
 exports.userPasswordChanged = function (event) {
   var userId = mongoose.Types.ObjectId(event.payload.id);
@@ -26,11 +48,11 @@ exports.userPasswordChanged = function (event) {
 
   });
 
-}
+};
 
 exports.userWagerAdded = function (event) {
 
-}
+};
 
 exports.userCreated = function (event) {
 
@@ -50,8 +72,8 @@ exports.userCreated = function (event) {
 
     });
 
-}
+};
 
 exports.userDestroyed = function (event) {
 
-}
+};

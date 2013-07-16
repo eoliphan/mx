@@ -1,4 +1,8 @@
+/* jshint node:true */
+"use strict";
+
 var base = require('cqrs-domain').aggregateBase;
+var _ = require('underscore');
 
 module.exports = base.extend({
 
@@ -26,12 +30,12 @@ module.exports = base.extend({
 
     this.checkBusinessRules(callback);
   },
-  addInvestorInfo: function (data, callbacl) {
+  addInvestorInfo: function (data, callback) {
     this.apply(this.toEvent('investorInfoAdded', data));
 
     this.checkBusinessRules(callback);
   },
-  updateUser: function (data, callbacl) {
+  updateUser: function (data, callback) {
     this.apply(this.toEvent('userUpdated', data));
 
     this.checkBusinessRules(callback);
@@ -53,10 +57,19 @@ module.exports = base.extend({
     this.set('password', data.password);
   },
   investorInfoAdded: function (data) {
+    var info = _.keys(data);
+    var self = this;
+    _.each(info, function (key, iterator, list) {
+      self.set(key, data[key]);
+    });
     //this.set(data);
   },
   userUpdated: function (data) {
-    //this.set(data);
+    var info = _.keys(data);
+    var self = this;
+    _.each(info, function (key, iterator, list) {
+      self.set(key, data[key]);
+    });
   }
 
 });

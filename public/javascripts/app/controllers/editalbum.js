@@ -1,16 +1,31 @@
+/* jshint browser:true */
 
 function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
+  "use strict";
+
   var albumId = $stateParams.albumId;
+
+
+  $scope.offerBreakdownOptions = {
+    type: "pie",
+
+
+    chartArea: {
+      width:100,
+      height: 100
+    }
+
+  };
 
   $scope.editing = {
     isDirty: false
-  }
+  };
 
 
   $scope.selectTrack = function (trackId) {
     console.log('track id: ' + trackId);
     var curTrack = _.find($scope.albumInfo.albums.songs, function (song) {
-      return trackId === song.itemId
+      return trackId === song.itemId;
     });
     $scope.curTrack = curTrack;
   }
@@ -32,12 +47,14 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
             .get('/api/offers/info/' + $scope.albumInfo.albums.offerId)
             .success(function (data) {
               $scope.offerInfo = data;
+              $scope.offerBreakdownOptions.data = [15, $scope.offerInfo.pctOfferingToSell, ($scope.offerInfo.pctOfferingToSell - 100)];
+              $scope.spark1.refresh();
 
             });
 
         }
 
-      })
+      });
   }
 
   refreshAlbum();

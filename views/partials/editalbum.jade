@@ -12,6 +12,7 @@ style
 
 .container
     .hero-unit
+
         tabs
             pane(heading="Album")
                 h5: a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
@@ -128,16 +129,26 @@ style
                                 label Credits
                                 textarea(ng-model="curTrack.credits")
             pane(heading="{{albumInfo.albums.isActiveOffer && 'Offering' || 'Add Offering!'}}")
-                form.span4.well
-                    fieldset
-                        legend Offer Info
-                        label Amount To Raise
-                        input(type="text", ng-model="offerInfo.amtToRaise")
-                        label Percentage of Offering to Sell
-                        input(type="text", ng-model="offerInfo.pctOfferingToSell")
-                        label Number Of Shares
-                        input(type="text",ng-model="offerInfo.numShares")
-                    button.btn.btn-primary(type="button") Update!
+                .row
+                    .span5
+                        form.span4.well
+                            fieldset
+                                legend Offer Info
+                                label Amount To Raise
+                                input(type="text", ng-model="offerInfo.amtToRaise")
+                                label Percentage of Offering to Sell
+                                input(type="text", ng-model="offerInfo.pctOfferingToSell")
+                                label Number Of Shares
+                                input(type="text",ng-model="offerInfo.numShares")
+                                label Price Per Share ($)
+                                input(type="text",value="{{ offerInfo.amtToRaise / offerInfo.numShares}}")
+                                label Share Buys You (%)
+                                input(type="text",value="{{ (100 / offerInfo.numShares) * (offerInfo.pctOfferingToSell/100) }}")
+                            button.btn.btn-primary(type="button") Update!
+                    .span4
+                        div(kendo-sparkline="spark1",k-options="offerBreakdownOptions")
+                        //div(kendo-chart,k-options="incomeDistributionOptions")
+
 
 
 

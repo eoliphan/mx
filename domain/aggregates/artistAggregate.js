@@ -1,3 +1,6 @@
+/* jshint node:true */
+"use strict";
+
 var base = require('cqrs-domain').aggregateBase
   , _ = require('underscore');
 

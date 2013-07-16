@@ -1,3 +1,6 @@
+/* jshint node:true */
+"use strict";
+
 /**
  * Module dependencies.
  */
@@ -10,15 +13,16 @@ var express = require('express');
 var app = express();
 //hub.app = app;
 
-ensureAuthenticated = function (req, res, next) {
+var ensureAuthenticated = function (req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect('/login')
+  res.redirect('/login');
 };
 
 var
-  conf = require('./config').conf
+  conf = require('./config').conf,
+  util = require('util')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
@@ -36,7 +40,7 @@ var
   , User = require("./repositories/user").User
   , Order = require("./repositories/order").Order
   , Artist = require("./repositories/artist").Artist
-  , _ = require('underscore')
+  , _ = require('underscore'),
 
 cart = require("./routes/cart"),
   game = require("./routes/game")
@@ -123,7 +127,7 @@ app.configure('development', function () {
 app.configure('production', function () {
   app.use(express.errorHandler());
 });
-store = new express.session.MemoryStore;
+var store = new express.session.MemoryStore;
 app.configure(function () {
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -186,7 +190,7 @@ var domainConf = {
   dbPass: conf.get("database:password"),
   domainType: conf.get("domainType")
 
-}
+};
 domain.initDomain(domainConf,function(){
   logger.info("Domain Initialized");
 });
@@ -451,10 +455,14 @@ io.set('authorization', function (data, accept) {
 });
 
 //todo: needs to go to redis for clustering next rev
-clients = {};
+var clients = {};
 evtcmdbus.addEventSink(function (event) {
-  if (event.payload.sessionId && clients[event.payload.sessionId])
+  if (event.payload.sessionId && clients[event.payload.sessionId]) {
+    logger.debug("Sending event: " + util.inspect(event) + "to client: " + clients[event.payload.sessionId]);
     clients[event.payload.sessionId].emit(event.event, event.payload);
+  } else {
+    logger.debug("No client for event: " + util.inspect(event));
+  }
 });
 io.sockets.on('connection', function (socket) {
   //console.log("Socket established: " + socket);

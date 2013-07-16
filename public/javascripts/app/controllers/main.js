@@ -1,4 +1,8 @@
+/* jshint browser: true */
+
+
 function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $dialog, principal, authority, authService) {
+  "use strict";
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
@@ -8,6 +12,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
   $scope.password = '';
   $scope.loginMsg = '';
   var authUrl = "/api/auth";
+  var artistUrl = "/api/artist/basicinfo";
 
   // check for current auth on reload
   $http
@@ -22,7 +27,31 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
       $scope.curUser = data;
 
     });
+  $scope.refreshCurUser = function () {
+    $http
+      .get(authUrl)
+      .success(function (data) {
 
+        $scope.curUser = data;
+
+      });
+
+  };
+  $scope.refreshCurArtist = function () {
+    $http
+      .get(artistUrl)
+      .success(function (data) {
+
+        $scope.curArtist = data;
+
+      });
+
+  };
+
+  $scope.refreshCurUserAndArtist = function() {
+      $scope.refreshCurUser();
+      $scope.refreshCurArtist();
+  };
   $scope.loginButtonClick = function () {
     var body = {
       email: $scope.email,
@@ -65,7 +94,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
     backdropClick: true,
     templateUrl: '/partials/signupdlg',
     controller: 'SignUpDlgCtrl'
-  }
+  };
   $rootScope.openSignUpDialog = function () {
     var d = $dialog.dialog($rootScope.signupopts);
     d.open().then(function (userInfo) {

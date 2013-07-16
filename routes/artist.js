@@ -17,7 +17,7 @@ module.exports = function (app) {
       return res.send({});
     }
     // todo add limit of fields
-    Artist.findOne({userId: req.user._id}, function (err, artist) {
+    Artist.findOne({userId: req.user._id}, '_id artistName bio',function (err, artist) {
       if (err) {
         return res.send(400);
       }

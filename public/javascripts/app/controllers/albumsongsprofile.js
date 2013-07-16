@@ -19,7 +19,7 @@ function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
   ];
   $scope.addAlbum = function () {
     var payload = {
-      id: $scope.curUser._id,
+      id: $scope.curArtist._id,
       albumId: (new ObjectId()).toString(),
       name: "New Album...",
       description: "Add A Description...",

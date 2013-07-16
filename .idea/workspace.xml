@@ -6,61 +6,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/album.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/angular-kendo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/artistpage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/buychipsdlg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/buysharesdlg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/cart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/faq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/fileupload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/flatui-checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/flatui-radio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/home.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/investorprofilectrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/musicloverprofilectrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/signupdlg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/store.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/track.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/angular-kendo.js" afterPath="$PROJECT_DIR$/public/javascripts/angular-kendo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/app.jade" afterPath="$PROJECT_DIR$/views/app.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/app.js" afterPath="$PROJECT_DIR$/public/javascripts/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/applayout.jade" afterPath="$PROJECT_DIR$/views/applayout.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/favicon.ico" afterPath="$PROJECT_DIR$/public/images/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/artist.js" afterPath="$PROJECT_DIR$/routes/artist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cart.jade" afterPath="$PROJECT_DIR$/views/partials/cart.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/directives.js" afterPath="$PROJECT_DIR$/public/javascripts/app/directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/aggregates/artistAggregate.js" afterPath="$PROJECT_DIR$/domain/aggregates/artistAggregate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/artistpage.jade" afterPath="$PROJECT_DIR$/views/partials/artistpage.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/editalbum.jade" afterPath="$PROJECT_DIR$/views/partials/editalbum.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/home.jade" afterPath="$PROJECT_DIR$/views/partials/home.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers/home.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mx.iml" afterPath="$PROJECT_DIR$/.idea/mx.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/signupdlg.jade" afterPath="$PROJECT_DIR$/views/partials/signupdlg.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers/main.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js" afterPath="$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventhandlers/user.js" afterPath="$PROJECT_DIR$/eventhandlers/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositories/user.js" afterPath="$PROJECT_DIR$/repositories/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/application/user.js" afterPath="$PROJECT_DIR$/services/application/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/aggregates/userAggregate.js" afterPath="$PROJECT_DIR$/domain/aggregates/userAggregate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/domain/commandHandlers/userCommandHandler.js" afterPath="$PROJECT_DIR$/domain/commandHandlers/userCommandHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mx.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373726387201" ignored="false" />
+    <file path="/Dummy.txt" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373815388220" ignored="false" />
     <file path="/evtcmdbus.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368825416735" ignored="false" />
-    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373376363483" ignored="false" />
+    <file path="/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373843807783" ignored="false" />
     <file path="/topbar.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368219221644" ignored="false" />
     <file path="/order.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1367248696355" ignored="false" />
     <file path="/order.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1367538873280" ignored="false" />
     <file path="/loadeventhandlers.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362671889019" ignored="false" />
-    <file path="/fragment.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1372980610021" ignored="false" />
-    <file path="/userAggregate.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373572959342" ignored="false" />
+    <file path="/fragment.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373932741163" ignored="false" />
+    <file path="/userAggregate.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373842900730" ignored="false" />
     <file path="/orderAggregate.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1363440534189" ignored="false" />
-    <file path="/a.dummy" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373252072589" ignored="false" />
+    <file path="/a.dummy" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373933306549" ignored="false" />
     <file path="$PROJECT_DIR$/../socialsos/web.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362676746315" ignored="false" />
     <file path="/web.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362676745001" ignored="false" />
     <file path="/a.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1362682997029" ignored="false" />
@@ -83,7 +58,7 @@
     <file path="/offer.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1367876480228" ignored="false" />
     <file path="/offerAggregate.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365087185130" ignored="false" />
     <file path="/musicianprofile.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370360620227" ignored="false" />
-    <file path="/index.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373574171637" ignored="false" />
+    <file path="/index.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373907477459" ignored="false" />
     <file path="/artist.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370378086988" ignored="false" />
     <file path="/offering.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1363610874288" ignored="false" />
     <file path="/offer.coffee" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1365090517196" ignored="false" />
@@ -108,7 +83,7 @@
     <file path="$PROJECT_DIR$/../jabsnoop/.gitignore" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366405339034" ignored="false" />
     <file path="/.gitignore" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368123516321" ignored="false" />
     <file path="$PROJECT_DIR$/../jabsnoop/.idea/workspace.xml" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1366951964581" ignored="false" />
-    <file path="/editalbum.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1371246367274" ignored="false" />
+    <file path="/editalbum.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373937070134" ignored="false" />
     <file path="/album.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370368847876" ignored="false" />
     <file path="$USER_HOME$/Library/Caches/WebIde60/extLibs/nodejs-v0.8.2-src/core-modules-sources/lib/events.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1367359961455" ignored="false" />
     <file path="$PROJECT_DIR$/../sslaunch/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1367516184962" ignored="false" />
@@ -127,7 +102,7 @@
     <file path="$PROJECT_DIR$/../cgtwitter/views/layout.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368116787990" ignored="false" />
     <file path="$PROJECT_DIR$/../cgtwitter/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368195350367" ignored="false" />
     <file path="$PROJECT_DIR$/../cgtwitter/views/index.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368111234346" ignored="false" />
-    <file path="/home.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373572478842" ignored="false" />
+    <file path="/home.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373923511653" ignored="false" />
     <file path="$PROJECT_DIR$/../cgtwitter/views/partials/home.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368112730141" ignored="false" />
     <file path="$PROJECT_DIR$/../cgtwitter/views/partials/admin.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368112318274" ignored="false" />
     <file path="/admin.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368112301226" ignored="false" />
@@ -174,12 +149,12 @@
     <file path="/promoterinfo.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368218423707" ignored="false" />
     <file path="/about.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368218896828" ignored="false" />
     <file path="/faq.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370358994006" ignored="false" />
-    <file path="/user.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1372995707978" ignored="false" />
+    <file path="/user.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373841067300" ignored="false" />
     <file path="/passportconf.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368402106435" ignored="false" />
     <file path="/applayout.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1372778996400" ignored="false" />
     <file path="/app.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1372892024193" ignored="false" />
     <file path="/investorprofilectrl.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368476923260" ignored="false" />
-    <file path="/musicianprofilectrl.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370365039734" ignored="false" />
+    <file path="/musicianprofilectrl.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373925615227" ignored="false" />
     <file path="/musicloverprofilectrl.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368479766002" ignored="false" />
     <file path="/album.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1371242286354" ignored="false" />
     <file path="/buychipsdlg.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1368552248330" ignored="false" />
@@ -195,7 +170,7 @@
     <file path="/a.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1369322094233" ignored="false" />
     <file path="/mongosetup.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1369360332371" ignored="false" />
     <file path="/albumsongs.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1370372952427" ignored="false" />
-    <file path="/artistpage.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1371242210138" ignored="false" />
+    <file path="/artistpage.jade" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373926396532" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/app.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373376364419" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/public/app/metadata/store/MenuStore" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1371750556712" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/public/app/app/store/MenuStore.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1371750556712" ignored="false" />
@@ -220,8 +195,8 @@
     <file path="$PROJECT_DIR$/../fdacr/public/app/index.html" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373293609846" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/public/app/app.xds" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373292818395" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/public/app/metadata/controller/MainController" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373288580800" ignored="false" />
-    <file path="/home.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373734755726" ignored="false" />
-    <file path="/main.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373297652467" ignored="false" />
+    <file path="/home.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373932942971" ignored="false" />
+    <file path="/main.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373900115557" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/package.json" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373379951943" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/src/util/export-1.csv" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373379104502" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/src/util/mkfactsarrays.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373380373181" ignored="false" />
@@ -229,6 +204,7 @@
     <file path="$PROJECT_DIR$/../fdacr/src/util/ACTION PERFORMED.json" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373380378322" ignored="false" />
     <file path="$PROJECT_DIR$/../fdacr/src/util/SAMPLE CLASSIFICATION CODE.json" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373380378322" ignored="false" />
     <file path="/userCommandHandler.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373572801926" ignored="false" />
+    <file path="/editalbum.js" changelist="f674dff7-9361-4ad6-a5ed-8aa73b503ab0" time="1373937767033" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,70 +223,35 @@
     <favorites_list name="mx" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5616921">
+    <splitter split-orientation="vertical" split-proportion="0.6087516">
       <split-first>
         <leaf>
-          <file leaf-file-name="signupdlg.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/partials/signupdlg.jade">
+          <file leaf-file-name="albumsongsprofile.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="14" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.0">
+                <state line="29" column="16" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="flatui-checkbox.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/flatui-checkbox.js">
+          <file leaf-file-name="artistpage.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/artistpage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="79" column="43" selection-start="2228" selection-end="2228" vertical-scroll-proportion="0.0">
+                <state line="5" column="12" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/app/directives.js">
+          <file leaf-file-name="home.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="18" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/services/application/user.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="9" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/repositories/user.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="19" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="artist.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/artist.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="23" vertical-scroll-proportion="0.0">
+                <state line="14" column="15" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                    <marker date="1373932955000" expanded="false" signature="1152:1191" placeholder="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="investorprofilectrl.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/investorprofilectrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="14" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0">
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -318,20 +259,57 @@
           <file leaf-file-name="musicianprofilectrl.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="327" column="9" selection-start="8920" selection-end="9594" vertical-scroll-proportion="0.0">
+                <state line="364" column="13" selection-start="10429" selection-end="10429" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="editalbum.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="52" column="15" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.5067568">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="faq.jade" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/partials/faq.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/home.js">
+          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="264" column="4" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.49329758">
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                    <marker date="1373814985000" expanded="false" signature="497:536" placeholder="..." />
-                  </folding>
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="artistpage.jade" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/partials/artistpage.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="12" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="artist.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/repositories/artist.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -340,55 +318,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="privatehome.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/partials/privatehome.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="home.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/partials/home.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="200" column="109" selection-start="10515" selection-end="10515" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="artist.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/eventhandlers/artist.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="artist.coffee" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/eventhandlers/artist.coffee">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="25" selection-start="18" selection-end="25" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cart.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/partials/cart.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="47" column="35" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="145" column="27" selection-start="3746" selection-end="3746" vertical-scroll-proportion="0.0">
+                <state line="120" column="94" selection-start="4373" selection-end="4427" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -397,8 +330,32 @@
           <file leaf-file-name="artistAggregate.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/domain/aggregates/artistAggregate.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
+                <state line="1" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="artist.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/artist.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="64" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="50" column="32" selection-start="1036" selection-end="1066" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -406,8 +363,10 @@
           <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/eventhandlers/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
+                <state line="34" column="7" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -424,7 +383,36 @@
           <file leaf-file-name="userAggregate.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/domain/aggregates/userAggregate.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="15" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+                <state line="66" column="2" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="aggregateBase.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/lib/bases/aggregateBase.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="72" column="0" selection-start="1617" selection-end="1617" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="artistCommandHandler.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/domain/commandHandlers/artistCommandHandler.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="editalbum.jade" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/partials/editalbum.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="148" column="51" selection-start="9387" selection-end="9387" vertical-scroll-proportion="0.12875536">
                   <folding />
                 </state>
               </provider>
@@ -450,22 +438,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/applayout.jade" />
-        <option value="$PROJECT_DIR$/repositories/user.js" />
-        <option value="$PROJECT_DIR$/services/application/user.js" />
-        <option value="$PROJECT_DIR$/views/partials/signupdlg.jade" />
-        <option value="$PROJECT_DIR$/eventhandlers/user.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/app/directives.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/app/controllers/main.js" />
-        <option value="$PROJECT_DIR$/views/app.jade" />
-        <option value="$PROJECT_DIR$/public/javascripts/app/app.js" />
         <option value="$PROJECT_DIR$/views/partials/cart.jade" />
-        <option value="$PROJECT_DIR$/views/partials/home.jade" />
         <option value="$PROJECT_DIR$/domain/commandHandlers/userCommandHandler.js" />
-        <option value="$PROJECT_DIR$/domain/aggregates/userAggregate.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/domain/aggregates/artistAggregate.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/app/controllers/main.js" />
         <option value="$PROJECT_DIR$/routes/artist.js" />
+        <option value="$PROJECT_DIR$/eventhandlers/user.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/views/partials/home.jade" />
+        <option value="$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js" />
+        <option value="$PROJECT_DIR$/views/partials/artistpage.jade" />
+        <option value="$PROJECT_DIR$/domain/aggregates/userAggregate.js" />
         <option value="$PROJECT_DIR$/public/javascripts/app/controllers/home.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js" />
+        <option value="$PROJECT_DIR$/views/partials/editalbum.jade" />
+        <option value="$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js" />
       </list>
     </option>
   </component>
@@ -475,8 +463,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1533" />
-    <option name="height" value="1058" />
+    <option name="width" value="1635" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -763,6 +751,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repositories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -804,6 +820,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -981,11 +1067,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/javascripts" />
       <recent name="$PROJECT_DIR$/public/javascripts/app/controllers" />
       <recent name="$PROJECT_DIR$/public/stylesheets" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/test/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/javascripts/app/profile" />
@@ -1430,32 +1516,36 @@
       <created>1372452648374</created>
       <updated>1372452648374</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Added some refactorings and unit tests">
+      <created>1373815406300</created>
+      <updated>1373815406300</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1533" height="1058" extended-state="0" />
+    <frame x="0" y="22" width="1635" height="1174" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.338945" sideWeight="0.49438202" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30550283" sideWeight="0.4981217" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22106262" sideWeight="0.49779737" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36852208" sideWeight="0.49962434" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22650902" sideWeight="0.8038835" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19189766" sideWeight="0.75521183" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26280835" sideWeight="0.7551919" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19189766" sideWeight="0.24478817" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26280835" sideWeight="0.24480805" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20049658" sideWeight="0.1994302" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5483871" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.4963112" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1735037" sideWeight="0.29104477" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16236627" sideWeight="0.26565465" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.094249204" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1735037" sideWeight="0.51599145" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25142315" sideWeight="0.8812923" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16236627" sideWeight="0.47058824" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2504744" sideWeight="0.88042796" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.4963112" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39848197" sideWeight="0.49905002" order="5" side_tool="false" content_ui="tabs" />
@@ -1557,7 +1647,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/index.js</url>
-          <line>105</line>
+          <line>109</line>
           <option name="timeStamp" value="350" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1579,70 +1669,91 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="387" />
+      <option name="time" value="392" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/application/user.js">
+    <entry file="file://$PROJECT_DIR$/domain/aggregates/userAggregate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="9" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
+        <state line="66" column="2" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="15" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1373932955000" expanded="false" signature="1152:1191" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/artistpage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/repositories/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="19" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/privatehome.jade">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/app/profile/musicianprofilectrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/home.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="109" selection-start="10515" selection-end="10515" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventhandlers/artist.js">
+    <entry file="file://$PROJECT_DIR$/views/partials/profile.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cart.jade">
+    <entry file="file://$PROJECT_DIR$/views/partials/musicianprofile.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="35" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/faq.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/albumsongs.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="70" selection-start="215" selection-end="282" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cqrs-domain/lib/bases/aggregateBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="1617" selection-end="1617" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/albumsongsprofile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="16" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="27" selection-start="3746" selection-end="3746" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/aggregates/artistAggregate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventhandlers/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="168" column="0" selection-start="4055" selection-end="4055" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1653,49 +1764,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/domain/aggregates/userAggregate.js">
+    <entry file="file://$PROJECT_DIR$/views/partials/home.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="15" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventhandlers/artist.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="25" selection-start="18" selection-end="25" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/artist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/investorprofilectrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="14" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0">
+        <state line="120" column="94" selection-start="4373" selection-end="4427" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/musicianprofilectrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="327" column="9" selection-start="8920" selection-end="9594" vertical-scroll-proportion="0.0">
+        <state line="364" column="13" selection-start="10429" selection-end="10429" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/editalbum.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="51" selection-start="9387" selection-end="9387" vertical-scroll-proportion="0.12875536">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/home.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/app/controllers/editalbum.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="264" column="4" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.49329758">
+        <state line="52" column="15" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.5067568">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1373814985000" expanded="false" signature="497:536" placeholder="..." />
           </folding>
         </state>
       </provider>

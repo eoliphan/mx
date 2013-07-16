@@ -1,7 +1,37 @@
 /* jslint browser: true, devel:true */
 
-function HomeCtrl($scope, $http) {
+function HomeCtrl($scope, $http, $location,socket) {
   "use strict";
+  //todo:----- refactor
+  $scope.addAlbum = function () {
+    var payload = {
+      id: $scope.curArtist._id,
+      albumId: (new ObjectId()).toString(),
+      name: "New Album...",
+      description: "Add A Description...",
+      price: 0
+
+    };
+    var cmd = {
+      id: uuid.v4(),
+      command: "addAlbum",
+      payload: payload
+
+    };
+    socket.emit("command", cmd);
+
+  };
+  socket.on('albumAdded', function (data) {
+    console.log("album added: " + JSON.stringify(data));
+    //todo: need positive ack
+    setTimeout(function () {
+      $location.path('/album/edit/' + data.albumId);
+    }, 1000);
+
+  });
+  //endtodo: -----
+
+
   $scope.offers = [];
   $scope.gridOptions = {
     data: 'offers',
@@ -24,7 +54,34 @@ function HomeCtrl($scope, $http) {
       }
 
     });
+  // private home
+  if ($scope.curUser && $scope.curUser.isArtist) {
+    $scope.refreshCurArtist();
+  }
+  $scope.addInvestorInfo = function () {
+    $http.post('/api/investor', $scope.curUser)
+      .success(function (data) {
 
+      })
+      .error(function (data) {
+
+      });
+  };
+  $scope.addArtistInfo = function () {
+    var payload = {};
+    payload.curUser = $scope.curUser;
+    payload.curArtist = $scope.curArtist;
+    $http.post('/api/artist', payload)
+      .success(function (data) {
+
+      })
+      .error(function (data) {
+
+      });
+  };
+  socket.on('artistCreated', function (data) {
+    _.delay($scope.refreshCurUserAndArtist, 500);
+  });
   $scope.revenueByOfferOptions = {
     dataSource: {
       transport: {
@@ -128,7 +185,7 @@ function HomeCtrl($scope, $http) {
     tooltip: {visible: true, template: "#= dataItem.offeringName # - #=  numeral(dataItem.totalSales).format('$0,0.00') #"},
     legend: {visible: false}
 
-  }
+  };
 
   var incomeDistChartDS = new kendo.data.DataSource({
     transport: {
@@ -199,7 +256,7 @@ function HomeCtrl($scope, $http) {
       //format: "{0:c}"
     }
 
-  }
+  };
   function refreshUserHome() {
     console.log("Refreshing uuser home");
     if ($scope.curUser.isInvestor) {
