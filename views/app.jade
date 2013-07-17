@@ -3,15 +3,13 @@ extends applayout
 block content
     body(ng-controller="MainCtrl")
         div
-            div.navbar.navbar-inverse.navbar-fixed-top
+            div.navbar.navbar-fixed-top.navbar-inverse
               div.navbar-inner
                   div.container-fluid
-                      a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
-                          span.icon-bar
-                          span.icon-bar
-                          span.icon-bar
-                      a.brand(href='/') SoundScry
-                          i.icon-sslogo
+
+                      a.brand(href='/')
+                          img(href="images/SoundScry_small_trans.png", width="100",height="100")
+                          //i.icon-sslogo
                       div.nav-collapse.collapse(ng-cloak="")
 
                           ul.nav.test
@@ -41,6 +39,7 @@ block content
                                   button.btn(ng-click="loginButtonClick()") Log In
             //pre user.isAuthenticated() = {{user.isAuthenticated()}}
             //pre $state = {{$state}}
+            //img(href="images/SoundScry_small_trans.jpg",width="297",height="80")
             div(ui-view)
             br
             //pre $location.path() = {{$location.path()}}

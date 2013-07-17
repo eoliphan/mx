@@ -24,7 +24,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
 
       $scope.email = '';
       $scope.password = '';
-      $scope.curUser = data;
+      $rootScope.curUser = data;
 
     });
   $scope.refreshCurUser = function () {
@@ -32,7 +32,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
       .get(authUrl)
       .success(function (data) {
 
-        $scope.curUser = data;
+        $rootScope.curUser = data;
 
       });
 
@@ -42,7 +42,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
       .get(artistUrl)
       .success(function (data) {
 
-        $scope.curArtist = data;
+        $rootScope.curArtist = data;
 
       });
 
@@ -65,7 +65,10 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
 
         $scope.email = '';
         $scope.password = '';
-        $scope.curUser = data;
+        $rootScope.curUser = data;
+        if($rootScope.curUser.isArtist) {
+          $scope.refreshCurArtist();
+        }
         $scope.$broadcast("LoggedIn");
 
       })
@@ -73,7 +76,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
         $scope.loginMsg = 'Invalid Credentials';
         $rootScope.$broadcast('event:signin-failed');
 
-      })
+      });
 
 
   }
@@ -109,7 +112,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
 
           });
       }
-    })
-  }
+    });
+  };
 
 }

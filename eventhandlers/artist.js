@@ -31,7 +31,7 @@
   exports.albumAdded = function(event) {
     logger.debug(event);
     return Artist.findOne({
-      userId: event.payload.id
+      _id: event.payload.id
     }, function(err, artist) {
       var newAlbum;
       if (err) {
@@ -56,7 +56,7 @@
           return logger.info("Album Saved");
         });
       } else {
-        return logger.error("Artist for not found for id: " + event.payload.id);
+        return logger.error("Artist for not found for event: " + JSON.stringify(event.payload));
       }
     });
   };

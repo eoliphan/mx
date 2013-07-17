@@ -1,3 +1,6 @@
+/* jshint node:true */
+"use strict";
+
 var mongoose = require('mongoose')
   , gridfs = require('gridfs-stream')
   , logger = require('winston')
@@ -23,6 +26,6 @@ exports.init = function (conf,done) {
   });
 
 
-}
-exports.gfs = function(){ return gfs; }
-exports.mongo = function(){return mongoose.mongo;}
+};
+exports.gfs = function(){ return gfs; };
+exports.mongo = function(){return mongoose.mongo;};

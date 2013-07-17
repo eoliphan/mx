@@ -26,5 +26,5 @@ conf.set("testvar","local");
 conf.set("deployenv","local");
 
 
-console.log('database: ' + conf.get('database'));
+//console.log('database: ' + conf.get('database'));
 exports.conf=conf;

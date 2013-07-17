@@ -17,7 +17,7 @@ exports.artistCreated = (event) ->
 
 exports.albumAdded = (event) ->
   logger.debug event
-  Artist.findOne {userId: event.payload.id}, (err, artist) ->
+  Artist.findOne {_id: event.payload.id}, (err, artist) ->
     logger.error "error searching for artist: " + err if err
     if (artist)
       logger.debug "adding album: " + JSON.stringify(event.payload) + "to artistId: " + artist._id
@@ -36,7 +36,7 @@ exports.albumAdded = (event) ->
         logger.error "Error adding album: " + err if err
         logger.info "Album Saved"
     else
-      logger.error "Artist for not found for id: " + event.payload.id
+      logger.error "Artist for not found for event: " + JSON.stringify(event.payload)
 
 exports.albumUpdated = (event) ->
   logger.debug event

@@ -1,15 +1,8 @@
-
-
-
-
-
-
-
-
-
+/* jshint node: true */
 
 
 function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
+  "use strict";
   $scope.myData = [
     {name: "Moroni", age: 50},
     {name: "Tiancum", age: 43},
@@ -25,16 +18,16 @@ function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
       description: "Add A Description...",
       price: 0
 
-    }
-    cmd = {
+    };
+    var cmd = {
       id: uuid.v4(),
       command: "addAlbum",
       payload: payload
 
-    }
+    };
     socket.emit("command", cmd);
 
-  }
+  };
   socket.on('albumAdded', function (data) {
     console.log("album added: " + JSON.stringify(data));
     //todo: need positive ack
@@ -47,7 +40,7 @@ function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
     console.log("edit album");
     console.log(row.entity.albums._id);
     $location.path('/album/edit/' + row.entity.albums._id);
-  }
+  };
   $scope.albums = [];
   $scope.gridOptions = {
     data: 'albums',
@@ -68,6 +61,6 @@ function AlbumSongsProfileCtrl($http, $scope, $location, socket) {
         $scope.$apply();
       }
 
-    })
+    });
 
 }
