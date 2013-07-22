@@ -122,6 +122,14 @@ block content
                             div(ng-hide="curUser.isArtist")
                                 .row
                                     .span6
+                                        .well
+                                            b First off! Why SoundScry? And, what makes SoundScry different?
+                                            ul
+                                                li We are creating an environment the allows Musicians to reach out to music lovers, investors, promoters, fans, and anyone that believes music is worth supporting by actually financially investing in your album.
+                                                li They purchase a piece of the revenues from the album purchases though the SoundScry website from an Offering that you control and manage, then your investors help you grow your music audience.
+                                                li You do not have to pay back the money you receive from your Offering(s)
+                                                li You are free to distribute your music to other sites, but we hope you will drive your listeners to purchase from SoundScry, thus supporting your investors
+                                            p If this interests you please fill out your Profile and learn more about creating a financial support system for your band that give you creative freedom and huge revenue potential.
                                         form
                                             legend Create your Artist Profile
                                             .row
@@ -145,7 +153,7 @@ block content
                                                     .control-group
                                                             label.control-label(for="inputState") State
                                                             .controls
-                                                                input#inputState(ng-model="curUser.state",type="text",placeholder="State")
+                                                                select#inputState(ng-model="curUser.state",ng-options="state.name for state in states")
                                                     .control-group
                                                             label.control-label(for="inputFirstName") Zip
                                                             .controls

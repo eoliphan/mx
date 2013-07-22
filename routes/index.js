@@ -37,10 +37,10 @@ var testAuth = function (req, res, next) {
 
   return func;
 
-}
+};
 
 module.exports = function (app) {
-  "use strict";
+
   require("./artist")(app);
   require("./offer")(app);
   require("./order")(app);
@@ -60,6 +60,7 @@ module.exports = function (app) {
     logger.debug(JSON.stringify(req.body));
     var userInfo = req.body;
     userService.createUser(userInfo);
+    res.send(200);
 
   });
   app.get('/logout', function (req, res) {

@@ -1,6 +1,7 @@
 /* jslint browser: true, devel:true */
+/* global uuid */
 
-function HomeCtrl($scope, $http, $location,socket) {
+function HomeCtrl($scope, $http, $location,socket,lookups) {
   "use strict";
   //todo:----- refactor
   $scope.addAlbum = function () {

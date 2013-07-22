@@ -11,6 +11,10 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
   $scope.email = '';
   $scope.password = '';
   $scope.loginMsg = '';
+  $rootScope.flags = {
+    showLoginPopover:false
+  };
+  //$scope.showLoginPopover=false;
   var authUrl = "/api/auth";
   var artistUrl = "/api/artist/basicinfo";
 
@@ -70,6 +74,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
           $scope.refreshCurArtist();
         }
         $scope.$broadcast("LoggedIn");
+        $rootScope.flags.showLoginPopover=false;
 
       })
       .error(function (data) {
@@ -79,7 +84,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
       });
 
 
-  }
+  };
 
   $scope.logout = function () {
     $http
@@ -88,7 +93,7 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
         authority.deauthorize();
       });
 
-  }
+  };
 
   // setup signup dialog
   $rootScope.signupopts = {
@@ -106,7 +111,9 @@ function MainCtrl($http, $scope, $route, $routeParams, $location, $rootScope, $d
         $http
           .post('/api/signup', userInfo)
           .success(function (data) {
-
+            console.log("setting login to true: "+$rootScope.flags.showLoginPopover);
+            $scope.flags.showLoginPopover=true;
+            console.log("set login to true: "+$rootScope.flags.showLoginPopover);
           })
           .error(function (data) {
 

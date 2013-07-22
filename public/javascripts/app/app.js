@@ -85,7 +85,7 @@ angular.module('soundscry',
                     url: "/artist/:artistId",
                     templateUrl: 'partials/artistpage',
                     controller: ArtistPageCtrl
-                });;
+                });
             $locationProvider.html5Mode(true);
         }]).run(
         [        '$rootScope', '$state', '$stateParams',

@@ -1,22 +1,25 @@
-/* jshint browser:true */
+/* jshint browser:true, devel:true */
+/* global _:true */
+/* global uuid:true */
 
 function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
   "use strict";
 
   var albumId = $stateParams.albumId;
 
-
+  $scope.graph = {
+    spark1:{}
+  };
   $scope.offerBreakdownOptions = {
     type: "pie",
 
-
+    data: [20, 30, 30],
     chartArea: {
-      width:100,
+      width: 100,
       height: 100
     }
 
   };
-
   $scope.editing = {
     isDirty: false
   };
@@ -28,14 +31,14 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
       return trackId === song.itemId;
     });
     $scope.curTrack = curTrack;
-  }
+  };
 
   $scope.uploadTrack = function (trackId) {
     console.log("uloading: " + trackId);
-  }
+  };
 
   $scope.curTrack = {};
-  function refreshAlbum() {
+  $scope.refreshAlbum = function() {
     $http
       .get('/api/album/' + albumId)
       .success(function (data) {
@@ -48,20 +51,21 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
             .success(function (data) {
               $scope.offerInfo = data;
               $scope.offerBreakdownOptions.data = [15, $scope.offerInfo.pctOfferingToSell, ($scope.offerInfo.pctOfferingToSell - 100)];
-              $scope.spark1.refresh();
+              console.log(_.functions($scope.graph.spark1));
+              $scope.graph.spark1.refresh();
 
             });
 
         }
 
       });
-  }
+  };
 
-  refreshAlbum();
+  $scope.refreshAlbum();
   socket.on('albumUpdated', function () {
     console.log("refresh");
     setTimeout(function () {
-      refreshAlbum();
+      $scope.refreshAlbum();
     }, 2000);
 
   });
@@ -75,17 +79,17 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
       command: "updateAlbum",
 
       payload: album
-    }
+    };
     socket.emit("command", cmd);
     $scope.editing.isDirty = false;
 
-  }
+  };
   $scope.addTrack = function () {
     console.log("addTrack");
     var song = {
       name: "New Track...",
       itemId: uuid.v4()
-    }
+    };
     var cmd = {
       command: 'addSongToAlbum',
       id: uuid.v4(),
@@ -93,11 +97,11 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
         albumId: $scope.albumInfo.albums._id,
         song: song
       }
-    }
+    };
     //todo: this is experimental, socket.io v http
     socket.emit('command', cmd);
     $scope.albumInfo.albums.songs.push(song);
-  }
+  };
   // handle model changes
 //    $scope.$watch('albumInfo.albums.name', function (newVal, oldVal) {
 //        console.log("Old Val: " + oldVal + " : newVal " + newVal);
@@ -121,7 +125,7 @@ function EditAlbumCtrl($http, $scope, $stateParams, $state, $dialog, socket) {
       //albumId: $scope.albumInfo.albums._id,
       itemId: $scope.albumInfo.albums._id
       //origFileName: data.files[0].name
-    }
+    };
     // set the file name locally
     //$scope.song.origFileName = data.files[0].name;
     data.submit();

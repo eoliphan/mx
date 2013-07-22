@@ -34,7 +34,9 @@ block content
                               div.navbar-text.pull-right
                                   a.btn.btn-primary.span1(role="button",ng-click="openSignUpDialog()") Sign Up
                               form.navbar-form.pull-right()
-                                  input.span2(type="email",name="email",placeholder="Email",required,ng-model="email")
+                                  input.span2(type="email",name="email",placeholder="Email",required,ng-model="email",
+                                  sqd-popover,popover-trigger="manual",popover-content="Log In To SoundScry!",
+                                  popover-name="emailpop",popover-placement="bottom",popover-show="{{flags.showLoginPopover}}");
                                   input.span2(type="password",name="password",placeholder="Password",ng-model="password")
                                   button.btn(ng-click="loginButtonClick()") Log In
             //pre user.isAuthenticated() = {{user.isAuthenticated()}}
@@ -49,8 +51,13 @@ block content
         script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
         //
         //script(src='/javascripts/kendo/kendo.web.min.js')
-
+        // breeze.js
         script(src='/javascripts/jqBootstrapValidation.js')
+        script(src='/javascripts/q.js')
+        script(src='/javascripts/breeze.debug.js.js')
+        script(src='/javascripts/breeze.savequeuing.js')
+        script(src='/javascripts/toastr.js')
+
         script(src='/socket.io/socket.io.js')
         script(src='/javascripts/uuid.js')
 

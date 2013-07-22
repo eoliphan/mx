@@ -11,9 +11,12 @@ style
 
 
 .container
+
+
     .hero-unit
 
         tabs
+
             pane(heading="Album")
                 h5: a.editable.editable-click(xeditable="",href="javascript:;",data-type="text",data-pk="1",data-url="/api/album/{{albumInfo.albums._id}}",
                     data-name="name",data-ng-model="albumInfo.albums.name",data-placement="right",
@@ -146,7 +149,8 @@ style
                                 input(type="text",value="{{ (100 / offerInfo.numShares) * (offerInfo.pctOfferingToSell/100) }}")
                             button.btn.btn-primary(type="button") Update!
                     .span4
-                        div(kendo-sparkline="spark1",k-options="offerBreakdownOptions")
+                        div(kendo-sparkline="graph.spark1",k-options="offerBreakdownOptions")
+                        //div(kendo-sparkline="spark1",k-options="offerBreakdownOptions")
                         //div(kendo-chart,k-options="incomeDistributionOptions")
 
 
